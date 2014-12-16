@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.Office.Interop;
-using Microsoft.Office.Core;
+
 using System.Windows.Forms;
 using System.Data;
 using System.Data.SqlClient;

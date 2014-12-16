@@ -158,18 +158,7 @@ namespace Helper
 
         
 
-        public static void SQL2Excel(string Sql, string FileName, string Printer)
-        {
-            ExcelHelper excel = null;
-            excel = new ExcelHelper();
-            excel.Workbook_Hinzufuegen();
-            excel.SQL2Excel(Sql);
-            excel.DateiSpeichern(FileName);
-            excel.SheetDrucken(Printer);
-            excel.ExcelHelperClose();
-            excel = null;
-            GC.Collect();
-        }
+
 
         public static void RotatePoints(ref List<PointF> pointToRotate, PointF centerPoint, float angleInDegrees)
         {

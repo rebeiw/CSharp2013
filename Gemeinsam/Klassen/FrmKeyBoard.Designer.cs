@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             
+            
             this.bitButton1 = new Helper.RotaBitButton();
             this.bitButton2 = new Helper.RotaBitButton();
             this.bitButton3 = new Helper.RotaBitButton();
@@ -315,6 +316,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bitButton10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bitButton11)).EndInit();
             this.ResumeLayout(false);
+            
         }
 
         #endregion
