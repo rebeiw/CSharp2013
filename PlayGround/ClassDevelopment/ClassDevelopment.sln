@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassDevelopment", "ClassDe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helper", "..\..\Gemeinsam\Klassen\Helper.csproj", "{105E1C4D-F555-4C42-B09B-EAF26CD86990}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackgroundWorkerSample", "..\..\..\CSharp\PlayGround\BackgroundWorkerSample\BackgroundWorkerSample\BackgroundWorkerSample.csproj", "{EAB746AC-58BA-4671-9B90-2CE955BE4FEE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{105E1C4D-F555-4C42-B09B-EAF26CD86990}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{105E1C4D-F555-4C42-B09B-EAF26CD86990}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{105E1C4D-F555-4C42-B09B-EAF26CD86990}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAB746AC-58BA-4671-9B90-2CE955BE4FEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAB746AC-58BA-4671-9B90-2CE955BE4FEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAB746AC-58BA-4671-9B90-2CE955BE4FEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAB746AC-58BA-4671-9B90-2CE955BE4FEE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
