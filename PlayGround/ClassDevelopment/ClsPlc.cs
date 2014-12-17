@@ -196,7 +196,9 @@ namespace ClassDevelopment
             int j = Glb_VarCollect.ReadValueInt("Variable1");
             j++;
             Glb_VarCollect.WriteValue("Variable1", j);
-            Glb_VarCollect.WriteValue("Variable2", (double)j + 100);
+            object www = m_DatabasesValues["DB59.P1_Qmax_3"];
+            double eee = Convert.ToDouble(www);
+            Glb_VarCollect.WriteValue("Variable2", eee);
             (sender as BackgroundWorker).ReportProgress(fort);
             this.m_Value.Add("Variable1");
             this.m_Value.Add("Variable2");
@@ -249,7 +251,7 @@ namespace ClassDevelopment
 
         public void StoppRead()
         {
-            this.m_BackgroundWorkerPlcRead.CancelAsync();
+            //this.m_BackgroundWorkerPlcRead.CancelAsync();
             this.m_TimerRead.Enabled = false;
 
             this.m_ProgressBar.Style = ProgressBarStyle.Blocks;
