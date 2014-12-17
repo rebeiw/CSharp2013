@@ -31,7 +31,10 @@ namespace ClassDevelopment
             Glb_VarCollect1 = ClsVarCollect.CreateInstance();
             Glb_DataBinding = ClsDataBinding.CreateInstance();
             this.m_PlcPara.ProgBar = this.progressBar1;
-            this.m_PlcPara.IP="192.168.2.118";
+            this.m_PlcPara.LblStatus = this.lblStatus;
+            this.m_PlcPara.BtnStart = this.btnstart;
+            this.m_PlcPara.BtnStopp = this.btnstopp;
+            this.m_PlcPara.IP = "192.168.2.118";
             this.m_PlcPara.Rack = 0;
             this.m_PlcPara.Slot = 2;
 
@@ -88,6 +91,11 @@ namespace ClassDevelopment
         private void button2_Click(object sender, EventArgs e)
         {
             Glb_Plc.StoppRead();
+        }
+
+        private void lblStatus_Click(object sender, EventArgs e)
+        {
+
         }
 
     }

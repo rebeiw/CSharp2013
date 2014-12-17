@@ -18,6 +18,9 @@ namespace ClassDevelopment
         public int Rack;
         public int Slot;
         public ProgressBar ProgBar;
+        public Label LblStatus;
+        public Button BtnStart;
+        public Button BtnStopp;
     }
 
     public struct PLCDatas
@@ -35,6 +38,7 @@ namespace ClassDevelopment
 
     public class ClsPlc
     {
+        private bool m_FlagGoOn;
         private Hashtable m_DatabasesInfo;
         private Hashtable m_SymbolInfo;
 
@@ -53,6 +57,9 @@ namespace ClassDevelopment
         private BackgroundWorker m_BackgroundWorkerPlcRead;
 
         private ProgressBar m_ProgressBar;
+        private Label m_LblStatus;
+        private Button m_BtnStart;
+        private Button m_BtnStopp;
 
         private System.Windows.Forms.Timer m_TimerRead;
 
@@ -70,6 +77,7 @@ namespace ClassDevelopment
 
         private ClsPlc(PlcParameter PlcParameter)
         {
+            this.m_FlagGoOn = false;
 
             this.m_DatabasesInfo = new Hashtable();
             this.m_DatabasesNr = new List<int>();
@@ -91,6 +99,10 @@ namespace ClassDevelopment
             this.m_ProgressBar = PlcParameter.ProgBar;
             this.m_ProgressBar.Style = ProgressBarStyle.Blocks;
             this.m_ProgressBar.Value = 0;
+
+            this.m_LblStatus = PlcParameter.LblStatus;
+            this.m_BtnStart = PlcParameter.BtnStart;
+            this.m_BtnStopp = PlcParameter.BtnStopp;
             
             this.m_BackgroundWorkerPlcRead = new BackgroundWorker();
             this.m_BackgroundWorkerPlcRead.WorkerReportsProgress = true;
@@ -115,30 +127,26 @@ namespace ClassDevelopment
 
         private void m_TimerRead_Tick(object sender, EventArgs e)
         {
-            if (this.m_BackgroundWorkerPlcRead.IsBusy == false)
-            {
-                this.m_ProgressBar.Style = ProgressBarStyle.Marquee;
-                this.m_BackgroundWorkerPlcRead.RunWorkerAsync();
-            }
+            this.m_TimerRead.Enabled = false;
+            this.m_ProgressBar.Style = ProgressBarStyle.Marquee;
+            this.m_BackgroundWorkerPlcRead.RunWorkerAsync();
         }
 
         private void m_BackgroundWorkerPlcRead_DoWork(object sender, DoWorkEventArgs e)
         {
+            int prginfo = 0;
             foreach (int dbNr in this.m_DatabasesNr)
             {
                 int anz = Convert.ToInt32(this.m_DatabasesInfo[dbNr]);
                 byte[] daten = new byte[anz];
+                //Thread.Sleep(10);
                 this.m_Dc.readManyBytes(libnodave.daveDB, dbNr, 0, anz, daten);
-                if ((sender as BackgroundWorker).CancellationPending)
-                {
-                    e.Cancel = true;
-                    break;
-                }
-
                 PLCDatas pclData;
 
                 for (int i = 0; i < this.m_Daten.Count(); i++)
                 {
+                    prginfo = i;
+                    this.m_BackgroundWorkerPlcRead.ReportProgress(i);
                     pclData = this.m_Daten[i];
                     if (pclData.DatabaseNumber == dbNr)
                     {
@@ -199,7 +207,7 @@ namespace ClassDevelopment
             object www = m_DatabasesValues["DB59.P1_Qmax_3"];
             double eee = Convert.ToDouble(www);
             Glb_VarCollect.WriteValue("Variable2", eee);
-            (sender as BackgroundWorker).ReportProgress(fort);
+            this.m_BackgroundWorkerPlcRead.ReportProgress(fort);
             this.m_Value.Add("Variable1");
             this.m_Value.Add("Variable2");
             e.Result = this.m_Value;
@@ -207,60 +215,70 @@ namespace ClassDevelopment
         }
         private void m_BackgroundWorkerPlcRead_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            this.m_ProgressBar.Value = e.ProgressPercentage;
+            this.m_ProgressBar.Value = 0;
+            this.m_LblStatus.Text = "Prhjrehrje" + e.ProgressPercentage.ToString() + "%";
         }
 
         private void m_BackgroundWorkerPlcRead_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            if(e.Cancelled)
+            if (!this.m_FlagGoOn)
             {
-                int asd = 0;
-                asd++;
+                this.m_TimerRead.Enabled = false;
+                this.m_LblStatus.Text = "task cancled";
+                if (this.m_Dc != null)
+                {
+                    this.m_Di.disconnectAdapter();
+                    this.m_Dc.disconnectPLC();
+                    libnodave.closeSocket(this.m_Fds.rfd);
+                    this.m_Dc = null;
+                    this.m_Di = null;
+                    GC.Collect();
+                }
+                this.m_BtnStart.Enabled = true;
+                this.m_BtnStart.Focus();
             }
             else
             {
-                if (e.Error!=null)
-                {
-                    int asd = 0;
-                    asd++;
-                }
-                else
-                {
-                    List<string> var_list = (List<string>)e.Result;
-                    foreach (string var in var_list)
-                    {
-                        Glb_DataBinding.Dispatch(var);
-                    }
-                }
+                this.m_LblStatus.Text = "task complete";
             }
-            GC.Collect();
-        }
-
+            List<string> var_list = (List<string>)e.Result;
+            foreach (string var in var_list)
+            {
+                Glb_DataBinding.Dispatch(var);
+            }
+            this.m_TimerRead.Enabled = this.m_FlagGoOn;
+        } 
         public void StartRead()
         {
-            //this.m_Fds = new libnodave.daveOSserialType();
+            this.m_FlagGoOn = true;
+            this.m_BtnStart.Enabled = false;
+            this.m_BtnStopp.Enabled = true;
+            this.m_BtnStopp.Focus();
             this.m_Fds.rfd = libnodave.openSocket(102, this.m_IP);
             this.m_Fds.wfd = m_Fds.rfd;
             this.m_Di = new libnodave.daveInterface(this.m_Fds, "PLC", this.m_LocalMPI, libnodave.daveProtoISOTCP, libnodave.daveSpeed187k);
             this.m_Di.setTimeout(5000);
             this.m_Dc = new libnodave.daveConnection(m_Di, this.m_LocalMPI, this.m_Rack, this.m_Slot);
-
             int retval = this.m_Dc.connectPLC();
-            this.m_TimerRead.Enabled = true;
+            if(retval>=0)
+            {
+                this.m_TimerRead.Enabled = true;
+            }
+            else
+            {
+                retval = this.m_Dc.connectPLC();
+                int asd = 0;
+                asd++;
+            }
+
         }
 
         public void StoppRead()
         {
-            //this.m_BackgroundWorkerPlcRead.CancelAsync();
-            this.m_TimerRead.Enabled = false;
-
+            this.m_FlagGoOn = false;
+            this.m_BtnStart.Enabled = false;
+            this.m_BtnStopp.Enabled = false;
             this.m_ProgressBar.Style = ProgressBarStyle.Blocks;
-            if (this.m_Dc != null)
-            {
-                this.m_Dc.disconnectPLC();
-                this.m_Dc = null;
-                this.m_Di = null;
-            }
         }
 
         public void AddList(string Adress, string Symbolname, string DataType, string Comment,bool DataLog=false)

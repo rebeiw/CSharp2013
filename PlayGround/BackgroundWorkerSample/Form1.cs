@@ -86,5 +86,10 @@ namespace BackgroundWorkerSample
             this.timer1.Enabled = false;
             this.btnStartAsyncOperation_Click(sender, e);
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
