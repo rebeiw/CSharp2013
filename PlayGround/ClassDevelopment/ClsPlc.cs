@@ -232,7 +232,7 @@ namespace ClassDevelopment
                     libnodave.closeSocket(this.m_Fds.rfd);
                     this.m_Dc = null;
                     this.m_Di = null;
-                    GC.Collect();
+                    //GC.Collect();
                 }
                 this.m_BtnStart.Enabled = true;
                 this.m_BtnStart.Focus();
