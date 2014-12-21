@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-
 namespace ClassDevelopment
 {
     public partial class Form1 : Form
@@ -26,6 +25,14 @@ namespace ClassDevelopment
 
         public Form1()
         {
+
+            string folder = "";
+                folder=Environment.GetFolderPath(Environment.SpecialFolder.CommonDocuments);
+            if(folder=="")
+            {
+                int asd = 0;
+            }
+            System.Data.SQLite.SQLiteConnection.CreateFile("databaseFile.db3");        
             InitializeComponent();
             Glb_VarCollect = ClsVarCollect.CreateInstance();
             Glb_VarCollect1 = ClsVarCollect.CreateInstance();

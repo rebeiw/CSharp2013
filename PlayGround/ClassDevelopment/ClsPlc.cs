@@ -46,6 +46,8 @@ namespace ClassDevelopment
 
         private Hashtable m_DatabasesValues;
 
+        private Hashtable m_InfoThread;
+
         public List<PLCDatas> m_Daten;
 
         private List<string> m_Value;
@@ -83,6 +85,8 @@ namespace ClassDevelopment
             this.m_DatabasesNr = new List<int>();
             this.m_SymbolInfo = new Hashtable();
             this.m_DatabasesValues = new Hashtable();
+
+            this.m_InfoThread = new Hashtable();
  
 
             this.m_Daten=new List<PLCDatas>();
@@ -128,86 +132,93 @@ namespace ClassDevelopment
         private void m_TimerRead_Tick(object sender, EventArgs e)
         {
             this.m_TimerRead.Enabled = false;
-            this.m_ProgressBar.Style = ProgressBarStyle.Marquee;
+//            this.m_ProgressBar.Style = ProgressBarStyle.Marquee;
             this.m_BackgroundWorkerPlcRead.RunWorkerAsync();
         }
 
         private void m_BackgroundWorkerPlcRead_DoWork(object sender, DoWorkEventArgs e)
         {
-            int prginfo = 0;
             foreach (int dbNr in this.m_DatabasesNr)
             {
+                this.m_InfoThread[1] = "Datenbaustein " + dbNr + " wird eingelesen.";
+                this.m_BackgroundWorkerPlcRead.ReportProgress(1);
                 int anz = Convert.ToInt32(this.m_DatabasesInfo[dbNr]);
                 byte[] daten = new byte[anz];
                 //Thread.Sleep(10);
-                this.m_Dc.readManyBytes(libnodave.daveDB, dbNr, 0, anz, daten);
-                PLCDatas pclData;
-
-                for (int i = 0; i < this.m_Daten.Count(); i++)
+                int retval=this.m_Dc.readManyBytes(libnodave.daveDB, dbNr, 0, anz, daten);
+                if(retval<0)
                 {
-                    prginfo = i;
-                    this.m_BackgroundWorkerPlcRead.ReportProgress(i);
-                    pclData = this.m_Daten[i];
-                    if (pclData.DatabaseNumber == dbNr)
+                    Thread.Sleep(500);
+                    this.InitPLC();
+                }
+                else
+                {
+                    PLCDatas pclData;
+                    for (int i = 0; i < this.m_Daten.Count(); i++)
                     {
-                        string searchSymbol = "DB" + dbNr.ToString() + "." + pclData.Symbolname;
-                        string value = "";
-                        int byteNumber = pclData.ByteNumber;
-                        double bitNumber = (double)pclData.BitNumber;
-                        if (pclData.DataType == "BOOL")
+                        this.m_InfoThread[2] = i;
+                        this.m_BackgroundWorkerPlcRead.ReportProgress(2);
+                        pclData = this.m_Daten[i];
+                        if (pclData.DatabaseNumber == dbNr)
                         {
-                            int wert = (int)Math.Pow(2.0, bitNumber);
-                            int byteWert = daten[byteNumber];
-                            int valence = byteWert & wert;
-                            if (valence > 0)
+                            string searchSymbol = "DB" + dbNr.ToString() + "." + pclData.Symbolname;
+                            string value = "";
+                            int byteNumber = pclData.ByteNumber;
+                            double bitNumber = (double)pclData.BitNumber;
+                            if (pclData.DataType == "BOOL")
                             {
-                                value = "1";
+                                int wert = (int)Math.Pow(2.0, bitNumber);
+                                int byteWert = daten[byteNumber];
+                                int valence = byteWert & wert;
+                                if (valence > 0)
+                                {
+                                    value = "1";
+                                }
+                                else
+                                {
+                                    value = "0";
+                                }
+                            }
+                            if (pclData.DataType == "INT")
+                            {
+                                int wert = daten[byteNumber + 0] * 256 + daten[byteNumber + 1];
+                                value = wert.ToString();
+
+                            }
+                            if (pclData.DataType == "TIME")
+                            {
+                                int lowByteWert = daten[byteNumber + 1];
+                                int highByteWert = daten[byteNumber + 0];
+                                int wert = daten[byteNumber + 0] * 256 * 256 * 256 + daten[byteNumber + 1] * 256 * 256 + daten[byteNumber + 2] * 256 + daten[byteNumber + 3];
+                                value = wert.ToString();
+                            }
+
+                            if (pclData.DataType == "REAL")
+                            {
+                                value = libnodave.getFloatfrom(daten, byteNumber).ToString();
+                            }
+
+                            if (m_DatabasesValues.ContainsKey(searchSymbol))
+                            {
+                                m_DatabasesValues[searchSymbol] = value;
                             }
                             else
                             {
-                                value = "0";
+                                m_DatabasesValues.Add(searchSymbol, value);
                             }
-                        }
-                        if (pclData.DataType == "INT")
-                        {
-                            int wert = daten[byteNumber + 0] * 256 + daten[byteNumber + 1];
-                            value = wert.ToString();
-
-                        }
-                        if (pclData.DataType == "TIME")
-                        {
-                            int lowByteWert = daten[byteNumber + 1];
-                            int highByteWert = daten[byteNumber + 0];
-                            int wert = daten[byteNumber + 0] * 256 * 256 * 256 + daten[byteNumber + 1] * 256 * 256 + daten[byteNumber + 2] * 256 + daten[byteNumber + 3];
-                            value = wert.ToString();
-                        }
-
-                        if (pclData.DataType == "REAL")
-                        {
-                            value = libnodave.getFloatfrom(daten, byteNumber).ToString();
-                        }
-
-                        if (m_DatabasesValues.ContainsKey(searchSymbol))
-                        {
-                            m_DatabasesValues[searchSymbol] = value;
-                        }
-                        else
-                        {
-                            m_DatabasesValues.Add(searchSymbol, value);
                         }
                     }
                 }
             }
 
             this.m_Value.Clear();
-            int fort = 0;
             int j = Glb_VarCollect.ReadValueInt("Variable1");
             j++;
             Glb_VarCollect.WriteValue("Variable1", j);
             object www = m_DatabasesValues["DB59.P1_Qmax_3"];
             double eee = Convert.ToDouble(www);
             Glb_VarCollect.WriteValue("Variable2", eee);
-            this.m_BackgroundWorkerPlcRead.ReportProgress(fort);
+            this.m_BackgroundWorkerPlcRead.ReportProgress(0);
             this.m_Value.Add("Variable1");
             this.m_Value.Add("Variable2");
             e.Result = this.m_Value;
@@ -215,8 +226,15 @@ namespace ClassDevelopment
         }
         private void m_BackgroundWorkerPlcRead_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            this.m_ProgressBar.Value = 0;
-            this.m_LblStatus.Text = "Prhjrehrje" + e.ProgressPercentage.ToString() + "%";
+
+            if (e.ProgressPercentage == 1)
+            {
+                this.m_LblStatus.Text = (string)this.m_InfoThread[e.ProgressPercentage];
+            }
+            if (e.ProgressPercentage == 2)
+            {
+                this.m_ProgressBar.Value = (int)this.m_InfoThread[e.ProgressPercentage];
+            }
         }
 
         private void m_BackgroundWorkerPlcRead_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -224,22 +242,14 @@ namespace ClassDevelopment
             if (!this.m_FlagGoOn)
             {
                 this.m_TimerRead.Enabled = false;
+                this.DeletePLC();
                 this.m_LblStatus.Text = "task cancled";
-                if (this.m_Dc != null)
-                {
-                    this.m_Di.disconnectAdapter();
-                    this.m_Dc.disconnectPLC();
-                    libnodave.closeSocket(this.m_Fds.rfd);
-                    this.m_Dc = null;
-                    this.m_Di = null;
-                    //GC.Collect();
-                }
                 this.m_BtnStart.Enabled = true;
                 this.m_BtnStart.Focus();
             }
             else
             {
-                this.m_LblStatus.Text = "task complete";
+                //this.m_LblStatus.Text = "task complete";
             }
             List<string> var_list = (List<string>)e.Result;
             foreach (string var in var_list)
@@ -248,29 +258,46 @@ namespace ClassDevelopment
             }
             this.m_TimerRead.Enabled = this.m_FlagGoOn;
         } 
+
+        private void DeletePLC()
+        {
+            if (this.m_Dc != null)
+            {
+                this.m_Di.disconnectAdapter();
+                this.m_Dc.disconnectPLC();
+                libnodave.closeSocket(this.m_Fds.rfd);
+                this.m_Dc = null;
+                this.m_Di = null;
+            }
+        }
+
         public void StartRead()
         {
+            int retval = 0;
             this.m_FlagGoOn = true;
             this.m_BtnStart.Enabled = false;
             this.m_BtnStopp.Enabled = true;
             this.m_BtnStopp.Focus();
+
+            do
+            {
+                retval=this.InitPLC();
+            } while (retval < 0);
+            this.m_TimerRead.Enabled = true;
+
+        }
+
+        private int InitPLC()
+        {
+            this.DeletePLC();
+            int retval = 0;
             this.m_Fds.rfd = libnodave.openSocket(102, this.m_IP);
             this.m_Fds.wfd = m_Fds.rfd;
             this.m_Di = new libnodave.daveInterface(this.m_Fds, "PLC", this.m_LocalMPI, libnodave.daveProtoISOTCP, libnodave.daveSpeed187k);
             this.m_Di.setTimeout(5000);
             this.m_Dc = new libnodave.daveConnection(m_Di, this.m_LocalMPI, this.m_Rack, this.m_Slot);
-            int retval = this.m_Dc.connectPLC();
-            if(retval>=0)
-            {
-                this.m_TimerRead.Enabled = true;
-            }
-            else
-            {
-                retval = this.m_Dc.connectPLC();
-                int asd = 0;
-                asd++;
-            }
-
+            retval = this.m_Dc.connectPLC();
+            return retval;
         }
 
         public void StoppRead()
