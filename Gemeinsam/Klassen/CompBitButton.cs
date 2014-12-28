@@ -12,72 +12,81 @@ using System.Windows.Forms;
 namespace Helper
 {
 
-//    public enum BtnStyle
-//     {
-//        btg_Blanko = 0,
-//        btg_Benutzer,
-//        btg_Clipboard,
-//        btg_Diskette,
-//        btg_Esc,
-//        btg_Excel,
-//        btg_Exit,
-//        btg_Gruen,
-//        btg_Menue,
-//        btg_Ok,
-//        btg_Requery,
-//        btg_Run,
-//        btg_Stop,
-//        btg_UserNok,
-//        btg_UserOk,
-//        btg_Switchoff,
-//        btg_DeleteForm,
-//        btg_Error,
-//        btg_Fehler,
-//        btg_Freigabe,
-//        btg_Gelb,
-//        btg_Rot,
-//        btg_Weiss,
-//        btg_Cn,
-//        btg_De,
-//        btg_En,
-//        btg_It,
-//        btg_Nl,
-//        btg_Pl,
-//        btg_Pt,
-//        btg_Ru,
-//        btg_Se,
-//        btg_Sp,
-//        btg_Tu,
-//        btg_Fr,
-//        btg_ScreenShot,
-//        btg_Keyboard,
-//        btg_Para,
-//        btg_Service,
-//        btg_Blau,
-//        btg_Orange,
-//        btg_DunkelGruen,
-//        btg_New,
-//        btg_Folder,
-//        btg_PfeilOben,
-//        btg_PfeilUnten,
-//        btg_PfeilObenAktiv,
-//        btg_PfeilUntenAktiv,
-//        btg_Pfeillinks,
-//        btg_PfeilRechts,
-//        btg_Graph
-
-
-//}
-
-    public class BitButton : PictureBox
+    public enum CompBitButtonStyle
     {
-        private List<Bitmap> Bitmaps;
+        btg_Blanko = 0,
+        btg_Benutzer,
+        btg_Clipboard,
+        btg_Diskette,
+        btg_Esc,
+        btg_Excel,
+        btg_Exit,
+        btg_Gruen,
+        btg_Menue,
+        btg_Ok,
+        btg_Requery,
+        btg_Run,
+        btg_Stop,
+        btg_UserNok,
+        btg_UserOk,
+        btg_Switchoff,
+        btg_DeleteForm,
+        btg_Error,
+        btg_Fehler,
+        btg_Freigabe,
+        btg_Gelb,
+        btg_Rot,
+        btg_Weiss,
+        btg_Cn,
+        btg_De,
+        btg_En,
+        btg_It,
+        btg_Nl,
+        btg_Pl,
+        btg_Pt,
+        btg_Ru,
+        btg_Se,
+        btg_Sp,
+        btg_Tu,
+        btg_Fr,
+        btg_ScreenShot,
+        btg_Keyboard,
+        btg_Para,
+        btg_Service,
+        btg_Blau,
+        btg_Orange,
+        btg_DunkelGruen,
+        btg_New,
+        btg_Folder,
+        btg_PfeilOben,
+        btg_PfeilUnten,
+        btg_PfeilObenAktiv,
+        btg_PfeilUntenAktiv,
+        btg_Pfeillinks,
+        btg_PfeilRechts,
+        btg_Graph
+
+
+    }
+
+    public class CompBitButton : PictureBox
+    {
+        private List<Bitmap> m_Bitmaps;
         private Rectangle Rec,Rec1;
-        private Pen Pen1;
+        private Pen m_Pen;
         private bool FlagDrawRec;
-        public BitButton()
+
+        /**
+         * @brief      Konstruktor.
+         * @details    Verbose description of method
+         *             (or function) details.
+         * @todo       Make it do something.
+         * @bug        To be Microsoft Certified,
+         */
+
+        public CompBitButton()
         {
-            Bitmaps = new List<Bitmap>();
+            this.m_Bitmaps = new List<Bitmap>();
             Font fnt = new Font("Arial", 18f, System.Drawing.FontStyle.Bold);
             this.Width = 79;
             this.Height = 48;
@@ -85,13 +94,13 @@ namespace Helper
             FlagDrawRec = false;
             Rec1 = new Rectangle(0, 0, 79, 48);
             Rec = new Rectangle(0, 0, 79-1, 48-1);
-            Pen1 = new Pen(Color.DarkBlue);
+            this.m_Pen = new Pen(Color.DarkBlue);
             this.FillButtonBitmaps();
-            this.Picture_0 = BtnStyle.btg_Blanko;
-            this.Picture_1 = BtnStyle.btg_Blanko;
-            this.Picture_2 = BtnStyle.btg_Blanko;
-            this.Picture_3 = BtnStyle.btg_Blanko;
-            this.Picture_4 = BtnStyle.btg_Blanko;
+            this.Picture_0 = CompBitButtonStyle.btg_Blanko;
+            this.Picture_1 = CompBitButtonStyle.btg_Blanko;
+            this.Picture_2 = CompBitButtonStyle.btg_Blanko;
+            this.Picture_3 = CompBitButtonStyle.btg_Blanko;
+            this.Picture_4 = CompBitButtonStyle.btg_Blanko;
             this.PictureNumber = 0;
             this.Caption = "";
             this.EnableMouseDown = false;
@@ -140,8 +149,8 @@ namespace Helper
         }
 
         [Category("Default"), Description("")]
-        private BtnStyle m_Picture_0;
-        public BtnStyle Picture_0
+        private CompBitButtonStyle m_Picture_0;
+        public CompBitButtonStyle Picture_0
         {
             set { if (m_Picture_0 != value) { m_Picture_0 = value; this.Invalidate(); } }
             get { return this.m_Picture_0; }
@@ -149,16 +158,16 @@ namespace Helper
 
 
         [Category("Default"), Description("")]
-        private BtnStyle m_Picture_1;
-        public BtnStyle Picture_1
+        private CompBitButtonStyle m_Picture_1;
+        public CompBitButtonStyle Picture_1
         {
             set { if (m_Picture_1 != value) { m_Picture_1 = value; this.Invalidate(); } }
             get { return this.m_Picture_1; }
         }
 
         [Category("Default"), Description("")]
-        private BtnStyle m_Picture_2;
-        public BtnStyle Picture_2
+        private CompBitButtonStyle m_Picture_2;
+        public CompBitButtonStyle Picture_2
         {
             set { if (m_Picture_2 != value) { m_Picture_2 = value; this.Invalidate(); } }
             get { return this.m_Picture_2; }
@@ -166,16 +175,16 @@ namespace Helper
 
 
         [Category("Default"), Description("")]
-        private BtnStyle m_Picture_3;
-        public BtnStyle Picture_3
+        private CompBitButtonStyle m_Picture_3;
+        public CompBitButtonStyle Picture_3
         {
             set { if (m_Picture_3 != value) { m_Picture_3 = value; this.Invalidate(); } }
             get { return this.m_Picture_3; }
         }
 
         [Category("Default"), Description("")]
-        private BtnStyle m_Picture_4;
-        public BtnStyle Picture_4
+        private CompBitButtonStyle m_Picture_4;
+        public CompBitButtonStyle Picture_4
         {
             set { if (m_Picture_4 != value) { m_Picture_4 = value; this.Invalidate(); } }
             get { return this.m_Picture_4; }
@@ -232,7 +241,7 @@ namespace Helper
                 nr = (int)m_Picture_1;
             }
 
-            g.DrawImage(this.Bitmaps[nr], Rec1);
+            g.DrawImage(this.m_Bitmaps[nr], Rec1);
 
 
             Font f = new Font("Arial", 14f, FontStyle.Bold);
@@ -245,12 +254,8 @@ namespace Helper
 
             if (this.FlagDrawRec)
             {
-
-                g.DrawRectangle(Pen1, Rec);
+                g.DrawRectangle(this.m_Pen, Rec);
             }
-
-
-
         }
         protected override void OnMouseDown(MouseEventArgs pe)
         {
@@ -268,57 +273,57 @@ namespace Helper
         private void FillButtonBitmaps()
         {
            
-            this.Bitmaps.Add(Bmp.btg_Blanko);
-            this.Bitmaps.Add(Bmp.btg_benutzer);
-            this.Bitmaps.Add(Bmp.btg_Clipboard);
-            this.Bitmaps.Add(Bmp.btg_diskette);
-            this.Bitmaps.Add(Bmp.btg_esc);
-            this.Bitmaps.Add(Bmp.btg_Excel);
-            this.Bitmaps.Add(Bmp.btg_exit);
-            this.Bitmaps.Add(Bmp.btg_Gruen);
-            this.Bitmaps.Add(Bmp.btg_menue);
-            this.Bitmaps.Add(Bmp.btg_ok);
-            this.Bitmaps.Add(Bmp.btg_Requery);
-            this.Bitmaps.Add(Bmp.btg_Run);
-            this.Bitmaps.Add(Bmp.btg_Stop);
-            this.Bitmaps.Add(Bmp.btg_usernok);
-            this.Bitmaps.Add(Bmp.btg_userok);
-            this.Bitmaps.Add(Bmp.btg_switchoff);
-            this.Bitmaps.Add(Bmp.btg_DeleteForm);
-            this.Bitmaps.Add(Bmp.btg_Error);
-            this.Bitmaps.Add(Bmp.btg_fehler);
-            this.Bitmaps.Add(Bmp.btg_freigabe);
-            this.Bitmaps.Add(Bmp.btg_Gelb);
-            this.Bitmaps.Add(Bmp.btg_rot);
-            this.Bitmaps.Add(Bmp.btg_Weis);
-            this.Bitmaps.Add(Bmp.btg_cn);
-            this.Bitmaps.Add(Bmp.btg_de);
-            this.Bitmaps.Add(Bmp.btg_en);
-            this.Bitmaps.Add(Bmp.btg_it);
-            this.Bitmaps.Add(Bmp.btg_NL);
-            this.Bitmaps.Add(Bmp.btg_pl);
-            this.Bitmaps.Add(Bmp.btg_pt);
-            this.Bitmaps.Add(Bmp.btg_ru);
-            this.Bitmaps.Add(Bmp.btg_SE);
-            this.Bitmaps.Add(Bmp.btg_sp);
-            this.Bitmaps.Add(Bmp.btg_tu);
-            this.Bitmaps.Add(Bmp.btg_fr);
-            this.Bitmaps.Add(Bmp.btg_screenshot);
-            this.Bitmaps.Add(Bmp.btg_keyboard);
-            this.Bitmaps.Add(Bmp.btg_para);
-            this.Bitmaps.Add(Bmp.btg_service);
-            this.Bitmaps.Add(Bmp.btg_Blau);
-            this.Bitmaps.Add(Bmp.btg_Orange);
-            this.Bitmaps.Add(Bmp.btg_DarkGruen);
-            this.Bitmaps.Add(Bmp.btg_new);
-            this.Bitmaps.Add(Bmp.btg_folder);
-            this.Bitmaps.Add(Bmp.btg_Pfeilob);
-            this.Bitmaps.Add(Bmp.btg_Pfeilunt);
-            this.Bitmaps.Add(Bmp.btg_Gruen_Pfeilob);
-            this.Bitmaps.Add(Bmp.btg_Gruen_Pfeilunt);
-            this.Bitmaps.Add(Bmp.btg_pfeilli);
-            this.Bitmaps.Add(Bmp.btg_pfeilre);
-            this.Bitmaps.Add(Bmp.btg_graph);
+            this.m_Bitmaps.Add(Bmp.btg_Blanko);
+            this.m_Bitmaps.Add(Bmp.btg_benutzer);
+            this.m_Bitmaps.Add(Bmp.btg_Clipboard);
+            this.m_Bitmaps.Add(Bmp.btg_diskette);
+            this.m_Bitmaps.Add(Bmp.btg_esc);
+            this.m_Bitmaps.Add(Bmp.btg_Excel);
+            this.m_Bitmaps.Add(Bmp.btg_exit);
+            this.m_Bitmaps.Add(Bmp.btg_Gruen);
+            this.m_Bitmaps.Add(Bmp.btg_menue);
+            this.m_Bitmaps.Add(Bmp.btg_ok);
+            this.m_Bitmaps.Add(Bmp.btg_Requery);
+            this.m_Bitmaps.Add(Bmp.btg_Run);
+            this.m_Bitmaps.Add(Bmp.btg_Stop);
+            this.m_Bitmaps.Add(Bmp.btg_usernok);
+            this.m_Bitmaps.Add(Bmp.btg_userok);
+            this.m_Bitmaps.Add(Bmp.btg_switchoff);
+            this.m_Bitmaps.Add(Bmp.btg_DeleteForm);
+            this.m_Bitmaps.Add(Bmp.btg_Error);
+            this.m_Bitmaps.Add(Bmp.btg_fehler);
+            this.m_Bitmaps.Add(Bmp.btg_freigabe);
+            this.m_Bitmaps.Add(Bmp.btg_Gelb);
+            this.m_Bitmaps.Add(Bmp.btg_rot);
+            this.m_Bitmaps.Add(Bmp.btg_Weis);
+            this.m_Bitmaps.Add(Bmp.btg_cn);
+            this.m_Bitmaps.Add(Bmp.btg_de);
+            this.m_Bitmaps.Add(Bmp.btg_en);
+            this.m_Bitmaps.Add(Bmp.btg_it);
+            this.m_Bitmaps.Add(Bmp.btg_NL);
+            this.m_Bitmaps.Add(Bmp.btg_pl);
+            this.m_Bitmaps.Add(Bmp.btg_pt);
+            this.m_Bitmaps.Add(Bmp.btg_ru);
+            this.m_Bitmaps.Add(Bmp.btg_SE);
+            this.m_Bitmaps.Add(Bmp.btg_sp);
+            this.m_Bitmaps.Add(Bmp.btg_tu);
+            this.m_Bitmaps.Add(Bmp.btg_fr);
+            this.m_Bitmaps.Add(Bmp.btg_screenshot);
+            this.m_Bitmaps.Add(Bmp.btg_keyboard);
+            this.m_Bitmaps.Add(Bmp.btg_para);
+            this.m_Bitmaps.Add(Bmp.btg_service);
+            this.m_Bitmaps.Add(Bmp.btg_Blau);
+            this.m_Bitmaps.Add(Bmp.btg_Orange);
+            this.m_Bitmaps.Add(Bmp.btg_DarkGruen);
+            this.m_Bitmaps.Add(Bmp.btg_new);
+            this.m_Bitmaps.Add(Bmp.btg_folder);
+            this.m_Bitmaps.Add(Bmp.btg_Pfeilob);
+            this.m_Bitmaps.Add(Bmp.btg_Pfeilunt);
+            this.m_Bitmaps.Add(Bmp.btg_Gruen_Pfeilob);
+            this.m_Bitmaps.Add(Bmp.btg_Gruen_Pfeilunt);
+            this.m_Bitmaps.Add(Bmp.btg_pfeilli);
+            this.m_Bitmaps.Add(Bmp.btg_pfeilre);
+            this.m_Bitmaps.Add(Bmp.btg_graph);
 
         }
     }
