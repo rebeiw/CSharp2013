@@ -57,6 +57,7 @@ namespace Helper
         }
         ~ClsPDF()
         {
+           
         }
 
 

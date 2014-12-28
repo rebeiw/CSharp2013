@@ -1,51 +1,50 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
 
 namespace Helper
 {
     public partial class FrmLanguage : Helper.FrmVorlage
     {
 
-        ClsFormularManager frm_mng;
+        ClsSingeltonFormularManager m_formularManager;//!<Instanz auf die Klasse Formularmanager
 
+        /** 
+         * \brief Konstruktor
+         * 
+         * Funktionsbeschreibung: Erzeugen der Komponenten, Instanz fuer den Formularmanger anlegen und Formular anmelden. 
+         */
         public FrmLanguage()
         {
-            InitializeComponent();
-            frm_mng = ClsFormularManager.CreateInstance();
-            frm_mng.FormularAdd(this, this.Name.ToString());
+            this.InitializeComponent();
+            this.m_formularManager = ClsSingeltonFormularManager.CreateInstance(this, this.Name.ToString());
         }
 
-        private void BTN_Ende_Click(object sender, EventArgs e)
+        /** 
+         * \brief Formular schliessen
+         */
+        private void BtnEnd_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void FrmLanguage_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BTN_Sprache_Click(object sender, EventArgs e)
+        /** 
+         * \brief Sprache umschalten
+         */
+        private void BtnLanguage_Click(object sender, EventArgs e)
         {
             this.Close();
-            RotaBitButton btn = (RotaBitButton)sender;
-            if (btn.Name == "BTN_De")
+            CompBitButton btn = (CompBitButton)sender;
+            if (btn.Name == "BtnDe")
                 GlobalVar.Glb_Language = GlobalVar.Language.De;
-            if (btn.Name == "BTN_En")
+            if (btn.Name == "BtnEn")
                 GlobalVar.Glb_Language = GlobalVar.Language.En;
-            if (btn.Name == "BTN_Fr")
+            if (btn.Name == "BtnFr")
                 GlobalVar.Glb_Language = GlobalVar.Language.Fr;
-            if (btn.Name == "BTN_Sp")
+            if (btn.Name == "BtnSp")
                 GlobalVar.Glb_Language = GlobalVar.Language.Sp;
-            if (btn.Name == "BTN_Ru")
+            if (btn.Name == "BtnRu")
                 GlobalVar.Glb_Language = GlobalVar.Language.Ru;
-            frm_mng.SetLanguage();
-            
+            this.m_formularManager.SetLanguage();
         }
+
     }
 }

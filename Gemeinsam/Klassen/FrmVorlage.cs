@@ -1,41 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace Helper
 {
     public partial class FrmVorlage : Form
     {
-        private ClsPLC glb_plc;
-        private ClsFormularManager frmMng;
+        private ClsSingeltonFormularManager m_formularManager;
 
         public FrmVorlage()
         {
             InitializeComponent();
-            glb_plc = ClsPLC.CreateInstance();
-            frmMng = ClsFormularManager.CreateInstance();
+            this.m_formularManager = ClsSingeltonFormularManager.CreateInstance();
         }
+
         public void ShowMenu()
         {
-            frmMng.SetFormPrintScreen(this);
-            frmMng.FormularShow("FRM_Menu");
+            this.m_formularManager.SetFormPrintScreen(this);
+            this.m_formularManager.FormularShow("FrmMenu");
         }
-        private void FrmVorlage_Load(object sender, EventArgs e)
-        {
 
-        }
         public virtual void SetUserRight()
         {
         }
+
         public virtual void SetLanguage()
         {
         }
+
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             e.Cancel = true;

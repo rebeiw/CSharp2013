@@ -1,21 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
 
 namespace Helper
 {
     public partial class FrmVorlageMenu : Helper.FrmVorlage
     {
-        private ClsFormularManager frmMng;
+        private ClsSingeltonFormularManager m_formularManager;
 
         private bool m_ShowClose;
         public bool ShowClose
         {
-            set { if (m_ShowClose != value) { m_ShowClose = value; } }
+            set { if (this.m_ShowClose != value) { this.m_ShowClose = value; } }
             get { return this.m_ShowClose; }
         }
 
@@ -23,15 +17,15 @@ namespace Helper
         public FrmVorlageMenu()
         {
             InitializeComponent();
-            frmMng = ClsFormularManager.CreateInstance();
+            this.m_formularManager = ClsSingeltonFormularManager.CreateInstance();
         }
 
 
-        private void BTN_Close_Click(object sender, EventArgs e)
+        private void BtnClose_Click(object sender, EventArgs e)
         {
             if (this.ShowClose)
             {
-                frmMng.FormularShow("FrmProgEnd");
+                this.m_formularManager.FormularShow("FrmProgEnd");
             }
             else
             {
@@ -39,19 +33,14 @@ namespace Helper
             }
         }
 
-        private void BTN_Menu_Click(object sender, EventArgs e)
+        private void BtnMenu_Click(object sender, EventArgs e)
         {
             this.ShowMenu();
         }
 
-        private void FrmVorlageMenu_Load(object sender, EventArgs e)
+        private void BtnKeyboard_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void BTN_Keyboard_Click(object sender, EventArgs e)
-        {
-            frmMng.FormularShow("FrmKeyBoard");
+            m_formularManager.FormularShow("FrmKeyBoard");
         }
     }
 }

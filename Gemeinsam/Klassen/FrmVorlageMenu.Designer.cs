@@ -28,126 +28,124 @@
         /// </summary>
         private void InitializeComponent()
         {
-            
-            this.GB_Menu = new System.Windows.Forms.GroupBox();
-            this.BTN_Keyboard = new Helper.RotaBitButton();
-            this.BTN_Menu = new Helper.RotaBitButton();
-            this.BTN_Close = new Helper.RotaBitButton();
-            this.GB_Datenausgabe = new System.Windows.Forms.GroupBox();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.GB_Menu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BTN_Keyboard)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BTN_Menu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BTN_Close)).BeginInit();
+            this.GbxMenu = new System.Windows.Forms.GroupBox();
+            this.BtnKeyboard = new Helper.CompBitButton();
+            this.BtnMenu = new Helper.CompBitButton();
+            this.BtnClose = new Helper.CompBitButton();
+            this.GbxOutput = new System.Windows.Forms.GroupBox();
+            this.GbxMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnKeyboard)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnClose)).BeginInit();
             this.SuspendLayout();
             // 
-            // GB_Menu
+            // GbxMenu
             // 
-            this.GB_Menu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.GbxMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.GB_Menu.Controls.Add(this.BTN_Keyboard);
-            this.GB_Menu.Controls.Add(this.BTN_Menu);
-            this.GB_Menu.Controls.Add(this.BTN_Close);
-            this.GB_Menu.Location = new System.Drawing.Point(663, 5);
-            this.GB_Menu.Name = "GB_Menu";
-            this.GB_Menu.Size = new System.Drawing.Size(99, 517);
-            this.GB_Menu.TabIndex = 0;
-            this.GB_Menu.TabStop = false;
-            this.GB_Menu.Text = "Menue";
+            this.GbxMenu.Controls.Add(this.BtnKeyboard);
+            this.GbxMenu.Controls.Add(this.BtnMenu);
+            this.GbxMenu.Controls.Add(this.BtnClose);
+            this.GbxMenu.Location = new System.Drawing.Point(663, 5);
+            this.GbxMenu.Name = "GbxMenu";
+            this.GbxMenu.Size = new System.Drawing.Size(99, 517);
+            this.GbxMenu.TabIndex = 0;
+            this.GbxMenu.TabStop = false;
+            this.GbxMenu.Text = "Menue";
             // 
-            // BTN_Keyboard
+            // BtnKeyboard
             // 
-            this.BTN_Keyboard.Caption = "";
-            this.BTN_Keyboard.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
-            this.BTN_Keyboard.Formular = null;
-            this.BTN_Keyboard.Location = new System.Drawing.Point(10, 123);
-            this.BTN_Keyboard.Name = "BTN_Keyboard";
-            this.BTN_Keyboard.Picture_0 = Helper.BtnStyle.btg_Keyboard;
-            this.BTN_Keyboard.Picture_1 = Helper.BtnStyle.btg_Blanko;
-            this.BTN_Keyboard.Picture_2 = Helper.BtnStyle.btg_Blanko;
-            this.BTN_Keyboard.Picture_3 = Helper.BtnStyle.btg_Blanko;
-            this.BTN_Keyboard.Picture_4 = Helper.BtnStyle.btg_Blanko;
-            this.BTN_Keyboard.PictureNumber = 0;
-            this.BTN_Keyboard.Size = new System.Drawing.Size(79, 48);
-            this.BTN_Keyboard.Symbol = null;
-            this.BTN_Keyboard.TabIndex = 2;
-            this.BTN_Keyboard.TabStop = false;
-            this.BTN_Keyboard.Click += new System.EventHandler(this.BTN_Keyboard_Click);
+            this.BtnKeyboard.Caption = "";
+            this.BtnKeyboard.EnableMouseDown = false;
+            this.BtnKeyboard.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.BtnKeyboard.Formular = null;
+            this.BtnKeyboard.Location = new System.Drawing.Point(10, 123);
+            this.BtnKeyboard.Name = "BtnKeyboard";
+            this.BtnKeyboard.Picture_0 = Helper.CompBitButtonStyle.btg_Keyboard;
+            this.BtnKeyboard.Picture_1 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnKeyboard.Picture_2 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnKeyboard.Picture_3 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnKeyboard.Picture_4 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnKeyboard.PictureNumber = 0;
+            this.BtnKeyboard.Size = new System.Drawing.Size(79, 48);
+            this.BtnKeyboard.Symbol = null;
+            this.BtnKeyboard.TabIndex = 2;
+            this.BtnKeyboard.TabStop = false;
+            this.BtnKeyboard.Click += new System.EventHandler(this.BtnKeyboard_Click);
             // 
-            // BTN_Menu
+            // BtnMenu
             // 
-            this.BTN_Menu.Caption = "";
-            this.BTN_Menu.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
-            this.BTN_Menu.Formular = null;
-            this.BTN_Menu.Location = new System.Drawing.Point(10, 71);
-            this.BTN_Menu.Name = "BTN_Menu";
-            this.BTN_Menu.Picture_0 = Helper.BtnStyle.btg_Menue;
-            this.BTN_Menu.Picture_1 = Helper.BtnStyle.btg_Blanko;
-            this.BTN_Menu.Picture_2 = Helper.BtnStyle.btg_Blanko;
-            this.BTN_Menu.Picture_3 = Helper.BtnStyle.btg_Blanko;
-            this.BTN_Menu.Picture_4 = Helper.BtnStyle.btg_Blanko;
-            this.BTN_Menu.PictureNumber = 0;
-            this.BTN_Menu.Size = new System.Drawing.Size(79, 48);
-            this.BTN_Menu.Symbol = null;
-            this.BTN_Menu.TabIndex = 1;
-            this.BTN_Menu.TabStop = false;
-            this.BTN_Menu.Click += new System.EventHandler(this.BTN_Menu_Click);
+            this.BtnMenu.Caption = "";
+            this.BtnMenu.EnableMouseDown = false;
+            this.BtnMenu.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.BtnMenu.Formular = null;
+            this.BtnMenu.Location = new System.Drawing.Point(10, 71);
+            this.BtnMenu.Name = "BtnMenu";
+            this.BtnMenu.Picture_0 = Helper.CompBitButtonStyle.btg_Menue;
+            this.BtnMenu.Picture_1 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnMenu.Picture_2 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnMenu.Picture_3 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnMenu.Picture_4 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnMenu.PictureNumber = 0;
+            this.BtnMenu.Size = new System.Drawing.Size(79, 48);
+            this.BtnMenu.Symbol = null;
+            this.BtnMenu.TabIndex = 1;
+            this.BtnMenu.TabStop = false;
+            this.BtnMenu.Click += new System.EventHandler(this.BtnMenu_Click);
             // 
-            // BTN_Close
+            // BtnClose
             // 
-            this.BTN_Close.Caption = "";
-            this.BTN_Close.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
-            this.BTN_Close.Formular = null;
-            this.BTN_Close.Location = new System.Drawing.Point(10, 19);
-            this.BTN_Close.Name = "BTN_Close";
-            this.BTN_Close.Picture_0 = Helper.BtnStyle.btg_Exit;
-            this.BTN_Close.Picture_1 = Helper.BtnStyle.btg_Blanko;
-            this.BTN_Close.Picture_2 = Helper.BtnStyle.btg_Blanko;
-            this.BTN_Close.Picture_3 = Helper.BtnStyle.btg_Blanko;
-            this.BTN_Close.Picture_4 = Helper.BtnStyle.btg_Blanko;
-            this.BTN_Close.PictureNumber = 0;
-            this.BTN_Close.Size = new System.Drawing.Size(79, 48);
-            this.BTN_Close.Symbol = null;
-            this.BTN_Close.TabIndex = 0;
-            this.BTN_Close.TabStop = false;
-            this.BTN_Close.Click += new System.EventHandler(this.BTN_Close_Click);
+            this.BtnClose.Caption = "";
+            this.BtnClose.EnableMouseDown = false;
+            this.BtnClose.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.BtnClose.Formular = null;
+            this.BtnClose.Location = new System.Drawing.Point(10, 19);
+            this.BtnClose.Name = "BtnClose";
+            this.BtnClose.Picture_0 = Helper.CompBitButtonStyle.btg_Exit;
+            this.BtnClose.Picture_1 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnClose.Picture_2 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnClose.Picture_3 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnClose.Picture_4 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnClose.PictureNumber = 0;
+            this.BtnClose.Size = new System.Drawing.Size(79, 48);
+            this.BtnClose.Symbol = null;
+            this.BtnClose.TabIndex = 0;
+            this.BtnClose.TabStop = false;
+            this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
-            // GB_Datenausgabe
+            // GbxOutput
             // 
-            this.GB_Datenausgabe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.GbxOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.GB_Datenausgabe.Location = new System.Drawing.Point(5, 5);
-            this.GB_Datenausgabe.Name = "GB_Datenausgabe";
-            this.GB_Datenausgabe.Size = new System.Drawing.Size(652, 517);
-            this.GB_Datenausgabe.TabIndex = 1;
-            this.GB_Datenausgabe.TabStop = false;
-            this.GB_Datenausgabe.Text = "Datenausgabe";
+            this.GbxOutput.Location = new System.Drawing.Point(5, 5);
+            this.GbxOutput.Name = "GbxOutput";
+            this.GbxOutput.Size = new System.Drawing.Size(652, 517);
+            this.GbxOutput.TabIndex = 1;
+            this.GbxOutput.TabStop = false;
+            this.GbxOutput.Text = "Datenausgabe";
             // 
             // FrmVorlageMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.ClientSize = new System.Drawing.Size(768, 528);
-            this.Controls.Add(this.GB_Datenausgabe);
-            this.Controls.Add(this.GB_Menu);
+            this.Controls.Add(this.GbxOutput);
+            this.Controls.Add(this.GbxMenu);
             this.Name = "FrmVorlageMenu";
-            this.Load += new System.EventHandler(this.FrmVorlageMenu_Load);
-            this.GB_Menu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.BTN_Keyboard)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BTN_Menu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BTN_Close)).EndInit();
+            this.GbxMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.BtnKeyboard)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnClose)).EndInit();
             this.ResumeLayout(false);
-            
 
         }
 
         #endregion
 
-        protected RotaBitButton BTN_Close;
-        protected RotaBitButton BTN_Keyboard;
-        protected System.Windows.Forms.GroupBox GB_Menu;
-        protected System.Windows.Forms.GroupBox GB_Datenausgabe;
-        protected System.ComponentModel.BackgroundWorker backgroundWorker1;
-        protected RotaBitButton BTN_Menu;
+        protected CompBitButton BtnClose;
+        protected CompBitButton BtnKeyboard;
+        protected System.Windows.Forms.GroupBox GbxMenu;
+        protected System.Windows.Forms.GroupBox GbxOutput;
+        protected CompBitButton BtnMenu;
     }
 }

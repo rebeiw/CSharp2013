@@ -18,10 +18,9 @@ using System.Drawing.Text;
 
 namespace Helper
 {
-
     public enum CrossState
     {
-        StandStill=0,
+        StandStill = 0,
         Moving
     }
 
@@ -36,8 +35,6 @@ namespace Helper
         private PointF CentrePoint=new PointF();
         private SolidBrush brushTriangle = new SolidBrush(Color.Blue);
         private Pen penOutline = new Pen(Color.Blue, 1);
-        //private RectangleF Circle=new RectangleF();  Noch implementieren
-        
 
         [Category("Default"), Description("")]
         private CrossState m_State;
@@ -62,9 +59,7 @@ namespace Helper
             set { m_Direction = value; Invalidate(); }
             get { return this.m_Direction; }
         }
-
-
-
+        
         public Cross()
         {
             this.Height = 70;
@@ -75,6 +70,7 @@ namespace Helper
 
             this.UrsprungsKoordinaden = new List<PointF>();
         }
+
         ~Cross()
         {
             this.UrsprungsKoordinaden = null;
@@ -93,7 +89,6 @@ namespace Helper
             koor.Y = this.Height - Y * VerstaerkungX;
             this.UrsprungsKoordinaden.Add(koor);
         }
-
 
         protected override void OnPaint(PaintEventArgs pe)
         {
@@ -169,8 +164,6 @@ namespace Helper
             float x=this.UrsprungsKoordinaden[0].X;
             float y=this.UrsprungsKoordinaden[0].Y;
             float widh=this.UrsprungsKoordinaden[1].X;
-
         }
     }
-
 }

@@ -1,23 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Helper
 {
-    public partial class Frm_Passwort : FrmVorlage
+    public partial class FrmPasswort : FrmVorlage
     {
-        ClsFormularManager frm_mng;
+        ClsSingeltonFormularManager frm_mng;
 
-        public Frm_Passwort()
+        public FrmPasswort()
         {
             InitializeComponent();
-            frm_mng = ClsFormularManager.CreateInstance();
+            frm_mng = ClsSingeltonFormularManager.CreateInstance();
             frm_mng.FormularAdd(this, this.Name.ToString());
         }
 

@@ -34,3 +34,24 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+
+
+/** \mainpage The mainpage documentation von Wieber Juergen
+* 
+* 
+*\section pageTOC Content
+  -# \ref Description
+  -# \ref License
+  -# \ref Item
+* Das Programm berechnet das Integral der Funktion \f$ u(x,y)=2x\cdot y\f$
+* entlang des positiv orientierten Rand des Einheitskreises.
+* In einem ersten Ansatz verwenden wir hierzu die Trapezregel mit 20, 40, 60
+* und 100 Stützstellen auf dem Einheitskreisrand und geben die
+* berechneten Werte aus. Die Funktion main() steuert den Programmablauf.
+*/
+
+
+/*! \page Description Another page
+  Even more info.
+* <img src="../Doku/main.png"> 
+*/

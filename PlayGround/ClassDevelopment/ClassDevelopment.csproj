@@ -11,7 +11,7 @@
     <AssemblyName>ClassDevelopment</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <NuGetPackageImportStamp>0eb649ff</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>48db35bf</NuGetPackageImportStamp>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>e:\Setup\</PublishUrl>
     <Install>true</Install>
@@ -25,7 +25,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <AutorunEnabled>true</AutorunEnabled>
     <ApplicationRevision>2</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <ApplicationVersion>1.0.0.2</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -59,76 +59,21 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BLToolkit.4">
-      <HintPath>packages\BLToolkit.4.2.0\lib\net40-full\BLToolkit.4.dll</HintPath>
-    </Reference>
-    <Reference Include="BLToolkit.Data.DataProvider.SQLite.4">
-      <HintPath>packages\BLToolkit.SQLite.4.2.0\lib\net40\BLToolkit.Data.DataProvider.SQLite.4.dll</HintPath>
-    </Reference>
-    <Reference Include="Devart.Data">
-      <HintPath>packages\dotConnect.Express.for.SQLite.5.2.313\lib\Devart.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="Devart.Data.SQLite">
-      <HintPath>packages\dotConnect.Express.for.SQLite.5.2.313\lib\Devart.Data.SQLite.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework">
-      <HintPath>packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="libnodave.net, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>.\libnodave.net.dll</HintPath>
     </Reference>
-    <Reference Include="linq2db">
-      <HintPath>packages\linq2db.1.0.6\lib\net45\linq2db.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.Data.Sqlite">
-      <HintPath>packages\NServiceKit.OrmLite.Sqlite.Mono.1.0.11\lib\net35\Mono.Data.Sqlite.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceKit.Common">
-      <HintPath>packages\NServiceKit.Common.1.0.11\lib\net35\NServiceKit.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceKit.Interfaces">
-      <HintPath>packages\NServiceKit.Common.1.0.11\lib\net35\NServiceKit.Interfaces.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceKit.OrmLite">
-      <HintPath>packages\NServiceKit.OrmLite.Sqlite.Mono.1.0.11\lib\net35\NServiceKit.OrmLite.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceKit.OrmLite.Sqlite">
-      <HintPath>packages\NServiceKit.OrmLite.Sqlite.Mono.1.0.11\lib\net35\NServiceKit.OrmLite.Sqlite.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceKit.Text">
-      <HintPath>packages\NServiceKit.Text.1.0.10\lib\net35\NServiceKit.Text.dll</HintPath>
-    </Reference>
-    <Reference Include="Simple.Data">
-      <HintPath>packages\Simple.Data.Core.0.18.3.1\lib\net40\Simple.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="Simple.Data.Ado">
-      <HintPath>packages\Simple.Data.Ado.0.18.3.1\lib\net40\Simple.Data.Ado.dll</HintPath>
-    </Reference>
-    <Reference Include="Simple.Data.Sqlite">
-      <HintPath>packages\Simple.Data.Sqlite.0.18.3.2\lib\net40\Simple.Data.Sqlite.dll</HintPath>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="PdfSharp">
+      <HintPath>..\..\Gemeinsam\Klassen\PdfSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.SQLite, Version=1.0.94.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\System.Data.SQLite.Core.MSIL.1.0.94.0\lib\net45\System.Data.SQLite.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Data.SQLite.EF6, Version=1.0.94.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\System.Data.SQLite.x64.1.0.94.1\lib\net45\System.Data.SQLite.EF6.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Data.SQLite.Linq, Version=1.0.94.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\System.Data.SQLite.x64.1.0.94.1\lib\net45\System.Data.SQLite.Linq.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -151,8 +96,6 @@
     <Compile Include="FuncString.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SQLite.cs" />
-    <Compile Include="SQLiteAsync.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -166,32 +109,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="ClassDevelopment_TemporaryKey.pfx" />
-    <None Include="databaseFile.db3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="LinqToDB.Templates\!ReadMe.LinqToDB.md" />
-    <None Include="LinqToDB.Templates\DataAnnotations.ttinclude" />
-    <None Include="LinqToDB.Templates\DataModel.ttinclude" />
-    <None Include="LinqToDB.Templates\EditableObject.ttinclude" />
-    <None Include="LinqToDB.Templates\LinqToDB.Access.ttinclude" />
-    <None Include="LinqToDB.Templates\LinqToDB.DB2.ttinclude" />
-    <None Include="LinqToDB.Templates\LinqToDB.Firebird.ttinclude" />
-    <None Include="LinqToDB.Templates\LinqToDB.Informix.ttinclude" />
-    <None Include="LinqToDB.Templates\LinqToDB.MySql.ttinclude" />
-    <None Include="LinqToDB.Templates\LinqToDB.Oracle.ttinclude" />
-    <None Include="LinqToDB.Templates\LinqToDB.PostgreSQL.ttinclude" />
-    <None Include="LinqToDB.Templates\LinqToDB.SqlCe.ttinclude" />
-    <None Include="LinqToDB.Templates\LinqToDB.SQLite.Tools.ttinclude" />
-    <None Include="LinqToDB.Templates\LinqToDB.SQLite.ttinclude" />
-    <None Include="LinqToDB.Templates\LinqToDB.SqlServer.ttinclude" />
-    <None Include="LinqToDB.Templates\LinqToDB.Sybase.ttinclude" />
-    <None Include="LinqToDB.Templates\LinqToDB.Tools.ttinclude" />
-    <None Include="LinqToDB.Templates\LinqToDB.ttinclude" />
-    <None Include="LinqToDB.Templates\NotifyPropertyChanged.ttinclude" />
-    <None Include="LinqToDB.Templates\PluralizationService.ttinclude" />
-    <None Include="LinqToDB.Templates\T4Model.ttinclude" />
-    <None Include="LinqToDB.Templates\Validation.ttinclude" />
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -212,13 +129,6 @@
     <Content Include="libnodave.net.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="LinqToDB.Templates\CopyMe.SQLite.tt.txt" />
-    <Content Include="sqlite3.dll" />
-    <Content Include="sqlite3.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="x64\SQLite.Interop.dll" />
-    <Content Include="x86\SQLite.Interop.dll" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
@@ -237,14 +147,41 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Gemeinsam\Klassen\Helper.csproj">
+      <Project>{105E1C4D-F555-4C42-B09B-EAF26CD86990}</Project>
+      <Name>Helper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxiProfessionalLibrary">
+      <Guid>{A8B345A0-74B5-11D3-85C2-00105AC8B715}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="iProfessionalLibrary">
+      <Guid>{A8B345A0-74B5-11D3-85C2-00105AC8B715}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="packages\System.Data.SQLite.Core.1.0.94.0\build\net45\System.Data.SQLite.Core.targets" Condition="Exists('packages\System.Data.SQLite.Core.1.0.94.0\build\net45\System.Data.SQLite.Core.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>Dieses Projekt verweist auf mindestens ein NuGet-Paket, das auf diesem Computer fehlt. Aktivieren Sie die Wiederherstellung von NuGet-Paketen, um die fehlende Datei herunterzuladen. Weitere Informationen finden Sie unter "http://go.microsoft.com/fwlink/?LinkID=322105". Die fehlende Datei ist "{0}".</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('packages\System.Data.SQLite.Core.1.0.94.0\build\net45\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\System.Data.SQLite.Core.1.0.94.0\build\net45\System.Data.SQLite.Core.targets'))" />
-  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

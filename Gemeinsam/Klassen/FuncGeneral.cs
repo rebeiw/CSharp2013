@@ -84,8 +84,8 @@ namespace Helper
 
         public static void Start()
         {
-            FRM_Menu frm = new FRM_Menu();
-            Frm_Passwort frm1 = new Frm_Passwort();
+            FrmMenu frm = new FrmMenu();
+            FrmPasswort frm1 = new FrmPasswort();
             FrmLanguage frm2 = new FrmLanguage();
             FrmKeyBoard frm3 = new FrmKeyBoard();
             FrmProgEnd frm4 = new FrmProgEnd();
@@ -253,31 +253,31 @@ namespace Helper
             return retval;
         }
 
-        public static LEDState GetSateLED(string Input)
+        public static CompLedState GetSateLED(string Input)
         {
-            LEDState retval = LEDState.LEDOff;
+            CompLedState retval = CompLedState.LedOff;
             if (Input == "0")
             {
-                retval = LEDState.LEDOff;
+                retval = CompLedState.LedOff;
             }
             if (Input == "1")
             {
-                retval = LEDState.LEDOn;
+                retval = CompLedState.LedOn;
             }
             return retval;
         }
 
 
-        public static PipeState GetSatePipe(string Input)
+        public static CompPipeState GetSatePipe(string Input)
         {
-            PipeState retval = PipeState.FlowOff;
+            CompPipeState retval = CompPipeState.FlowOff;
             if (Input == "0")
             {
-                retval = PipeState.FlowOff;
+                retval = CompPipeState.FlowOff;
             }
             if (Input == "1")
             {
-                retval = PipeState.FlowOn;
+                retval = CompPipeState.FlowOn;
             }
             return retval;
         }
@@ -363,7 +363,7 @@ namespace Helper
             Component.Margin = new System.Windows.Forms.Padding(4);
             Component.Name = compName;
             Component.Size = new System.Drawing.Size(25, 25);
-            Component.State = Helper.LEDState.LEDOff;
+            Component.State = Helper.CompLedState.LedOff;
             Component.Type = LedType;
         }
 

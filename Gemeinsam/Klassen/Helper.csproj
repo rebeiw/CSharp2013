@@ -57,7 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BitButton.cs">
+    <Compile Include="CompBitButton.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="BitButtonSmall.cs">
@@ -71,11 +71,14 @@
     <Compile Include="ClsCreateParameter.cs" />
     <Compile Include="ClsIni.cs" />
     <Compile Include="ClsPDF.cs" />
+    <Compile Include="CompVentil.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Cross.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ClsDataBinding.cs" />
-    <Compile Include="ClsFormularManager.cs" />
+    <Compile Include="ClsSingeltonFormularManager.cs" />
     <Compile Include="FrmKeyBoard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,7 +128,7 @@
     <Compile Include="InputBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="LedRectangle.cs">
+    <Compile Include="CompLedRectangle.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="LedRound.cs">
@@ -137,15 +140,12 @@
     <Compile Include="ListViewNF.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Pipe.cs">
+    <Compile Include="CompPipe.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ClsPLC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Pump.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="RotaBitButton.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="RotaCoriolis.cs">
@@ -162,7 +162,7 @@
     <Compile Include="ToggleSwitch.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="TxtBox.cs">
+    <Compile Include="CompTxtBox.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Valve.cs">

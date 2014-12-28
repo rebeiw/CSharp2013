@@ -21,15 +21,9 @@ namespace Helper
             string btnType = sender.GetType().ToString();
             if (btnType == "Helper.BitButton")
             {
-                BitButton btnObj = (BitButton)sender;
+                CompBitButton btnObj = (CompBitButton)sender;
                 retval = btnObj.Symbol;
             }
-            if (btnType == "Helper.RotaBitButton")
-            {
-                RotaBitButton btnObj = (RotaBitButton)sender;
-                retval = btnObj.Symbol;
-            }
-
             if (btnType == "Helper.InputBox")
             {
                 InputBox btnObj = (InputBox)sender;

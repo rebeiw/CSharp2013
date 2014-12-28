@@ -96,8 +96,8 @@ namespace Helper
 
                         if (obj_type == "Helper.LedRectangle")
                         {
-                            LedRectangle obj_led_rectangle;
-                            obj_led_rectangle = (LedRectangle)obj;
+                            CompLedRectangle obj_led_rectangle;
+                            obj_led_rectangle = (CompLedRectangle)obj;
                             if (bindingList.Propertie == "State")
                             {
                                 obj_led_rectangle.State = FuncGeneral.GetSateLED(Glb_Plc.DatabasesValues[bindingList.SymbolName].ToString());
@@ -158,8 +158,8 @@ namespace Helper
 
                         if (obj_type == "Helper.Pipe")
                         {
-                            Pipe obj_pipe;
-                            obj_pipe = (Pipe)obj;
+                            CompPipe obj_pipe;
+                            obj_pipe = (CompPipe)obj;
                             if (bindingList.Propertie == "Flow")
                             {
                                 obj_pipe.Flow = FuncGeneral.GetSatePipe(Glb_Plc.DatabasesValues[bindingList.SymbolName].ToString());
@@ -178,8 +178,8 @@ namespace Helper
 
                         if (obj_type == "Helper.TxtBox")
                         {
-                            TxtBox obj_txt_box;
-                            obj_txt_box = (TxtBox)obj;
+                            CompTxtBox obj_txt_box;
+                            obj_txt_box = (CompTxtBox)obj;
                             if (bindingList.Propertie == "Text")
                             {
                                 obj_txt_box.Text = Glb_Plc.DatabasesValues[bindingList.SymbolName].ToString();
@@ -188,8 +188,8 @@ namespace Helper
 
                         if (obj_type == "Helper.BitButton")
                         {
-                            BitButton obj_bit_button;
-                            obj_bit_button = (BitButton)obj;
+                            CompBitButton obj_bit_button;
+                            obj_bit_button = (CompBitButton)obj;
                             if (bindingList.Propertie == "PictureNumber")
                             {
                                 obj_bit_button.PictureNumber=Convert.ToInt32(Glb_Plc.DatabasesValues[bindingList.SymbolName].ToString());

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SQLite.Generic;
+using Helper;
 
 namespace ClassDevelopment
 {
@@ -58,9 +58,9 @@ namespace ClassDevelopment
                     {
                         TextBox obj_text_box;
                         obj_text_box = (TextBox)sender;
-                        Glb_VarCollect.WriteValue(var_name, obj_text_box.Text,true);
+                        Glb_VarCollect.WriteValue(var_name, obj_text_box.Text, true);
 
-                        this.Dispatch(var_name,true);
+                        this.Dispatch(var_name, true);
                         obj_text_box.SelectAll();
                     }
                 }
@@ -145,6 +145,19 @@ namespace ClassDevelopment
                                 {
                                     TextBox obj_text_box;
                                     obj_text_box = (TextBox)obj;
+                                    if (data.Propertie == "Text")
+                                    {
+                                        if (!obj_text_box.Focused || Override)
+                                        {
+                                            obj_text_box.Text = Glb_VarCollect.ReadValueString(data.VarName);
+                                        }
+                                    }
+                                }
+
+                                if (obj_type == "Helper.CompTxtBox")
+                                {
+                                    CompTxtBox obj_text_box;
+                                    obj_text_box = (CompTxtBox)obj;
                                     if (data.Propertie == "Text")
                                     {
                                         if (!obj_text_box.Focused || Override)

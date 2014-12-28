@@ -28,97 +28,96 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.BTN_Ok = new Helper.RotaBitButton();
-            this.BTN_Abbruch = new Helper.RotaBitButton();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BTN_Ok)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BTN_Abbruch)).BeginInit();
+            this.GbxOutput = new System.Windows.Forms.GroupBox();
+            this.LblMessage = new System.Windows.Forms.Label();
+            this.BtnOk = new Helper.CompBitButton();
+            this.BtnCancel = new Helper.CompBitButton();
+            this.GbxOutput.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnOk)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnCancel)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // GbxOutput
             // 
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.BTN_Ok);
-            this.groupBox1.Controls.Add(this.BTN_Abbruch);
-            this.groupBox1.Location = new System.Drawing.Point(5, 5);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(197, 129);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
+            this.GbxOutput.Controls.Add(this.LblMessage);
+            this.GbxOutput.Controls.Add(this.BtnOk);
+            this.GbxOutput.Controls.Add(this.BtnCancel);
+            this.GbxOutput.Location = new System.Drawing.Point(5, 5);
+            this.GbxOutput.Name = "GbxOutput";
+            this.GbxOutput.Size = new System.Drawing.Size(197, 129);
+            this.GbxOutput.TabIndex = 2;
+            this.GbxOutput.TabStop = false;
             // 
-            // label1
+            // LblMessage
             // 
-            this.label1.Location = new System.Drawing.Point(7, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(182, 44);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Programm beenden?";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LblMessage.Location = new System.Drawing.Point(7, 18);
+            this.LblMessage.Name = "LblMessage";
+            this.LblMessage.Size = new System.Drawing.Size(182, 44);
+            this.LblMessage.TabIndex = 4;
+            this.LblMessage.Text = "Programm beenden?";
+            this.LblMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // BTN_Ok
+            // BtnOk
             // 
-            this.BTN_Ok.Caption = "";
-            this.BTN_Ok.EnableMouseDown = false;
-            this.BTN_Ok.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
-            this.BTN_Ok.Formular = null;
-            this.BTN_Ok.Location = new System.Drawing.Point(8, 73);
-            this.BTN_Ok.Name = "BTN_Ok";
-            this.BTN_Ok.Picture_0 = Helper.BtnStyle.btg_Ok;
-            this.BTN_Ok.Picture_1 = Helper.BtnStyle.btg_Blanko;
-            this.BTN_Ok.Picture_2 = Helper.BtnStyle.btg_Blanko;
-            this.BTN_Ok.Picture_3 = Helper.BtnStyle.btg_Blanko;
-            this.BTN_Ok.Picture_4 = Helper.BtnStyle.btg_Blanko;
-            this.BTN_Ok.PictureNumber = 0;
-            this.BTN_Ok.Size = new System.Drawing.Size(79, 48);
-            this.BTN_Ok.Symbol = null;
-            this.BTN_Ok.TabIndex = 3;
-            this.BTN_Ok.TabStop = false;
-            this.BTN_Ok.Click += new System.EventHandler(this.BTN_Ok_Click);
+            this.BtnOk.Caption = "";
+            this.BtnOk.EnableMouseDown = false;
+            this.BtnOk.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.BtnOk.Formular = null;
+            this.BtnOk.Location = new System.Drawing.Point(8, 73);
+            this.BtnOk.Name = "BtnOk";
+            this.BtnOk.Picture_0 = Helper.CompBitButtonStyle.btg_Ok;
+            this.BtnOk.Picture_1 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnOk.Picture_2 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnOk.Picture_3 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnOk.Picture_4 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnOk.PictureNumber = 0;
+            this.BtnOk.Size = new System.Drawing.Size(79, 48);
+            this.BtnOk.Symbol = null;
+            this.BtnOk.TabIndex = 3;
+            this.BtnOk.TabStop = false;
+            this.BtnOk.Click += new System.EventHandler(this.BtnOk_Click);
             // 
-            // BTN_Abbruch
+            // BtnCancel
             // 
-            this.BTN_Abbruch.Caption = "";
-            this.BTN_Abbruch.EnableMouseDown = false;
-            this.BTN_Abbruch.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
-            this.BTN_Abbruch.Formular = null;
-            this.BTN_Abbruch.Location = new System.Drawing.Point(110, 73);
-            this.BTN_Abbruch.Name = "BTN_Abbruch";
-            this.BTN_Abbruch.Picture_0 = Helper.BtnStyle.btg_Esc;
-            this.BTN_Abbruch.Picture_1 = Helper.BtnStyle.btg_Blanko;
-            this.BTN_Abbruch.Picture_2 = Helper.BtnStyle.btg_Blanko;
-            this.BTN_Abbruch.Picture_3 = Helper.BtnStyle.btg_Blanko;
-            this.BTN_Abbruch.Picture_4 = Helper.BtnStyle.btg_Blanko;
-            this.BTN_Abbruch.PictureNumber = 0;
-            this.BTN_Abbruch.Size = new System.Drawing.Size(79, 48);
-            this.BTN_Abbruch.Symbol = null;
-            this.BTN_Abbruch.TabIndex = 2;
-            this.BTN_Abbruch.TabStop = false;
-            this.BTN_Abbruch.Click += new System.EventHandler(this.BTN_Abbruch_Click);
+            this.BtnCancel.Caption = "";
+            this.BtnCancel.EnableMouseDown = false;
+            this.BtnCancel.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.BtnCancel.Formular = null;
+            this.BtnCancel.Location = new System.Drawing.Point(110, 73);
+            this.BtnCancel.Name = "BtnCancel";
+            this.BtnCancel.Picture_0 = Helper.CompBitButtonStyle.btg_Esc;
+            this.BtnCancel.Picture_1 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnCancel.Picture_2 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnCancel.Picture_3 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnCancel.Picture_4 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnCancel.PictureNumber = 0;
+            this.BtnCancel.Size = new System.Drawing.Size(79, 48);
+            this.BtnCancel.Symbol = null;
+            this.BtnCancel.TabIndex = 2;
+            this.BtnCancel.TabStop = false;
+            this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // FrmProgEnd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.ClientSize = new System.Drawing.Size(210, 139);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.GbxOutput);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmProgEnd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Programm beenden";
-            this.Load += new System.EventHandler(this.FrmProgEnd_Load);
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.BTN_Ok)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BTN_Abbruch)).EndInit();
+            this.GbxOutput.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.BtnOk)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnCancel)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label1;
-        private RotaBitButton BTN_Ok;
-        private RotaBitButton BTN_Abbruch;
+        private System.Windows.Forms.GroupBox GbxOutput;
+        private System.Windows.Forms.Label LblMessage;
+        private CompBitButton BtnOk;
+        private CompBitButton BtnCancel;
     }
 }

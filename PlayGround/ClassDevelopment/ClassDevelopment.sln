@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassDevelopment", "ClassDevelopment.csproj", "{E330D4DA-AD8E-4515-B010-AE38008F370B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{105E1C4D-F555-4C42-B09B-EAF26CD86990} = {105E1C4D-F555-4C42-B09B-EAF26CD86990}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helper", "..\..\Gemeinsam\Klassen\Helper.csproj", "{105E1C4D-F555-4C42-B09B-EAF26CD86990}"
 EndProject

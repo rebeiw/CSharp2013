@@ -1,6 +1,6 @@
 ﻿namespace Helper
 {
-    partial class FRM_Menu
+    partial class FrmMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.GB_Menu = new System.Windows.Forms.GroupBox();
-            this.BTN_KeyBoard = new Helper.RotaBitButton();
-            this.BTN_PrintScreen = new Helper.RotaBitButton();
-            this.BTN_Sprache = new Helper.RotaBitButton();
-            this.BTN_Quit = new Helper.RotaBitButton();
-            this.BTN_User = new Helper.RotaBitButton();
-            this.BTN_Ende = new Helper.RotaBitButton();
+            this.BTN_KeyBoard = new Helper.CompBitButton();
+            this.BTN_PrintScreen = new Helper.CompBitButton();
+            this.BTN_Sprache = new Helper.CompBitButton();
+            this.BTN_Quit = new Helper.CompBitButton();
+            this.BTN_User = new Helper.CompBitButton();
+            this.BTN_Ende = new Helper.CompBitButton();
             this.GB_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BTN_KeyBoard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BTN_PrintScreen)).BeginInit();
@@ -62,15 +62,16 @@
             // BTN_KeyBoard
             // 
             this.BTN_KeyBoard.Caption = "";
+            this.BTN_KeyBoard.EnableMouseDown = false;
             this.BTN_KeyBoard.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
             this.BTN_KeyBoard.Formular = null;
             this.BTN_KeyBoard.Location = new System.Drawing.Point(10, 227);
             this.BTN_KeyBoard.Name = "BTN_KeyBoard";
-            this.BTN_KeyBoard.Picture_0 = Helper.BtnStyle.btg_Keyboard;
-            this.BTN_KeyBoard.Picture_1 = Helper.BtnStyle.btg_Blanko;
-            this.BTN_KeyBoard.Picture_2 = Helper.BtnStyle.btg_Blanko;
-            this.BTN_KeyBoard.Picture_3 = Helper.BtnStyle.btg_Blanko;
-            this.BTN_KeyBoard.Picture_4 = Helper.BtnStyle.btg_Blanko;
+            this.BTN_KeyBoard.Picture_0 = Helper.CompBitButtonStyle.btg_Keyboard;
+            this.BTN_KeyBoard.Picture_1 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BTN_KeyBoard.Picture_2 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BTN_KeyBoard.Picture_3 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BTN_KeyBoard.Picture_4 = Helper.CompBitButtonStyle.btg_Blanko;
             this.BTN_KeyBoard.PictureNumber = 0;
             this.BTN_KeyBoard.Size = new System.Drawing.Size(79, 48);
             this.BTN_KeyBoard.Symbol = null;
@@ -81,15 +82,16 @@
             // BTN_PrintScreen
             // 
             this.BTN_PrintScreen.Caption = "";
+            this.BTN_PrintScreen.EnableMouseDown = false;
             this.BTN_PrintScreen.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
             this.BTN_PrintScreen.Formular = null;
             this.BTN_PrintScreen.Location = new System.Drawing.Point(10, 175);
             this.BTN_PrintScreen.Name = "BTN_PrintScreen";
-            this.BTN_PrintScreen.Picture_0 = Helper.BtnStyle.btg_ScreenShot;
-            this.BTN_PrintScreen.Picture_1 = Helper.BtnStyle.btg_Blanko;
-            this.BTN_PrintScreen.Picture_2 = Helper.BtnStyle.btg_Blanko;
-            this.BTN_PrintScreen.Picture_3 = Helper.BtnStyle.btg_Blanko;
-            this.BTN_PrintScreen.Picture_4 = Helper.BtnStyle.btg_Blanko;
+            this.BTN_PrintScreen.Picture_0 = Helper.CompBitButtonStyle.btg_ScreenShot;
+            this.BTN_PrintScreen.Picture_1 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BTN_PrintScreen.Picture_2 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BTN_PrintScreen.Picture_3 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BTN_PrintScreen.Picture_4 = Helper.CompBitButtonStyle.btg_Blanko;
             this.BTN_PrintScreen.PictureNumber = 0;
             this.BTN_PrintScreen.Size = new System.Drawing.Size(79, 48);
             this.BTN_PrintScreen.Symbol = null;
@@ -100,15 +102,16 @@
             // BTN_Sprache
             // 
             this.BTN_Sprache.Caption = "";
+            this.BTN_Sprache.EnableMouseDown = false;
             this.BTN_Sprache.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
             this.BTN_Sprache.Formular = null;
             this.BTN_Sprache.Location = new System.Drawing.Point(10, 123);
             this.BTN_Sprache.Name = "BTN_Sprache";
-            this.BTN_Sprache.Picture_0 = Helper.BtnStyle.btg_De;
-            this.BTN_Sprache.Picture_1 = Helper.BtnStyle.btg_Blanko;
-            this.BTN_Sprache.Picture_2 = Helper.BtnStyle.btg_Blanko;
-            this.BTN_Sprache.Picture_3 = Helper.BtnStyle.btg_Blanko;
-            this.BTN_Sprache.Picture_4 = Helper.BtnStyle.btg_Blanko;
+            this.BTN_Sprache.Picture_0 = Helper.CompBitButtonStyle.btg_De;
+            this.BTN_Sprache.Picture_1 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BTN_Sprache.Picture_2 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BTN_Sprache.Picture_3 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BTN_Sprache.Picture_4 = Helper.CompBitButtonStyle.btg_Blanko;
             this.BTN_Sprache.PictureNumber = 0;
             this.BTN_Sprache.Size = new System.Drawing.Size(79, 48);
             this.BTN_Sprache.Symbol = null;
@@ -119,15 +122,16 @@
             // BTN_Quit
             // 
             this.BTN_Quit.Caption = "";
+            this.BTN_Quit.EnableMouseDown = false;
             this.BTN_Quit.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
             this.BTN_Quit.Formular = null;
             this.BTN_Quit.Location = new System.Drawing.Point(10, 279);
             this.BTN_Quit.Name = "BTN_Quit";
-            this.BTN_Quit.Picture_0 = Helper.BtnStyle.btg_Switchoff;
-            this.BTN_Quit.Picture_1 = Helper.BtnStyle.btg_Blanko;
-            this.BTN_Quit.Picture_2 = Helper.BtnStyle.btg_Blanko;
-            this.BTN_Quit.Picture_3 = Helper.BtnStyle.btg_Blanko;
-            this.BTN_Quit.Picture_4 = Helper.BtnStyle.btg_Blanko;
+            this.BTN_Quit.Picture_0 = Helper.CompBitButtonStyle.btg_Switchoff;
+            this.BTN_Quit.Picture_1 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BTN_Quit.Picture_2 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BTN_Quit.Picture_3 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BTN_Quit.Picture_4 = Helper.CompBitButtonStyle.btg_Blanko;
             this.BTN_Quit.PictureNumber = 0;
             this.BTN_Quit.Size = new System.Drawing.Size(79, 48);
             this.BTN_Quit.Symbol = null;
@@ -138,15 +142,16 @@
             // BTN_User
             // 
             this.BTN_User.Caption = "";
+            this.BTN_User.EnableMouseDown = false;
             this.BTN_User.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
             this.BTN_User.Formular = null;
             this.BTN_User.Location = new System.Drawing.Point(10, 71);
             this.BTN_User.Name = "BTN_User";
-            this.BTN_User.Picture_0 = Helper.BtnStyle.btg_UserNok;
-            this.BTN_User.Picture_1 = Helper.BtnStyle.btg_UserOk;
-            this.BTN_User.Picture_2 = Helper.BtnStyle.btg_Benutzer;
-            this.BTN_User.Picture_3 = Helper.BtnStyle.btg_Blanko;
-            this.BTN_User.Picture_4 = Helper.BtnStyle.btg_Blanko;
+            this.BTN_User.Picture_0 = Helper.CompBitButtonStyle.btg_UserNok;
+            this.BTN_User.Picture_1 = Helper.CompBitButtonStyle.btg_UserOk;
+            this.BTN_User.Picture_2 = Helper.CompBitButtonStyle.btg_Benutzer;
+            this.BTN_User.Picture_3 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BTN_User.Picture_4 = Helper.CompBitButtonStyle.btg_Blanko;
             this.BTN_User.PictureNumber = 2;
             this.BTN_User.Size = new System.Drawing.Size(79, 48);
             this.BTN_User.Symbol = null;
@@ -157,15 +162,16 @@
             // BTN_Ende
             // 
             this.BTN_Ende.Caption = "";
+            this.BTN_Ende.EnableMouseDown = false;
             this.BTN_Ende.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
             this.BTN_Ende.Formular = null;
             this.BTN_Ende.Location = new System.Drawing.Point(10, 19);
             this.BTN_Ende.Name = "BTN_Ende";
-            this.BTN_Ende.Picture_0 = Helper.BtnStyle.btg_Exit;
-            this.BTN_Ende.Picture_1 = Helper.BtnStyle.btg_Blanko;
-            this.BTN_Ende.Picture_2 = Helper.BtnStyle.btg_Blanko;
-            this.BTN_Ende.Picture_3 = Helper.BtnStyle.btg_Blanko;
-            this.BTN_Ende.Picture_4 = Helper.BtnStyle.btg_Blanko;
+            this.BTN_Ende.Picture_0 = Helper.CompBitButtonStyle.btg_Exit;
+            this.BTN_Ende.Picture_1 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BTN_Ende.Picture_2 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BTN_Ende.Picture_3 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BTN_Ende.Picture_4 = Helper.CompBitButtonStyle.btg_Blanko;
             this.BTN_Ende.PictureNumber = 0;
             this.BTN_Ende.Size = new System.Drawing.Size(79, 48);
             this.BTN_Ende.Symbol = null;
@@ -173,7 +179,7 @@
             this.BTN_Ende.TabStop = false;
             this.BTN_Ende.Click += new System.EventHandler(this.BTN_Ende_Click);
             // 
-            // FRM_Menu
+            // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -182,7 +188,7 @@
             this.Controls.Add(this.GB_Menu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FRM_Menu";
+            this.Name = "FrmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Menu";
             this.Activated += new System.EventHandler(this.Form2_Activated);
@@ -202,11 +208,11 @@
         #endregion
 
         private System.Windows.Forms.GroupBox GB_Menu;
-        private RotaBitButton BTN_User;
-        private RotaBitButton BTN_Ende;
-        private RotaBitButton BTN_Quit;
-        private RotaBitButton BTN_KeyBoard;
-        private RotaBitButton BTN_PrintScreen;
-        private RotaBitButton BTN_Sprache;
+        private CompBitButton BTN_User;
+        private CompBitButton BTN_Ende;
+        private CompBitButton BTN_Quit;
+        private CompBitButton BTN_KeyBoard;
+        private CompBitButton BTN_PrintScreen;
+        private CompBitButton BTN_Sprache;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Helper
 {
-    partial class Frm_Passwort
+    partial class FrmPasswort
     {
         /// <summary>
         /// Required designer variable.
@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.GB_Passwort = new System.Windows.Forms.GroupBox();
-            this.BTN_Ok1 = new Helper.RotaBitButton();
-            this.BTN_Abbruch = new Helper.RotaBitButton();
+            this.BTN_Ok1 = new Helper.CompBitButton();
+            this.BTN_Abbruch = new Helper.CompBitButton();
             this.TB_Passwort = new System.Windows.Forms.TextBox();
             this.LBL_Passwort = new System.Windows.Forms.Label();
             this.GB_Passwort.SuspendLayout();
@@ -53,15 +53,16 @@
             // BTN_Ok1
             // 
             this.BTN_Ok1.Caption = "";
+            this.BTN_Ok1.EnableMouseDown = false;
             this.BTN_Ok1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
             this.BTN_Ok1.Formular = null;
             this.BTN_Ok1.Location = new System.Drawing.Point(8, 86);
             this.BTN_Ok1.Name = "BTN_Ok1";
-            this.BTN_Ok1.Picture_0 = Helper.BtnStyle.btg_Ok;
-            this.BTN_Ok1.Picture_1 = Helper.BtnStyle.btg_Blanko;
-            this.BTN_Ok1.Picture_2 = Helper.BtnStyle.btg_Blanko;
-            this.BTN_Ok1.Picture_3 = Helper.BtnStyle.btg_Blanko;
-            this.BTN_Ok1.Picture_4 = Helper.BtnStyle.btg_Blanko;
+            this.BTN_Ok1.Picture_0 = Helper.CompBitButtonStyle.btg_Ok;
+            this.BTN_Ok1.Picture_1 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BTN_Ok1.Picture_2 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BTN_Ok1.Picture_3 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BTN_Ok1.Picture_4 = Helper.CompBitButtonStyle.btg_Blanko;
             this.BTN_Ok1.PictureNumber = 0;
             this.BTN_Ok1.Size = new System.Drawing.Size(79, 48);
             this.BTN_Ok1.Symbol = null;
@@ -72,15 +73,16 @@
             // BTN_Abbruch
             // 
             this.BTN_Abbruch.Caption = "";
+            this.BTN_Abbruch.EnableMouseDown = false;
             this.BTN_Abbruch.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
             this.BTN_Abbruch.Formular = null;
             this.BTN_Abbruch.Location = new System.Drawing.Point(130, 86);
             this.BTN_Abbruch.Name = "BTN_Abbruch";
-            this.BTN_Abbruch.Picture_0 = Helper.BtnStyle.btg_Esc;
-            this.BTN_Abbruch.Picture_1 = Helper.BtnStyle.btg_Blanko;
-            this.BTN_Abbruch.Picture_2 = Helper.BtnStyle.btg_Blanko;
-            this.BTN_Abbruch.Picture_3 = Helper.BtnStyle.btg_Blanko;
-            this.BTN_Abbruch.Picture_4 = Helper.BtnStyle.btg_Blanko;
+            this.BTN_Abbruch.Picture_0 = Helper.CompBitButtonStyle.btg_Esc;
+            this.BTN_Abbruch.Picture_1 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BTN_Abbruch.Picture_2 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BTN_Abbruch.Picture_3 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BTN_Abbruch.Picture_4 = Helper.CompBitButtonStyle.btg_Blanko;
             this.BTN_Abbruch.PictureNumber = 0;
             this.BTN_Abbruch.Size = new System.Drawing.Size(79, 48);
             this.BTN_Abbruch.Symbol = null;
@@ -106,7 +108,7 @@
             this.LBL_Passwort.Text = "Passwort:";
             this.LBL_Passwort.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // Frm_Passwort
+            // FrmPasswort
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -115,7 +117,7 @@
             this.Controls.Add(this.GB_Passwort);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Frm_Passwort";
+            this.Name = "FrmPasswort";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Passworteingabe";
             this.Deactivate += new System.EventHandler(this.FRM_Password_Deactivate);
@@ -133,7 +135,7 @@
         private System.Windows.Forms.GroupBox GB_Passwort;
         private System.Windows.Forms.TextBox TB_Passwort;
         private System.Windows.Forms.Label LBL_Passwort;
-        private RotaBitButton BTN_Ok1;
-        private RotaBitButton BTN_Abbruch;
+        private CompBitButton BTN_Ok1;
+        private CompBitButton BTN_Abbruch;
     }
 }

@@ -15,7 +15,7 @@ namespace Helper
     {
         private Label m_Text;
         private ToggleSwitch m_ToogleSwitch;
-        private LedRectangle m_LedRectangle;
+        private CompLedRectangle m_LedRectangle;
         private Control m_Komponente;
         private int m_Zeile;
         private PLCDatas m_PlcData;
@@ -47,7 +47,7 @@ namespace Helper
 
             int breite = this.m_Komponente.ClientRectangle.Width;
             this.m_ToogleSwitch = new ToggleSwitch();
-            this.m_LedRectangle = new LedRectangle();
+            this.m_LedRectangle = new CompLedRectangle();
 
             int hoeheZeile=this.m_LedRectangle.Height;
 

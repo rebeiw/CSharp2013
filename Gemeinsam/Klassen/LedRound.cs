@@ -49,8 +49,8 @@ namespace Helper
         }
 
         [Category("Default"), Description("")]
-        private LEDState m_State;
-        public LEDState State
+        private CompLedState m_State;
+        public CompLedState State
         {
             set { if (m_State != value) { m_State = value; this.Invalidate(); } }
             get { return this.m_State; }
@@ -66,7 +66,7 @@ namespace Helper
         {
             this.Width = 25;
             this.Height = 25;
-            this.State = LEDState.LEDOff;
+            this.State = CompLedState.LedOff;
             this.Type = LEDType.Normal;
 
             recLedGradient = new Rectangle();
@@ -101,7 +101,7 @@ namespace Helper
             pgb.SurroundColors = colors;
             pe.Graphics.FillEllipse(pgb, recLedGradient);
 
-            if (this.m_State == LEDState.LEDOff)
+            if (this.m_State == CompLedState.LedOff)
             {
                 this.OnValueChanged(EventArgs.Empty);
 
@@ -118,7 +118,7 @@ namespace Helper
                     pe.Graphics.FillEllipse(Brushes.Red, recLed);
                 }
             }
-            if (this.m_State == LEDState.LEDOn)
+            if (this.m_State == CompLedState.LedOn)
             {
                 this.OnValueChanged(EventArgs.Empty);
                 if (this.Type == LEDType.Normal)

@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace Helper
 {
-    public partial class FRM_Menu : FrmVorlage
+    public partial class FrmMenu : FrmVorlage
     {
-        ClsFormularManager frm_mng;
-        List<RotaBitButton> BtnList;
-        public FRM_Menu()
+        ClsSingeltonFormularManager m_formularManager;
+        List<CompBitButton> m_ButtonList;
+        public FrmMenu()
         {
             InitializeComponent();
-            frm_mng = ClsFormularManager.CreateInstance();
-            frm_mng.FormularAdd(this, this.Name.ToString());
-            this.BtnList = new List<RotaBitButton>();
+            this.m_formularManager = ClsSingeltonFormularManager.CreateInstance();
+            this.m_formularManager.FormularAdd(this, this.Name.ToString());
+            this.m_ButtonList = new List<CompBitButton>();
             this.ClrButtons();
         }
         private void BTN_Ende_Click(object sender, EventArgs e)
@@ -36,23 +36,23 @@ namespace Helper
         }
         private void BTN_User_Click(object sender, EventArgs e)
         {
-            frm_mng.FormularShow("Frm_Passwort");
+            m_formularManager.FormularShow("FrmPasswort");
         }
         public void ClrButtons()
         {
-            this.BtnList.Clear();
-            this.BtnList.Add(this.BTN_Ende);
-            this.BtnList.Add(this.BTN_User);
-            this.BtnList.Add(this.BTN_Sprache);
-            this.BtnList.Add(this.BTN_PrintScreen);
-            this.BtnList.Add(this.BTN_KeyBoard);
-            this.BtnList.Add(this.BTN_Quit);
+            this.m_ButtonList.Clear();
+            this.m_ButtonList.Add(this.BTN_Ende);
+            this.m_ButtonList.Add(this.BTN_User);
+            this.m_ButtonList.Add(this.BTN_Sprache);
+            this.m_ButtonList.Add(this.BTN_PrintScreen);
+            this.m_ButtonList.Add(this.BTN_KeyBoard);
+            this.m_ButtonList.Add(this.BTN_Quit);
             this.SetButtons();
         }
         private void SetButtons()
         {
             double anzSpalten = 0.0;
-            anzSpalten = (double)((double)this.BtnList.Count-1.0) / 6.0;
+            anzSpalten = (double)((double)this.m_ButtonList.Count-1.0) / 6.0;
 
             int dRound = (int)anzSpalten+1;
             int breite = (int)dRound * 89 + 10;
@@ -60,7 +60,7 @@ namespace Helper
             this.GB_Menu.Left=5;
             this.Width = breite + 26;
             int btnId=0;
-            foreach (RotaBitButton bitBtn in BtnList)
+            foreach (CompBitButton bitBtn in m_ButtonList)
             {
                 double sp = anzSpalten - (int)((double)btnId / 6.0);
                 int ze = btnId - (int)((double)btnId / 6.0) * 6;
@@ -70,7 +70,6 @@ namespace Helper
                 bitBtn.Top = posze;
                 btnId++;
             }
-
         }
 
         private void FRM_Menu_Load(object sender, EventArgs e)
@@ -82,15 +81,15 @@ namespace Helper
         {
             base.SetLanguage();
             if (GlobalVar.Glb_Language == GlobalVar.Language.De)
-                this.BTN_Sprache.Picture_0 = BtnStyle.btg_De;
+                this.BTN_Sprache.Picture_0 = CompBitButtonStyle.btg_De;
             if (GlobalVar.Glb_Language == GlobalVar.Language.En)
-                this.BTN_Sprache.Picture_0 = BtnStyle.btg_En;
+                this.BTN_Sprache.Picture_0 = CompBitButtonStyle.btg_En;
             if (GlobalVar.Glb_Language == GlobalVar.Language.Fr)
-                this.BTN_Sprache.Picture_0 = BtnStyle.btg_Fr;
+                this.BTN_Sprache.Picture_0 = CompBitButtonStyle.btg_Fr;
             if (GlobalVar.Glb_Language == GlobalVar.Language.Sp)
-                this.BTN_Sprache.Picture_0 = BtnStyle.btg_Sp;
+                this.BTN_Sprache.Picture_0 = CompBitButtonStyle.btg_Sp;
             if (GlobalVar.Glb_Language == GlobalVar.Language.Ru)
-                this.BTN_Sprache.Picture_0 = BtnStyle.btg_Ru;
+                this.BTN_Sprache.Picture_0 = CompBitButtonStyle.btg_Ru;
         }
 
 
@@ -101,8 +100,8 @@ namespace Helper
 
         private void BTN_Formular_Click(object sender, EventArgs e)
         {
-            RotaBitButton btn = (RotaBitButton)sender;
-            frm_mng.FormularShow(btn.Formular);
+            CompBitButton btn = (CompBitButton)sender;
+            this.m_formularManager.FormularShow(btn.Formular);
         }
 
         private void GB_Menu_Enter(object sender, EventArgs e)
@@ -112,29 +111,28 @@ namespace Helper
 
         private void BTN_CloseAll_Click(object sender, EventArgs e)
         {
-            frm_mng.FormularCloseAll();
+            this.m_formularManager.FormularCloseAll();
         }
 
         public void AddBitButtonCloseAll()
         {
-            RotaBitButton btn = new RotaBitButton();
-            btn.Picture_0 = BtnStyle.btg_DeleteForm;
+            CompBitButton btn = new CompBitButton();
+            btn.Picture_0 = CompBitButtonStyle.btg_DeleteForm;
             btn.Click += new System.EventHandler(this.BTN_CloseAll_Click);
 
-            this.BtnList.Add(btn);
+            this.m_ButtonList.Add(btn);
             this.GB_Menu.Controls.Add(btn);
             this.SetButtons();
-
         }
 
-        public void AddBitButton(BtnStyle ButtonStyle, string Formularname)
+        public void AddBitButton(CompBitButtonStyle ButtonStyle, string Formularname)
         {
-            RotaBitButton btn = new RotaBitButton();
+            CompBitButton btn = new CompBitButton();
             btn.Picture_0 = ButtonStyle;
             btn.Formular = Formularname;
             btn.Click += new System.EventHandler(this.BTN_Formular_Click);
 
-            this.BtnList.Add(btn);
+            this.m_ButtonList.Add(btn);
             this.GB_Menu.Controls.Add(btn);
             this.SetButtons();
         }
@@ -143,16 +141,16 @@ namespace Helper
         {
             this.Close();
             Graphics graph = null;
-            Bitmap bmp = new Bitmap(frm_mng.PrintScreen.Width, frm_mng.PrintScreen.Height);
+            Bitmap bmp = new Bitmap(this.m_formularManager.m_printScreen.Width, this.m_formularManager.m_printScreen.Height);
             graph = Graphics.FromImage(bmp);
-            graph.CopyFromScreen(frm_mng.PrintScreen.Left, frm_mng.PrintScreen.Top, 0, 0, bmp.Size);
-            string Pfad = string.Empty;
+            graph.CopyFromScreen(this.m_formularManager.m_printScreen.Left, this.m_formularManager.m_printScreen.Top, 0, 0, bmp.Size);
+            string path = string.Empty;
             SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.FileName = frm_mng.PrintScreen.Name + ".bmp";
+            saveFileDialog.FileName = m_formularManager.m_printScreen.Name + ".bmp";
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                Pfad = saveFileDialog.FileName;
-                bmp.Save(Pfad);
+                path = saveFileDialog.FileName;
+                bmp.Save(path);
             }
             saveFileDialog.Dispose();
             bmp.Dispose();
@@ -162,13 +160,13 @@ namespace Helper
         private void BTN_Sprache_Click(object sender, EventArgs e)
         {
             this.Close();
-            frm_mng.FormularShow("FrmLanguage");
+            m_formularManager.FormularShow("FrmLanguage");
         }
 
         private void BTN_KeyBoard_Click(object sender, EventArgs e)
         {
             this.Close();
-            frm_mng.FormularShow("FrmKeyBoard");
+            m_formularManager.FormularShow("FrmKeyBoard");
         }
     }
 }
