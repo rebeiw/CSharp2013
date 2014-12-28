@@ -1,0 +1,48 @@
+<stylecopresultscache>
+  <version>10</version>
+  <project key="-1147211935">
+    <configuration>CODE_ANALYSIS;DEBUG;TRACE</configuration>
+  </project>
+  <sourcecode name=".NETFramework,Version=v4.0.AssemblyAttributes.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>06/05/2010 13:00:58</timestamp>
+      <milliseconds>0</milliseconds>
+    </settings>
+    <timestamp>12/17/2014 19:52:52</timestamp>
+    <milliseconds>909</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="AssemblyInfo.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>06/05/2010 13:00:58</timestamp>
+      <milliseconds>0</milliseconds>
+    </settings>
+    <timestamp>06/05/2010 12:04:06</timestamp>
+    <milliseconds>0</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="Program.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>06/05/2010 13:00:58</timestamp>
+      <milliseconds>0</milliseconds>
+    </settings>
+    <timestamp>06/05/2010 12:04:06</timestamp>
+    <milliseconds>0</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="TestClass.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>06/05/2010 13:00:58</timestamp>
+      <milliseconds>0</milliseconds>
+    </settings>
+    <timestamp>06/05/2010 13:02:10</timestamp>
+    <milliseconds>0</milliseconds>
+    <violations>
+      <violation namespace="Microsoft.StyleCop.CSharp.NamingRules" rule="ElementMustBeginWithUpperCaseLetter" ruleCheckId="SA1300">
+        <context>property names begin with an upper-case letter: myProperty.</context>
+        <line>10</line>
+        <warning>False</warning>
+      </violation>
+    </violations>
+  </sourcecode>
+</stylecopresultscache>
