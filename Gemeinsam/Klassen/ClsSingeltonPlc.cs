@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Helper;
 
-namespace ClassDevelopment
+namespace Helper
 {
     public struct ClsSingeltonPlcParameter
     {

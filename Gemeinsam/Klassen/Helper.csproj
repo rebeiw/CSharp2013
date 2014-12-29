@@ -57,6 +57,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClsSingeltonDataBinding.cs" />
+    <Compile Include="ClsSingeltonPlc.cs" />
+    <Compile Include="ClsSingeltonVariablesCollecter.cs" />
     <Compile Include="CompBitButton.cs">
       <SubType>Component</SubType>
     </Compile>

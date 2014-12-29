@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 
-namespace ClassDevelopment
+namespace Helper
 {
 
     public enum ClsSingeltonVariablesCollecterDataType { Null = 0, Int, Double, String }
