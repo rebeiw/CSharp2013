@@ -41,7 +41,7 @@ using System.Runtime.InteropServices;
 * 
 *\section pageTOC Content
   -# \ref Description
-  -# \ref License
+  -# \ref Doku
   -# \ref Item
 * Das Programm berechnet das Integral der Funktion \f$ u(x,y)=2x\cdot y\f$
 * entlang des positiv orientierten Rand des Einheitskreises.
@@ -55,3 +55,12 @@ using System.Runtime.InteropServices;
   Even more info.
 * <img src="../Doku/main.png"> 
 */
+
+/*! \page Doku Fertig dokumentierte Files
+ *  
+ *<ul>
+ *<li> ClsSingeltonFormularManager
+ *<li> 1 = Success
+ *</ul>
+ *  
+ */

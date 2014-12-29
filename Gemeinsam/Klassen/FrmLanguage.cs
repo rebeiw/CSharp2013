@@ -45,6 +45,5 @@ namespace Helper
                 GlobalVar.Glb_Language = GlobalVar.Language.Ru;
             this.m_formularManager.SetLanguage();
         }
-
     }
 }
