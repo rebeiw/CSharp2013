@@ -57,7 +57,6 @@
             this.GbxMenu.Size = new System.Drawing.Size(99, 335);
             this.GbxMenu.TabIndex = 0;
             this.GbxMenu.TabStop = false;
-            this.GbxMenu.Enter += new System.EventHandler(this.GB_Menu_Enter);
             // 
             // BtnKeyBoard
             // 

@@ -28,14 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnstart = new System.Windows.Forms.Button();
-            this.btnstopp = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.lblStatus = new System.Windows.Forms.Label();
-            this.bitButton1 = new Helper.CompBitButton();
             this.ledRectangle1 = new Helper.CompLedRectangle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -54,9 +46,9 @@
             this.compPipe1 = new Helper.CompPipe();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.compPipe2 = new Helper.CompPipe();
-            this.bitButton3 = new Helper.CompBitButton();
+            this.BtnStartPlc = new Helper.CompBitButton();
             this.txtBox2 = new Helper.CompTxtBox();
-            this.txtBox3 = new Helper.CompTxtBox();
+            this.Txt01 = new Helper.CompTxtBox();
             this.label7 = new System.Windows.Forms.Label();
             this.compPipe3 = new Helper.CompPipe();
             this.compPipe4 = new Helper.CompPipe();
@@ -67,13 +59,13 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.compPipe6 = new Helper.CompPipe();
             this.compPipe7 = new Helper.CompPipe();
-            this.txtBox8 = new Helper.CompTxtBox();
+            this.Txt10 = new Helper.CompTxtBox();
             this.compPipe8 = new Helper.CompPipe();
             this.compPipe9 = new Helper.CompPipe();
-            this.txtBox9 = new Helper.CompTxtBox();
+            this.Txt09 = new Helper.CompTxtBox();
             this.compPipe10 = new Helper.CompPipe();
-            this.txtBox10 = new Helper.CompTxtBox();
-            this.compTxtBox1 = new Helper.CompTxtBox();
+            this.Txt02 = new Helper.CompTxtBox();
+            this.Txt04 = new Helper.CompTxtBox();
             this.compTxtBox2 = new Helper.CompTxtBox();
             this.label9 = new System.Windows.Forms.Label();
             this.compVentil1 = new Helper.CompVentil();
@@ -88,12 +80,12 @@
             this.compTxtBox5 = new Helper.CompTxtBox();
             this.label13 = new System.Windows.Forms.Label();
             this.compTxtBox6 = new Helper.CompTxtBox();
-            this.compTxtBox7 = new Helper.CompTxtBox();
-            this.compTxtBox8 = new Helper.CompTxtBox();
+            this.Txt05 = new Helper.CompTxtBox();
+            this.Txt03 = new Helper.CompTxtBox();
             this.compPipe11 = new Helper.CompPipe();
-            this.compTxtBox9 = new Helper.CompTxtBox();
+            this.Txt06 = new Helper.CompTxtBox();
             this.compVentil5 = new Helper.CompVentil();
-            this.compTxtBox10 = new Helper.CompTxtBox();
+            this.Txt07 = new Helper.CompTxtBox();
             this.compVentil6 = new Helper.CompVentil();
             this.compPipe12 = new Helper.CompPipe();
             this.compTxtBox11 = new Helper.CompTxtBox();
@@ -104,18 +96,20 @@
             this.compVentil9 = new Helper.CompVentil();
             this.compPipe14 = new Helper.CompPipe();
             this.compVentil10 = new Helper.CompVentil();
-            this.compTxtBox13 = new Helper.CompTxtBox();
+            this.Txt08 = new Helper.CompTxtBox();
             this.compVentil11 = new Helper.CompVentil();
             this.label14 = new System.Windows.Forms.Label();
             this.compTxtBox14 = new Helper.CompTxtBox();
             this.label15 = new System.Windows.Forms.Label();
             this.compTxtBox15 = new Helper.CompTxtBox();
+            this.BtnStoppPlc = new Helper.CompBitButton();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.BtnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnKeyboard)).BeginInit();
             this.GbxMenu.SuspendLayout();
             this.GbxOutput.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMenu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bitButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ledRectangle1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ledRectangle2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ledRectangle3)).BeginInit();
@@ -127,7 +121,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.compPipe1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.compPipe2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bitButton3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnStartPlc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.compPipe3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.compPipe4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -153,31 +147,35 @@
             ((System.ComponentModel.ISupportInitialize)(this.compPipe14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.compVentil10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.compVentil11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnStoppPlc)).BeginInit();
             this.SuspendLayout();
             // 
-            // BTN_Close
+            // BtnClose
             // 
             this.BtnClose.Enabled = false;
             // 
-            // BTN_Keyboard
+            // BtnKeyboard
             // 
             this.BtnKeyboard.Enabled = false;
             // 
-            // GB_Menu
+            // GbxMenu
             // 
             this.GbxMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
             this.GbxMenu.Enabled = false;
             this.GbxMenu.Location = new System.Drawing.Point(1032, 5);
             // 
-            // GB_Datenausgabe
+            // GbxOutput
             // 
             this.GbxOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
+            this.GbxOutput.Controls.Add(this.progressBar1);
+            this.GbxOutput.Controls.Add(this.lblStatus);
+            this.GbxOutput.Controls.Add(this.BtnStoppPlc);
             this.GbxOutput.Controls.Add(this.label14);
             this.GbxOutput.Controls.Add(this.compTxtBox14);
             this.GbxOutput.Controls.Add(this.label15);
             this.GbxOutput.Controls.Add(this.compTxtBox15);
             this.GbxOutput.Controls.Add(this.compVentil11);
-            this.GbxOutput.Controls.Add(this.compTxtBox13);
+            this.GbxOutput.Controls.Add(this.Txt08);
             this.GbxOutput.Controls.Add(this.compVentil10);
             this.GbxOutput.Controls.Add(this.compPipe14);
             this.GbxOutput.Controls.Add(this.compVentil9);
@@ -188,12 +186,12 @@
             this.GbxOutput.Controls.Add(this.compTxtBox12);
             this.GbxOutput.Controls.Add(this.compPipe12);
             this.GbxOutput.Controls.Add(this.compVentil6);
-            this.GbxOutput.Controls.Add(this.compTxtBox10);
+            this.GbxOutput.Controls.Add(this.Txt07);
             this.GbxOutput.Controls.Add(this.compVentil5);
-            this.GbxOutput.Controls.Add(this.compTxtBox9);
+            this.GbxOutput.Controls.Add(this.Txt06);
             this.GbxOutput.Controls.Add(this.compPipe11);
-            this.GbxOutput.Controls.Add(this.compTxtBox8);
-            this.GbxOutput.Controls.Add(this.compTxtBox7);
+            this.GbxOutput.Controls.Add(this.Txt03);
+            this.GbxOutput.Controls.Add(this.Txt05);
             this.GbxOutput.Controls.Add(this.label12);
             this.GbxOutput.Controls.Add(this.compTxtBox5);
             this.GbxOutput.Controls.Add(this.label13);
@@ -208,14 +206,14 @@
             this.GbxOutput.Controls.Add(this.compVentil1);
             this.GbxOutput.Controls.Add(this.label9);
             this.GbxOutput.Controls.Add(this.compTxtBox2);
-            this.GbxOutput.Controls.Add(this.compTxtBox1);
-            this.GbxOutput.Controls.Add(this.txtBox10);
+            this.GbxOutput.Controls.Add(this.Txt04);
+            this.GbxOutput.Controls.Add(this.Txt02);
             this.GbxOutput.Controls.Add(this.compPipe10);
-            this.GbxOutput.Controls.Add(this.txtBox9);
+            this.GbxOutput.Controls.Add(this.Txt09);
             this.GbxOutput.Controls.Add(this.compPipe9);
             this.GbxOutput.Controls.Add(this.pictureBox2);
             this.GbxOutput.Controls.Add(this.compPipe8);
-            this.GbxOutput.Controls.Add(this.txtBox8);
+            this.GbxOutput.Controls.Add(this.Txt10);
             this.GbxOutput.Controls.Add(this.compPipe7);
             this.GbxOutput.Controls.Add(this.compPipe6);
             this.GbxOutput.Controls.Add(this.pictureBox3);
@@ -226,9 +224,9 @@
             this.GbxOutput.Controls.Add(this.txtBox6);
             this.GbxOutput.Controls.Add(this.compPipe4);
             this.GbxOutput.Controls.Add(this.label7);
-            this.GbxOutput.Controls.Add(this.txtBox3);
+            this.GbxOutput.Controls.Add(this.Txt01);
             this.GbxOutput.Controls.Add(this.txtBox2);
-            this.GbxOutput.Controls.Add(this.bitButton3);
+            this.GbxOutput.Controls.Add(this.BtnStartPlc);
             this.GbxOutput.Controls.Add(this.pictureBox1);
             this.GbxOutput.Controls.Add(this.pipe1);
             this.GbxOutput.Controls.Add(this.bitButton2);
@@ -251,95 +249,9 @@
             this.GbxOutput.Text = "Heater Fuel Gas";
             this.GbxOutput.Enter += new System.EventHandler(this.GB_Datenausgabe_Enter);
             // 
-            // BTN_Menu
+            // BtnMenu
             // 
             this.BtnMenu.Enabled = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(1152, 145);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(132, 22);
-            this.textBox1.TabIndex = 0;
-            // 
-            // btnstart
-            // 
-            this.btnstart.Location = new System.Drawing.Point(1165, 44);
-            this.btnstart.Margin = new System.Windows.Forms.Padding(4);
-            this.btnstart.Name = "btnstart";
-            this.btnstart.Size = new System.Drawing.Size(100, 28);
-            this.btnstart.TabIndex = 1;
-            this.btnstart.Text = "start";
-            this.btnstart.UseVisualStyleBackColor = true;
-            this.btnstart.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnstopp
-            // 
-            this.btnstopp.Enabled = false;
-            this.btnstopp.Location = new System.Drawing.Point(1175, 96);
-            this.btnstopp.Margin = new System.Windows.Forms.Padding(4);
-            this.btnstopp.Name = "btnstopp";
-            this.btnstopp.Size = new System.Drawing.Size(100, 28);
-            this.btnstopp.TabIndex = 2;
-            this.btnstopp.Text = "stopp";
-            this.btnstopp.UseVisualStyleBackColor = true;
-            this.btnstopp.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(1152, 175);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(132, 22);
-            this.textBox2.TabIndex = 3;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(8, 401);
-            this.progressBar1.Margin = new System.Windows.Forms.Padding(4);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(331, 28);
-            this.progressBar1.Step = 1;
-            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
-            this.progressBar1.TabIndex = 4;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(1152, 205);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(132, 22);
-            this.textBox3.TabIndex = 5;
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.Location = new System.Drawing.Point(1302, 287);
-            this.lblStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(129, 28);
-            this.lblStatus.TabIndex = 6;
-            this.lblStatus.Text = "label1";
-            // 
-            // bitButton1
-            // 
-            this.bitButton1.Caption = "";
-            this.bitButton1.EnableMouseDown = false;
-            this.bitButton1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
-            this.bitButton1.Formular = null;
-            this.bitButton1.Location = new System.Drawing.Point(1112, 401);
-            this.bitButton1.Margin = new System.Windows.Forms.Padding(4);
-            this.bitButton1.Name = "bitButton1";
-            this.bitButton1.Picture_0 = Helper.CompBitButtonStyle.btg_Blanko;
-            this.bitButton1.Picture_1 = Helper.CompBitButtonStyle.btg_Blanko;
-            this.bitButton1.Picture_2 = Helper.CompBitButtonStyle.btg_Blanko;
-            this.bitButton1.Picture_3 = Helper.CompBitButtonStyle.btg_Blanko;
-            this.bitButton1.Picture_4 = Helper.CompBitButtonStyle.btg_Blanko;
-            this.bitButton1.PictureNumber = 0;
-            this.bitButton1.Size = new System.Drawing.Size(79, 48);
-            this.bitButton1.Symbol = null;
-            this.bitButton1.TabIndex = 7;
-            this.bitButton1.TabStop = false;
             // 
             // ledRectangle1
             // 
@@ -527,24 +439,25 @@
             this.compPipe2.TabIndex = 27;
             this.compPipe2.TabStop = false;
             // 
-            // bitButton3
+            // BtnStartPlc
             // 
-            this.bitButton3.Caption = "";
-            this.bitButton3.EnableMouseDown = false;
-            this.bitButton3.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
-            this.bitButton3.Formular = null;
-            this.bitButton3.Location = new System.Drawing.Point(23, 625);
-            this.bitButton3.Name = "bitButton3";
-            this.bitButton3.Picture_0 = Helper.CompBitButtonStyle.btg_Run;
-            this.bitButton3.Picture_1 = Helper.CompBitButtonStyle.btg_Blanko;
-            this.bitButton3.Picture_2 = Helper.CompBitButtonStyle.btg_Blanko;
-            this.bitButton3.Picture_3 = Helper.CompBitButtonStyle.btg_Blanko;
-            this.bitButton3.Picture_4 = Helper.CompBitButtonStyle.btg_Blanko;
-            this.bitButton3.PictureNumber = 0;
-            this.bitButton3.Size = new System.Drawing.Size(79, 48);
-            this.bitButton3.Symbol = null;
-            this.bitButton3.TabIndex = 28;
-            this.bitButton3.TabStop = false;
+            this.BtnStartPlc.Caption = "";
+            this.BtnStartPlc.EnableMouseDown = false;
+            this.BtnStartPlc.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.BtnStartPlc.Formular = null;
+            this.BtnStartPlc.Location = new System.Drawing.Point(10, 615);
+            this.BtnStartPlc.Name = "BtnStartPlc";
+            this.BtnStartPlc.Picture_0 = Helper.CompBitButtonStyle.btg_Run;
+            this.BtnStartPlc.Picture_1 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnStartPlc.Picture_2 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnStartPlc.Picture_3 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnStartPlc.Picture_4 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnStartPlc.PictureNumber = 0;
+            this.BtnStartPlc.Size = new System.Drawing.Size(79, 48);
+            this.BtnStartPlc.Symbol = null;
+            this.BtnStartPlc.TabIndex = 28;
+            this.BtnStartPlc.TabStop = false;
+            this.BtnStartPlc.Click += new System.EventHandler(this.BtnStartPlc_Click);
             // 
             // txtBox2
             // 
@@ -564,23 +477,23 @@
             this.txtBox2.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.Setpoint;
             this.txtBox2.TextChanged += new System.EventHandler(this.txtBox2_TextChanged);
             // 
-            // txtBox3
+            // Txt01
             // 
-            this.txtBox3.BackColor = System.Drawing.Color.Black;
-            this.txtBox3.Enabled = false;
-            this.txtBox3.Error = false;
-            this.txtBox3.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
-            this.txtBox3.ForeColor = System.Drawing.Color.Yellow;
-            this.txtBox3.Format = "0.00";
-            this.txtBox3.Location = new System.Drawing.Point(27, 375);
-            this.txtBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBox3.Name = "txtBox3";
-            this.txtBox3.Size = new System.Drawing.Size(59, 29);
-            this.txtBox3.TabIndex = 31;
-            this.txtBox3.Text = "0,00";
-            this.txtBox3.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
-            this.txtBox3.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
-            this.txtBox3.TextChanged += new System.EventHandler(this.txtBox3_TextChanged);
+            this.Txt01.BackColor = System.Drawing.Color.Black;
+            this.Txt01.Enabled = false;
+            this.Txt01.Error = false;
+            this.Txt01.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
+            this.Txt01.ForeColor = System.Drawing.Color.Yellow;
+            this.Txt01.Format = "0.00";
+            this.Txt01.Location = new System.Drawing.Point(27, 375);
+            this.Txt01.Margin = new System.Windows.Forms.Padding(4);
+            this.Txt01.Name = "Txt01";
+            this.Txt01.Size = new System.Drawing.Size(59, 29);
+            this.Txt01.TabIndex = 31;
+            this.Txt01.Text = "0,00";
+            this.Txt01.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
+            this.Txt01.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
+            this.Txt01.TextChanged += new System.EventHandler(this.txtBox3_TextChanged);
             // 
             // label7
             // 
@@ -703,22 +616,22 @@
             this.compPipe7.TabIndex = 46;
             this.compPipe7.TabStop = false;
             // 
-            // txtBox8
+            // Txt10
             // 
-            this.txtBox8.BackColor = System.Drawing.Color.Black;
-            this.txtBox8.Enabled = false;
-            this.txtBox8.Error = false;
-            this.txtBox8.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
-            this.txtBox8.ForeColor = System.Drawing.Color.Yellow;
-            this.txtBox8.Format = "0.0";
-            this.txtBox8.Location = new System.Drawing.Point(932, 333);
-            this.txtBox8.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBox8.Name = "txtBox8";
-            this.txtBox8.Size = new System.Drawing.Size(59, 29);
-            this.txtBox8.TabIndex = 48;
-            this.txtBox8.Text = "0,0";
-            this.txtBox8.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
-            this.txtBox8.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
+            this.Txt10.BackColor = System.Drawing.Color.Black;
+            this.Txt10.Enabled = false;
+            this.Txt10.Error = false;
+            this.Txt10.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
+            this.Txt10.ForeColor = System.Drawing.Color.Yellow;
+            this.Txt10.Format = "0.0";
+            this.Txt10.Location = new System.Drawing.Point(932, 333);
+            this.Txt10.Margin = new System.Windows.Forms.Padding(4);
+            this.Txt10.Name = "Txt10";
+            this.Txt10.Size = new System.Drawing.Size(59, 29);
+            this.Txt10.TabIndex = 48;
+            this.Txt10.Text = "0,0";
+            this.Txt10.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
+            this.Txt10.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
             // 
             // compPipe8
             // 
@@ -744,22 +657,22 @@
             this.compPipe9.TabIndex = 53;
             this.compPipe9.TabStop = false;
             // 
-            // txtBox9
+            // Txt09
             // 
-            this.txtBox9.BackColor = System.Drawing.Color.Black;
-            this.txtBox9.Enabled = false;
-            this.txtBox9.Error = false;
-            this.txtBox9.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
-            this.txtBox9.ForeColor = System.Drawing.Color.Yellow;
-            this.txtBox9.Format = "0.0";
-            this.txtBox9.Location = new System.Drawing.Point(706, 274);
-            this.txtBox9.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBox9.Name = "txtBox9";
-            this.txtBox9.Size = new System.Drawing.Size(59, 29);
-            this.txtBox9.TabIndex = 54;
-            this.txtBox9.Text = "0,0";
-            this.txtBox9.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
-            this.txtBox9.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
+            this.Txt09.BackColor = System.Drawing.Color.Black;
+            this.Txt09.Enabled = false;
+            this.Txt09.Error = false;
+            this.Txt09.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
+            this.Txt09.ForeColor = System.Drawing.Color.Yellow;
+            this.Txt09.Format = "0.0";
+            this.Txt09.Location = new System.Drawing.Point(706, 274);
+            this.Txt09.Margin = new System.Windows.Forms.Padding(4);
+            this.Txt09.Name = "Txt09";
+            this.Txt09.Size = new System.Drawing.Size(59, 29);
+            this.Txt09.TabIndex = 54;
+            this.Txt09.Text = "0,0";
+            this.Txt09.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
+            this.Txt09.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
             // 
             // compPipe10
             // 
@@ -773,38 +686,38 @@
             this.compPipe10.TabIndex = 55;
             this.compPipe10.TabStop = false;
             // 
-            // txtBox10
+            // Txt02
             // 
-            this.txtBox10.BackColor = System.Drawing.Color.Black;
-            this.txtBox10.Enabled = false;
-            this.txtBox10.Error = false;
-            this.txtBox10.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
-            this.txtBox10.ForeColor = System.Drawing.Color.Yellow;
-            this.txtBox10.Format = "0.00";
-            this.txtBox10.Location = new System.Drawing.Point(95, 302);
-            this.txtBox10.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBox10.Name = "txtBox10";
-            this.txtBox10.Size = new System.Drawing.Size(59, 29);
-            this.txtBox10.TabIndex = 57;
-            this.txtBox10.Text = "0,00";
-            this.txtBox10.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
-            this.txtBox10.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
+            this.Txt02.BackColor = System.Drawing.Color.Black;
+            this.Txt02.Enabled = false;
+            this.Txt02.Error = false;
+            this.Txt02.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
+            this.Txt02.ForeColor = System.Drawing.Color.Yellow;
+            this.Txt02.Format = "0.00";
+            this.Txt02.Location = new System.Drawing.Point(95, 302);
+            this.Txt02.Margin = new System.Windows.Forms.Padding(4);
+            this.Txt02.Name = "Txt02";
+            this.Txt02.Size = new System.Drawing.Size(59, 29);
+            this.Txt02.TabIndex = 57;
+            this.Txt02.Text = "0,00";
+            this.Txt02.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
+            this.Txt02.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
             // 
-            // compTxtBox1
+            // Txt04
             // 
-            this.compTxtBox1.BackColor = System.Drawing.Color.Black;
-            this.compTxtBox1.Enabled = false;
-            this.compTxtBox1.Error = false;
-            this.compTxtBox1.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
-            this.compTxtBox1.ForeColor = System.Drawing.Color.Yellow;
-            this.compTxtBox1.Format = null;
-            this.compTxtBox1.Location = new System.Drawing.Point(227, 375);
-            this.compTxtBox1.Name = "compTxtBox1";
-            this.compTxtBox1.Size = new System.Drawing.Size(59, 29);
-            this.compTxtBox1.TabIndex = 63;
-            this.compTxtBox1.Text = "0";
-            this.compTxtBox1.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
-            this.compTxtBox1.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
+            this.Txt04.BackColor = System.Drawing.Color.Black;
+            this.Txt04.Enabled = false;
+            this.Txt04.Error = false;
+            this.Txt04.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
+            this.Txt04.ForeColor = System.Drawing.Color.Yellow;
+            this.Txt04.Format = null;
+            this.Txt04.Location = new System.Drawing.Point(227, 375);
+            this.Txt04.Name = "Txt04";
+            this.Txt04.Size = new System.Drawing.Size(59, 29);
+            this.Txt04.TabIndex = 63;
+            this.Txt04.Text = "0";
+            this.Txt04.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
+            this.Txt04.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
             // 
             // compTxtBox2
             // 
@@ -989,39 +902,39 @@
             this.compTxtBox6.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
             this.compTxtBox6.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.Setpoint;
             // 
-            // compTxtBox7
+            // Txt05
             // 
-            this.compTxtBox7.BackColor = System.Drawing.Color.Black;
-            this.compTxtBox7.Enabled = false;
-            this.compTxtBox7.Error = false;
-            this.compTxtBox7.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
-            this.compTxtBox7.ForeColor = System.Drawing.Color.Yellow;
-            this.compTxtBox7.Format = "0.00";
-            this.compTxtBox7.Location = new System.Drawing.Point(292, 375);
-            this.compTxtBox7.Margin = new System.Windows.Forms.Padding(4);
-            this.compTxtBox7.Name = "compTxtBox7";
-            this.compTxtBox7.Size = new System.Drawing.Size(59, 29);
-            this.compTxtBox7.TabIndex = 78;
-            this.compTxtBox7.Text = "0,00";
-            this.compTxtBox7.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
-            this.compTxtBox7.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
+            this.Txt05.BackColor = System.Drawing.Color.Black;
+            this.Txt05.Enabled = false;
+            this.Txt05.Error = false;
+            this.Txt05.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
+            this.Txt05.ForeColor = System.Drawing.Color.Yellow;
+            this.Txt05.Format = "0.00";
+            this.Txt05.Location = new System.Drawing.Point(292, 375);
+            this.Txt05.Margin = new System.Windows.Forms.Padding(4);
+            this.Txt05.Name = "Txt05";
+            this.Txt05.Size = new System.Drawing.Size(59, 29);
+            this.Txt05.TabIndex = 78;
+            this.Txt05.Text = "0,00";
+            this.Txt05.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
+            this.Txt05.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
             // 
-            // compTxtBox8
+            // Txt03
             // 
-            this.compTxtBox8.BackColor = System.Drawing.Color.Black;
-            this.compTxtBox8.Enabled = false;
-            this.compTxtBox8.Error = false;
-            this.compTxtBox8.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
-            this.compTxtBox8.ForeColor = System.Drawing.Color.Yellow;
-            this.compTxtBox8.Format = "0.00";
-            this.compTxtBox8.Location = new System.Drawing.Point(162, 375);
-            this.compTxtBox8.Margin = new System.Windows.Forms.Padding(4);
-            this.compTxtBox8.Name = "compTxtBox8";
-            this.compTxtBox8.Size = new System.Drawing.Size(59, 29);
-            this.compTxtBox8.TabIndex = 79;
-            this.compTxtBox8.Text = "0,00";
-            this.compTxtBox8.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
-            this.compTxtBox8.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
+            this.Txt03.BackColor = System.Drawing.Color.Black;
+            this.Txt03.Enabled = false;
+            this.Txt03.Error = false;
+            this.Txt03.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
+            this.Txt03.ForeColor = System.Drawing.Color.Yellow;
+            this.Txt03.Format = "0.00";
+            this.Txt03.Location = new System.Drawing.Point(162, 375);
+            this.Txt03.Margin = new System.Windows.Forms.Padding(4);
+            this.Txt03.Name = "Txt03";
+            this.Txt03.Size = new System.Drawing.Size(59, 29);
+            this.Txt03.TabIndex = 79;
+            this.Txt03.Text = "0,00";
+            this.Txt03.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
+            this.Txt03.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
             // 
             // compPipe11
             // 
@@ -1034,24 +947,23 @@
             this.compPipe11.Size = new System.Drawing.Size(6, 158);
             this.compPipe11.TabIndex = 80;
             this.compPipe11.TabStop = false;
-            this.compPipe11.Click += new System.EventHandler(this.compPipe11_Click);
             // 
-            // compTxtBox9
+            // Txt06
             // 
-            this.compTxtBox9.BackColor = System.Drawing.Color.Black;
-            this.compTxtBox9.Enabled = false;
-            this.compTxtBox9.Error = false;
-            this.compTxtBox9.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
-            this.compTxtBox9.ForeColor = System.Drawing.Color.Yellow;
-            this.compTxtBox9.Format = "0.00";
-            this.compTxtBox9.Location = new System.Drawing.Point(413, 375);
-            this.compTxtBox9.Margin = new System.Windows.Forms.Padding(4);
-            this.compTxtBox9.Name = "compTxtBox9";
-            this.compTxtBox9.Size = new System.Drawing.Size(59, 29);
-            this.compTxtBox9.TabIndex = 81;
-            this.compTxtBox9.Text = "0,00";
-            this.compTxtBox9.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
-            this.compTxtBox9.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
+            this.Txt06.BackColor = System.Drawing.Color.Black;
+            this.Txt06.Enabled = false;
+            this.Txt06.Error = false;
+            this.Txt06.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
+            this.Txt06.ForeColor = System.Drawing.Color.Yellow;
+            this.Txt06.Format = "0.00";
+            this.Txt06.Location = new System.Drawing.Point(413, 375);
+            this.Txt06.Margin = new System.Windows.Forms.Padding(4);
+            this.Txt06.Name = "Txt06";
+            this.Txt06.Size = new System.Drawing.Size(59, 29);
+            this.Txt06.TabIndex = 81;
+            this.Txt06.Text = "0,00";
+            this.Txt06.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
+            this.Txt06.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
             // 
             // compVentil5
             // 
@@ -1065,22 +977,22 @@
             this.compVentil5.TabIndex = 82;
             this.compVentil5.TabStop = false;
             // 
-            // compTxtBox10
+            // Txt07
             // 
-            this.compTxtBox10.BackColor = System.Drawing.Color.Black;
-            this.compTxtBox10.Enabled = false;
-            this.compTxtBox10.Error = false;
-            this.compTxtBox10.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
-            this.compTxtBox10.ForeColor = System.Drawing.Color.Yellow;
-            this.compTxtBox10.Format = "0.00";
-            this.compTxtBox10.Location = new System.Drawing.Point(549, 372);
-            this.compTxtBox10.Margin = new System.Windows.Forms.Padding(4);
-            this.compTxtBox10.Name = "compTxtBox10";
-            this.compTxtBox10.Size = new System.Drawing.Size(59, 29);
-            this.compTxtBox10.TabIndex = 83;
-            this.compTxtBox10.Text = "0,00";
-            this.compTxtBox10.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
-            this.compTxtBox10.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
+            this.Txt07.BackColor = System.Drawing.Color.Black;
+            this.Txt07.Enabled = false;
+            this.Txt07.Error = false;
+            this.Txt07.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
+            this.Txt07.ForeColor = System.Drawing.Color.Yellow;
+            this.Txt07.Format = "0.00";
+            this.Txt07.Location = new System.Drawing.Point(549, 375);
+            this.Txt07.Margin = new System.Windows.Forms.Padding(4);
+            this.Txt07.Name = "Txt07";
+            this.Txt07.Size = new System.Drawing.Size(59, 29);
+            this.Txt07.TabIndex = 83;
+            this.Txt07.Text = "0,00";
+            this.Txt07.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
+            this.Txt07.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
             // 
             // compVentil6
             // 
@@ -1093,7 +1005,6 @@
             this.compVentil6.State = Helper.CompVentil.CompVentilState.Close;
             this.compVentil6.TabIndex = 84;
             this.compVentil6.TabStop = false;
-            this.compVentil6.Click += new System.EventHandler(this.compVentil6_Click);
             // 
             // compPipe12
             // 
@@ -1212,22 +1123,22 @@
             this.compVentil10.TabIndex = 93;
             this.compVentil10.TabStop = false;
             // 
-            // compTxtBox13
+            // Txt08
             // 
-            this.compTxtBox13.BackColor = System.Drawing.Color.Black;
-            this.compTxtBox13.Enabled = false;
-            this.compTxtBox13.Error = false;
-            this.compTxtBox13.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
-            this.compTxtBox13.ForeColor = System.Drawing.Color.Yellow;
-            this.compTxtBox13.Format = "0.00";
-            this.compTxtBox13.Location = new System.Drawing.Point(685, 375);
-            this.compTxtBox13.Margin = new System.Windows.Forms.Padding(4);
-            this.compTxtBox13.Name = "compTxtBox13";
-            this.compTxtBox13.Size = new System.Drawing.Size(59, 29);
-            this.compTxtBox13.TabIndex = 94;
-            this.compTxtBox13.Text = "0,00";
-            this.compTxtBox13.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
-            this.compTxtBox13.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
+            this.Txt08.BackColor = System.Drawing.Color.Black;
+            this.Txt08.Enabled = false;
+            this.Txt08.Error = false;
+            this.Txt08.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
+            this.Txt08.ForeColor = System.Drawing.Color.Yellow;
+            this.Txt08.Format = "0.00";
+            this.Txt08.Location = new System.Drawing.Point(685, 375);
+            this.Txt08.Margin = new System.Windows.Forms.Padding(4);
+            this.Txt08.Name = "Txt08";
+            this.Txt08.Size = new System.Drawing.Size(59, 29);
+            this.Txt08.TabIndex = 94;
+            this.Txt08.Text = "0,00";
+            this.Txt08.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
+            this.Txt08.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
             // 
             // compVentil11
             // 
@@ -1295,33 +1206,56 @@
             this.compTxtBox15.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
             this.compTxtBox15.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.Setpoint;
             // 
+            // BtnStoppPlc
+            // 
+            this.BtnStoppPlc.Caption = "";
+            this.BtnStoppPlc.EnableMouseDown = false;
+            this.BtnStoppPlc.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.BtnStoppPlc.Formular = null;
+            this.BtnStoppPlc.Location = new System.Drawing.Point(10, 615);
+            this.BtnStoppPlc.Name = "BtnStoppPlc";
+            this.BtnStoppPlc.Picture_0 = Helper.CompBitButtonStyle.btg_Stop;
+            this.BtnStoppPlc.Picture_1 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnStoppPlc.Picture_2 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnStoppPlc.Picture_3 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnStoppPlc.Picture_4 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnStoppPlc.PictureNumber = 0;
+            this.BtnStoppPlc.Size = new System.Drawing.Size(79, 48);
+            this.BtnStoppPlc.Symbol = null;
+            this.BtnStoppPlc.TabIndex = 100;
+            this.BtnStoppPlc.TabStop = false;
+            this.BtnStoppPlc.Click += new System.EventHandler(this.BtnStoppPlc_Click);
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.Location = new System.Drawing.Point(10, 594);
+            this.lblStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(79, 17);
+            this.lblStatus.TabIndex = 101;
+            this.lblStatus.Text = "label1";
+            this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(11, 670);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(4);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(77, 13);
+            this.progressBar1.Step = 1;
+            this.progressBar1.TabIndex = 102;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1565, 741);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.bitButton1);
-            this.Controls.Add(this.lblStatus);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.btnstopp);
-            this.Controls.Add(this.btnstart);
-            this.Controls.Add(this.textBox1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.Controls.SetChildIndex(this.textBox1, 0);
-            this.Controls.SetChildIndex(this.btnstart, 0);
-            this.Controls.SetChildIndex(this.btnstopp, 0);
-            this.Controls.SetChildIndex(this.textBox2, 0);
-            this.Controls.SetChildIndex(this.progressBar1, 0);
-            this.Controls.SetChildIndex(this.textBox3, 0);
-            this.Controls.SetChildIndex(this.lblStatus, 0);
-            this.Controls.SetChildIndex(this.bitButton1, 0);
             this.Controls.SetChildIndex(this.GbxMenu, 0);
             this.Controls.SetChildIndex(this.GbxOutput, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
@@ -1331,7 +1265,6 @@
             this.GbxOutput.ResumeLayout(false);
             this.GbxOutput.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMenu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bitButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ledRectangle1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ledRectangle2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ledRectangle3)).EndInit();
@@ -1343,7 +1276,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.compPipe1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.compPipe2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bitButton3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnStartPlc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.compPipe3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.compPipe4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -1369,21 +1302,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.compPipe14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.compVentil10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.compVentil11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnStoppPlc)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button btnstart;
-        private System.Windows.Forms.Button btnstopp;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label lblStatus;
-        private Helper.CompBitButton bitButton1;
         private System.Windows.Forms.Label label1;
         private Helper.CompLedRectangle ledRectangle1;
         private System.Windows.Forms.Label label6;
@@ -1402,9 +1327,9 @@
         private Helper.CompPipe compPipe1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Helper.CompPipe compPipe2;
-        private Helper.CompBitButton bitButton3;
+        private Helper.CompBitButton BtnStartPlc;
         private System.Windows.Forms.Label label7;
-        private Helper.CompTxtBox txtBox3;
+        private Helper.CompTxtBox Txt01;
         private Helper.CompTxtBox txtBox2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private Helper.CompPipe compPipe4;
@@ -1414,14 +1339,14 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private Helper.CompPipe compPipe5;
         private Helper.CompPipe compPipe6;
-        private Helper.CompTxtBox txtBox8;
+        private Helper.CompTxtBox Txt10;
         private Helper.CompPipe compPipe7;
-        private Helper.CompTxtBox txtBox10;
+        private Helper.CompTxtBox Txt02;
         private Helper.CompPipe compPipe10;
-        private Helper.CompTxtBox txtBox9;
+        private Helper.CompTxtBox Txt09;
         private Helper.CompPipe compPipe9;
         private Helper.CompPipe compPipe8;
-        private Helper.CompTxtBox compTxtBox1;
+        private Helper.CompTxtBox Txt04;
         private System.Windows.Forms.Label label9;
         private Helper.CompTxtBox compTxtBox2;
         private Helper.CompVentil compVentil1;
@@ -1436,11 +1361,11 @@
         private Helper.CompTxtBox compTxtBox3;
         private System.Windows.Forms.Label label11;
         private Helper.CompTxtBox compTxtBox4;
-        private Helper.CompTxtBox compTxtBox9;
+        private Helper.CompTxtBox Txt06;
         private Helper.CompPipe compPipe11;
-        private Helper.CompTxtBox compTxtBox8;
-        private Helper.CompTxtBox compTxtBox7;
-        private Helper.CompTxtBox compTxtBox10;
+        private Helper.CompTxtBox Txt03;
+        private Helper.CompTxtBox Txt05;
+        private Helper.CompTxtBox Txt07;
         private Helper.CompVentil compVentil5;
         private Helper.CompVentil compVentil6;
         private Helper.CompVentil compVentil8;
@@ -1456,8 +1381,11 @@
         private System.Windows.Forms.Label label15;
         private Helper.CompTxtBox compTxtBox15;
         private Helper.CompVentil compVentil11;
-        private Helper.CompTxtBox compTxtBox13;
+        private Helper.CompTxtBox Txt08;
         private Helper.CompVentil compVentil10;
+        private Helper.CompBitButton BtnStoppPlc;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Label lblStatus;
     }
 }
 

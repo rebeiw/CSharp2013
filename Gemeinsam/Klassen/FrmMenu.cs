@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Helper
@@ -13,8 +14,8 @@ namespace Helper
     */
     public partial class FrmMenu : FrmVorlage
     {
-        ClsSingeltonFormularManager m_formularManager;
-        List<CompBitButton> m_buttonList;
+        ClsSingeltonFormularManager m_formularManager;//!<Objekt auf die erzeugte Instanz
+        List<CompBitButton> m_buttonList;//!<Liste fuer die Buttons im Menu
         /** 
         * \brief Konstruktor
         * 
@@ -59,6 +60,9 @@ namespace Helper
             this.SetButtons();
         }
 
+        /** 
+        * \brief Alle Buttons in der Liste im Menu erzeugen
+        */
         private void SetButtons()
         {
             double anzSpalten = 0.0;
@@ -97,11 +101,6 @@ namespace Helper
                 this.BtnLanguage.Picture_0 = CompBitButtonStyle.btg_Ru;
         }
 
-        private void GB_Menu_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         public void AddBitButtonCloseAll()
         {
             CompBitButton btn = new CompBitButton();
@@ -125,21 +124,22 @@ namespace Helper
             this.SetButtons();
         }
 
-        private void BtnQuit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
 
+        /** 
+        * \brief Hardcopy vonm ausgewaehlten Formular erstellen
+        */
         private void BtnPrintScreen_Click(object sender, EventArgs e)
         {
             this.Close();
+            this.m_formularManager.m_printScreen.BringToFront();
+            Application.DoEvents();
             Graphics graph = null;
             Bitmap bmp = new Bitmap(this.m_formularManager.m_printScreen.Width, this.m_formularManager.m_printScreen.Height);
             graph = Graphics.FromImage(bmp);
             graph.CopyFromScreen(this.m_formularManager.m_printScreen.Left, this.m_formularManager.m_printScreen.Top, 0, 0, bmp.Size);
-            string path = string.Empty;
+            string path = "";
             SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.FileName = m_formularManager.m_printScreen.Name + ".bmp";
+            saveFileDialog.FileName = m_formularManager.m_printScreen.Name + ".png";
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 path = saveFileDialog.FileName;
@@ -150,37 +150,61 @@ namespace Helper
             graph.Dispose();
         }
 
-
+        /** 
+        * \brief Formular fuer den Button anzeigen
+        */
         private void BtnShowFormular_Click(object sender, EventArgs e)
         {
             CompBitButton btn = (CompBitButton)sender;
             this.m_formularManager.FormularShow(btn.Formular);
         }
 
+        /** 
+        * \brief Formular Sprachauswahl anzeigen
+        */
         private void BtnLanguage_Click(object sender, EventArgs e)
         {
             this.Close();
             m_formularManager.FormularShow("FrmLanguage");
         }
 
+        /** 
+        * \brief Formular Tastatur anzeigen
+        */
         private void BtnKeyBoard_Click(object sender, EventArgs e)
         {
             this.Close();
             m_formularManager.FormularShow("FrmKeyBoard");
         }
+        /** 
+        * \brief Formular Passwort anzeigen
+        */
         private void BtnUser_Click(object sender, EventArgs e)
         {
             m_formularManager.FormularShow("FrmPasswort");
         }
 
+        /** 
+        * \brief Formular beenden
+        */
         private void BtnEnd_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /** 
+        * \brief Alle geoeffneten Formulare schliessen
+        */
         private void BtnCloseAll_Click(object sender, EventArgs e)
         {
             this.m_formularManager.FormularCloseAll();
+        }
+        /** 
+        * \brief Application beenden
+        */
+        private void BtnQuit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
     }
