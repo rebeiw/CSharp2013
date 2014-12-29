@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -65,35 +61,28 @@ namespace Helper
         btg_Pfeillinks,
         btg_PfeilRechts,
         btg_Graph
-
-
     }
 
     public class CompBitButton : PictureBox
     {
         private List<Bitmap> m_Bitmaps;
-        private Rectangle Rec,Rec1;
+        private Rectangle m_Rec;
+        private Rectangle m_Rec1;
         private Pen m_Pen;
-        private bool FlagDrawRec;
-
-        /**
-         * @brief      Konstruktor.
-         * @details    Verbose description of method
-         *             (or function) details.
-         * @todo       Make it do something.
-         * @bug        To be Microsoft Certified,
-         */
+        private bool m_FlagDrawRec;
+        private Font m_Font;
 
         public CompBitButton()
         {
-            this.m_Bitmaps = new List<Bitmap>();
-            Font fnt = new Font("Arial", 18f, System.Drawing.FontStyle.Bold);
             this.Width = 79;
             this.Height = 48;
-            this.Font = fnt;
-            FlagDrawRec = false;
-            Rec1 = new Rectangle(0, 0, 79, 48);
-            Rec = new Rectangle(0, 0, 79-1, 48-1);
+            this.Font = this.m_Font;
+
+            this.m_Bitmaps = new List<Bitmap>();
+            this.m_Font = new Font("Arial", 18f, System.Drawing.FontStyle.Bold);
+            this.m_FlagDrawRec = false;
+            this.m_Rec1 = new Rectangle(0, 0, 79, 48);
+            this.m_Rec = new Rectangle(0, 0, 79 - 1, 48 - 1);
             this.m_Pen = new Pen(Color.DarkBlue);
             this.FillButtonBitmaps();
             this.Picture_0 = CompBitButtonStyle.btg_Blanko;
@@ -104,7 +93,6 @@ namespace Helper
             this.PictureNumber = 0;
             this.Caption = "";
             this.EnableMouseDown = false;
-
         }
 
         [Category("Default"), Description("")]
@@ -130,7 +118,6 @@ namespace Helper
             set { m_EnableMouseDown = value;  }
             get { return this.m_EnableMouseDown; }
         }
-
 
         [Category("Default"), Description("")]
         private string m_Symbol;
@@ -190,14 +177,21 @@ namespace Helper
             get { return this.m_Picture_4; }
         }
 
-        
-        
+        /** 
+        * \brief Groessenaenderung verhindern
+        * 
+        */
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);
             this.Width = 79;
             this.Height = 48;
         }
+        /** 
+        * \brief Ausgewaehleter Button zeichnen
+        * 
+        */
+
         protected override void OnPaint(PaintEventArgs pe)
         {
             base.OnPaint(pe);
@@ -236,12 +230,12 @@ namespace Helper
                 nr = (int)m_Picture_4;
             }
 
-            if (this.EnableMouseDown && this.FlagDrawRec)
+            if (this.EnableMouseDown && this.m_FlagDrawRec)
             {
                 nr = (int)m_Picture_1;
             }
 
-            g.DrawImage(this.m_Bitmaps[nr], Rec1);
+            g.DrawImage(this.m_Bitmaps[nr], this.m_Rec1);
 
 
             Font f = new Font("Arial", 14f, FontStyle.Bold);
@@ -250,29 +244,42 @@ namespace Helper
             strFormat.LineAlignment = StringAlignment.Center;
 
 
-            g.DrawString(this.Caption, f, Brushes.Black, Rec1, strFormat);
+            g.DrawString(this.Caption, f, Brushes.Black, this.m_Rec1, strFormat);
 
-            if (this.FlagDrawRec)
+            if (this.m_FlagDrawRec)
             {
-                g.DrawRectangle(this.m_Pen, Rec);
+                g.DrawRectangle(this.m_Pen, this.m_Rec);
             }
         }
+        /** 
+        * \brief Rahmen zeichnen aktivieren
+        * 
+        */
         protected override void OnMouseDown(MouseEventArgs pe)
         {
             base.OnMouseDown(pe);
-            this.FlagDrawRec = true;
+            this.m_FlagDrawRec = true;
             this.Invalidate();
         }
+        /** 
+        * \brief Rahmen zeichnen deaktivieren
+        * 
+        */
         protected override void OnMouseUp(MouseEventArgs pe)
         {
             base.OnMouseUp(pe);
-            this.FlagDrawRec = false;
+            this.m_FlagDrawRec = false;
             this.Invalidate();
         }
 
+        /** 
+        * \brief Liste mit Ressourcen fuellen
+        * 
+        * Funktionsbeschreibung: Liste aus den internen Ressourcen fuellen 
+        */
+
         private void FillButtonBitmaps()
         {
-           
             this.m_Bitmaps.Add(Bmp.btg_Blanko);
             this.m_Bitmaps.Add(Bmp.btg_benutzer);
             this.m_Bitmaps.Add(Bmp.btg_Clipboard);
@@ -324,7 +331,6 @@ namespace Helper
             this.m_Bitmaps.Add(Bmp.btg_pfeilli);
             this.m_Bitmaps.Add(Bmp.btg_pfeilre);
             this.m_Bitmaps.Add(Bmp.btg_graph);
-
         }
     }
 }
