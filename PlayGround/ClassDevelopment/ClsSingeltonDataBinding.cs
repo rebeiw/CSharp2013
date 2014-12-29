@@ -9,10 +9,10 @@ using Helper;
 
 namespace ClassDevelopment
 {
-    public class ClsDataBinding
+    public class ClsSingeltonDataBinding
     {
 
-        public struct DataBindingList
+        public struct ClsSingeltonDataBindingList
         {
             public object Form;
             public string Component;
@@ -20,30 +20,30 @@ namespace ClassDevelopment
             public string VarName;
         };
 
-        private ClsVarCollect Glb_VarCollect;
+        private ClsSingeltonVariablesCollecter m_VariablesCollecter;
 
         private Hashtable m_Variables;
         private Hashtable m_VariablesNo;
         private Hashtable m_Components;
 
 
-        private static ClsDataBinding instance;
+        private static ClsSingeltonDataBinding m_instance;
 
-        private ClsDataBinding()
+        private ClsSingeltonDataBinding()
         {
             this.m_Variables = new Hashtable();
             this.m_VariablesNo = new Hashtable();
             this.m_Components = new Hashtable();
-            Glb_VarCollect = ClsVarCollect.CreateInstance();
+            m_VariablesCollecter = ClsSingeltonVariablesCollecter.CreateInstance();
 
         }
-        public static ClsDataBinding CreateInstance()
+        public static ClsSingeltonDataBinding CreateInstance()
         {
-            if (instance == null)
+            if (m_instance == null)
             {
-                instance = new ClsDataBinding();
+                m_instance = new ClsSingeltonDataBinding();
             }
-            return instance;
+            return m_instance;
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -58,7 +58,7 @@ namespace ClassDevelopment
                     {
                         TextBox obj_text_box;
                         obj_text_box = (TextBox)sender;
-                        Glb_VarCollect.WriteValue(var_name, obj_text_box.Text, true);
+                        m_VariablesCollecter.WriteValue(var_name, obj_text_box.Text, true);
 
                         this.Dispatch(var_name, true);
                         obj_text_box.SelectAll();
@@ -70,7 +70,7 @@ namespace ClassDevelopment
 
         public void AddList(object Form, string Component, string Propertie, string VarName)
         {
-            DataBindingList data;
+            ClsSingeltonDataBindingList data;
             data.Form = Form;
             data.Component = Component;
             data.Propertie = Propertie;
@@ -126,7 +126,7 @@ namespace ClassDevelopment
 
                     if (this.m_Variables[key] != null)
                     {
-                        DataBindingList data = (DataBindingList)this.m_Variables[key];
+                        ClsSingeltonDataBindingList data = (ClsSingeltonDataBindingList)this.m_Variables[key];
 
                         Form frm_show;
                         Form frm = (Form)data.Form;
@@ -149,7 +149,7 @@ namespace ClassDevelopment
                                     {
                                         if (!obj_text_box.Focused || Override)
                                         {
-                                            obj_text_box.Text = Glb_VarCollect.ReadValueString(data.VarName);
+                                            obj_text_box.Text = m_VariablesCollecter.ReadValueString(data.VarName);
                                         }
                                     }
                                 }
@@ -162,7 +162,7 @@ namespace ClassDevelopment
                                     {
                                         if (!obj_text_box.Focused || Override)
                                         {
-                                            obj_text_box.Text = Glb_VarCollect.ReadValueString(data.VarName);
+                                            obj_text_box.Text = m_VariablesCollecter.ReadValueString(data.VarName);
                                         }
                                     }
                                 }

@@ -9,21 +9,22 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Helper;
 
 namespace ClassDevelopment
 {
-    public struct PlcParameter
+    public struct ClsSingeltonPlcParameter
     {
-        public string IP;                       //!< PLC IP Adresse 
-        public int Rack;                        //!< Rack Adresse 300 = 2; 
-        public int Slot;                        //!< Slot immer 0
-        public ProgressBar ProgBar;             //!< Progressbarbar zur Anzeige des Fortschrittes im Thread
-        public Label LblStatus;                 //!< Ausgabe nach
-        public Button BtnStart;                 //!< Button zum Starten des Threads
-        public Button BtnStopp;                 //!< Button zum Stoppen des Threads
+        public string IP;
+        public int Rack;
+        public int Slot;                        
+        public object ProgBar;
+        public object LblStatus;
+        public object BtnStart;
+        public object BtnStopp;
     }
 
-    public struct PLCDatas
+    public struct ClsSingeltonPlcDatas
     {
         public string Adress;
         public int DatabaseNumber;
@@ -36,9 +37,9 @@ namespace ClassDevelopment
         public bool DataLog;
     }
 
-    public class ClsPlc
+    public class ClsSingeltonPlc
     {
-        public List<PLCDatas> m_Daten;
+        public List<ClsSingeltonPlcDatas> m_Daten;
 
         private byte[] m_DatenBytes;
 
@@ -55,20 +56,20 @@ namespace ClassDevelopment
 
         private List<string> m_Value;
 
-        private ClsVarCollect Glb_VarCollect;
+        private ClsSingeltonVariablesCollecter m_VarCollect;
 
-        private ClsDataBinding Glb_DataBinding;
+        private ClsSingeltonDataBinding m_DataBinding;
 
         private BackgroundWorker m_BackgroundWorkerPlcRead;
 
-        private ProgressBar m_ProgressBar;
-        private Label m_LblStatus;
-        private Button m_BtnStart;
-        private Button m_BtnStopp;
+        private object m_ProgressBar;
+        private object m_LblStatus;
+        private object m_BtnStart;
+        private object m_BtnStopp;
 
         private System.Windows.Forms.Timer m_TimerRead;
 
-        private static ClsPlc instance;
+        private static ClsSingeltonPlc m_instance;
 
         private libnodave.daveOSserialType m_Fds;
         private libnodave.daveInterface m_Di;
@@ -80,7 +81,7 @@ namespace ClassDevelopment
         private int m_Rack;
         private int m_Slot;
 
-        private ClsPlc(PlcParameter PlcParameter)
+        private ClsSingeltonPlc(ClsSingeltonPlcParameter PlcParameter)
         {
 
             this.m_DatenBytes = new byte[0];
@@ -95,7 +96,7 @@ namespace ClassDevelopment
             this.m_InfoThread = new Hashtable();
  
 
-            this.m_Daten=new List<PLCDatas>();
+            this.m_Daten=new List<ClsSingeltonPlcDatas>();
             this.m_Value = new List<string>();
             this.m_TimerRead = new System.Windows.Forms.Timer();
             this.m_TimerRead.Enabled = false;
@@ -107,8 +108,6 @@ namespace ClassDevelopment
             this.m_Slot = PlcParameter.Slot;
 
             this.m_ProgressBar = PlcParameter.ProgBar;
-            this.m_ProgressBar.Style = ProgressBarStyle.Blocks;
-            this.m_ProgressBar.Value = 0;
 
             this.m_LblStatus = PlcParameter.LblStatus;
             this.m_BtnStart = PlcParameter.BtnStart;
@@ -121,18 +120,22 @@ namespace ClassDevelopment
             this.m_BackgroundWorkerPlcRead.ProgressChanged+=BackgroundWorkerPlcRead_ProgressChanged;
             this.m_BackgroundWorkerPlcRead.RunWorkerCompleted+=BackgroundWorkerPlcRead_RunWorkerCompleted;
             
-            Glb_VarCollect = ClsVarCollect.CreateInstance();
-            Glb_DataBinding = ClsDataBinding.CreateInstance();
+            m_VarCollect = ClsSingeltonVariablesCollecter.CreateInstance();
+            m_DataBinding = ClsSingeltonDataBinding.CreateInstance();
+
+            this.ButtonVisibleOnOff(this.m_BtnStart, true);
+            this.ButtonVisibleOnOff(this.m_BtnStopp, false);
+            this.SetInfo(this.m_LblStatus, "Wait..");
 
         }
 
-        public static ClsPlc CreateInstance(PlcParameter PlcParameter)
+        public static ClsSingeltonPlc CreateInstance(ClsSingeltonPlcParameter PlcParameter)
         {
-            if (instance == null)
+            if (m_instance == null)
             {
-                instance = new ClsPlc(PlcParameter);
+                m_instance = new ClsSingeltonPlc(PlcParameter);
             }
-            return instance;
+            return m_instance;
         }
 
         private void TimerRead_Tick(object sender, EventArgs e)
@@ -141,15 +144,18 @@ namespace ClassDevelopment
             this.m_BackgroundWorkerPlcRead.RunWorkerAsync();
         }
 
+
         private void BackgroundWorkerPlcRead_DoWork(object sender, DoWorkEventArgs e)
         {
+            int counter_progress = 0;
+            int progress_value = 0;
+            this.m_Value.Clear();
             foreach (int dbNr in this.m_DatabasesNr)
             {
-                this.m_InfoThread[1] = "Datenbaustein " + dbNr + " wird eingelesen.";
+                this.m_InfoThread[1] = "DB " + dbNr + " ..";
                 this.m_BackgroundWorkerPlcRead.ReportProgress(1);
                 int anz = Convert.ToInt32(this.m_DatabasesInfo[dbNr]);
                 Array.Resize(ref this.m_DatenBytes, anz);
-                //Thread.Sleep(10);
                 int retval = this.m_Dc.readManyBytes(libnodave.daveDB, dbNr, 0, anz, this.m_DatenBytes);
                 if(retval<0)
                 {
@@ -158,14 +164,16 @@ namespace ClassDevelopment
                 }
                 else
                 {
-                    PLCDatas pclData;
+                    ClsSingeltonPlcDatas pclData;
                     for (int i = 0; i < this.m_Daten.Count(); i++)
                     {
-                        this.m_InfoThread[2] = i;
-                        this.m_BackgroundWorkerPlcRead.ReportProgress(2);
                         pclData = this.m_Daten[i];
                         if (pclData.DatabaseNumber == dbNr)
                         {
+                            counter_progress++;
+                            progress_value = 100 * counter_progress / this.m_Daten.Count();
+                            this.m_InfoThread[2] = progress_value;
+                            this.m_BackgroundWorkerPlcRead.ReportProgress(2);
                             string searchSymbol = "DB" + dbNr.ToString() + "." + pclData.Symbolname;
                             string value = "";
                             int byteNumber = pclData.ByteNumber;
@@ -193,54 +201,51 @@ namespace ClassDevelopment
                             {
                                 int lowByteWert = this.m_DatenBytes[byteNumber + 1];
                                 int highByteWert = this.m_DatenBytes[byteNumber + 0];
-                                int wert = this.m_DatenBytes[byteNumber + 0] * 256 * 256 * 256 + this.m_DatenBytes[byteNumber + 1] * 256 * 256 + this.m_DatenBytes[byteNumber + 2] * 256 + this.m_DatenBytes[byteNumber + 3];
+                                int wert = this.m_DatenBytes[byteNumber + 0] * 256 * 256 * 256 + 
+                                           this.m_DatenBytes[byteNumber + 1] * 256 * 256 + 
+                                           this.m_DatenBytes[byteNumber + 2] * 256 + 
+                                           this.m_DatenBytes[byteNumber + 3];
                                 value = wert.ToString();
                             }
 
                             if (pclData.DataType == "REAL")
                             {
+                                double convert_value=0.0;
                                 value = libnodave.getFloatfrom(this.m_DatenBytes, byteNumber).ToString();
+                                double.TryParse(value, out convert_value);
+                                this.m_VarCollect.WriteValue(searchSymbol, convert_value);
                             }
 
                             if (m_DatabasesValues.ContainsKey(searchSymbol))
                             {
+                                if (m_DatabasesValues[searchSymbol] != value)
+                                {
+                                    this.m_Value.Add(searchSymbol);
+                                }
                                 m_DatabasesValues[searchSymbol] = value;
                             }
                             else
                             {
                                 m_DatabasesValues.Add(searchSymbol, value);
+                                this.m_Value.Add(searchSymbol);
                             }
                         }
                     }
-                    
                 }
             }
-
-            
-
-            this.m_Value.Clear();
-            int j = Glb_VarCollect.ReadValueInt("Variable1");
-            j++;
-            Glb_VarCollect.WriteValue("Variable1", j);
-            object www = m_DatabasesValues["DB59.P1_Qmax_3"];
-            double eee = Convert.ToDouble(www);
-            Glb_VarCollect.WriteValue("Variable2", eee);
             this.m_BackgroundWorkerPlcRead.ReportProgress(0);
-            this.m_Value.Add("Variable1");
-            this.m_Value.Add("Variable2");
             e.Result = this.m_Value;
-
         }
+
         private void BackgroundWorkerPlcRead_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-
             if (e.ProgressPercentage == 1)
             {
-                this.m_LblStatus.Text = (string)this.m_InfoThread[e.ProgressPercentage];
+                this.SetInfo(this.m_LblStatus, (string)this.m_InfoThread[e.ProgressPercentage]);
             }
             if (e.ProgressPercentage == 2)
             {
-                this.m_ProgressBar.Value = (int)this.m_InfoThread[e.ProgressPercentage];
+                this.SetProgressbar(this.m_ProgressBar, (int)this.m_InfoThread[e.ProgressPercentage]);
             }
         }
 
@@ -250,29 +255,67 @@ namespace ClassDevelopment
             {
                 this.m_TimerRead.Enabled = false;
                 this.DeletePLC();
-                this.m_LblStatus.Text = "task cancled";
-                this.m_BtnStart.Enabled = true;
-                this.m_BtnStart.Focus();
+                this.SetInfo(this.m_LblStatus, "Canc..");
+                this.ButtonVisibleOnOff(this.m_BtnStart, true);
+                this.SetProgressbar(this.m_ProgressBar, 0);
+
             }
-            else
+            foreach (string var in (List<string>)e.Result)
             {
-                //this.m_LblStatus.Text = "task complete";
-            }
-            List<string> var_list = (List<string>)e.Result;
-            foreach (string var in var_list)
-            {
-                Glb_DataBinding.Dispatch(var);
+                this.m_DataBinding.Dispatch(var);
             }
             this.m_TimerRead.Enabled = this.m_FlagGoOn;
-        } 
+        }
+
+        private void SetInfo(object labelInfo, string message)
+        {
+            string obj_type = labelInfo.GetType().ToString();
+            if (obj_type == "System.Windows.Forms.Label")
+            {
+                Label label = (Label)labelInfo;
+                label.Text = message;
+            }
+        }
+        private void SetProgressbar(object progressBar, int value)
+        {
+            string obj_type = progressBar.GetType().ToString();
+            if (obj_type == "System.Windows.Forms.ProgressBar")
+            {
+                ProgressBar progress_bar = (ProgressBar)progressBar;
+                progress_bar.Value = value;
+            }
+        }
+
+
+        private void ButtonVisibleOnOff(object button, bool visible)
+        {
+            string obj_type = button.GetType().ToString();
+            if (obj_type == "System.Windows.Forms.Button")
+            {
+                Button btn = (Button)button;
+                btn.Visible = visible;
+                if(visible)
+                {
+                    btn.Focus();
+                }
+            }
+            if (obj_type == "Helper.CompBitButton")
+            {
+                CompBitButton btn = (CompBitButton)button;
+                btn.Visible = visible;
+                if (visible)
+                {
+                    btn.Focus();
+                }
+            }
+        }
 
         public void StartRead()
         {
             int retval = 0;
             this.m_FlagGoOn = true;
-            this.m_BtnStart.Enabled = false;
-            this.m_BtnStopp.Enabled = true;
-            this.m_BtnStopp.Focus();
+            this.ButtonVisibleOnOff(this.m_BtnStart, false);
+            this.ButtonVisibleOnOff(this.m_BtnStopp, true);
             do
             {
                 retval=this.InitPLC();
@@ -303,34 +346,41 @@ namespace ClassDevelopment
                 libnodave.closeSocket(this.m_Fds.rfd);
                 this.m_Dc = null;
                 this.m_Di = null;
-
             }
         }
-
 
         public void StoppRead()
         {
             this.m_FlagGoOn = false;
-            this.m_BtnStart.Enabled = false;
-            this.m_BtnStopp.Enabled = false;
-            this.m_ProgressBar.Style = ProgressBarStyle.Blocks;
+            this.ButtonVisibleOnOff(this.m_BtnStart, false);
+            this.ButtonVisibleOnOff(this.m_BtnStopp, false);
+            this.SetProgressbar(this.m_ProgressBar, 0);
         }
-
         public void AddList(string adresse, string symbolName, string dataType, string comment, bool dataLog=false)
         {
-            int byte_laenge = 0;
+            int byte_length = 0;
+            ClsSingeltonVariablesCollecterDataType data_type = ClsSingeltonVariablesCollecterDataType.Null;
             if (dataType == "BOOL")
             {
-                byte_laenge = 2;
+                byte_length = 2;
+                data_type = ClsSingeltonVariablesCollecterDataType.Int;
             }
             if (dataType == "INT")
             {
-                byte_laenge = 2;
+                byte_length = 2;
+                data_type = ClsSingeltonVariablesCollecterDataType.Int;
             }
-            if (dataType == "TIME" || dataType == "REAL")
+            if (dataType == "TIME")
             {
-                byte_laenge = 4;
+                byte_length = 4;
+                data_type = ClsSingeltonVariablesCollecterDataType.Int;
             }
+            if (dataType == "REAL")
+            {
+                byte_length = 4;
+                data_type = ClsSingeltonVariablesCollecterDataType.Double;
+            }
+
             int db_nr = 0;
             int byte_nr = 0;
             int bit_nr = 0;
@@ -343,14 +393,14 @@ namespace ClassDevelopment
                 {
                     bit_nr = Convert.ToInt32(FuncString.GetOnlyNumeric(adressen[2]));
                     int rest=byte_nr % 2;
-                    byte_laenge = byte_laenge - rest;
+                    byte_length = byte_length - rest;
                 }
                 if (this.m_DatabasesInfo.ContainsKey(db_nr))
                 {
                     int value = Convert.ToInt32(this.m_DatabasesInfo[db_nr]);
-                    if ((byte_nr+byte_laenge)>value)
+                    if ((byte_nr+byte_length)>value)
                     {
-                        this.m_DatabasesInfo[db_nr] = byte_nr + byte_laenge;
+                        this.m_DatabasesInfo[db_nr] = byte_nr + byte_length;
                     }
                 }
                 else
@@ -359,7 +409,7 @@ namespace ClassDevelopment
                     this.m_DatabasesNr.Add(db_nr);
                 }
             }
-            PLCDatas data;
+            ClsSingeltonPlcDatas data;
             data.Adress = adresse;
             data.DatabaseNumber = db_nr;
             data.ByteNumber = byte_nr;
@@ -371,6 +421,7 @@ namespace ClassDevelopment
             data.DataLog = dataLog;
             this.m_Daten.Add(data);
             string keyInfo = "DB" + db_nr + "." + symbolName;
+            this.m_VarCollect.CreateVariable(keyInfo, data_type);
             if (!this.m_SymbolInfo.ContainsKey(keyInfo))
             {
                 this.m_SymbolInfo.Add(keyInfo, data);
