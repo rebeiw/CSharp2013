@@ -63,6 +63,8 @@ namespace Helper
                         this.Dispatch(var_name, true);
                         obj_text_box.SelectAll();
                     }
+
+
                 }
             }
         }
@@ -164,6 +166,48 @@ namespace Helper
                                         {
                                             obj_text_box.Text = m_VariablesCollecter.ReadValueString(data.VarName);
                                         }
+                                    }
+                                }
+                                
+                                if (obj_type == "Helper.CompVentil")
+                                {
+                                    CompVentil obj_ventil;
+                                    obj_ventil = (CompVentil)obj;
+                                    if (data.Propertie == "State")
+                                    {
+                                        int convert_value=0;
+                                        string val = m_VariablesCollecter.ReadValueString(data.VarName);
+                                        convert_value=Convert.ToInt32(val);
+                                        CompVentil.CompVentilState state = (CompVentil.CompVentilState)convert_value;
+                                        obj_ventil.State = state;
+                                    }
+                                }
+
+                                if (obj_type == "Helper.CompPipe")
+                                {
+                                    CompPipe obj_comp;
+                                    obj_comp = (CompPipe)obj;
+                                    if (data.Propertie == "Flow")
+                                    {
+                                        int convert_value = 0;
+                                        string val = m_VariablesCollecter.ReadValueString(data.VarName);
+                                        convert_value = Convert.ToInt32(val);
+                                        CompPipe.CompPipeFlow flow = (CompPipe.CompPipeFlow)convert_value;
+                                        obj_comp.Flow = flow;
+                                    }
+                                }
+                                
+                                if (obj_type == "Helper.CompLedRectangle")
+                                {
+                                    CompLedRectangle obj_comp;
+                                    obj_comp = (CompLedRectangle)obj;
+                                    if (data.Propertie == "State")
+                                    {
+                                        int convert_value = 0;
+                                        string val = m_VariablesCollecter.ReadValueString(data.VarName);
+                                        convert_value = Convert.ToInt32(val);
+                                        CompLedRectangle.CompLedState state = (CompLedRectangle.CompLedState)convert_value;
+                                        obj_comp.State = state;
                                     }
                                 }
                             }

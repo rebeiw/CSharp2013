@@ -12,21 +12,17 @@ using System.Windows.Forms;
 namespace Helper
 {
 
-    public enum CompPipeState
-    {
-        FlowOff=0,
-        FlowOn
-    }
 
     public class CompPipe : PictureBox
     {
+        public enum CompPipeFlow { FlowOff = 0, FlowOn }
         public CompPipe()
         {
             this.Height = 10;
             this.Width = 100;
             this.ColorFlowOn = Color.Aqua;
             this.ColorFlowOff = Color.Blue;
-            this.Flow = CompPipeState.FlowOff;
+            this.Flow = CompPipeFlow.FlowOff;
         }
         [Category("Default"), Description("")]
 
@@ -45,8 +41,8 @@ namespace Helper
 
         [Category("Default"), Description("")]
 
-        private CompPipeState m_Flow;
-        public CompPipeState Flow
+        private CompPipeFlow m_Flow;
+        public CompPipeFlow Flow
         {
             set { if (m_Flow != value) { m_Flow = value; this.Invalidate(); } }
             get { return this.m_Flow; }
@@ -55,11 +51,11 @@ namespace Helper
         protected override void OnPaint(PaintEventArgs pe)
         {
             base.OnPaint(pe);
-            if(this.m_Flow==CompPipeState.FlowOff)
+            if(this.m_Flow==CompPipeFlow.FlowOff)
             {
                 this.BackColor=this.m_ColorFlowOff;
             }
-            if(this.m_Flow==CompPipeState.FlowOn)
+            if(this.m_Flow==CompPipeFlow.FlowOn)
             {
                 this.BackColor = this.m_ColorFlowOn;
             }

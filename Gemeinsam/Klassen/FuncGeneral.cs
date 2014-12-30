@@ -253,34 +253,20 @@ namespace Helper
             return retval;
         }
 
-        public static CompLedState GetSateLED(string Input)
+        public static CompLedRectangle.CompLedState GetSateLED(string Input)
         {
-            CompLedState retval = CompLedState.LedOff;
+            CompLedRectangle.CompLedState retval = CompLedRectangle.CompLedState.LedOff;
             if (Input == "0")
             {
-                retval = CompLedState.LedOff;
+                retval = CompLedRectangle.CompLedState.LedOff;
             }
             if (Input == "1")
             {
-                retval = CompLedState.LedOn;
+                retval = CompLedRectangle.CompLedState.LedOn;
             }
             return retval;
         }
 
-
-        public static CompPipeState GetSatePipe(string Input)
-        {
-            CompPipeState retval = CompPipeState.FlowOff;
-            if (Input == "0")
-            {
-                retval = CompPipeState.FlowOff;
-            }
-            if (Input == "1")
-            {
-                retval = CompPipeState.FlowOn;
-            }
-            return retval;
-        }
         public static SwitchState GetSateToggleSwitch(string Input)
         {
             SwitchState retval = SwitchState.Off;
@@ -363,7 +349,7 @@ namespace Helper
             Component.Margin = new System.Windows.Forms.Padding(4);
             Component.Name = compName;
             Component.Size = new System.Drawing.Size(25, 25);
-            Component.State = Helper.CompLedState.LedOff;
+            Component.State = Helper.CompLedRectangle.CompLedState.LedOff;
             Component.Type = LedType;
         }
 

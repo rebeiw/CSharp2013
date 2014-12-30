@@ -156,15 +156,15 @@ namespace Helper
                             }
                         }
 
-                        if (obj_type == "Helper.Pipe")
-                        {
-                            CompPipe obj_pipe;
-                            obj_pipe = (CompPipe)obj;
-                            if (bindingList.Propertie == "Flow")
-                            {
-                                obj_pipe.Flow = FuncGeneral.GetSatePipe(Glb_Plc.DatabasesValues[bindingList.SymbolName].ToString());
-                            }
-                        }
+                        //if (obj_type == "Helper.Pipe")
+                        //{
+                        //    CompPipe obj_pipe;
+                        //    obj_pipe = (CompPipe)obj;
+                        //    if (bindingList.Propertie == "Flow")
+                        //    {
+                        //        obj_pipe.Flow = FuncGeneral.GetSatePipe(Glb_Plc.DatabasesValues[bindingList.SymbolName].ToString());
+                        //    }
+                        //}
 
                         if (obj_type == "Helper.ToggleSwitch")
                         {

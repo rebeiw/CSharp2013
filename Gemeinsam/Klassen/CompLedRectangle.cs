@@ -7,14 +7,10 @@ using System.Windows.Forms;
 namespace Helper
 {
 
-    public enum CompLedState
-    {
-        LedOff=0,
-        LedOn
-    }
 
     public class CompLedRectangle : PictureBox
     {
+        public enum CompLedState { LedOff = 0, LedOn }
         private Rectangle m_RecLedGradient;
         private Rectangle m_RecLed;
         private Brush m_BrushGradient;

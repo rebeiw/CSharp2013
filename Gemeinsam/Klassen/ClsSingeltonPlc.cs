@@ -191,16 +191,18 @@ namespace Helper
                                 {
                                     value = "0";
                                 }
+                                int convert_value = 0;
+                                convert_value = Convert.ToInt32(value);
+                                this.m_VarCollect.WriteValue(searchSymbol, convert_value);
                             }
                             if (pclData.DataType == "INT")
                             {
                                 int wert = this.m_DatenBytes[byteNumber + 0] * 256 + this.m_DatenBytes[byteNumber + 1];
+                                this.m_VarCollect.WriteValue(searchSymbol, wert);
                                 value = wert.ToString();
                             }
                             if (pclData.DataType == "TIME")
                             {
-                                int lowByteWert = this.m_DatenBytes[byteNumber + 1];
-                                int highByteWert = this.m_DatenBytes[byteNumber + 0];
                                 int wert = this.m_DatenBytes[byteNumber + 0] * 256 * 256 * 256 + 
                                            this.m_DatenBytes[byteNumber + 1] * 256 * 256 + 
                                            this.m_DatenBytes[byteNumber + 2] * 256 + 
