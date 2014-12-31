@@ -60,6 +60,9 @@
     <Compile Include="ClsSingeltonDataBinding.cs" />
     <Compile Include="ClsSingeltonPlc.cs" />
     <Compile Include="ClsSingeltonVariablesCollecter.cs" />
+    <Compile Include="CompArrow.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CompBitButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -74,6 +77,12 @@
     <Compile Include="ClsCreateParameter.cs" />
     <Compile Include="ClsIni.cs" />
     <Compile Include="ClsPDF.cs" />
+    <Compile Include="CompTemplate.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CompVan.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CompVentil.cs">
       <SubType>Component</SubType>
     </Compile>

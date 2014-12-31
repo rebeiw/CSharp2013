@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.Led01 = new Helper.CompLedRectangle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,7 +41,6 @@
             this.Led05 = new Helper.CompLedRectangle();
             this.label6 = new System.Windows.Forms.Label();
             this.Led06 = new Helper.CompLedRectangle();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.bitButton2 = new Helper.CompBitButton();
             this.Pip07 = new Helper.CompPipe();
             this.Pip02 = new Helper.CompPipe();
@@ -52,11 +52,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.Pip01 = new Helper.CompPipe();
             this.Pip04 = new Helper.CompPipe();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.Txt17 = new Helper.CompTxtBox();
             this.label8 = new System.Windows.Forms.Label();
             this.Pip06 = new Helper.CompPipe();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.Pip03 = new Helper.CompPipe();
             this.Pip05 = new Helper.CompPipe();
             this.Txt10 = new Helper.CompTxtBox();
@@ -105,6 +103,54 @@
             this.BtnStoppPlc = new Helper.CompBitButton();
             this.lblStatus = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.compArrow1 = new Helper.CompArrow();
+            this.label17 = new System.Windows.Forms.Label();
+            this.compArrow2 = new Helper.CompArrow();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.compPipe1 = new Helper.CompPipe();
+            this.compArrow3 = new Helper.CompArrow();
+            this.compArrow4 = new Helper.CompArrow();
+            this.compArrow5 = new Helper.CompArrow();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.compTxtBox1 = new Helper.CompTxtBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.compVan1 = new Helper.CompVan();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.compPipe2 = new Helper.CompPipe();
+            this.compArrow6 = new Helper.CompArrow();
+            this.compPipe3 = new Helper.CompPipe();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.compTxtBox2 = new Helper.CompTxtBox();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.compTxtBox3 = new Helper.CompTxtBox();
             ((System.ComponentModel.ISupportInitialize)(this.BtnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnKeyboard)).BeginInit();
             this.GbxMenu.SuspendLayout();
@@ -124,9 +170,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnStartPlc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pip01)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pip04)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pip06)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pip03)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pip05)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pip13)).BeginInit();
@@ -148,6 +192,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.Vnt06)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Vnt07)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnStoppPlc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compArrow1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compArrow2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compPipe1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compArrow3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compArrow4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compArrow5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compVan1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compPipe2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compArrow6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compPipe3)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // BtnClose
@@ -167,6 +222,49 @@
             // GbxOutput
             // 
             this.GbxOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
+            this.GbxOutput.BackColor = System.Drawing.Color.Transparent;
+            this.GbxOutput.Controls.Add(this.panel1);
+            this.GbxOutput.Controls.Add(this.compPipe3);
+            this.GbxOutput.Controls.Add(this.compArrow6);
+            this.GbxOutput.Controls.Add(this.compPipe2);
+            this.GbxOutput.Controls.Add(this.label45);
+            this.GbxOutput.Controls.Add(this.label44);
+            this.GbxOutput.Controls.Add(this.label43);
+            this.GbxOutput.Controls.Add(this.label42);
+            this.GbxOutput.Controls.Add(this.label41);
+            this.GbxOutput.Controls.Add(this.label40);
+            this.GbxOutput.Controls.Add(this.label39);
+            this.GbxOutput.Controls.Add(this.label38);
+            this.GbxOutput.Controls.Add(this.label37);
+            this.GbxOutput.Controls.Add(this.compVan1);
+            this.GbxOutput.Controls.Add(this.label35);
+            this.GbxOutput.Controls.Add(this.label34);
+            this.GbxOutput.Controls.Add(this.label33);
+            this.GbxOutput.Controls.Add(this.label32);
+            this.GbxOutput.Controls.Add(this.label29);
+            this.GbxOutput.Controls.Add(this.label31);
+            this.GbxOutput.Controls.Add(this.label30);
+            this.GbxOutput.Controls.Add(this.label28);
+            this.GbxOutput.Controls.Add(this.label27);
+            this.GbxOutput.Controls.Add(this.label26);
+            this.GbxOutput.Controls.Add(this.label16);
+            this.GbxOutput.Controls.Add(this.label25);
+            this.GbxOutput.Controls.Add(this.compTxtBox1);
+            this.GbxOutput.Controls.Add(this.label24);
+            this.GbxOutput.Controls.Add(this.label23);
+            this.GbxOutput.Controls.Add(this.label22);
+            this.GbxOutput.Controls.Add(this.compArrow5);
+            this.GbxOutput.Controls.Add(this.compArrow4);
+            this.GbxOutput.Controls.Add(this.compArrow3);
+            this.GbxOutput.Controls.Add(this.compPipe1);
+            this.GbxOutput.Controls.Add(this.label21);
+            this.GbxOutput.Controls.Add(this.label20);
+            this.GbxOutput.Controls.Add(this.label19);
+            this.GbxOutput.Controls.Add(this.label18);
+            this.GbxOutput.Controls.Add(this.compArrow2);
+            this.GbxOutput.Controls.Add(this.label17);
+            this.GbxOutput.Controls.Add(this.compArrow1);
+            this.GbxOutput.Controls.Add(this.Pip02);
             this.GbxOutput.Controls.Add(this.progressBar1);
             this.GbxOutput.Controls.Add(this.lblStatus);
             this.GbxOutput.Controls.Add(this.BtnStoppPlc);
@@ -211,16 +309,13 @@
             this.GbxOutput.Controls.Add(this.Pip10);
             this.GbxOutput.Controls.Add(this.Txt09);
             this.GbxOutput.Controls.Add(this.Pip12);
-            this.GbxOutput.Controls.Add(this.pictureBox2);
             this.GbxOutput.Controls.Add(this.Pip13);
             this.GbxOutput.Controls.Add(this.Txt10);
             this.GbxOutput.Controls.Add(this.Pip05);
             this.GbxOutput.Controls.Add(this.Pip03);
-            this.GbxOutput.Controls.Add(this.pictureBox3);
             this.GbxOutput.Controls.Add(this.Pip01);
             this.GbxOutput.Controls.Add(this.Pip06);
             this.GbxOutput.Controls.Add(this.label8);
-            this.GbxOutput.Controls.Add(this.Pip02);
             this.GbxOutput.Controls.Add(this.Txt17);
             this.GbxOutput.Controls.Add(this.Pip04);
             this.GbxOutput.Controls.Add(this.label7);
@@ -244,8 +339,9 @@
             this.GbxOutput.Controls.Add(this.Led01);
             this.GbxOutput.Controls.Add(this.Pip08);
             this.GbxOutput.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GbxOutput.ForeColor = System.Drawing.Color.Black;
             this.GbxOutput.Location = new System.Drawing.Point(5, 4);
-            this.GbxOutput.Size = new System.Drawing.Size(1007, 694);
+            this.GbxOutput.Size = new System.Drawing.Size(1007, 701);
             this.GbxOutput.Text = "Heater Fuel Gas";
             this.GbxOutput.Enter += new System.EventHandler(this.GB_Datenausgabe_Enter);
             // 
@@ -255,7 +351,7 @@
             // 
             // Led01
             // 
-            this.Led01.Location = new System.Drawing.Point(7, 28);
+            this.Led01.Location = new System.Drawing.Point(7, 21);
             this.Led01.Name = "Led01";
             this.Led01.Size = new System.Drawing.Size(79, 39);
             this.Led01.State = Helper.CompLedRectangle.CompLedState.LedOff;
@@ -264,7 +360,7 @@
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(7, 70);
+            this.label1.Location = new System.Drawing.Point(7, 63);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 39);
             this.label1.TabIndex = 11;
@@ -273,7 +369,7 @@
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(104, 70);
+            this.label2.Location = new System.Drawing.Point(104, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 39);
             this.label2.TabIndex = 13;
@@ -282,7 +378,7 @@
             // 
             // Led02
             // 
-            this.Led02.Location = new System.Drawing.Point(104, 28);
+            this.Led02.Location = new System.Drawing.Point(104, 21);
             this.Led02.Name = "Led02";
             this.Led02.Size = new System.Drawing.Size(79, 39);
             this.Led02.State = Helper.CompLedRectangle.CompLedState.LedOff;
@@ -291,7 +387,7 @@
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(202, 70);
+            this.label3.Location = new System.Drawing.Point(202, 63);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 39);
             this.label3.TabIndex = 15;
@@ -300,7 +396,7 @@
             // 
             // Led03
             // 
-            this.Led03.Location = new System.Drawing.Point(202, 28);
+            this.Led03.Location = new System.Drawing.Point(202, 21);
             this.Led03.Name = "Led03";
             this.Led03.Size = new System.Drawing.Size(79, 39);
             this.Led03.State = Helper.CompLedRectangle.CompLedState.LedOff;
@@ -309,7 +405,7 @@
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(305, 70);
+            this.label4.Location = new System.Drawing.Point(305, 63);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 39);
             this.label4.TabIndex = 17;
@@ -318,7 +414,7 @@
             // 
             // Led04
             // 
-            this.Led04.Location = new System.Drawing.Point(305, 28);
+            this.Led04.Location = new System.Drawing.Point(305, 21);
             this.Led04.Name = "Led04";
             this.Led04.Size = new System.Drawing.Size(79, 39);
             this.Led04.State = Helper.CompLedRectangle.CompLedState.LedOff;
@@ -328,7 +424,7 @@
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(402, 70);
+            this.label5.Location = new System.Drawing.Point(402, 63);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 39);
             this.label5.TabIndex = 19;
@@ -337,7 +433,7 @@
             // 
             // Led05
             // 
-            this.Led05.Location = new System.Drawing.Point(402, 28);
+            this.Led05.Location = new System.Drawing.Point(402, 21);
             this.Led05.Name = "Led05";
             this.Led05.Size = new System.Drawing.Size(79, 39);
             this.Led05.State = Helper.CompLedRectangle.CompLedState.LedOff;
@@ -346,7 +442,7 @@
             // 
             // label6
             // 
-            this.label6.Location = new System.Drawing.Point(497, 70);
+            this.label6.Location = new System.Drawing.Point(497, 63);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 39);
             this.label6.TabIndex = 21;
@@ -355,7 +451,7 @@
             // 
             // Led06
             // 
-            this.Led06.Location = new System.Drawing.Point(497, 28);
+            this.Led06.Location = new System.Drawing.Point(497, 21);
             this.Led06.Name = "Led06";
             this.Led06.Size = new System.Drawing.Size(79, 39);
             this.Led06.State = Helper.CompLedRectangle.CompLedState.LedOff;
@@ -363,24 +459,13 @@
             this.Led06.TabStop = false;
             this.Led06.Click += new System.EventHandler(this.ledRectangle6_Click);
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Red;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.ForeColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(5, 704);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1007, 32);
-            this.panel1.TabIndex = 8;
-            // 
             // bitButton2
             // 
             this.bitButton2.Caption = "";
             this.bitButton2.EnableMouseDown = false;
             this.bitButton2.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
             this.bitButton2.Formular = null;
-            this.bitButton2.Location = new System.Drawing.Point(921, 13);
+            this.bitButton2.Location = new System.Drawing.Point(921, 21);
             this.bitButton2.Name = "bitButton2";
             this.bitButton2.Picture_0 = Helper.CompBitButtonStyle.btg_Menue;
             this.bitButton2.Picture_1 = Helper.CompBitButtonStyle.btg_Blanko;
@@ -412,16 +497,17 @@
             this.Pip02.ColorFlowOff = System.Drawing.Color.Blue;
             this.Pip02.ColorFlowOn = System.Drawing.Color.Aqua;
             this.Pip02.Flow = Helper.CompPipe.CompPipeFlow.FlowOff;
-            this.Pip02.Location = new System.Drawing.Point(7, 145);
+            this.Pip02.Location = new System.Drawing.Point(30, 149);
             this.Pip02.Name = "Pip02";
-            this.Pip02.Size = new System.Drawing.Size(100, 10);
+            this.Pip02.Size = new System.Drawing.Size(106, 10);
             this.Pip02.TabIndex = 25;
             this.Pip02.TabStop = false;
+            this.Pip02.Click += new System.EventHandler(this.Pip02_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(107, 361);
+            this.pictureBox1.Location = new System.Drawing.Point(118, 365);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(47, 50);
             this.pictureBox1.TabIndex = 26;
@@ -435,7 +521,7 @@
             this.Pip08.Flow = Helper.CompPipe.CompPipeFlow.FlowOff;
             this.Pip08.Location = new System.Drawing.Point(152, 385);
             this.Pip08.Name = "Pip08";
-            this.Pip08.Size = new System.Drawing.Size(634, 10);
+            this.Pip08.Size = new System.Drawing.Size(684, 10);
             this.Pip08.TabIndex = 27;
             this.Pip08.TabStop = false;
             // 
@@ -467,7 +553,7 @@
             this.Txt14.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.Txt14.ForeColor = System.Drawing.Color.White;
             this.Txt14.Format = "0";
-            this.Txt14.Location = new System.Drawing.Point(399, 198);
+            this.Txt14.Location = new System.Drawing.Point(356, 198);
             this.Txt14.Margin = new System.Windows.Forms.Padding(4);
             this.Txt14.Name = "Txt14";
             this.Txt14.Size = new System.Drawing.Size(59, 29);
@@ -485,7 +571,7 @@
             this.Txt01.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.Txt01.ForeColor = System.Drawing.Color.Yellow;
             this.Txt01.Format = "0.00";
-            this.Txt01.Location = new System.Drawing.Point(27, 375);
+            this.Txt01.Location = new System.Drawing.Point(54, 375);
             this.Txt01.Margin = new System.Windows.Forms.Padding(4);
             this.Txt01.Name = "Txt01";
             this.Txt01.Size = new System.Drawing.Size(59, 29);
@@ -498,7 +584,7 @@
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(463, 174);
+            this.label7.Location = new System.Drawing.Point(420, 174);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(20, 17);
             this.label7.TabIndex = 34;
@@ -514,7 +600,7 @@
             this.Pip01.Flow = Helper.CompPipe.CompPipeFlow.FlowOff;
             this.Pip01.Location = new System.Drawing.Point(164, 149);
             this.Pip01.Name = "Pip01";
-            this.Pip01.Size = new System.Drawing.Size(450, 10);
+            this.Pip01.Size = new System.Drawing.Size(458, 10);
             this.Pip01.TabIndex = 35;
             this.Pip01.TabStop = false;
             this.Pip01.Click += new System.EventHandler(this.compPipe3_Click);
@@ -525,22 +611,12 @@
             this.Pip04.ColorFlowOff = System.Drawing.Color.Blue;
             this.Pip04.ColorFlowOn = System.Drawing.Color.Aqua;
             this.Pip04.Flow = Helper.CompPipe.CompPipeFlow.FlowOff;
-            this.Pip04.Location = new System.Drawing.Point(623, 145);
+            this.Pip04.Location = new System.Drawing.Point(622, 149);
             this.Pip04.Name = "Pip04";
-            this.Pip04.Size = new System.Drawing.Size(213, 6);
+            this.Pip04.Size = new System.Drawing.Size(247, 6);
             this.Pip04.TabIndex = 37;
             this.Pip04.TabStop = false;
             this.Pip04.Click += new System.EventHandler(this.compPipe4_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.DimGray;
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(873, 73);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(127, 233);
-            this.pictureBox2.TabIndex = 38;
-            this.pictureBox2.TabStop = false;
             // 
             // Txt17
             // 
@@ -550,7 +626,7 @@
             this.Txt17.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.Txt17.ForeColor = System.Drawing.Color.Yellow;
             this.Txt17.Format = "0";
-            this.Txt17.Location = new System.Drawing.Point(761, 72);
+            this.Txt17.Location = new System.Drawing.Point(792, 22);
             this.Txt17.Margin = new System.Windows.Forms.Padding(4);
             this.Txt17.Name = "Txt17";
             this.Txt17.Size = new System.Drawing.Size(59, 29);
@@ -561,11 +637,11 @@
             // 
             // label8
             // 
-            this.label8.Location = new System.Drawing.Point(761, 106);
+            this.label8.Location = new System.Drawing.Point(792, 56);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(59, 17);
             this.label8.TabIndex = 42;
-            this.label8.Text = "bar";
+            this.label8.Text = "%";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
@@ -575,22 +651,12 @@
             this.Pip06.ColorFlowOff = System.Drawing.Color.Blue;
             this.Pip06.ColorFlowOn = System.Drawing.Color.Aqua;
             this.Pip06.Flow = Helper.CompPipe.CompPipeFlow.FlowOff;
-            this.Pip06.Location = new System.Drawing.Point(628, 183);
+            this.Pip06.Location = new System.Drawing.Point(622, 236);
             this.Pip06.Name = "Pip06";
-            this.Pip06.Size = new System.Drawing.Size(203, 10);
+            this.Pip06.Size = new System.Drawing.Size(241, 10);
             this.Pip06.TabIndex = 43;
             this.Pip06.TabStop = false;
             this.Pip06.Click += new System.EventHandler(this.compPipe5_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Teal;
-            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox3.Location = new System.Drawing.Point(104, 114);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(79, 78);
-            this.pictureBox3.TabIndex = 44;
-            this.pictureBox3.TabStop = false;
             // 
             // Pip03
             // 
@@ -598,9 +664,9 @@
             this.Pip03.ColorFlowOff = System.Drawing.Color.Blue;
             this.Pip03.ColorFlowOn = System.Drawing.Color.Aqua;
             this.Pip03.Flow = Helper.CompPipe.CompPipeFlow.FlowOff;
-            this.Pip03.Location = new System.Drawing.Point(609, 149);
+            this.Pip03.Location = new System.Drawing.Point(622, 149);
             this.Pip03.Name = "Pip03";
-            this.Pip03.Size = new System.Drawing.Size(10, 52);
+            this.Pip03.Size = new System.Drawing.Size(10, 97);
             this.Pip03.TabIndex = 45;
             this.Pip03.TabStop = false;
             // 
@@ -610,9 +676,9 @@
             this.Pip05.ColorFlowOff = System.Drawing.Color.Blue;
             this.Pip05.ColorFlowOn = System.Drawing.Color.Aqua;
             this.Pip05.Flow = Helper.CompPipe.CompPipeFlow.FlowOff;
-            this.Pip05.Location = new System.Drawing.Point(916, 302);
+            this.Pip05.Location = new System.Drawing.Point(953, 307);
             this.Pip05.Name = "Pip05";
-            this.Pip05.Size = new System.Drawing.Size(9, 259);
+            this.Pip05.Size = new System.Drawing.Size(9, 285);
             this.Pip05.TabIndex = 46;
             this.Pip05.TabStop = false;
             // 
@@ -624,7 +690,7 @@
             this.Txt10.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.Txt10.ForeColor = System.Drawing.Color.Yellow;
             this.Txt10.Format = "0.0";
-            this.Txt10.Location = new System.Drawing.Point(932, 333);
+            this.Txt10.Location = new System.Drawing.Point(928, 489);
             this.Txt10.Margin = new System.Windows.Forms.Padding(4);
             this.Txt10.Name = "Txt10";
             this.Txt10.Size = new System.Drawing.Size(59, 29);
@@ -639,11 +705,12 @@
             this.Pip13.ColorFlowOff = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.Pip13.ColorFlowOn = System.Drawing.Color.Yellow;
             this.Pip13.Flow = Helper.CompPipe.CompPipeFlow.FlowOff;
-            this.Pip13.Location = new System.Drawing.Point(826, 271);
+            this.Pip13.Location = new System.Drawing.Point(828, 263);
             this.Pip13.Name = "Pip13";
-            this.Pip13.Size = new System.Drawing.Size(70, 10);
+            this.Pip13.Size = new System.Drawing.Size(54, 10);
             this.Pip13.TabIndex = 52;
             this.Pip13.TabStop = false;
+            this.Pip13.Click += new System.EventHandler(this.Pip13_Click);
             // 
             // Pip12
             // 
@@ -651,9 +718,9 @@
             this.Pip12.ColorFlowOff = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.Pip12.ColorFlowOn = System.Drawing.Color.Yellow;
             this.Pip12.Flow = Helper.CompPipe.CompPipeFlow.FlowOff;
-            this.Pip12.Location = new System.Drawing.Point(826, 271);
+            this.Pip12.Location = new System.Drawing.Point(828, 263);
             this.Pip12.Name = "Pip12";
-            this.Pip12.Size = new System.Drawing.Size(10, 124);
+            this.Pip12.Size = new System.Drawing.Size(10, 132);
             this.Pip12.TabIndex = 53;
             this.Pip12.TabStop = false;
             // 
@@ -664,13 +731,13 @@
             this.Txt09.Error = false;
             this.Txt09.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.Txt09.ForeColor = System.Drawing.Color.Yellow;
-            this.Txt09.Format = "0.0";
-            this.Txt09.Location = new System.Drawing.Point(706, 274);
+            this.Txt09.Format = "0";
+            this.Txt09.Location = new System.Drawing.Point(928, 343);
             this.Txt09.Margin = new System.Windows.Forms.Padding(4);
             this.Txt09.Name = "Txt09";
             this.Txt09.Size = new System.Drawing.Size(59, 29);
             this.Txt09.TabIndex = 54;
-            this.Txt09.Text = "0,0";
+            this.Txt09.Text = "0";
             this.Txt09.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
             this.Txt09.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
             // 
@@ -680,11 +747,12 @@
             this.Pip10.ColorFlowOff = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.Pip10.ColorFlowOn = System.Drawing.Color.Yellow;
             this.Pip10.Flow = Helper.CompPipe.CompPipeFlow.FlowOff;
-            this.Pip10.Location = new System.Drawing.Point(614, 272);
+            this.Pip10.Location = new System.Drawing.Point(624, 287);
             this.Pip10.Name = "Pip10";
-            this.Pip10.Size = new System.Drawing.Size(6, 123);
+            this.Pip10.Size = new System.Drawing.Size(6, 108);
             this.Pip10.TabIndex = 55;
             this.Pip10.TabStop = false;
+            this.Pip10.Click += new System.EventHandler(this.Pip10_Click);
             // 
             // Txt02
             // 
@@ -694,7 +762,7 @@
             this.Txt02.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.Txt02.ForeColor = System.Drawing.Color.Yellow;
             this.Txt02.Format = "0.00";
-            this.Txt02.Location = new System.Drawing.Point(95, 302);
+            this.Txt02.Location = new System.Drawing.Point(112, 309);
             this.Txt02.Margin = new System.Windows.Forms.Padding(4);
             this.Txt02.Name = "Txt02";
             this.Txt02.Size = new System.Drawing.Size(59, 29);
@@ -710,8 +778,8 @@
             this.Txt04.Error = false;
             this.Txt04.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.Txt04.ForeColor = System.Drawing.Color.Yellow;
-            this.Txt04.Format = null;
-            this.Txt04.Location = new System.Drawing.Point(227, 375);
+            this.Txt04.Format = "0";
+            this.Txt04.Location = new System.Drawing.Point(234, 375);
             this.Txt04.Name = "Txt04";
             this.Txt04.Size = new System.Drawing.Size(59, 29);
             this.Txt04.TabIndex = 63;
@@ -727,7 +795,7 @@
             this.Txt13.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.Txt13.ForeColor = System.Drawing.Color.Yellow;
             this.Txt13.Format = "0";
-            this.Txt13.Location = new System.Drawing.Point(399, 168);
+            this.Txt13.Location = new System.Drawing.Point(356, 168);
             this.Txt13.Margin = new System.Windows.Forms.Padding(4);
             this.Txt13.Name = "Txt13";
             this.Txt13.Size = new System.Drawing.Size(59, 29);
@@ -739,7 +807,7 @@
             // label9
             // 
             this.label9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(463, 204);
+            this.label9.Location = new System.Drawing.Point(420, 204);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(20, 17);
             this.label9.TabIndex = 65;
@@ -751,7 +819,7 @@
             this.Vnt11.ColorClose = System.Drawing.Color.Blue;
             this.Vnt11.ColorOpen = System.Drawing.Color.Cyan;
             this.Vnt11.Direction = Helper.CompVentil.CompVentilDirection.Vertical;
-            this.Vnt11.Location = new System.Drawing.Point(891, 420);
+            this.Vnt11.Location = new System.Drawing.Point(927, 420);
             this.Vnt11.Name = "Vnt11";
             this.Vnt11.Size = new System.Drawing.Size(40, 40);
             this.Vnt11.State = Helper.CompVentil.CompVentilState.Close;
@@ -763,9 +831,9 @@
             this.Vnt02.ColorClose = System.Drawing.Color.Aqua;
             this.Vnt02.ColorOpen = System.Drawing.Color.Blue;
             this.Vnt02.Direction = Helper.CompVentil.CompVentilDirection.Horizontal;
-            this.Vnt02.Location = new System.Drawing.Point(403, 115);
+            this.Vnt02.Location = new System.Drawing.Point(365, 123);
             this.Vnt02.Name = "Vnt02";
-            this.Vnt02.Size = new System.Drawing.Size(50, 50);
+            this.Vnt02.Size = new System.Drawing.Size(40, 40);
             this.Vnt02.State = Helper.CompVentil.CompVentilState.Close;
             this.Vnt02.TabIndex = 67;
             this.Vnt02.TabStop = false;
@@ -775,9 +843,9 @@
             this.Vnt03.ColorClose = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.Vnt03.ColorOpen = System.Drawing.Color.Yellow;
             this.Vnt03.Direction = Helper.CompVentil.CompVentilDirection.Horizontal;
-            this.Vnt03.Location = new System.Drawing.Point(357, 351);
+            this.Vnt03.Location = new System.Drawing.Point(365, 359);
             this.Vnt03.Name = "Vnt03";
-            this.Vnt03.Size = new System.Drawing.Size(50, 50);
+            this.Vnt03.Size = new System.Drawing.Size(40, 40);
             this.Vnt03.State = Helper.CompVentil.CompVentilState.Close;
             this.Vnt03.TabIndex = 68;
             this.Vnt03.TabStop = false;
@@ -787,7 +855,7 @@
             this.Vnt01.ColorClose = System.Drawing.Color.Aqua;
             this.Vnt01.ColorOpen = System.Drawing.Color.Blue;
             this.Vnt01.Direction = Helper.CompVentil.CompVentilDirection.Horizontal;
-            this.Vnt01.Location = new System.Drawing.Point(659, 118);
+            this.Vnt01.Location = new System.Drawing.Point(705, 121);
             this.Vnt01.Name = "Vnt01";
             this.Vnt01.Size = new System.Drawing.Size(40, 40);
             this.Vnt01.State = Helper.CompVentil.CompVentilState.Open;
@@ -797,7 +865,7 @@
             // label10
             // 
             this.label10.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(712, 93);
+            this.label10.Location = new System.Drawing.Point(760, 203);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(20, 17);
             this.label10.TabIndex = 73;
@@ -812,7 +880,7 @@
             this.Txt15.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.Txt15.ForeColor = System.Drawing.Color.Yellow;
             this.Txt15.Format = "0";
-            this.Txt15.Location = new System.Drawing.Point(648, 57);
+            this.Txt15.Location = new System.Drawing.Point(696, 167);
             this.Txt15.Margin = new System.Windows.Forms.Padding(4);
             this.Txt15.Name = "Txt15";
             this.Txt15.Size = new System.Drawing.Size(59, 29);
@@ -824,7 +892,7 @@
             // label11
             // 
             this.label11.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(712, 63);
+            this.label11.Location = new System.Drawing.Point(760, 173);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(20, 17);
             this.label11.TabIndex = 71;
@@ -839,7 +907,7 @@
             this.Txt16.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.Txt16.ForeColor = System.Drawing.Color.White;
             this.Txt16.Format = "0";
-            this.Txt16.Location = new System.Drawing.Point(648, 87);
+            this.Txt16.Location = new System.Drawing.Point(696, 197);
             this.Txt16.Margin = new System.Windows.Forms.Padding(4);
             this.Txt16.Name = "Txt16";
             this.Txt16.Size = new System.Drawing.Size(59, 29);
@@ -847,11 +915,12 @@
             this.Txt16.Text = "100";
             this.Txt16.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
             this.Txt16.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.Setpoint;
+            this.Txt16.TextChanged += new System.EventHandler(this.Txt16_TextChanged);
             // 
             // label12
             // 
             this.label12.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(168, 236);
+            this.label12.Location = new System.Drawing.Point(176, 225);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(20, 17);
             this.label12.TabIndex = 77;
@@ -866,7 +935,7 @@
             this.Txt11.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.Txt11.ForeColor = System.Drawing.Color.Yellow;
             this.Txt11.Format = "0";
-            this.Txt11.Location = new System.Drawing.Point(104, 200);
+            this.Txt11.Location = new System.Drawing.Point(112, 189);
             this.Txt11.Margin = new System.Windows.Forms.Padding(4);
             this.Txt11.Name = "Txt11";
             this.Txt11.Size = new System.Drawing.Size(59, 29);
@@ -878,7 +947,7 @@
             // label13
             // 
             this.label13.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(168, 206);
+            this.label13.Location = new System.Drawing.Point(176, 195);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(20, 17);
             this.label13.TabIndex = 75;
@@ -893,7 +962,7 @@
             this.Txt12.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.Txt12.ForeColor = System.Drawing.Color.White;
             this.Txt12.Format = "0";
-            this.Txt12.Location = new System.Drawing.Point(104, 230);
+            this.Txt12.Location = new System.Drawing.Point(112, 219);
             this.Txt12.Margin = new System.Windows.Forms.Padding(4);
             this.Txt12.Name = "Txt12";
             this.Txt12.Size = new System.Drawing.Size(59, 29);
@@ -910,7 +979,7 @@
             this.Txt05.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.Txt05.ForeColor = System.Drawing.Color.Yellow;
             this.Txt05.Format = "0.00";
-            this.Txt05.Location = new System.Drawing.Point(292, 375);
+            this.Txt05.Location = new System.Drawing.Point(298, 375);
             this.Txt05.Margin = new System.Windows.Forms.Padding(4);
             this.Txt05.Name = "Txt05";
             this.Txt05.Size = new System.Drawing.Size(59, 29);
@@ -927,7 +996,7 @@
             this.Txt03.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.Txt03.ForeColor = System.Drawing.Color.Yellow;
             this.Txt03.Format = "0.00";
-            this.Txt03.Location = new System.Drawing.Point(162, 375);
+            this.Txt03.Location = new System.Drawing.Point(170, 375);
             this.Txt03.Margin = new System.Windows.Forms.Padding(4);
             this.Txt03.Name = "Txt03";
             this.Txt03.Size = new System.Drawing.Size(59, 29);
@@ -942,9 +1011,9 @@
             this.Pip09.ColorFlowOff = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.Pip09.ColorFlowOn = System.Drawing.Color.Yellow;
             this.Pip09.Flow = Helper.CompPipe.CompPipeFlow.FlowOff;
-            this.Pip09.Location = new System.Drawing.Point(478, 385);
+            this.Pip09.Location = new System.Drawing.Point(478, 395);
             this.Pip09.Name = "Pip09";
-            this.Pip09.Size = new System.Drawing.Size(6, 158);
+            this.Pip09.Size = new System.Drawing.Size(6, 213);
             this.Pip09.TabIndex = 80;
             this.Pip09.TabStop = false;
             // 
@@ -970,9 +1039,9 @@
             this.Vnt04.ColorClose = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.Vnt04.ColorOpen = System.Drawing.Color.Yellow;
             this.Vnt04.Direction = Helper.CompVentil.CompVentilDirection.Horizontal;
-            this.Vnt04.Location = new System.Drawing.Point(491, 351);
+            this.Vnt04.Location = new System.Drawing.Point(499, 359);
             this.Vnt04.Name = "Vnt04";
-            this.Vnt04.Size = new System.Drawing.Size(50, 50);
+            this.Vnt04.Size = new System.Drawing.Size(40, 40);
             this.Vnt04.State = Helper.CompVentil.CompVentilState.Close;
             this.Vnt04.TabIndex = 82;
             this.Vnt04.TabStop = false;
@@ -985,7 +1054,7 @@
             this.Txt07.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.Txt07.ForeColor = System.Drawing.Color.Yellow;
             this.Txt07.Format = "0.00";
-            this.Txt07.Location = new System.Drawing.Point(549, 375);
+            this.Txt07.Location = new System.Drawing.Point(555, 375);
             this.Txt07.Margin = new System.Windows.Forms.Padding(4);
             this.Txt07.Name = "Txt07";
             this.Txt07.Size = new System.Drawing.Size(59, 29);
@@ -999,7 +1068,7 @@
             this.Vnt05.ColorClose = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.Vnt05.ColorOpen = System.Drawing.Color.Yellow;
             this.Vnt05.Direction = Helper.CompVentil.CompVentilDirection.Vertical;
-            this.Vnt05.Location = new System.Drawing.Point(587, 296);
+            this.Vnt05.Location = new System.Drawing.Point(596, 305);
             this.Vnt05.Name = "Vnt05";
             this.Vnt05.Size = new System.Drawing.Size(40, 40);
             this.Vnt05.State = Helper.CompVentil.CompVentilState.Close;
@@ -1012,9 +1081,9 @@
             this.Pip11.ColorFlowOff = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.Pip11.ColorFlowOn = System.Drawing.Color.Yellow;
             this.Pip11.Flow = Helper.CompPipe.CompPipeFlow.FlowOff;
-            this.Pip11.Location = new System.Drawing.Point(480, 539);
+            this.Pip11.Location = new System.Drawing.Point(478, 602);
             this.Pip11.Name = "Pip11";
-            this.Pip11.Size = new System.Drawing.Size(315, 6);
+            this.Pip11.Size = new System.Drawing.Size(367, 6);
             this.Pip11.TabIndex = 85;
             this.Pip11.TabStop = false;
             // 
@@ -1026,7 +1095,7 @@
             this.Txt20.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.Txt20.ForeColor = System.Drawing.Color.Yellow;
             this.Txt20.Format = "0.00";
-            this.Txt20.Location = new System.Drawing.Point(490, 528);
+            this.Txt20.Location = new System.Drawing.Point(490, 591);
             this.Txt20.Margin = new System.Windows.Forms.Padding(4);
             this.Txt20.Name = "Txt20";
             this.Txt20.Size = new System.Drawing.Size(59, 29);
@@ -1043,7 +1112,7 @@
             this.Txt21.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.Txt21.ForeColor = System.Drawing.Color.Yellow;
             this.Txt21.Format = null;
-            this.Txt21.Location = new System.Drawing.Point(555, 528);
+            this.Txt21.Location = new System.Drawing.Point(555, 591);
             this.Txt21.Name = "Txt21";
             this.Txt21.Size = new System.Drawing.Size(59, 29);
             this.Txt21.TabIndex = 86;
@@ -1056,7 +1125,7 @@
             this.Vnt09.ColorClose = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.Vnt09.ColorOpen = System.Drawing.Color.Yellow;
             this.Vnt09.Direction = Helper.CompVentil.CompVentilDirection.Horizontal;
-            this.Vnt09.Location = new System.Drawing.Point(623, 511);
+            this.Vnt09.Location = new System.Drawing.Point(641, 574);
             this.Vnt09.Name = "Vnt09";
             this.Vnt09.Size = new System.Drawing.Size(40, 40);
             this.Vnt09.State = Helper.CompVentil.CompVentilState.Close;
@@ -1068,7 +1137,7 @@
             this.Vnt08.ColorClose = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.Vnt08.ColorOpen = System.Drawing.Color.Yellow;
             this.Vnt08.Direction = Helper.CompVentil.CompVentilDirection.Vertical;
-            this.Vnt08.Location = new System.Drawing.Point(644, 446);
+            this.Vnt08.Location = new System.Drawing.Point(695, 518);
             this.Vnt08.Name = "Vnt08";
             this.Vnt08.Size = new System.Drawing.Size(40, 40);
             this.Vnt08.State = Helper.CompVentil.CompVentilState.Close;
@@ -1081,9 +1150,9 @@
             this.Pip15.ColorFlowOff = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.Pip15.ColorFlowOn = System.Drawing.Color.Yellow;
             this.Pip15.Flow = Helper.CompPipe.CompPipeFlow.FlowOff;
-            this.Pip15.Location = new System.Drawing.Point(671, 422);
+            this.Pip15.Location = new System.Drawing.Point(722, 500);
             this.Pip15.Name = "Pip15";
-            this.Pip15.Size = new System.Drawing.Size(6, 123);
+            this.Pip15.Size = new System.Drawing.Size(6, 108);
             this.Pip15.TabIndex = 89;
             this.Pip15.TabStop = false;
             // 
@@ -1092,7 +1161,7 @@
             this.Vnt10.ColorClose = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.Vnt10.ColorOpen = System.Drawing.Color.Yellow;
             this.Vnt10.Direction = Helper.CompVentil.CompVentilDirection.Horizontal;
-            this.Vnt10.Location = new System.Drawing.Point(688, 511);
+            this.Vnt10.Location = new System.Drawing.Point(769, 574);
             this.Vnt10.Name = "Vnt10";
             this.Vnt10.Size = new System.Drawing.Size(40, 40);
             this.Vnt10.State = Helper.CompVentil.CompVentilState.Close;
@@ -1105,9 +1174,9 @@
             this.Pip14.ColorFlowOff = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.Pip14.ColorFlowOn = System.Drawing.Color.Yellow;
             this.Pip14.Flow = Helper.CompPipe.CompPipeFlow.FlowOff;
-            this.Pip14.Location = new System.Drawing.Point(853, 291);
+            this.Pip14.Location = new System.Drawing.Point(845, 290);
             this.Pip14.Name = "Pip14";
-            this.Pip14.Size = new System.Drawing.Size(6, 254);
+            this.Pip14.Size = new System.Drawing.Size(6, 318);
             this.Pip14.TabIndex = 92;
             this.Pip14.TabStop = false;
             // 
@@ -1116,9 +1185,9 @@
             this.Vnt06.ColorClose = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.Vnt06.ColorOpen = System.Drawing.Color.Yellow;
             this.Vnt06.Direction = Helper.CompVentil.CompVentilDirection.Horizontal;
-            this.Vnt06.Location = new System.Drawing.Point(628, 351);
+            this.Vnt06.Location = new System.Drawing.Point(641, 359);
             this.Vnt06.Name = "Vnt06";
-            this.Vnt06.Size = new System.Drawing.Size(50, 50);
+            this.Vnt06.Size = new System.Drawing.Size(40, 40);
             this.Vnt06.State = Helper.CompVentil.CompVentilState.Close;
             this.Vnt06.TabIndex = 93;
             this.Vnt06.TabStop = false;
@@ -1131,7 +1200,7 @@
             this.Txt08.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.Txt08.ForeColor = System.Drawing.Color.Yellow;
             this.Txt08.Format = "0.00";
-            this.Txt08.Location = new System.Drawing.Point(685, 375);
+            this.Txt08.Location = new System.Drawing.Point(696, 375);
             this.Txt08.Margin = new System.Windows.Forms.Padding(4);
             this.Txt08.Name = "Txt08";
             this.Txt08.Size = new System.Drawing.Size(59, 29);
@@ -1145,9 +1214,9 @@
             this.Vnt07.ColorClose = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.Vnt07.ColorOpen = System.Drawing.Color.Yellow;
             this.Vnt07.Direction = Helper.CompVentil.CompVentilDirection.Horizontal;
-            this.Vnt07.Location = new System.Drawing.Point(751, 351);
+            this.Vnt07.Location = new System.Drawing.Point(769, 359);
             this.Vnt07.Name = "Vnt07";
-            this.Vnt07.Size = new System.Drawing.Size(50, 50);
+            this.Vnt07.Size = new System.Drawing.Size(40, 40);
             this.Vnt07.State = Helper.CompVentil.CompVentilState.Close;
             this.Vnt07.TabIndex = 95;
             this.Vnt07.TabStop = false;
@@ -1155,9 +1224,9 @@
             // label14
             // 
             this.label14.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(809, 444);
+            this.label14.Location = new System.Drawing.Point(824, 441);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(20, 17);
+            this.label14.Size = new System.Drawing.Size(12, 17);
             this.label14.TabIndex = 99;
             this.label14.Text = "%";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1170,7 +1239,7 @@
             this.Txt18.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.Txt18.ForeColor = System.Drawing.Color.Yellow;
             this.Txt18.Format = "0";
-            this.Txt18.Location = new System.Drawing.Point(745, 408);
+            this.Txt18.Location = new System.Drawing.Point(760, 405);
             this.Txt18.Margin = new System.Windows.Forms.Padding(4);
             this.Txt18.Name = "Txt18";
             this.Txt18.Size = new System.Drawing.Size(59, 29);
@@ -1182,9 +1251,9 @@
             // label15
             // 
             this.label15.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(809, 414);
+            this.label15.Location = new System.Drawing.Point(824, 411);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(20, 17);
+            this.label15.Size = new System.Drawing.Size(12, 17);
             this.label15.TabIndex = 97;
             this.label15.Text = "%";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1197,7 +1266,7 @@
             this.Txt19.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.Txt19.ForeColor = System.Drawing.Color.White;
             this.Txt19.Format = "0";
-            this.Txt19.Location = new System.Drawing.Point(745, 438);
+            this.Txt19.Location = new System.Drawing.Point(760, 435);
             this.Txt19.Margin = new System.Windows.Forms.Padding(4);
             this.Txt19.Name = "Txt19";
             this.Txt19.Size = new System.Drawing.Size(59, 29);
@@ -1238,19 +1307,581 @@
             // 
             // progressBar1
             // 
+            this.progressBar1.ForeColor = System.Drawing.Color.Lime;
             this.progressBar1.Location = new System.Drawing.Point(11, 670);
             this.progressBar1.Margin = new System.Windows.Forms.Padding(4);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(77, 13);
             this.progressBar1.Step = 1;
             this.progressBar1.TabIndex = 102;
+            this.progressBar1.Value = 50;
+            // 
+            // compArrow1
+            // 
+            this.compArrow1.BackColor = System.Drawing.Color.Transparent;
+            this.compArrow1.ColorArrow = System.Drawing.Color.Blue;
+            this.compArrow1.Direction = Helper.CompArrow.CompArrowDirection.Right;
+            this.compArrow1.Location = new System.Drawing.Point(7, 126);
+            this.compArrow1.Name = "compArrow1";
+            this.compArrow1.Size = new System.Drawing.Size(42, 57);
+            this.compArrow1.TabIndex = 103;
+            this.compArrow1.TabStop = false;
+            this.compArrow1.Click += new System.EventHandler(this.compArrow1_Click);
+            // 
+            // label17
+            // 
+            this.label17.Location = new System.Drawing.Point(170, 409);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(59, 17);
+            this.label17.TabIndex = 105;
+            this.label17.Text = "barg";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // compArrow2
+            // 
+            this.compArrow2.BackColor = System.Drawing.Color.Transparent;
+            this.compArrow2.ColorArrow = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.compArrow2.Direction = Helper.CompArrow.CompArrowDirection.Right;
+            this.compArrow2.Location = new System.Drawing.Point(7, 362);
+            this.compArrow2.Name = "compArrow2";
+            this.compArrow2.Size = new System.Drawing.Size(42, 57);
+            this.compArrow2.TabIndex = 106;
+            this.compArrow2.TabStop = false;
+            // 
+            // label18
+            // 
+            this.label18.Location = new System.Drawing.Point(234, 409);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(59, 17);
+            this.label18.TabIndex = 107;
+            this.label18.Text = "Nm³/h";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label19
+            // 
+            this.label19.Location = new System.Drawing.Point(298, 409);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(59, 17);
+            this.label19.TabIndex = 108;
+            this.label19.Text = "barg";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label20
+            // 
+            this.label20.Location = new System.Drawing.Point(54, 409);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(59, 17);
+            this.label20.TabIndex = 109;
+            this.label20.Text = "barg";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label21
+            // 
+            this.label21.Location = new System.Drawing.Point(112, 343);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(59, 17);
+            this.label21.TabIndex = 110;
+            this.label21.Text = "barg";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // compPipe1
+            // 
+            this.compPipe1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.compPipe1.ColorFlowOff = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.compPipe1.ColorFlowOn = System.Drawing.Color.Yellow;
+            this.compPipe1.Flow = Helper.CompPipe.CompPipeFlow.FlowOff;
+            this.compPipe1.Location = new System.Drawing.Point(845, 290);
+            this.compPipe1.Name = "compPipe1";
+            this.compPipe1.Size = new System.Drawing.Size(36, 6);
+            this.compPipe1.TabIndex = 111;
+            this.compPipe1.TabStop = false;
+            this.compPipe1.Click += new System.EventHandler(this.compPipe1_Click);
+            // 
+            // compArrow3
+            // 
+            this.compArrow3.BackColor = System.Drawing.Color.Transparent;
+            this.compArrow3.ColorArrow = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.compArrow3.Direction = Helper.CompArrow.CompArrowDirection.Top;
+            this.compArrow3.Location = new System.Drawing.Point(613, 258);
+            this.compArrow3.Name = "compArrow3";
+            this.compArrow3.Size = new System.Drawing.Size(29, 29);
+            this.compArrow3.TabIndex = 112;
+            this.compArrow3.TabStop = false;
+            this.compArrow3.Click += new System.EventHandler(this.compArrow3_Click);
+            // 
+            // compArrow4
+            // 
+            this.compArrow4.BackColor = System.Drawing.Color.Transparent;
+            this.compArrow4.ColorArrow = System.Drawing.Color.Blue;
+            this.compArrow4.Direction = Helper.CompArrow.CompArrowDirection.Top;
+            this.compArrow4.Location = new System.Drawing.Point(929, 592);
+            this.compArrow4.Name = "compArrow4";
+            this.compArrow4.Size = new System.Drawing.Size(57, 57);
+            this.compArrow4.TabIndex = 113;
+            this.compArrow4.TabStop = false;
+            // 
+            // compArrow5
+            // 
+            this.compArrow5.BackColor = System.Drawing.Color.Transparent;
+            this.compArrow5.ColorArrow = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.compArrow5.Direction = Helper.CompArrow.CompArrowDirection.Top;
+            this.compArrow5.Location = new System.Drawing.Point(711, 471);
+            this.compArrow5.Name = "compArrow5";
+            this.compArrow5.Size = new System.Drawing.Size(29, 29);
+            this.compArrow5.TabIndex = 114;
+            this.compArrow5.TabStop = false;
+            // 
+            // label22
+            // 
+            this.label22.Location = new System.Drawing.Point(413, 409);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(59, 17);
+            this.label22.TabIndex = 122;
+            this.label22.Text = "barg";
+            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label23
+            // 
+            this.label23.Location = new System.Drawing.Point(555, 409);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(59, 17);
+            this.label23.TabIndex = 123;
+            this.label23.Text = "barg";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label24
+            // 
+            this.label24.Location = new System.Drawing.Point(696, 409);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(59, 17);
+            this.label24.TabIndex = 124;
+            this.label24.Text = "barg";
+            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // compTxtBox1
+            // 
+            this.compTxtBox1.BackColor = System.Drawing.Color.Black;
+            this.compTxtBox1.Enabled = false;
+            this.compTxtBox1.Error = false;
+            this.compTxtBox1.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
+            this.compTxtBox1.ForeColor = System.Drawing.Color.Yellow;
+            this.compTxtBox1.Format = "0.0";
+            this.compTxtBox1.Location = new System.Drawing.Point(234, 140);
+            this.compTxtBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.compTxtBox1.Name = "compTxtBox1";
+            this.compTxtBox1.Size = new System.Drawing.Size(59, 29);
+            this.compTxtBox1.TabIndex = 125;
+            this.compTxtBox1.Text = "0,0";
+            this.compTxtBox1.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
+            this.compTxtBox1.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
+            // 
+            // label25
+            // 
+            this.label25.Location = new System.Drawing.Point(234, 174);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(59, 17);
+            this.label25.TabIndex = 126;
+            this.label25.Text = "mbar";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label16
+            // 
+            this.label16.BackColor = System.Drawing.Color.Khaki;
+            this.label16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label16.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(234, 118);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(59, 17);
+            this.label16.TabIndex = 127;
+            this.label16.Text = "PDI2628";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label26
+            // 
+            this.label26.BackColor = System.Drawing.Color.Khaki;
+            this.label26.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label26.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(170, 355);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(59, 17);
+            this.label26.TabIndex = 128;
+            this.label26.Text = "PI2681";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label27
+            // 
+            this.label27.BackColor = System.Drawing.Color.Khaki;
+            this.label27.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label27.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(234, 355);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(59, 17);
+            this.label27.TabIndex = 129;
+            this.label27.Text = "FI2680";
+            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label28
+            // 
+            this.label28.BackColor = System.Drawing.Color.Khaki;
+            this.label28.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label28.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(298, 355);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(59, 17);
+            this.label28.TabIndex = 130;
+            this.label28.Text = "PI2685";
+            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label30
+            // 
+            this.label30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label30.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label30.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.ForeColor = System.Drawing.Color.White;
+            this.label30.Location = new System.Drawing.Point(7, 434);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(85, 38);
+            this.label30.TabIndex = 132;
+            this.label30.Text = "Fuel\n\rGas";
+            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label31
+            // 
+            this.label31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label31.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label31.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.ForeColor = System.Drawing.Color.White;
+            this.label31.Location = new System.Drawing.Point(524, 253);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(85, 38);
+            this.label31.TabIndex = 133;
+            this.label31.Text = "Ventilation\r\nAir";
+            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label31.Click += new System.EventHandler(this.label31_Click);
+            // 
+            // label29
+            // 
+            this.label29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label29.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label29.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.ForeColor = System.Drawing.Color.White;
+            this.label29.Location = new System.Drawing.Point(622, 466);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(85, 38);
+            this.label29.TabIndex = 134;
+            this.label29.Text = "Ventilation\r\nAir";
+            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label29.Click += new System.EventHandler(this.label29_Click);
+            // 
+            // label32
+            // 
+            this.label32.BackColor = System.Drawing.Color.Blue;
+            this.label32.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label32.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.ForeColor = System.Drawing.Color.White;
+            this.label32.Location = new System.Drawing.Point(7, 198);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(85, 38);
+            this.label32.TabIndex = 135;
+            this.label32.Text = "Combustion\r\nAir";
+            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label33
+            // 
+            this.label33.BackColor = System.Drawing.Color.Blue;
+            this.label33.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label33.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.ForeColor = System.Drawing.Color.White;
+            this.label33.Location = new System.Drawing.Point(915, 656);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(85, 38);
+            this.label33.TabIndex = 136;
+            this.label33.Text = "Instrument\r\nAir";
+            this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label34
+            // 
+            this.label34.BackColor = System.Drawing.Color.Khaki;
+            this.label34.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label34.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Location = new System.Drawing.Point(356, 102);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(59, 17);
+            this.label34.TabIndex = 137;
+            this.label34.Text = "TV26198";
+            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label35
+            // 
+            this.label35.BackColor = System.Drawing.Color.Khaki;
+            this.label35.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label35.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Location = new System.Drawing.Point(696, 100);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(59, 17);
+            this.label35.TabIndex = 138;
+            this.label35.Text = "TV2619C";
+            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // compVan1
+            // 
+            this.compVan1.ColorVan = System.Drawing.Color.Blue;
+            this.compVan1.Direction = Helper.CompVan.CompVanDirection.Right;
+            this.compVan1.Location = new System.Drawing.Point(112, 125);
+            this.compVan1.Name = "compVan1";
+            this.compVan1.Size = new System.Drawing.Size(59, 59);
+            this.compVan1.TabIndex = 139;
+            this.compVan1.TabStop = false;
+            // 
+            // label36
+            // 
+            this.label36.BackColor = System.Drawing.Color.Red;
+            this.label36.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label36.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.ForeColor = System.Drawing.Color.White;
+            this.label36.Location = new System.Drawing.Point(7, 709);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(1004, 29);
+            this.label36.TabIndex = 2;
+            this.label36.Text = "10.12.2014 12:00:00 | Fehlermeldung";
+            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label37
+            // 
+            this.label37.BackColor = System.Drawing.Color.Khaki;
+            this.label37.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label37.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.Location = new System.Drawing.Point(54, 355);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(59, 17);
+            this.label37.TabIndex = 140;
+            this.label37.Text = "PI2680";
+            this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label38
+            // 
+            this.label38.BackColor = System.Drawing.Color.Khaki;
+            this.label38.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label38.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.Location = new System.Drawing.Point(112, 290);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(59, 17);
+            this.label38.TabIndex = 141;
+            this.label38.Text = "PDA2680";
+            this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label39
+            // 
+            this.label39.BackColor = System.Drawing.Color.Khaki;
+            this.label39.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label39.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.Location = new System.Drawing.Point(413, 355);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(59, 17);
+            this.label39.TabIndex = 142;
+            this.label39.Text = "PI2636";
+            this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label40
+            // 
+            this.label40.BackColor = System.Drawing.Color.Khaki;
+            this.label40.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label40.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.Location = new System.Drawing.Point(112, 104);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(59, 17);
+            this.label40.TabIndex = 143;
+            this.label40.Text = "KZ0001A";
+            this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label41
+            // 
+            this.label41.BackColor = System.Drawing.Color.Khaki;
+            this.label41.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label41.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.Location = new System.Drawing.Point(555, 355);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(59, 17);
+            this.label41.TabIndex = 144;
+            this.label41.Text = "PI2610";
+            this.label41.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label42
+            // 
+            this.label42.BackColor = System.Drawing.Color.Khaki;
+            this.label42.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label42.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.Location = new System.Drawing.Point(696, 355);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(59, 17);
+            this.label42.TabIndex = 145;
+            this.label42.Text = "PI2611";
+            this.label42.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label43
+            // 
+            this.label43.BackColor = System.Drawing.Color.Khaki;
+            this.label43.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label43.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Location = new System.Drawing.Point(490, 571);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(59, 17);
+            this.label43.TabIndex = 146;
+            this.label43.Text = "PI2644";
+            this.label43.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label44
+            // 
+            this.label44.BackColor = System.Drawing.Color.Khaki;
+            this.label44.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label44.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.Location = new System.Drawing.Point(555, 571);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(59, 17);
+            this.label44.TabIndex = 147;
+            this.label44.Text = "PI2638";
+            this.label44.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label45
+            // 
+            this.label45.BackColor = System.Drawing.Color.Blue;
+            this.label45.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label45.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label45.ForeColor = System.Drawing.Color.White;
+            this.label45.Location = new System.Drawing.Point(856, 549);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(85, 38);
+            this.label45.TabIndex = 148;
+            this.label45.Text = "From\r\nBlower";
+            this.label45.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // compPipe2
+            // 
+            this.compPipe2.BackColor = System.Drawing.Color.Blue;
+            this.compPipe2.ColorFlowOff = System.Drawing.Color.Blue;
+            this.compPipe2.ColorFlowOn = System.Drawing.Color.Aqua;
+            this.compPipe2.Flow = Helper.CompPipe.CompPipeFlow.FlowOff;
+            this.compPipe2.Location = new System.Drawing.Point(894, 443);
+            this.compPipe2.Name = "compPipe2";
+            this.compPipe2.Size = new System.Drawing.Size(9, 37);
+            this.compPipe2.TabIndex = 149;
+            this.compPipe2.TabStop = false;
+            // 
+            // compArrow6
+            // 
+            this.compArrow6.BackColor = System.Drawing.Color.Transparent;
+            this.compArrow6.ColorArrow = System.Drawing.Color.Blue;
+            this.compArrow6.Direction = Helper.CompArrow.CompArrowDirection.Top;
+            this.compArrow6.Location = new System.Drawing.Point(870, 480);
+            this.compArrow6.Name = "compArrow6";
+            this.compArrow6.Size = new System.Drawing.Size(57, 57);
+            this.compArrow6.TabIndex = 150;
+            this.compArrow6.TabStop = false;
+            // 
+            // compPipe3
+            // 
+            this.compPipe3.BackColor = System.Drawing.Color.Blue;
+            this.compPipe3.ColorFlowOff = System.Drawing.Color.Blue;
+            this.compPipe3.ColorFlowOn = System.Drawing.Color.Aqua;
+            this.compPipe3.Flow = Helper.CompPipe.CompPipeFlow.FlowOff;
+            this.compPipe3.Location = new System.Drawing.Point(894, 435);
+            this.compPipe3.Name = "compPipe3";
+            this.compPipe3.Size = new System.Drawing.Size(65, 10);
+            this.compPipe3.TabIndex = 151;
+            this.compPipe3.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DimGray;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.label48);
+            this.panel1.Controls.Add(this.label49);
+            this.panel1.Controls.Add(this.compTxtBox3);
+            this.panel1.Controls.Add(this.label47);
+            this.panel1.Controls.Add(this.label46);
+            this.panel1.Controls.Add(this.compTxtBox2);
+            this.panel1.Location = new System.Drawing.Point(857, 75);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(144, 233);
+            this.panel1.TabIndex = 153;
+            // 
+            // compTxtBox2
+            // 
+            this.compTxtBox2.BackColor = System.Drawing.Color.Black;
+            this.compTxtBox2.Enabled = false;
+            this.compTxtBox2.Error = false;
+            this.compTxtBox2.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
+            this.compTxtBox2.ForeColor = System.Drawing.Color.Yellow;
+            this.compTxtBox2.Format = "0";
+            this.compTxtBox2.Location = new System.Drawing.Point(76, 98);
+            this.compTxtBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.compTxtBox2.Name = "compTxtBox2";
+            this.compTxtBox2.Size = new System.Drawing.Size(59, 29);
+            this.compTxtBox2.TabIndex = 153;
+            this.compTxtBox2.Text = "0";
+            this.compTxtBox2.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
+            this.compTxtBox2.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
+            // 
+            // label46
+            // 
+            this.label46.Location = new System.Drawing.Point(76, 132);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(59, 17);
+            this.label46.TabIndex = 154;
+            this.label46.Text = "%";
+            this.label46.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label47
+            // 
+            this.label47.Location = new System.Drawing.Point(76, 76);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(59, 17);
+            this.label47.TabIndex = 155;
+            this.label47.Text = "TIC";
+            this.label47.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label48
+            // 
+            this.label48.Location = new System.Drawing.Point(10, 76);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(59, 17);
+            this.label48.TabIndex = 158;
+            this.label48.Text = "LOAD";
+            this.label48.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label49
+            // 
+            this.label49.Location = new System.Drawing.Point(10, 132);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(59, 17);
+            this.label49.TabIndex = 157;
+            this.label49.Text = "kW";
+            this.label49.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // compTxtBox3
+            // 
+            this.compTxtBox3.BackColor = System.Drawing.Color.Black;
+            this.compTxtBox3.Enabled = false;
+            this.compTxtBox3.Error = false;
+            this.compTxtBox3.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
+            this.compTxtBox3.ForeColor = System.Drawing.Color.Yellow;
+            this.compTxtBox3.Format = "0";
+            this.compTxtBox3.Location = new System.Drawing.Point(10, 98);
+            this.compTxtBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.compTxtBox3.Name = "compTxtBox3";
+            this.compTxtBox3.Size = new System.Drawing.Size(59, 29);
+            this.compTxtBox3.TabIndex = 156;
+            this.compTxtBox3.Text = "0";
+            this.compTxtBox3.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
+            this.compTxtBox3.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1565, 741);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label36);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1258,7 +1889,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Controls.SetChildIndex(this.GbxMenu, 0);
             this.Controls.SetChildIndex(this.GbxOutput, 0);
-            this.Controls.SetChildIndex(this.panel1, 0);
+            this.Controls.SetChildIndex(this.label36, 0);
             ((System.ComponentModel.ISupportInitialize)(this.BtnClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnKeyboard)).EndInit();
             this.GbxMenu.ResumeLayout(false);
@@ -1279,9 +1910,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnStartPlc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pip01)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pip04)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pip06)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pip03)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pip05)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pip13)).EndInit();
@@ -1303,6 +1932,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.Vnt06)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Vnt07)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnStoppPlc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compArrow1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compArrow2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compPipe1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compArrow3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compArrow4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compArrow5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compVan1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compPipe2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compArrow6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compPipe3)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1321,7 +1962,6 @@
         private Helper.CompLedRectangle Led03;
         private System.Windows.Forms.Label label2;
         private Helper.CompLedRectangle Led02;
-        private System.Windows.Forms.Panel panel1;
         private Helper.CompBitButton bitButton2;
         private Helper.CompPipe Pip07;
         private Helper.CompPipe Pip02;
@@ -1331,12 +1971,10 @@
         private System.Windows.Forms.Label label7;
         private Helper.CompTxtBox Txt01;
         private Helper.CompTxtBox Txt14;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private Helper.CompPipe Pip04;
         private Helper.CompPipe Pip01;
         private Helper.CompTxtBox Txt17;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private Helper.CompPipe Pip06;
         private Helper.CompPipe Pip03;
         private Helper.CompTxtBox Txt10;
@@ -1386,6 +2024,54 @@
         private Helper.CompBitButton BtnStoppPlc;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label lblStatus;
+        private Helper.CompArrow compArrow1;
+        private System.Windows.Forms.Label label17;
+        private Helper.CompArrow compArrow2;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private Helper.CompPipe compPipe1;
+        private Helper.CompArrow compArrow3;
+        private Helper.CompArrow compArrow4;
+        private Helper.CompArrow compArrow5;
+        private System.Windows.Forms.Label label25;
+        private Helper.CompTxtBox compTxtBox1;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label35;
+        private Helper.CompVan compVan1;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label label40;
+        private Helper.CompArrow compArrow6;
+        private Helper.CompPipe compPipe2;
+        private System.Windows.Forms.Label label45;
+        private Helper.CompPipe compPipe3;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Label label49;
+        private Helper.CompTxtBox compTxtBox3;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Label label46;
+        private Helper.CompTxtBox compTxtBox2;
     }
 }
 

@@ -311,5 +311,60 @@ namespace ClassDevelopment
             Glb_Plc.StoppRead();
         }
 
+        private void compArrow1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Pip02_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Pip10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Pip13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void compPipe1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void compArrow3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Txt16_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label31_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label29_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
