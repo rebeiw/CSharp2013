@@ -15,6 +15,7 @@ namespace ClassDevelopment
 {
     public partial class FrmMain : Helper.FrmVorlageMenu
     {
+
         private ClsSingeltonVariablesCollecter m_varCollect;
 
         private ClsSingeltonDataBinding m_dataBinding;
@@ -27,6 +28,9 @@ namespace ClassDevelopment
 
         public FrmMain()
         {
+
+            GlobalVar.Glb_SQLConnecton = "Data Source=Daten.db";
+
             FuncGeneral.Start();
             FrmHeater = new FrmHeater();
 

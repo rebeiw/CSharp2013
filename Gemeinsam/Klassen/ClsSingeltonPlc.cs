@@ -51,6 +51,8 @@ namespace Helper
 
         private Hashtable m_InfoThread;
 
+        private int m_PlcState;
+
 
         private List<string> m_Value;
 
@@ -153,7 +155,16 @@ namespace Helper
                 this.m_BackgroundWorkerPlcRead.ReportProgress(1);
                 int anz = Convert.ToInt32(this.m_DatabasesInfo[dbNr]);
                 Array.Resize(ref this.m_DatenBytes, anz);
-                int retval = this.m_Dc.readManyBytes(libnodave.daveDB, dbNr, 0, anz, this.m_DatenBytes);
+                int retval = 0;
+                if(this.m_PlcState==0)
+                {
+                    retval = this.m_Dc.readManyBytes(libnodave.daveDB, dbNr, 0, anz, this.m_DatenBytes);
+                }
+                else
+                {
+                    Thread.Sleep(500);
+                    this.InitPLC();
+                }
                 if(retval<0)
                 {
                     Thread.Sleep(500);
@@ -311,20 +322,18 @@ namespace Helper
 
         public void StartRead()
         {
-            int retval = 0;
             this.m_FlagGoOn = true;
             this.ButtonVisibleOnOff(this.m_BtnStart, false);
             this.ButtonVisibleOnOff(this.m_BtnStopp, true);
             do
             {
-                retval=this.InitPLC();
-            } while (retval < 0);
+                this.InitPLC();
+            } while (this.m_PlcState < 0);
             this.m_TimerRead.Enabled = true;
         }
 
-        private int InitPLC()
+        private void InitPLC()
         {
-            int retval = 0;
             this.DeletePLC();
             this.m_Fds.rfd = libnodave.openSocket(102, this.m_IP);
             this.m_Fds.wfd = this.m_Fds.rfd;
@@ -332,8 +341,7 @@ namespace Helper
             this.m_Di.setTimeout(5000);
             this.m_Dc = new libnodave.daveConnection(this.m_Di, this.m_LocalMPI, this.m_Rack, this.m_Slot);
 
-            retval = this.m_Dc.connectPLC();
-            return retval;
+            this.m_PlcState = this.m_Dc.connectPLC();
         }
 
         private void DeletePLC()

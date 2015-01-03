@@ -9,17 +9,11 @@ namespace Helper
 
     public static class FuncPLC
     {
-        public static void ReadBit(libnodave.daveConnection dc, string Adresse)
-        {
-            byte[] db51 = new byte[2];
-            int anz= db51.Count();
-            dc.readManyBytes(libnodave.daveDB, 51, 0, anz, db51);
-        }
         public static string SymbolName(object sender)
         {
             string retval = "";
             string btnType = sender.GetType().ToString();
-            if (btnType == "Helper.BitButton")
+            if (btnType == "Helper.CompBitButton")
             {
                 CompBitButton btnObj = (CompBitButton)sender;
                 retval = btnObj.Symbol;
@@ -29,11 +23,7 @@ namespace Helper
                 InputBox btnObj = (InputBox)sender;
                 retval = btnObj.Symbol;
             }
-
-
             return retval;
         }
-
-
     }
 }
