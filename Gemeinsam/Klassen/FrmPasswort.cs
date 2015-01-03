@@ -6,12 +6,14 @@ namespace Helper
     public partial class FrmPasswort : FrmVorlage
     {
         ClsSingeltonFormularManager frm_mng;
+        ClsSingeltonLanguage m_Language;
 
         public FrmPasswort()
         {
             InitializeComponent();
-            frm_mng = ClsSingeltonFormularManager.CreateInstance();
-            frm_mng.FormularAdd(this, this.Name.ToString());
+            this.frm_mng = ClsSingeltonFormularManager.CreateInstance(this, this.Name.ToString());
+            this.m_Language = ClsSingeltonLanguage.CreateInstance();
+            this.m_Language.AddAllComponents(this);
         }
 
         private void FRM_Password_Deactivate(object sender, EventArgs e)
@@ -46,7 +48,7 @@ namespace Helper
             }
         }
 
-        private void Frm_Passwort_Load(object sender, EventArgs e)
+        private void FrmPasswort_Load(object sender, EventArgs e)
         {
 
         }

@@ -106,6 +106,7 @@
             this.Name = "FrmProgEnd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Programm beenden";
+            this.Load += new System.EventHandler(this.FrmProgEnd_Load);
             this.GbxOutput.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.BtnOk)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCancel)).EndInit();

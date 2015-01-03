@@ -5,7 +5,8 @@ namespace Helper
     public partial class FrmLanguage : Helper.FrmVorlage
     {
 
-        ClsSingeltonFormularManager m_formularManager;//!<Instanz auf die Klasse Formularmanager
+        private ClsSingeltonFormularManager m_formularManager;//!<Instanz auf die Klasse Formularmanager
+        private ClsSingeltonLanguage m_language;//!<Instanz auf die Klasse Spracheumschaltung
 
         /** 
          * \brief Konstruktor
@@ -16,6 +17,8 @@ namespace Helper
         {
             this.InitializeComponent();
             this.m_formularManager = ClsSingeltonFormularManager.CreateInstance(this, this.Name.ToString());
+            this.m_language = ClsSingeltonLanguage.CreateInstance();
+            this.m_language.AddAllComponents(this);
         }
 
         /** 
@@ -43,7 +46,13 @@ namespace Helper
                 GlobalVar.Glb_Language = GlobalVar.Language.Sp;
             if (btn.Name == "BtnRu")
                 GlobalVar.Glb_Language = GlobalVar.Language.Ru;
+            this.m_language.SetLanguage();
             this.m_formularManager.SetLanguage();
+        }
+
+        private void FrmLanguage_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -31,5 +31,10 @@ namespace Helper
             e.Cancel = true;
             this.Hide();
         }
+
+        private void FrmVorlage_Load(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

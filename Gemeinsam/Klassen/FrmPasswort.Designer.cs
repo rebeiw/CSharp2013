@@ -121,7 +121,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Passworteingabe";
             this.Deactivate += new System.EventHandler(this.FRM_Password_Deactivate);
-            this.Load += new System.EventHandler(this.Frm_Passwort_Load);
+            this.Load += new System.EventHandler(this.FrmPasswort_Load);
             this.GB_Passwort.ResumeLayout(false);
             this.GB_Passwort.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BTN_Ok1)).EndInit();

@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Helper;
+
 
 namespace Helper
 {
@@ -17,28 +13,30 @@ namespace Helper
     {
         public string IP;
         public int Rack;
-        public int Slot;                        
-        public object ProgBar;
-        public object LblStatus;
+        public int Slot;
         public object BtnStart;
         public object BtnStopp;
+        public object LblStatus;
+        public object ProgBar;
     }
 
     public struct ClsSingeltonPlcDatas
     {
         public string Adress;
-        public int DatabaseNumber;
-        public int ByteNumber;
-        public int BitNumber;
-        public string Symbolname;
-        public string DataType;
-        public string Value;
-        public string Comment;
         public bool DataLog;
+        public int BitNumber;
+        public int ByteNumber;
+        public int DatabaseNumber;
+        public string Comment;
+        public string DataType;
+        public string Symbolname;
+        public string Value;
     }
 
     public class ClsSingeltonPlc
     {
+        private static ClsSingeltonPlc m_instance;
+
         public List<ClsSingeltonPlcDatas> m_Daten;
 
         private byte[] m_DatenBytes;
@@ -69,7 +67,6 @@ namespace Helper
 
         private System.Windows.Forms.Timer m_TimerRead;
 
-        private static ClsSingeltonPlc m_instance;
 
         private libnodave.daveOSserialType m_Fds;
         private libnodave.daveInterface m_Di;
@@ -220,7 +217,7 @@ namespace Helper
 
                             if (m_DatabasesValues.ContainsKey(searchSymbol))
                             {
-                                if (m_DatabasesValues[searchSymbol] != value)
+                                if ((string)m_DatabasesValues[searchSymbol] != value)
                                 {
                                     this.m_Value.Add(searchSymbol);
                                 }

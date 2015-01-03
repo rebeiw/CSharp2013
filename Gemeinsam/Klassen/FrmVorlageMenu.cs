@@ -21,7 +21,7 @@ namespace Helper
         }
 
 
-        private void BtnClose_Click(object sender, EventArgs e)
+        protected void BtnClose_Click(object sender, EventArgs e)
         {
             if (this.ShowClose)
             {

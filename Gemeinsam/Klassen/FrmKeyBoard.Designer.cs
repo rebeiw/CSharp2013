@@ -77,7 +77,7 @@
             this.GbxOutput.Controls.Add(this.BtnNumber7);
             this.GbxOutput.Location = new System.Drawing.Point(6, 5);
             this.GbxOutput.Size = new System.Drawing.Size(275, 266);
-            this.GbxOutput.Text = "Keyboard";
+            this.GbxOutput.Text = "";
             // 
             // BtnNumber7
             // 
@@ -295,7 +295,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmKeyBoard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Keyboard";
+            this.Text = "Tastatur";
+            this.Load += new System.EventHandler(this.FrmKeyBoard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.BtnClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnKeyboard)).EndInit();
             this.GbxMenu.ResumeLayout(false);

@@ -44,6 +44,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmVorlage";
             this.Text = "FrmVorlage";
+            this.Load += new System.EventHandler(this.FrmVorlage_Load);
             this.ResumeLayout(false);
 
         }

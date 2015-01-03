@@ -145,12 +145,14 @@
             this.compArrow6 = new Helper.CompArrow();
             this.compPipe3 = new Helper.CompPipe();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.compTxtBox2 = new Helper.CompTxtBox();
-            this.label46 = new System.Windows.Forms.Label();
-            this.label47 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
             this.label49 = new System.Windows.Forms.Label();
             this.compTxtBox3 = new Helper.CompTxtBox();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.compTxtBox2 = new Helper.CompTxtBox();
+            this.compBitButton1 = new Helper.CompBitButton();
+            this.compBitButton2 = new Helper.CompBitButton();
             ((System.ComponentModel.ISupportInitialize)(this.BtnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnKeyboard)).BeginInit();
             this.GbxMenu.SuspendLayout();
@@ -203,11 +205,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.compArrow6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.compPipe3)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.compBitButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compBitButton2)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnClose
             // 
             this.BtnClose.Enabled = false;
+            this.BtnClose.Location = new System.Drawing.Point(10, 17);
             // 
             // BtnKeyboard
             // 
@@ -223,6 +228,8 @@
             // 
             this.GbxOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
             this.GbxOutput.BackColor = System.Drawing.Color.Transparent;
+            this.GbxOutput.Controls.Add(this.compBitButton2);
+            this.GbxOutput.Controls.Add(this.compBitButton1);
             this.GbxOutput.Controls.Add(this.panel1);
             this.GbxOutput.Controls.Add(this.compPipe3);
             this.GbxOutput.Controls.Add(this.compArrow6);
@@ -343,7 +350,6 @@
             this.GbxOutput.Location = new System.Drawing.Point(5, 4);
             this.GbxOutput.Size = new System.Drawing.Size(1007, 701);
             this.GbxOutput.Text = "Heater Fuel Gas";
-            this.GbxOutput.Enter += new System.EventHandler(this.GB_Datenausgabe_Enter);
             // 
             // BtnMenu
             // 
@@ -457,7 +463,6 @@
             this.Led06.State = Helper.CompLedRectangle.CompLedState.LedOff;
             this.Led06.TabIndex = 20;
             this.Led06.TabStop = false;
-            this.Led06.Click += new System.EventHandler(this.ledRectangle6_Click);
             // 
             // bitButton2
             // 
@@ -502,7 +507,6 @@
             this.Pip02.Size = new System.Drawing.Size(106, 10);
             this.Pip02.TabIndex = 25;
             this.Pip02.TabStop = false;
-            this.Pip02.Click += new System.EventHandler(this.Pip02_Click);
             // 
             // pictureBox1
             // 
@@ -561,7 +565,6 @@
             this.Txt14.Text = "100";
             this.Txt14.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
             this.Txt14.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.Setpoint;
-            this.Txt14.TextChanged += new System.EventHandler(this.txtBox2_TextChanged);
             // 
             // Txt01
             // 
@@ -579,7 +582,6 @@
             this.Txt01.Text = "0,00";
             this.Txt01.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
             this.Txt01.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
-            this.Txt01.TextChanged += new System.EventHandler(this.txtBox3_TextChanged);
             // 
             // label7
             // 
@@ -590,7 +592,6 @@
             this.label7.TabIndex = 34;
             this.label7.Text = "%";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // Pip01
             // 
@@ -603,7 +604,6 @@
             this.Pip01.Size = new System.Drawing.Size(458, 10);
             this.Pip01.TabIndex = 35;
             this.Pip01.TabStop = false;
-            this.Pip01.Click += new System.EventHandler(this.compPipe3_Click);
             // 
             // Pip04
             // 
@@ -616,7 +616,6 @@
             this.Pip04.Size = new System.Drawing.Size(247, 6);
             this.Pip04.TabIndex = 37;
             this.Pip04.TabStop = false;
-            this.Pip04.Click += new System.EventHandler(this.compPipe4_Click);
             // 
             // Txt17
             // 
@@ -643,7 +642,6 @@
             this.label8.TabIndex = 42;
             this.label8.Text = "%";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // Pip06
             // 
@@ -656,7 +654,6 @@
             this.Pip06.Size = new System.Drawing.Size(241, 10);
             this.Pip06.TabIndex = 43;
             this.Pip06.TabStop = false;
-            this.Pip06.Click += new System.EventHandler(this.compPipe5_Click);
             // 
             // Pip03
             // 
@@ -710,7 +707,6 @@
             this.Pip13.Size = new System.Drawing.Size(54, 10);
             this.Pip13.TabIndex = 52;
             this.Pip13.TabStop = false;
-            this.Pip13.Click += new System.EventHandler(this.Pip13_Click);
             // 
             // Pip12
             // 
@@ -752,7 +748,6 @@
             this.Pip10.Size = new System.Drawing.Size(6, 108);
             this.Pip10.TabIndex = 55;
             this.Pip10.TabStop = false;
-            this.Pip10.Click += new System.EventHandler(this.Pip10_Click);
             // 
             // Txt02
             // 
@@ -915,7 +910,6 @@
             this.Txt16.Text = "100";
             this.Txt16.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
             this.Txt16.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.Setpoint;
-            this.Txt16.TextChanged += new System.EventHandler(this.Txt16_TextChanged);
             // 
             // label12
             // 
@@ -1326,7 +1320,6 @@
             this.compArrow1.Size = new System.Drawing.Size(42, 57);
             this.compArrow1.TabIndex = 103;
             this.compArrow1.TabStop = false;
-            this.compArrow1.Click += new System.EventHandler(this.compArrow1_Click);
             // 
             // label17
             // 
@@ -1395,7 +1388,6 @@
             this.compPipe1.Size = new System.Drawing.Size(36, 6);
             this.compPipe1.TabIndex = 111;
             this.compPipe1.TabStop = false;
-            this.compPipe1.Click += new System.EventHandler(this.compPipe1_Click);
             // 
             // compArrow3
             // 
@@ -1407,7 +1399,6 @@
             this.compArrow3.Size = new System.Drawing.Size(29, 29);
             this.compArrow3.TabIndex = 112;
             this.compArrow3.TabStop = false;
-            this.compArrow3.Click += new System.EventHandler(this.compArrow3_Click);
             // 
             // compArrow4
             // 
@@ -1557,7 +1548,6 @@
             this.label31.TabIndex = 133;
             this.label31.Text = "Ventilation\r\nAir";
             this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label31.Click += new System.EventHandler(this.label31_Click);
             // 
             // label29
             // 
@@ -1571,7 +1561,6 @@
             this.label29.TabIndex = 134;
             this.label29.Text = "Ventilation\r\nAir";
             this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label29.Click += new System.EventHandler(this.label29_Click);
             // 
             // label32
             // 
@@ -1752,7 +1741,7 @@
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(85, 38);
             this.label45.TabIndex = 148;
-            this.label45.Text = "From\r\nBlower";
+            this.label45.Text = "Aus\r\nGebläse";
             this.label45.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // compPipe2
@@ -1805,41 +1794,6 @@
             this.panel1.Size = new System.Drawing.Size(144, 233);
             this.panel1.TabIndex = 153;
             // 
-            // compTxtBox2
-            // 
-            this.compTxtBox2.BackColor = System.Drawing.Color.Black;
-            this.compTxtBox2.Enabled = false;
-            this.compTxtBox2.Error = false;
-            this.compTxtBox2.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
-            this.compTxtBox2.ForeColor = System.Drawing.Color.Yellow;
-            this.compTxtBox2.Format = "0";
-            this.compTxtBox2.Location = new System.Drawing.Point(76, 98);
-            this.compTxtBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.compTxtBox2.Name = "compTxtBox2";
-            this.compTxtBox2.Size = new System.Drawing.Size(59, 29);
-            this.compTxtBox2.TabIndex = 153;
-            this.compTxtBox2.Text = "0";
-            this.compTxtBox2.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
-            this.compTxtBox2.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
-            // 
-            // label46
-            // 
-            this.label46.Location = new System.Drawing.Point(76, 132);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(59, 17);
-            this.label46.TabIndex = 154;
-            this.label46.Text = "%";
-            this.label46.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label47
-            // 
-            this.label47.Location = new System.Drawing.Point(76, 76);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(59, 17);
-            this.label47.TabIndex = 155;
-            this.label47.Text = "TIC";
-            this.label47.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // label48
             // 
             this.label48.Location = new System.Drawing.Point(10, 76);
@@ -1874,6 +1828,79 @@
             this.compTxtBox3.Text = "0";
             this.compTxtBox3.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
             this.compTxtBox3.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
+            // 
+            // label47
+            // 
+            this.label47.Location = new System.Drawing.Point(76, 76);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(59, 17);
+            this.label47.TabIndex = 155;
+            this.label47.Text = "TIC";
+            this.label47.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label46
+            // 
+            this.label46.Location = new System.Drawing.Point(76, 132);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(59, 17);
+            this.label46.TabIndex = 154;
+            this.label46.Text = "%";
+            this.label46.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // compTxtBox2
+            // 
+            this.compTxtBox2.BackColor = System.Drawing.Color.Black;
+            this.compTxtBox2.Enabled = false;
+            this.compTxtBox2.Error = false;
+            this.compTxtBox2.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
+            this.compTxtBox2.ForeColor = System.Drawing.Color.Yellow;
+            this.compTxtBox2.Format = "0";
+            this.compTxtBox2.Location = new System.Drawing.Point(76, 98);
+            this.compTxtBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.compTxtBox2.Name = "compTxtBox2";
+            this.compTxtBox2.Size = new System.Drawing.Size(59, 29);
+            this.compTxtBox2.TabIndex = 153;
+            this.compTxtBox2.Text = "0";
+            this.compTxtBox2.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
+            this.compTxtBox2.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
+            // 
+            // compBitButton1
+            // 
+            this.compBitButton1.Caption = "";
+            this.compBitButton1.EnableMouseDown = false;
+            this.compBitButton1.Formular = null;
+            this.compBitButton1.Location = new System.Drawing.Point(705, 21);
+            this.compBitButton1.Name = "compBitButton1";
+            this.compBitButton1.Picture_0 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.compBitButton1.Picture_1 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.compBitButton1.Picture_2 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.compBitButton1.Picture_3 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.compBitButton1.Picture_4 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.compBitButton1.PictureNumber = 0;
+            this.compBitButton1.Size = new System.Drawing.Size(79, 48);
+            this.compBitButton1.Symbol = null;
+            this.compBitButton1.TabIndex = 154;
+            this.compBitButton1.TabStop = false;
+            this.compBitButton1.Click += new System.EventHandler(this.compBitButton1_Click);
+            // 
+            // compBitButton2
+            // 
+            this.compBitButton2.Caption = "";
+            this.compBitButton2.EnableMouseDown = false;
+            this.compBitButton2.Formular = null;
+            this.compBitButton2.Location = new System.Drawing.Point(596, 21);
+            this.compBitButton2.Name = "compBitButton2";
+            this.compBitButton2.Picture_0 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.compBitButton2.Picture_1 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.compBitButton2.Picture_2 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.compBitButton2.Picture_3 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.compBitButton2.Picture_4 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.compBitButton2.PictureNumber = 0;
+            this.compBitButton2.Size = new System.Drawing.Size(79, 48);
+            this.compBitButton2.Symbol = null;
+            this.compBitButton2.TabIndex = 155;
+            this.compBitButton2.TabStop = false;
+            this.compBitButton2.Click += new System.EventHandler(this.compBitButton2_Click);
             // 
             // FrmMain
             // 
@@ -1944,6 +1971,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.compPipe3)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.compBitButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compBitButton2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2072,6 +2101,8 @@
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.Label label46;
         private Helper.CompTxtBox compTxtBox2;
+        private Helper.CompBitButton compBitButton1;
+        private Helper.CompBitButton compBitButton2;
     }
 }
 

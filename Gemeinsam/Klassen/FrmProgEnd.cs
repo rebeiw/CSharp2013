@@ -7,12 +7,14 @@ namespace Helper
     {
 
         ClsSingeltonFormularManager m_formularManager;
+        ClsSingeltonLanguage m_language;
 
         public FrmProgEnd()
         {
             this.InitializeComponent();
-            this.m_formularManager = ClsSingeltonFormularManager.CreateInstance();
-            this.m_formularManager.FormularAdd(this, this.Name.ToString());
+            this.m_formularManager = ClsSingeltonFormularManager.CreateInstance(this, this.Name.ToString());
+            this.m_language = ClsSingeltonLanguage.CreateInstance();
+            this.m_language.AddAllComponents(this);
         }
 
         private void BtnOk_Click(object sender, EventArgs e)
@@ -23,6 +25,11 @@ namespace Helper
         private void BtnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void FrmProgEnd_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

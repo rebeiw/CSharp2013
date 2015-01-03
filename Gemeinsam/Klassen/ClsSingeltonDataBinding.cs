@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Helper;
 
 namespace Helper
 {
@@ -20,14 +15,13 @@ namespace Helper
             public string VarName;
         };
 
+        private static ClsSingeltonDataBinding m_instance;
+
         private ClsSingeltonVariablesCollecter m_VariablesCollecter;
 
         private Hashtable m_Variables;
         private Hashtable m_VariablesNo;
         private Hashtable m_Components;
-
-
-        private static ClsSingeltonDataBinding m_instance;
 
         private ClsSingeltonDataBinding()
         {
@@ -35,8 +29,8 @@ namespace Helper
             this.m_VariablesNo = new Hashtable();
             this.m_Components = new Hashtable();
             m_VariablesCollecter = ClsSingeltonVariablesCollecter.CreateInstance();
-
         }
+ 
         public static ClsSingeltonDataBinding CreateInstance()
         {
             if (m_instance == null)
@@ -63,13 +57,9 @@ namespace Helper
                         this.Dispatch(var_name, true);
                         obj_text_box.SelectAll();
                     }
-
-
                 }
             }
         }
-
-
         public void AddList(object Form, string Component, string Propertie, string VarName)
         {
             ClsSingeltonDataBindingList data;

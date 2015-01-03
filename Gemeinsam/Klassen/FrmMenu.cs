@@ -15,6 +15,7 @@ namespace Helper
     public partial class FrmMenu : FrmVorlage
     {
         ClsSingeltonFormularManager m_formularManager;//!<Objekt auf die erzeugte Instanz
+        ClsSingeltonLanguage m_language;
         List<CompBitButton> m_buttonList;//!<Liste fuer die Buttons im Menu
         /** 
         * \brief Konstruktor
@@ -25,6 +26,8 @@ namespace Helper
         {
             this.InitializeComponent();
             this.m_formularManager = ClsSingeltonFormularManager.CreateInstance(this, this.Name.ToString());
+            this.m_language = ClsSingeltonLanguage.CreateInstance();
+            this.m_language.AddAllComponents(this);
             this.m_buttonList = new List<CompBitButton>();
             this.ClrButtons();
         }
@@ -205,6 +208,11 @@ namespace Helper
         private void BtnQuit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void FrmMenu_Load(object sender, EventArgs e)
+        {
+
         }
 
     }

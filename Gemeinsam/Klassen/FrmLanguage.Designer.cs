@@ -187,6 +187,7 @@
             this.Name = "FrmLanguage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Sprache";
+            this.Load += new System.EventHandler(this.FrmLanguage_Load);
             this.GbxMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.BtnEn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnRu)).EndInit();

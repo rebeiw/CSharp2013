@@ -189,9 +189,10 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "Menu";
+            this.Text = "Menue";
             this.Activated += new System.EventHandler(this.FrmMenu_Activated);
             this.Deactivate += new System.EventHandler(this.FrmMenu_Deactivate);
+            this.Load += new System.EventHandler(this.FrmMenu_Load);
             this.GbxMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.BtnKeyBoard)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnPrintScreen)).EndInit();
