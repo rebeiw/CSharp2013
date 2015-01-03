@@ -37,6 +37,9 @@ Value NVARCHAR(254),
 Comment NVARCHAR(254)
 );
 
-INSERT INTO PARAMETER(Parameter,Value,Comment)
-SELECT 'Language','DE','SYSTEM'
-WHERE NOT EXISTS (SELECT 1 FROM PARAMETER WHERE Parameter = 'Language');
+
+INSERT INTO Parameter(Parameter,Value,Comment)
+SELECT 'Language','De','System'
+WHERE NOT EXISTS(SELECT 1 FROM Parameter WHERE Parameter = 'Language');
+
+

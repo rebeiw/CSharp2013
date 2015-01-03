@@ -25,7 +25,16 @@ namespace ClassDevelopment
             this.m_language = ClsSingeltonLanguage.CreateInstance();
             this.m_language.AddAllComponents(this);
             this.m_dataBinding = ClsSingeltonDataBinding.CreateInstance();
-            m_dataBinding.AddList(this, "Txt01", "Text", "DB50.P1_Qmin_1");
+            this.m_dataBinding.AddList(this, "Txt01", "Text", "DB50.P1_Qmin_1");
+            this.m_dataBinding.AddList(this, "Txt02", "Text", "DB50.P1_Qmin_3");
+            this.m_dataBinding.AddList(this, "Txt03", "Text", "DB50.P1_Qmin_2");
+
+            this.m_dataBinding.AddList(this, "Led01", "State", "DB54.Bit20");
+
+            m_dataBinding.AddList(this, "Vnt01", "State", "DB52.Valve04");
+
+            m_dataBinding.AddList(this, "Pip01", "Flow", "DB53.Bit04");
+
 
         }
 

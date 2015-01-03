@@ -49,9 +49,11 @@ namespace Helper
             this.m_tableComponentIgnore = new List<Control>();
             this.m_tableComponents = new List<TableComponents>();
             this.m_tableLanguage = new Hashtable();
+
             this.m_sqliteConnection = new SQLiteConnection();
             this.m_sqliteConnection.ConnectionString = "Data Source=Daten.db";
             this.m_sqliteConnection.Open();
+
             this.m_sqliteCommand = new SQLiteCommand(this.m_sqliteConnection);
             this.LoadLanguage();
         }
