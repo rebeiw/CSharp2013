@@ -29,6 +29,15 @@ namespace Helper
             get { return m_ConnectionString; }
         }
 
+        private Form m_ActualForm;
+
+        public Form ActualForm
+        {
+            get { return this.m_ActualForm; }
+            set { this.m_ActualForm = value; }
+        }
+
+
         private bool m_PasswordOk;
 
         public bool PasswordOk
@@ -109,7 +118,7 @@ namespace Helper
             return m_instance;
         }
 
-        private void SetParameter(string parameter, string value, string defaultValue)
+        public void SetParameter(string parameter, string value, string defaultValue)
         {
             this.CloseReader();
             this.GetParameter(parameter, defaultValue);
@@ -132,7 +141,7 @@ namespace Helper
         }
 
 
-        private string GetParameter(string parameter, string defaultValue)
+        public string GetParameter(string parameter, string defaultValue)
         {
             this.CloseReader();
             string comment = "";

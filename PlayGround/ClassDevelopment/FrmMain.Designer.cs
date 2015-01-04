@@ -1937,6 +1937,7 @@
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Activated += new System.EventHandler(this.FrmMain_Activated);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Controls.SetChildIndex(this.GbxMenu, 0);
             this.Controls.SetChildIndex(this.GbxOutput, 0);

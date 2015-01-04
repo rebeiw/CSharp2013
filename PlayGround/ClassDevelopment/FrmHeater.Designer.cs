@@ -161,7 +161,8 @@
             this.ClientSize = new System.Drawing.Size(775, 279);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmHeater";
-            this.Text = "FrmHeater";
+            this.Text = "Ich find";
+            this.Activated += new System.EventHandler(this.FrmHeater_Activated);
             this.Load += new System.EventHandler(this.FrmHaeter_Load);
             ((System.ComponentModel.ISupportInitialize)(this.BtnClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnKeyboard)).EndInit();

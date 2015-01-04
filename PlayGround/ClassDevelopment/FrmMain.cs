@@ -252,5 +252,10 @@ namespace ClassDevelopment
         {
             this.BtnClose_Click(sender, e);
         }
+
+        private void FrmMain_Activated(object sender, EventArgs e)
+        {
+            this.m_parameter.ActualForm = this;
+        }
     }
 }

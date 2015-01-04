@@ -14,7 +14,7 @@ namespace ClassDevelopment
     {
         private ClsSingeltonFormularManager m_formularManager;//!<Objekt auf die erzeugte Instanz
 
-
+        private ClsSingeltonParameter m_parameter;
         private ClsSingeltonDataBinding m_dataBinding;
         private ClsSingeltonLanguage m_language;
         private ClsSingeltonUserManagement m_userManagement;
@@ -26,6 +26,7 @@ namespace ClassDevelopment
             this.m_language = ClsSingeltonLanguage.CreateInstance(this);
             this.m_dataBinding = ClsSingeltonDataBinding.CreateInstance();
             this.m_userManagement = ClsSingeltonUserManagement.CreateInstance(this);
+            this.m_parameter = ClsSingeltonParameter.CreateInstance();
             this.m_dataBinding.AddList(this, "Txt01", "Text", "DB50.P1_Qmin_1");
             this.m_dataBinding.AddList(this, "Txt02", "Text", "DB50.P1_Qmin_3");
             this.m_dataBinding.AddList(this, "Txt03", "Text", "DB50.P1_Qmin_2");
@@ -42,6 +43,11 @@ namespace ClassDevelopment
         private void FrmHaeter_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void FrmHeater_Activated(object sender, EventArgs e)
+        {
+            this.m_parameter.ActualForm = this;
         }
     }
 }
