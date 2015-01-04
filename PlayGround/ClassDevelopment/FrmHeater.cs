@@ -17,14 +17,15 @@ namespace ClassDevelopment
 
         private ClsSingeltonDataBinding m_dataBinding;
         private ClsSingeltonLanguage m_language;
+        private ClsSingeltonUserManagement m_userManagement;
 
         public FrmHeater()
         {
             InitializeComponent();
             this.m_formularManager = ClsSingeltonFormularManager.CreateInstance(this, this.Name.ToString());
-            this.m_language = ClsSingeltonLanguage.CreateInstance();
-            this.m_language.AddAllComponents(this);
+            this.m_language = ClsSingeltonLanguage.CreateInstance(this);
             this.m_dataBinding = ClsSingeltonDataBinding.CreateInstance();
+            this.m_userManagement = ClsSingeltonUserManagement.CreateInstance(this);
             this.m_dataBinding.AddList(this, "Txt01", "Text", "DB50.P1_Qmin_1");
             this.m_dataBinding.AddList(this, "Txt02", "Text", "DB50.P1_Qmin_3");
             this.m_dataBinding.AddList(this, "Txt03", "Text", "DB50.P1_Qmin_2");

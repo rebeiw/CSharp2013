@@ -18,6 +18,7 @@ namespace ClassDevelopment
 
         private ClsSingeltonVariablesCollecter m_varCollect;
 
+        private ClsSingeltonUserManagement m_userManagement;
         private ClsSingeltonDataBinding m_dataBinding;
         private ClsSingeltonLanguage m_language;
         private ClsSingeltonPlc m_plc;
@@ -32,7 +33,6 @@ namespace ClassDevelopment
 
             this.m_parameter = ClsSingeltonParameter.CreateInstance();
 
-            GlobalVar.Glb_SQLConnecton = this.m_parameter.ConnectionString;
             FuncGeneral.Start();
             FrmHeater = new FrmHeater();
 
@@ -41,20 +41,19 @@ namespace ClassDevelopment
             this.Height = 768;
 
             this.m_formularManager = ClsSingeltonFormularManager.CreateInstance();
-
+            this.m_userManagement = ClsSingeltonUserManagement.CreateInstance(this);
             this.m_varCollect = ClsSingeltonVariablesCollecter.CreateInstance();
             this.m_dataBinding = ClsSingeltonDataBinding.CreateInstance();
-            this.m_plcPara.ProgBar = this.progressBar1;
-            this.m_plcPara.LblStatus = this.lblStatus;
+            this.m_plcPara.ProgBar = this.BarPlcProgress;
+            this.m_plcPara.LblStatus = this.lblState;
             this.m_plcPara.BtnStart = this.BtnStartPlc;
             this.m_plcPara.BtnStopp = this.BtnStoppPlc;
-            this.m_plcPara.IP = "192.168.2.118";
-            this.m_plcPara.Rack = 0;
-            this.m_plcPara.Slot = 2;
+            this.m_plcPara.IP = this.m_parameter.PlcIp;
+            this.m_plcPara.Rack = this.m_parameter.PlcRack;
+            this.m_plcPara.Slot = this.m_parameter.PlcSlot;
 
             this.m_plc = ClsSingeltonPlc.CreateInstance(this.m_plcPara);
-            this.m_language = ClsSingeltonLanguage.CreateInstance();
-            this.m_language.AddAllComponents(this);
+            this.m_language = ClsSingeltonLanguage.CreateInstance(this);
 
         }
 
@@ -212,6 +211,8 @@ namespace ClassDevelopment
 
             this.m_language.SetLanguage();
             this.m_formularManager.SetLanguage();
+            this.m_userManagement.SetUserRight();
+            this.m_userManagement.SetUserRight();
 
 
         }

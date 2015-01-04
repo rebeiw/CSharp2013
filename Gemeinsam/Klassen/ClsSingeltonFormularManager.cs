@@ -42,6 +42,7 @@ namespace Helper
         private Hashtable m_formulars;//!<Liste fuer die angemeldeten Formulare
 
 
+
         /** 
          * \brief Konstruktor
          * 
@@ -151,6 +152,17 @@ namespace Helper
                 frm.BringToFront();
             }
         }
+
+        public Control GetFormular(string formularName)
+        {
+            Control retval = null;
+            if (this.m_formulars[formularName] != null)
+            {
+                retval = (Control)this.m_formulars[formularName];
+            }
+            return retval;
+        }
+
 
         /** 
          * \brief Alle Formulare schliessen

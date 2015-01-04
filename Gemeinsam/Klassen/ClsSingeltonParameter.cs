@@ -29,6 +29,50 @@ namespace Helper
             get { return m_ConnectionString; }
         }
 
+        private bool m_PasswordOk;
+
+        public bool PasswordOk
+        {
+            get { return this.m_PasswordOk; }
+            set { this.m_PasswordOk = value; }
+        }
+
+        public string LastUser
+        {
+            get { return this.GetParameter("LastUser", "0;User Management"); }
+            set { this.SetParameter("LastUser", value, "0;User Management"); }
+        }
+
+        public string MaxTimeLogin
+        {
+            get { return this.GetParameter("MaxTimeLogin", "10;User Management"); }
+            set { this.SetParameter("MaxTimeLogin", value, "10;User Management"); }
+        }
+
+        public string ActualUser
+        {
+            get { return this.GetParameter("ActualUser", "0;User Management"); }
+            set { this.SetParameter("ActualUser", value, "0;User Management"); }
+        }
+
+        public string PlcIp
+        {
+            get { return this.GetParameter("PlcIp", "192.168.2.118;Plc"); }
+            set { this.SetParameter("PlcIp", value, "192.168.2.118;Plc"); }
+        }
+
+        public string PlcRack
+        {
+            get { return this.GetParameter("PlcRack", "0;Plc"); }
+            set { this.SetParameter("PlcRack", value, "0;Plc"); }
+        }
+
+        public string PlcSlot
+        {
+            get { return this.GetParameter("PlcSlot", "2;Plc"); }
+            set { this.SetParameter("PlcSlot", value, "2;Plc"); }
+        }
+
         public string Language
         {
             get { return this.GetParameter("Language","De;System"); }

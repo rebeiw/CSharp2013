@@ -101,8 +101,8 @@
             this.label15 = new System.Windows.Forms.Label();
             this.Txt19 = new Helper.CompTxtBox();
             this.BtnStoppPlc = new Helper.CompBitButton();
-            this.lblStatus = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.lblState = new System.Windows.Forms.Label();
+            this.BarPlcProgress = new System.Windows.Forms.ProgressBar();
             this.compArrow1 = new Helper.CompArrow();
             this.label17 = new System.Windows.Forms.Label();
             this.compArrow2 = new Helper.CompArrow();
@@ -272,8 +272,8 @@
             this.GbxOutput.Controls.Add(this.label17);
             this.GbxOutput.Controls.Add(this.compArrow1);
             this.GbxOutput.Controls.Add(this.Pip02);
-            this.GbxOutput.Controls.Add(this.progressBar1);
-            this.GbxOutput.Controls.Add(this.lblStatus);
+            this.GbxOutput.Controls.Add(this.BarPlcProgress);
+            this.GbxOutput.Controls.Add(this.lblState);
             this.GbxOutput.Controls.Add(this.BtnStoppPlc);
             this.GbxOutput.Controls.Add(this.label14);
             this.GbxOutput.Controls.Add(this.Txt18);
@@ -565,6 +565,7 @@
             this.Txt14.Text = "100";
             this.Txt14.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
             this.Txt14.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.Setpoint;
+            this.Txt14.TextSymbol = "";
             // 
             // Txt01
             // 
@@ -582,6 +583,7 @@
             this.Txt01.Text = "0,00";
             this.Txt01.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
             this.Txt01.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
+            this.Txt01.TextSymbol = "";
             // 
             // label7
             // 
@@ -633,6 +635,7 @@
             this.Txt17.Text = "0";
             this.Txt17.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
             this.Txt17.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
+            this.Txt17.TextSymbol = "";
             // 
             // label8
             // 
@@ -695,6 +698,7 @@
             this.Txt10.Text = "0,0";
             this.Txt10.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
             this.Txt10.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
+            this.Txt10.TextSymbol = "";
             // 
             // Pip13
             // 
@@ -736,6 +740,7 @@
             this.Txt09.Text = "0";
             this.Txt09.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
             this.Txt09.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
+            this.Txt09.TextSymbol = "";
             // 
             // Pip10
             // 
@@ -765,6 +770,7 @@
             this.Txt02.Text = "0,00";
             this.Txt02.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
             this.Txt02.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
+            this.Txt02.TextSymbol = "";
             // 
             // Txt04
             // 
@@ -781,6 +787,7 @@
             this.Txt04.Text = "0";
             this.Txt04.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
             this.Txt04.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
+            this.Txt04.TextSymbol = "";
             // 
             // Txt13
             // 
@@ -798,6 +805,7 @@
             this.Txt13.Text = "1234";
             this.Txt13.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
             this.Txt13.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
+            this.Txt13.TextSymbol = "";
             // 
             // label9
             // 
@@ -883,6 +891,7 @@
             this.Txt15.Text = "1234";
             this.Txt15.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
             this.Txt15.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
+            this.Txt15.TextSymbol = "";
             // 
             // label11
             // 
@@ -910,6 +919,7 @@
             this.Txt16.Text = "100";
             this.Txt16.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
             this.Txt16.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.Setpoint;
+            this.Txt16.TextSymbol = "";
             // 
             // label12
             // 
@@ -937,6 +947,7 @@
             this.Txt11.Text = "1234";
             this.Txt11.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
             this.Txt11.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
+            this.Txt11.TextSymbol = "";
             // 
             // label13
             // 
@@ -964,6 +975,7 @@
             this.Txt12.Text = "100";
             this.Txt12.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
             this.Txt12.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.Setpoint;
+            this.Txt12.TextSymbol = "";
             // 
             // Txt05
             // 
@@ -981,6 +993,7 @@
             this.Txt05.Text = "0,00";
             this.Txt05.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
             this.Txt05.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
+            this.Txt05.TextSymbol = "";
             // 
             // Txt03
             // 
@@ -998,6 +1011,7 @@
             this.Txt03.Text = "0,00";
             this.Txt03.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
             this.Txt03.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
+            this.Txt03.TextSymbol = "";
             // 
             // Pip09
             // 
@@ -1027,6 +1041,7 @@
             this.Txt06.Text = "0,00";
             this.Txt06.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
             this.Txt06.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
+            this.Txt06.TextSymbol = "";
             // 
             // Vnt04
             // 
@@ -1056,6 +1071,7 @@
             this.Txt07.Text = "0,00";
             this.Txt07.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
             this.Txt07.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
+            this.Txt07.TextSymbol = "";
             // 
             // Vnt05
             // 
@@ -1097,6 +1113,7 @@
             this.Txt20.Text = "0,00";
             this.Txt20.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
             this.Txt20.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
+            this.Txt20.TextSymbol = "";
             // 
             // Txt21
             // 
@@ -1113,6 +1130,7 @@
             this.Txt21.Text = "0";
             this.Txt21.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
             this.Txt21.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
+            this.Txt21.TextSymbol = "";
             // 
             // Vnt09
             // 
@@ -1202,6 +1220,7 @@
             this.Txt08.Text = "0,00";
             this.Txt08.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
             this.Txt08.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
+            this.Txt08.TextSymbol = "";
             // 
             // Vnt07
             // 
@@ -1241,6 +1260,7 @@
             this.Txt18.Text = "1234";
             this.Txt18.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
             this.Txt18.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
+            this.Txt18.TextSymbol = "";
             // 
             // label15
             // 
@@ -1268,6 +1288,7 @@
             this.Txt19.Text = "100";
             this.Txt19.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
             this.Txt19.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.Setpoint;
+            this.Txt19.TextSymbol = "";
             // 
             // BtnStoppPlc
             // 
@@ -1289,26 +1310,26 @@
             this.BtnStoppPlc.TabStop = false;
             this.BtnStoppPlc.Click += new System.EventHandler(this.BtnStoppPlc_Click);
             // 
-            // lblStatus
+            // lblState
             // 
-            this.lblStatus.Location = new System.Drawing.Point(10, 594);
-            this.lblStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(79, 17);
-            this.lblStatus.TabIndex = 101;
-            this.lblStatus.Text = "label1";
-            this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblState.Location = new System.Drawing.Point(10, 594);
+            this.lblState.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblState.Name = "lblState";
+            this.lblState.Size = new System.Drawing.Size(79, 17);
+            this.lblState.TabIndex = 101;
+            this.lblState.Text = "label1";
+            this.lblState.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // progressBar1
+            // BarPlcProgress
             // 
-            this.progressBar1.ForeColor = System.Drawing.Color.Lime;
-            this.progressBar1.Location = new System.Drawing.Point(11, 670);
-            this.progressBar1.Margin = new System.Windows.Forms.Padding(4);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(77, 13);
-            this.progressBar1.Step = 1;
-            this.progressBar1.TabIndex = 102;
-            this.progressBar1.Value = 50;
+            this.BarPlcProgress.ForeColor = System.Drawing.Color.Lime;
+            this.BarPlcProgress.Location = new System.Drawing.Point(11, 670);
+            this.BarPlcProgress.Margin = new System.Windows.Forms.Padding(4);
+            this.BarPlcProgress.Name = "BarPlcProgress";
+            this.BarPlcProgress.Size = new System.Drawing.Size(77, 13);
+            this.BarPlcProgress.Step = 1;
+            this.BarPlcProgress.TabIndex = 102;
+            this.BarPlcProgress.Value = 50;
             // 
             // compArrow1
             // 
@@ -1465,6 +1486,7 @@
             this.compTxtBox1.Text = "0,0";
             this.compTxtBox1.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
             this.compTxtBox1.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
+            this.compTxtBox1.TextSymbol = "";
             // 
             // label25
             // 
@@ -1828,6 +1850,7 @@
             this.compTxtBox3.Text = "0";
             this.compTxtBox3.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
             this.compTxtBox3.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
+            this.compTxtBox3.TextSymbol = "";
             // 
             // label47
             // 
@@ -1863,6 +1886,7 @@
             this.compTxtBox2.Text = "0";
             this.compTxtBox2.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
             this.compTxtBox2.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
+            this.compTxtBox2.TextSymbol = "";
             // 
             // compBitButton1
             // 
@@ -2051,8 +2075,8 @@
         private Helper.CompTxtBox Txt08;
         private Helper.CompVentil Vnt06;
         private Helper.CompBitButton BtnStoppPlc;
-        private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.ProgressBar BarPlcProgress;
+        private System.Windows.Forms.Label lblState;
         private Helper.CompArrow compArrow1;
         private System.Windows.Forms.Label label17;
         private Helper.CompArrow compArrow2;

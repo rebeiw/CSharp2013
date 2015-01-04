@@ -85,7 +85,7 @@ namespace Helper
         public static void Start()
         {
             FrmMenu frm = new FrmMenu();
-            FrmPasswort frm1 = new FrmPasswort();
+            FrmPassword frm1 = new FrmPassword();
             FrmLanguage frm2 = new FrmLanguage();
             FrmKeyBoard frm3 = new FrmKeyBoard();
             FrmProgEnd frm4 = new FrmProgEnd();

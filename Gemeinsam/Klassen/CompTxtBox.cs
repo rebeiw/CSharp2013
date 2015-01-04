@@ -49,6 +49,7 @@ namespace Helper
             this.m_WidthSmall = 59;
             this.m_WidthNormal = 89;
             this.TextboxSize = CompTxtBoxSize.Normal;
+            this.TextSymbol = "";
             this.SetPropertie();
 
         }
@@ -58,6 +59,14 @@ namespace Helper
         {
             set { if (m_Format != value) { m_Format = value; this.Invalidate(); } }
             get { return this.m_Format; }
+        }
+
+        [Category("Default"), Description("")]
+        private string m_TextSymbol;
+        public string TextSymbol
+        {
+            set { if (m_TextSymbol != value) { m_TextSymbol = value; this.Invalidate(); } }
+            get { return this.m_TextSymbol; }
         }
 
         [Category("Default"), Description("")]

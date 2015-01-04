@@ -12,8 +12,8 @@ namespace Helper
     public struct ClsSingeltonPlcParameter
     {
         public string IP;
-        public int Rack;
-        public int Slot;
+        public string Rack;
+        public string Slot;
         public object BtnStart;
         public object BtnStopp;
         public object LblStatus;
@@ -103,8 +103,8 @@ namespace Helper
             this.m_TimerRead.Tick+=TimerRead_Tick;
 
             this.m_IP = PlcParameter.IP;
-            this.m_Rack = PlcParameter.Rack;
-            this.m_Slot = PlcParameter.Slot;
+            this.m_Rack = Convert.ToInt32(PlcParameter.Rack);
+            this.m_Slot = Convert.ToInt32(PlcParameter.Slot);
 
             this.m_ProgressBar = PlcParameter.ProgBar;
 

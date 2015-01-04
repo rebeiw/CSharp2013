@@ -13,8 +13,7 @@ namespace Helper
         {
             this.InitializeComponent();
             this.m_formularManager = ClsSingeltonFormularManager.CreateInstance(this, this.Name.ToString());
-            this.m_language = ClsSingeltonLanguage.CreateInstance();
-            this.m_language.AddAllComponents(this);
+            this.m_language = ClsSingeltonLanguage.CreateInstance(this);
         }
 
         private void BtnOk_Click(object sender, EventArgs e)

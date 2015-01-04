@@ -34,6 +34,7 @@
             this.Led01 = new Helper.CompLedRectangle();
             this.Pip01 = new Helper.CompPipe();
             this.Vnt01 = new Helper.CompVentil();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.BtnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnKeyboard)).BeginInit();
             this.GbxMenu.SuspendLayout();
@@ -53,6 +54,7 @@
             // GbxOutput
             // 
             this.GbxOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
+            this.GbxOutput.Controls.Add(this.textBox1);
             this.GbxOutput.Controls.Add(this.Vnt01);
             this.GbxOutput.Controls.Add(this.Pip01);
             this.GbxOutput.Controls.Add(this.Led01);
@@ -76,6 +78,7 @@
             this.Txt01.Text = "0";
             this.Txt01.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
             this.Txt01.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
+            this.Txt01.TextSymbol = "";
             // 
             // Txt02
             // 
@@ -92,6 +95,7 @@
             this.Txt02.Text = "0";
             this.Txt02.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
             this.Txt02.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
+            this.Txt02.TextSymbol = "";
             // 
             // Txt03
             // 
@@ -108,6 +112,7 @@
             this.Txt03.Text = "0";
             this.Txt03.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
             this.Txt03.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
+            this.Txt03.TextSymbol = "DB50.P1_Qmin_1";
             // 
             // Led01
             // 
@@ -142,6 +147,13 @@
             this.Vnt01.TabIndex = 5;
             this.Vnt01.TabStop = false;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(452, 66);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.TabIndex = 6;
+            // 
             // FrmHeater
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -172,5 +184,6 @@
         private Helper.CompLedRectangle Led01;
         private Helper.CompVentil Vnt01;
         private Helper.CompPipe Pip01;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

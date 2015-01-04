@@ -54,7 +54,7 @@ namespace Helper
             this.m_tableLanguage = new Hashtable();
 
             this.m_sqliteConnection = new SQLiteConnection();
-            this.m_sqliteConnection.ConnectionString = GlobalVar.Glb_SQLConnecton;
+            this.m_sqliteConnection.ConnectionString = this.m_parameter.ConnectionString;
             this.m_sqliteConnection.Open();
 
             this.m_sqliteCommand = new SQLiteCommand(this.m_sqliteConnection);
@@ -67,6 +67,16 @@ namespace Helper
             {
                 m_instance = new ClsSingeltonLanguage();
             }
+            return m_instance;
+        }
+
+        public static ClsSingeltonLanguage CreateInstance(Form formular)
+        {
+            if (m_instance == null)
+            {
+                m_instance = new ClsSingeltonLanguage();
+            }
+            m_instance.AddAllComponents(formular.Controls);
             return m_instance;
         }
 
@@ -128,10 +138,6 @@ namespace Helper
         {
             if(!this.m_tableComponentIgnore.Contains(controlToTranslate))
             {
-                string component_type = controlToTranslate.GetType().ToString();
-
-                Type t = Type.GetType(component_type);
-
                 if (controlToTranslate is Form || controlToTranslate is Label || controlToTranslate is GroupBox)
                 {
                     string native_text = controlToTranslate.Text;
@@ -157,6 +163,26 @@ namespace Helper
                 table_component.Ru = table_language.Ru;
                 this.m_tableComponents.Add(table_component);
             }
+        }
+        public string GetTranslation(string nativeText)
+        {
+            string retval = nativeText;
+            if (this.m_tableLanguage.ContainsKey(nativeText))
+            {
+                TableLanguage table_labnguage;
+                table_labnguage = (TableLanguage)this.m_tableLanguage[nativeText];
+                if (this.m_parameter.Language == "De")
+                    retval = table_labnguage.De;
+                if (this.m_parameter.Language == "En")
+                    retval = table_labnguage.En;
+                if (this.m_parameter.Language == "Fr")
+                    retval = table_labnguage.Fr;
+                if (this.m_parameter.Language == "Sp")
+                    retval = table_labnguage.Sp;
+                if (this.m_parameter.Language == "Ru")
+                    retval = table_labnguage.Ru;
+            }
+            return retval;
         }
 
         private void AddLanguage(String native, string de ="", string en = "", string fr = "", string sp = "", string ru = "")
@@ -187,6 +213,10 @@ namespace Helper
                 {
                     addTable.De = native;
                 }
+                if (addTable.Ru == "")
+                {
+                    addTable.Ru = native;
+                }
                 this.m_tableLanguage.Add(addTable.NativeText, addTable);
             }
         }
@@ -207,7 +237,6 @@ namespace Helper
             }
             this.m_sqliteDataReader.Close();
             this.m_sqliteDataReader = null;
-            
         }
     }
 }

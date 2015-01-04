@@ -6,23 +6,6 @@ using System.Threading.Tasks;
 
 public class GlobalVar
 {
-    public enum Language
-    {
-        De=0,
-        En,
-        Fr,
-        Sp,
-        Ru
-    }
-    public static bool Glb_Passwort_ok;
-
-    //public static Language Glb_Language;
-
-    public static string Glb_SQLConnecton;
-
-
-
-
 
 
     //Konstanten fuer automatische Generierung des Serviceformulars

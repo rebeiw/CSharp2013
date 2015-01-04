@@ -9,6 +9,7 @@ namespace Helper
         ClsSingeltonFormularManager m_formularManager;
         ClsSingeltonLanguage m_language;
         ClsSingeltonParameter m_parameter;
+        ClsSingeltonUserManagement m_userManagement;
         List<string> m_users;
 
         public FrmPassword()
@@ -16,8 +17,8 @@ namespace Helper
             InitializeComponent();
             this.m_parameter = ClsSingeltonParameter.CreateInstance();
             this.m_formularManager = ClsSingeltonFormularManager.CreateInstance(this, this.Name.ToString());
-            this.m_language = ClsSingeltonLanguage.CreateInstance();
-            this.m_language.AddAllComponents(this);
+            this.m_language = ClsSingeltonLanguage.CreateInstance(this);
+            this.m_userManagement = ClsSingeltonUserManagement.CreateInstance();
             this.m_users = new List<string>();
             this.m_users.Clear();
             this.m_users.Add("Ausgeloggt");
@@ -62,9 +63,11 @@ namespace Helper
             if (password == "DAkkS")
             {
                 this.m_parameter.ActualUser = this.CbxUser.SelectedIndex.ToString();
+                this.m_userManagement.SetUserRight();
                 this.m_formularManager.SetUserRight();
                 this.m_parameter.PasswordOk = true;
                 this.TxtPassword.Text = "";
+                this.m_userManagement.StartTimer();
                 this.Close();
             }
         }
@@ -82,6 +85,8 @@ namespace Helper
         private void FrmPassword_Activated(object sender, EventArgs e)
         {
             this.m_parameter.ActualUser = "0";
+            this.m_userManagement.SetUserRight();
+            this.m_formularManager.SetUserRight();
         }
     }
 }

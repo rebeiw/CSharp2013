@@ -28,10 +28,14 @@ namespace Helper
             this.InitializeComponent();
             this.m_parameter = ClsSingeltonParameter.CreateInstance();
             this.m_formularManager = ClsSingeltonFormularManager.CreateInstance(this, this.Name.ToString());
-            this.m_language = ClsSingeltonLanguage.CreateInstance();
-            this.m_language.AddAllComponents(this);
+            this.m_language = ClsSingeltonLanguage.CreateInstance(this);
             this.m_buttonList = new List<CompBitButton>();
             this.ClrButtons();
+        }
+
+        public void SetBtnUser()
+        {
+            this.BtnUser.PictureNumber = Convert.ToInt32(this.m_parameter.PasswordOk);
         }
 
         /** 
@@ -39,7 +43,7 @@ namespace Helper
         */
         private void FrmMenu_Activated(object sender, EventArgs e)
         {
-            this.BtnUser.PictureNumber = Convert.ToInt32(GlobalVar.Glb_Passwort_ok);
+            this.SetBtnUser();
         }
 
         /** 
@@ -186,7 +190,7 @@ namespace Helper
         */
         private void BtnUser_Click(object sender, EventArgs e)
         {
-            m_formularManager.FormularShow("FrmPasswort");
+            m_formularManager.FormularShow("FrmPassword");
         }
 
         /** 
@@ -216,6 +220,5 @@ namespace Helper
         {
 
         }
-
     }
 }

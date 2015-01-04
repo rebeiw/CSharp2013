@@ -27,7 +27,12 @@ VALUES
 ('Passwort:'		, 'Passwort:'			, 'Password:'			, ''	, ''	, 'цукенгшльотрип'),
 ('Tastatur'         , 'Tastatur'			, 'Keyboard'			, ''	, ''	, 'араракенуфвфыпав'),
 ('Programm beenden?', 'Programm beenden?'	, 'Exit Program?'		, ''	, ''	, 'длгонекпуц'),
-('Programm beenden'	, 'Programm beenden'	, 'Exit Program'		, ''	, ''	, 'йцукенпгршщз');
+('Programm beenden'	, 'Programm beenden'	, 'Exit Program'		, ''	, ''	, 'йцукенпгршщз'),
+('Benutzer:','Benutzer:','User:','','',''),
+('Operator','Operator','Operator','','',''),
+('Ausgeloggt','Ausgeloggt','Logoff','','',''),
+('Service','Service','Service','','',''),
+('Einrichter','Einrichter','Setter','','','');
 
 CREATE TABLE IF NOT EXISTS Parameter  
 (
