@@ -23,14 +23,16 @@ namespace ClassDevelopment
         private ClsSingeltonPlc m_plc;
         private ClsSingeltonPlcParameter m_plcPara;
         private ClsSingeltonFormularManager m_formularManager;
-
+        private ClsSingeltonParameter m_parameter;
         FrmHeater FrmHeater;
 
         public FrmMain()
         {
 
-            GlobalVar.Glb_SQLConnecton = "Data Source=Daten.db";
 
+            this.m_parameter = ClsSingeltonParameter.CreateInstance();
+
+            GlobalVar.Glb_SQLConnecton = this.m_parameter.ConnectionString;
             FuncGeneral.Start();
             FrmHeater = new FrmHeater();
 
@@ -205,6 +207,13 @@ namespace ClassDevelopment
             m_dataBinding.AddList(this, "Led04", "State", "DB54.Bit25");
             m_dataBinding.AddList(this, "Led05", "State", "DB54.Bit27");
             m_dataBinding.AddList(this, "Led06", "State", "DB54.Bit29");
+
+
+
+            this.m_language.SetLanguage();
+            this.m_formularManager.SetLanguage();
+
+
         }
 
 

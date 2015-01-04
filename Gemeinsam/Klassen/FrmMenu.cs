@@ -16,6 +16,7 @@ namespace Helper
     {
         ClsSingeltonFormularManager m_formularManager;//!<Objekt auf die erzeugte Instanz
         ClsSingeltonLanguage m_language;
+        ClsSingeltonParameter m_parameter;
         List<CompBitButton> m_buttonList;//!<Liste fuer die Buttons im Menu
         /** 
         * \brief Konstruktor
@@ -25,6 +26,7 @@ namespace Helper
         public FrmMenu()
         {
             this.InitializeComponent();
+            this.m_parameter = ClsSingeltonParameter.CreateInstance();
             this.m_formularManager = ClsSingeltonFormularManager.CreateInstance(this, this.Name.ToString());
             this.m_language = ClsSingeltonLanguage.CreateInstance();
             this.m_language.AddAllComponents(this);
@@ -92,15 +94,15 @@ namespace Helper
         public override void SetLanguage()
         {
             base.SetLanguage();
-            if (GlobalVar.Glb_Language == GlobalVar.Language.De)
+            if (this.m_parameter.Language=="De")
                 this.BtnLanguage.Picture_0 = CompBitButtonStyle.btg_De;
-            if (GlobalVar.Glb_Language == GlobalVar.Language.En)
+            if (this.m_parameter.Language == "En")
                 this.BtnLanguage.Picture_0 = CompBitButtonStyle.btg_En;
-            if (GlobalVar.Glb_Language == GlobalVar.Language.Fr)
+            if (this.m_parameter.Language == "Fr")
                 this.BtnLanguage.Picture_0 = CompBitButtonStyle.btg_Fr;
-            if (GlobalVar.Glb_Language == GlobalVar.Language.Sp)
+            if (this.m_parameter.Language == "Sp")
                 this.BtnLanguage.Picture_0 = CompBitButtonStyle.btg_Sp;
-            if (GlobalVar.Glb_Language == GlobalVar.Language.Ru)
+            if (this.m_parameter.Language == "Ru")
                 this.BtnLanguage.Picture_0 = CompBitButtonStyle.btg_Ru;
         }
 

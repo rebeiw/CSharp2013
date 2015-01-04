@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="ClsSingeltonDataBinding.cs" />
     <Compile Include="ClsSingeltonLanguage.cs" />
+    <Compile Include="ClsSingeltonParameter.cs" />
     <Compile Include="ClsSingeltonPlc.cs" />
     <Compile Include="ClsSingeltonVariablesCollecter.cs" />
     <Compile Include="CompArrow.cs">

@@ -35,17 +35,20 @@ namespace Helper
             public string Ru;
         }
 
-        SQLiteCommand m_sqliteCommand;
-        SQLiteConnection m_sqliteConnection;
-        SQLiteDataReader m_sqliteDataReader;
         private static ClsSingeltonLanguage m_instance;
 
+        private SQLiteCommand m_sqliteCommand;
+        private SQLiteConnection m_sqliteConnection;
+        private SQLiteDataReader m_sqliteDataReader;
         private Hashtable m_tableLanguage;
         private List<TableComponents> m_tableComponents;
         private List<Control> m_tableComponentIgnore;
 
+        private ClsSingeltonParameter m_parameter;
+
         private ClsSingeltonLanguage()
         {
+            this.m_parameter = ClsSingeltonParameter.CreateInstance();
             this.m_tableComponentIgnore = new List<Control>();
             this.m_tableComponents = new List<TableComponents>();
             this.m_tableLanguage = new Hashtable();
@@ -92,18 +95,19 @@ namespace Helper
 
         public void SetLanguage()
         {
+            string language = this.m_parameter.Language;
             string text="";
             foreach(TableComponents table_component in this.m_tableComponents)
             {
-                if (GlobalVar.Glb_Language == GlobalVar.Language.De)
+                if (language == "De")
                     text = table_component.De;
-                if (GlobalVar.Glb_Language == GlobalVar.Language.En)
+                if (language == "En")
                     text = table_component.En;
-                if (GlobalVar.Glb_Language == GlobalVar.Language.Fr)
+                if (language == "Fr")
                     text = table_component.Fr;
-                if (GlobalVar.Glb_Language == GlobalVar.Language.Sp)
+                if (language == "Sp")
                     text = table_component.Sp;
-                if (GlobalVar.Glb_Language == GlobalVar.Language.Ru)
+                if (language == "Ru")
                     text = table_component.Ru;
 
                 this.SetObjectProperty(table_component.Propertie,text ,table_component.Component);
@@ -189,8 +193,6 @@ namespace Helper
 
         private void LoadLanguage()
         {
-
-
             this.m_sqliteCommand.CommandText = "Select * from language";
 
             if(this.m_sqliteDataReader!=null)

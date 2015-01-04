@@ -16,7 +16,7 @@ public class GlobalVar
     }
     public static bool Glb_Passwort_ok;
 
-    public static Language Glb_Language;
+    //public static Language Glb_Language;
 
     public static string Glb_SQLConnecton;
 

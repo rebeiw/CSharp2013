@@ -7,6 +7,7 @@ namespace Helper
 
         private ClsSingeltonFormularManager m_formularManager;//!<Instanz auf die Klasse Formularmanager
         private ClsSingeltonLanguage m_language;//!<Instanz auf die Klasse Spracheumschaltung
+        private ClsSingeltonParameter m_parameter;
 
         /** 
          * \brief Konstruktor
@@ -16,6 +17,7 @@ namespace Helper
         public FrmLanguage()
         {
             this.InitializeComponent();
+            this.m_parameter = ClsSingeltonParameter.CreateInstance();
             this.m_formularManager = ClsSingeltonFormularManager.CreateInstance(this, this.Name.ToString());
             this.m_language = ClsSingeltonLanguage.CreateInstance();
             this.m_language.AddAllComponents(this);
@@ -37,15 +39,15 @@ namespace Helper
             this.Close();
             CompBitButton btn = (CompBitButton)sender;
             if (btn.Name == "BtnDe")
-                GlobalVar.Glb_Language = GlobalVar.Language.De;
+                this.m_parameter.Language = "De";
             if (btn.Name == "BtnEn")
-                GlobalVar.Glb_Language = GlobalVar.Language.En;
+                this.m_parameter.Language = "En";
             if (btn.Name == "BtnFr")
-                GlobalVar.Glb_Language = GlobalVar.Language.Fr;
+                this.m_parameter.Language = "Fr";
             if (btn.Name == "BtnSp")
-                GlobalVar.Glb_Language = GlobalVar.Language.Sp;
+                this.m_parameter.Language = "Sp";
             if (btn.Name == "BtnRu")
-                GlobalVar.Glb_Language = GlobalVar.Language.Ru;
+                this.m_parameter.Language = "Ru";
             this.m_language.SetLanguage();
             this.m_formularManager.SetLanguage();
         }
