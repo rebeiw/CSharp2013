@@ -54,6 +54,8 @@ namespace Helper
 
         private void SendKey(object sender, string text)
         {
+            this.TopMost = true;
+
             Form frm = (Form)Application.OpenForms[this.m_parameter.ActualForm.Name];
             if (frm != null)
             {
@@ -73,5 +75,6 @@ namespace Helper
         {
             this.SendKey(sender, "{BS}");
         }
+
     }
 }

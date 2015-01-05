@@ -23,6 +23,7 @@ namespace Helper
 
         protected void BtnClose_Click(object sender, EventArgs e)
         {
+            this.TopMost = false;
             if (this.ShowClose)
             {
                 this.m_formularManager.FormularShow("FrmProgEnd");
@@ -33,8 +34,9 @@ namespace Helper
             }
         }
 
-        private void BtnMenu_Click(object sender, EventArgs e)
+        public void BtnMenu_Click(object sender, EventArgs e)
         {
+            this.TopMost = false;
             this.ShowMenu();
         }
 
