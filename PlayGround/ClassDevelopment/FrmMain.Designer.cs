@@ -153,6 +153,7 @@
             this.compTxtBox2 = new Helper.CompTxtBox();
             this.compBitButton1 = new Helper.CompBitButton();
             this.compBitButton2 = new Helper.CompBitButton();
+            this.LblPlcNoConnect = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.BtnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnKeyboard)).BeginInit();
             this.GbxMenu.SuspendLayout();
@@ -1926,11 +1927,26 @@
             this.compBitButton2.TabStop = false;
             this.compBitButton2.Click += new System.EventHandler(this.compBitButton2_Click);
             // 
+            // LblPlcNoConnect
+            // 
+            this.LblPlcNoConnect.BackColor = System.Drawing.Color.Red;
+            this.LblPlcNoConnect.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.LblPlcNoConnect.Font = new System.Drawing.Font("Arial", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblPlcNoConnect.ForeColor = System.Drawing.Color.White;
+            this.LblPlcNoConnect.Location = new System.Drawing.Point(1137, 9);
+            this.LblPlcNoConnect.Name = "LblPlcNoConnect";
+            this.LblPlcNoConnect.Size = new System.Drawing.Size(539, 134);
+            this.LblPlcNoConnect.TabIndex = 157;
+            this.LblPlcNoConnect.Text = "No PLC - Connection";
+            this.LblPlcNoConnect.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LblPlcNoConnect.Visible = false;
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1565, 741);
+            this.ClientSize = new System.Drawing.Size(1604, 741);
+            this.Controls.Add(this.LblPlcNoConnect);
             this.Controls.Add(this.label36);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -1942,6 +1958,7 @@
             this.Controls.SetChildIndex(this.GbxMenu, 0);
             this.Controls.SetChildIndex(this.GbxOutput, 0);
             this.Controls.SetChildIndex(this.label36, 0);
+            this.Controls.SetChildIndex(this.LblPlcNoConnect, 0);
             ((System.ComponentModel.ISupportInitialize)(this.BtnClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnKeyboard)).EndInit();
             this.GbxMenu.ResumeLayout(false);
@@ -2128,6 +2145,7 @@
         private Helper.CompTxtBox compTxtBox2;
         private Helper.CompBitButton compBitButton1;
         private Helper.CompBitButton compBitButton2;
+        private System.Windows.Forms.Label LblPlcNoConnect;
     }
 }
 

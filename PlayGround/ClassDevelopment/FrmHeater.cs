@@ -33,21 +33,33 @@ namespace ClassDevelopment
 
             this.m_dataBinding.AddList(this, "Led01", "State", "DB54.Bit20");
 
-            m_dataBinding.AddList(this, "Vnt01", "State", "DB52.Valve04");
+            this.m_dataBinding.AddList(this, "Vnt01", "State", "DB52.Valve04");
 
-            m_dataBinding.AddList(this, "Pip01", "Flow", "DB53.Bit04");
+            this.m_dataBinding.AddList(this, "Pip01", "Flow", "DB53.Bit04");
 
 
         }
 
         private void FrmHaeter_Load(object sender, EventArgs e)
         {
+            this.m_userManagement.SetEnable(this.textBox1, ClsSingeltonUserManagement.UserRight.Logoff,true);
 
         }
 
         private void FrmHeater_Activated(object sender, EventArgs e)
         {
             this.m_parameter.ActualForm = this;
+        }
+
+        private void bitButtonSmall1_Click(object sender, EventArgs e)
+        {
+            this.m_userManagement.ResetEnable(this.textBox1, ClsSingeltonUserManagement.UserRight.Logoff, true);
+
+        }
+
+        private void bitButtonSmall2_Click(object sender, EventArgs e)
+        {
+            this.m_userManagement.SetEnable(this.textBox1, ClsSingeltonUserManagement.UserRight.Logoff, true);
         }
     }
 }

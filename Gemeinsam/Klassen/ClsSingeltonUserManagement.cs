@@ -98,9 +98,34 @@ namespace Helper
         {
             this.m_timerLogin.Enabled = true;
         }
-        public void SetEnable(Control component,UserRight userRight)
-        {
 
+        public void ResetEnable(Control component, UserRight userRight, bool SetUserRight = false)
+        {
+            if (this.m_tableComponents.ContainsKey(component))
+            {
+                UserEnableVisible enable_visible = (UserEnableVisible)this.m_tableComponents[component];
+                enable_visible.Enable &= ~userRight;
+                this.m_tableComponents[component] = enable_visible;
+            }
+            if (SetUserRight)
+            {
+                this.SetUserRight();
+            }
+        }
+
+
+        public void SetEnable(Control component,UserRight userRight,bool SetUserRight=false)
+        {
+            if(this.m_tableComponents.ContainsKey(component))
+            {
+                UserEnableVisible enable_visible = (UserEnableVisible)this.m_tableComponents[component];
+                enable_visible.Enable |= userRight;
+                this.m_tableComponents[component] = enable_visible;
+            }
+            if(SetUserRight)
+            {
+                this.SetUserRight();
+            }
         }
 
         public void SetUserRight()

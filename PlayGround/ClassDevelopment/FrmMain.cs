@@ -51,6 +51,7 @@ namespace ClassDevelopment
             this.m_plcPara.IP = this.m_parameter.PlcIp;
             this.m_plcPara.Rack = this.m_parameter.PlcRack;
             this.m_plcPara.Slot = this.m_parameter.PlcSlot;
+            this.m_plcPara.LblPlc = this.LblPlcNoConnect;
 
             this.m_plc = ClsSingeltonPlc.CreateInstance(this.m_plcPara);
             this.m_language = ClsSingeltonLanguage.CreateInstance(this);
@@ -60,95 +61,6 @@ namespace ClassDevelopment
         private void Form1_Load(object sender, EventArgs e)
         {
             this.ShowClose = true;
-            this.m_plc.AddList("DB50.DBD0", "P1_Qmin_1", "REAL", "Pumpen:Pumpendruck 1[EHbar]");
-            this.m_plc.AddList("DB50.DBD4", "P1_Qmin_2", "REAL", "Pumpen:Pumpendruck 2[EHbar]");
-            this.m_plc.AddList("DB50.DBD8", "P1_Qmin_3", "REAL", "Pumpen:Pumpendruck 3[EHbar]");
-            this.m_plc.AddList("DB50.DBD12", "P1_Qmin_4", "REAL", "Pumpen:Pumpendruck 4[EHbar]");
-            this.m_plc.AddList("DB50.DBD16", "P1_Qmin_5", "REAL", "Pumpen:Pumpendruck 5[EHbar]");
-
-            this.m_plc.AddList("DB51.DBD0", "P1_Qmin_1", "REAL", "Pumpen:Pumpendruck 1[EHbar]");
-            this.m_plc.AddList("DB51.DBD4", "P1_Qmin_2", "REAL", "Pumpen:Pumpendruck 2[EHbar]");
-            this.m_plc.AddList("DB51.DBD8", "P1_Qmin_3", "REAL", "Pumpen:Pumpendruck 3[EHbar]");
-            this.m_plc.AddList("DB51.DBD12", "P1_Qmin_4", "REAL", "Pumpen:Pumpendruck 4[EHbar]");
-            this.m_plc.AddList("DB51.DBD16", "P1_Qmin_5", "REAL", "Pumpen:Pumpendruck 5[EHbar]");
-
-            this.m_plc.AddList("DB52.DBW0", "Valve01", "INT", "Schieber:Status 1");
-            this.m_plc.AddList("DB52.DBW2", "Valve02", "INT", "Schieber:Status 2");
-            this.m_plc.AddList("DB52.DBW4", "Valve03", "INT", "Schieber:Status 3");
-            this.m_plc.AddList("DB52.DBW6", "Valve04", "INT", "Schieber:Status 4");
-            this.m_plc.AddList("DB52.DBW8", "Valve05", "INT", "Schieber:Status 5");
-
-            this.m_plc.AddList("DB53.DBX0.0", "Bit01", "BOOL", "");
-            this.m_plc.AddList("DB53.DBX0.1", "Bit01", "BOOL", "");
-            this.m_plc.AddList("DB53.DBX0.2", "Bit02", "BOOL", "");
-            this.m_plc.AddList("DB53.DBX0.3", "Bit03", "BOOL", "");
-            this.m_plc.AddList("DB53.DBX0.4", "Bit04", "BOOL", "");
-            this.m_plc.AddList("DB53.DBX0.5", "Bit05", "BOOL", "");
-            this.m_plc.AddList("DB53.DBX0.6", "Bit06", "BOOL", "");
-            this.m_plc.AddList("DB53.DBX0.7", "Bit07", "BOOL", "");
-
-            this.m_plc.AddList("DB53.DBX1.0", "Bit08", "BOOL", "");
-            this.m_plc.AddList("DB53.DBX1.1", "Bit09", "BOOL", "");
-            this.m_plc.AddList("DB53.DBX1.2", "Bit10", "BOOL", "");
-            this.m_plc.AddList("DB53.DBX1.3", "Bit11", "BOOL", "");
-            this.m_plc.AddList("DB53.DBX1.4", "Bit12", "BOOL", "");
-            this.m_plc.AddList("DB53.DBX1.5", "Bit13", "BOOL", "");
-            this.m_plc.AddList("DB53.DBX1.6", "Bit14", "BOOL", "");
-            this.m_plc.AddList("DB53.DBX1.7", "Bit15", "BOOL", "");
-
-            this.m_plc.AddList("DB53.DBX2.0", "Bit16", "BOOL", "");
-            this.m_plc.AddList("DB53.DBX2.1", "Bit17", "BOOL", "");
-            this.m_plc.AddList("DB53.DBX2.2", "Bit18", "BOOL", "");
-            this.m_plc.AddList("DB53.DBX2.3", "Bit29", "BOOL", "");
-            this.m_plc.AddList("DB53.DBX2.4", "Bit20", "BOOL", "");
-            this.m_plc.AddList("DB53.DBX2.5", "Bit21", "BOOL", "");
-            this.m_plc.AddList("DB53.DBX2.6", "Bit22", "BOOL", "");
-            this.m_plc.AddList("DB53.DBX2.7", "Bit23", "BOOL", "");
-
-            this.m_plc.AddList("DB53.DBX3.0", "Bit24", "BOOL", "");
-            this.m_plc.AddList("DB53.DBX3.1", "Bit25", "BOOL", "");
-            this.m_plc.AddList("DB53.DBX3.2", "Bit26", "BOOL", "");
-            this.m_plc.AddList("DB53.DBX3.3", "Bit27", "BOOL", "");
-            this.m_plc.AddList("DB53.DBX3.4", "Bit28", "BOOL", "");
-            this.m_plc.AddList("DB53.DBX3.5", "Bit29", "BOOL", "");
-            this.m_plc.AddList("DB53.DBX3.6", "Bit30", "BOOL", "");
-            this.m_plc.AddList("DB53.DBX3.7", "Bit31", "BOOL", "");
-
-            this.m_plc.AddList("DB54.DBX0.0", "Bit01", "BOOL", "");
-            this.m_plc.AddList("DB54.DBX0.1", "Bit01", "BOOL", "");
-            this.m_plc.AddList("DB54.DBX0.2", "Bit02", "BOOL", "");
-            this.m_plc.AddList("DB54.DBX0.3", "Bit03", "BOOL", "");
-            this.m_plc.AddList("DB54.DBX0.4", "Bit04", "BOOL", "");
-            this.m_plc.AddList("DB54.DBX0.5", "Bit05", "BOOL", "");
-            this.m_plc.AddList("DB54.DBX0.6", "Bit06", "BOOL", "");
-            this.m_plc.AddList("DB54.DBX0.7", "Bit07", "BOOL", "");
-
-            this.m_plc.AddList("DB54.DBX1.0", "Bit08", "BOOL", "");
-            this.m_plc.AddList("DB54.DBX1.1", "Bit09", "BOOL", "");
-            this.m_plc.AddList("DB54.DBX1.2", "Bit10", "BOOL", "");
-            this.m_plc.AddList("DB54.DBX1.3", "Bit11", "BOOL", "");
-            this.m_plc.AddList("DB54.DBX1.4", "Bit12", "BOOL", "");
-            this.m_plc.AddList("DB54.DBX1.5", "Bit13", "BOOL", "");
-            this.m_plc.AddList("DB54.DBX1.6", "Bit14", "BOOL", "");
-            this.m_plc.AddList("DB54.DBX1.7", "Bit15", "BOOL", "");
-
-            this.m_plc.AddList("DB54.DBX2.0", "Bit16", "BOOL", "");
-            this.m_plc.AddList("DB54.DBX2.1", "Bit17", "BOOL", "");
-            this.m_plc.AddList("DB54.DBX2.2", "Bit18", "BOOL", "");
-            this.m_plc.AddList("DB54.DBX2.3", "Bit29", "BOOL", "");
-            this.m_plc.AddList("DB54.DBX2.4", "Bit20", "BOOL", "");
-            this.m_plc.AddList("DB54.DBX2.5", "Bit21", "BOOL", "");
-            this.m_plc.AddList("DB54.DBX2.6", "Bit22", "BOOL", "");
-            this.m_plc.AddList("DB54.DBX2.7", "Bit23", "BOOL", "");
-
-            this.m_plc.AddList("DB54.DBX3.0", "Bit24", "BOOL", "");
-            this.m_plc.AddList("DB54.DBX3.1", "Bit25", "BOOL", "");
-            this.m_plc.AddList("DB54.DBX3.2", "Bit26", "BOOL", "");
-            this.m_plc.AddList("DB54.DBX3.3", "Bit27", "BOOL", "");
-            this.m_plc.AddList("DB54.DBX3.4", "Bit28", "BOOL", "");
-            this.m_plc.AddList("DB54.DBX3.5", "Bit29", "BOOL", "");
-            this.m_plc.AddList("DB54.DBX3.6", "Bit30", "BOOL", "");
-            this.m_plc.AddList("DB54.DBX3.7", "Bit31", "BOOL", "");
             
             m_dataBinding.AddList(this, "Txt01", "Text", "DB50.P1_Qmin_1");
             m_dataBinding.AddList(this, "Txt02", "Text", "DB50.P1_Qmin_2");
@@ -212,7 +124,10 @@ namespace ClassDevelopment
             this.m_language.SetLanguage();
             this.m_formularManager.SetLanguage();
             this.m_userManagement.SetUserRight();
-            this.m_userManagement.SetUserRight();
+            this.m_formularManager.SetUserRight();
+
+
+            FuncGeneral.CentreObject(this.LblPlcNoConnect,this.GbxOutput);
 
 
         }

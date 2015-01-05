@@ -35,6 +35,8 @@
             this.Pip01 = new Helper.CompPipe();
             this.Vnt01 = new Helper.CompVentil();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.bitButtonSmall1 = new Helper.BitButtonSmall();
+            this.bitButtonSmall2 = new Helper.BitButtonSmall();
             ((System.ComponentModel.ISupportInitialize)(this.BtnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnKeyboard)).BeginInit();
             this.GbxMenu.SuspendLayout();
@@ -43,6 +45,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Led01)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pip01)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Vnt01)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bitButtonSmall1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bitButtonSmall2)).BeginInit();
             this.SuspendLayout();
             // 
             // GbxMenu
@@ -54,6 +58,8 @@
             // GbxOutput
             // 
             this.GbxOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
+            this.GbxOutput.Controls.Add(this.bitButtonSmall2);
+            this.GbxOutput.Controls.Add(this.bitButtonSmall1);
             this.GbxOutput.Controls.Add(this.textBox1);
             this.GbxOutput.Controls.Add(this.Vnt01);
             this.GbxOutput.Controls.Add(this.Pip01);
@@ -154,6 +160,44 @@
             this.textBox1.Size = new System.Drawing.Size(100, 22);
             this.textBox1.TabIndex = 6;
             // 
+            // bitButtonSmall1
+            // 
+            this.bitButtonSmall1.Caption = "Rst";
+            this.bitButtonSmall1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.bitButtonSmall1.Formular = null;
+            this.bitButtonSmall1.Location = new System.Drawing.Point(49, 193);
+            this.bitButtonSmall1.Name = "bitButtonSmall1";
+            this.bitButtonSmall1.Picture_0 = Helper.BtnStyleSmall.btk_Blanko;
+            this.bitButtonSmall1.Picture_1 = Helper.BtnStyleSmall.btk_Blanko;
+            this.bitButtonSmall1.Picture_2 = Helper.BtnStyleSmall.btk_Blanko;
+            this.bitButtonSmall1.Picture_3 = Helper.BtnStyleSmall.btk_Blanko;
+            this.bitButtonSmall1.Picture_4 = Helper.BtnStyleSmall.btk_Blanko;
+            this.bitButtonSmall1.PictureNumber = 0;
+            this.bitButtonSmall1.Size = new System.Drawing.Size(40, 24);
+            this.bitButtonSmall1.Symbol = null;
+            this.bitButtonSmall1.TabIndex = 7;
+            this.bitButtonSmall1.TabStop = false;
+            this.bitButtonSmall1.Click += new System.EventHandler(this.bitButtonSmall1_Click);
+            // 
+            // bitButtonSmall2
+            // 
+            this.bitButtonSmall2.Caption = "Set";
+            this.bitButtonSmall2.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.bitButtonSmall2.Formular = null;
+            this.bitButtonSmall2.Location = new System.Drawing.Point(49, 223);
+            this.bitButtonSmall2.Name = "bitButtonSmall2";
+            this.bitButtonSmall2.Picture_0 = Helper.BtnStyleSmall.btk_Blanko;
+            this.bitButtonSmall2.Picture_1 = Helper.BtnStyleSmall.btk_Blanko;
+            this.bitButtonSmall2.Picture_2 = Helper.BtnStyleSmall.btk_Blanko;
+            this.bitButtonSmall2.Picture_3 = Helper.BtnStyleSmall.btk_Blanko;
+            this.bitButtonSmall2.Picture_4 = Helper.BtnStyleSmall.btk_Blanko;
+            this.bitButtonSmall2.PictureNumber = 0;
+            this.bitButtonSmall2.Size = new System.Drawing.Size(40, 24);
+            this.bitButtonSmall2.Symbol = null;
+            this.bitButtonSmall2.TabIndex = 8;
+            this.bitButtonSmall2.TabStop = false;
+            this.bitButtonSmall2.Click += new System.EventHandler(this.bitButtonSmall2_Click);
+            // 
             // FrmHeater
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -173,6 +217,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Led01)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pip01)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Vnt01)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bitButtonSmall1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bitButtonSmall2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -186,5 +232,7 @@
         private Helper.CompVentil Vnt01;
         private Helper.CompPipe Pip01;
         private System.Windows.Forms.TextBox textBox1;
+        private Helper.BitButtonSmall bitButtonSmall1;
+        private Helper.BitButtonSmall bitButtonSmall2;
     }
 }

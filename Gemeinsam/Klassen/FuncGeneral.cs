@@ -20,6 +20,7 @@ namespace Helper
 {
     public static class FuncGeneral
     {
+        public enum AlignmentType { Both = 0, Vertikal, Horizontal };
 
         public static int komCounter = 0;
 
@@ -69,16 +70,12 @@ namespace Helper
             {
                 retval = DeleteLeft(match, 3);
                 retval = DeleteRight(retval, 1);
-
-
             }
             else
             {
                 retval = match;
             }
-
             Text = text;
-
             return retval;
         }
 
@@ -99,7 +96,6 @@ namespace Helper
             string[] typeGroups = cType.Split('.');
             retval = "dyn" + typeGroups[typeGroups.Count() - 1] + komCounter;
             return retval;
-
         }
 
         public static void KillProgram(string ProgName, bool allProgs = true)
@@ -156,9 +152,19 @@ namespace Helper
             return retval;
         }
 
-        
-
-
+        public static void CentreObject(Control centreObject, Control centreObjectParent, AlignmentType alignment=AlignmentType.Both)
+        {
+            centreObject.Parent = centreObjectParent;
+            if (alignment == AlignmentType.Both || alignment == AlignmentType.Horizontal)
+            {
+                centreObject.Left = (centreObjectParent.Width - centreObject.Width) / 2;
+            }
+            if (alignment == AlignmentType.Both || alignment == AlignmentType.Vertikal)
+            {
+                centreObject.Top = (centreObjectParent.Height - centreObject.Height) / 2;
+            }
+            centreObject.BringToFront();
+        }
 
         public static void RotatePoints(ref List<PointF> pointToRotate, PointF centerPoint, float angleInDegrees)
         {

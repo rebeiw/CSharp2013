@@ -5,6 +5,12 @@ using System.ComponentModel;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
+using System.Text;
+using System.Threading.Tasks;
+using System.Reflection;
+using System.Data;
+using System.Data.SqlClient;
+using System.Data.SQLite;
 
 
 namespace Helper
@@ -18,6 +24,7 @@ namespace Helper
         public object BtnStopp;
         public object LblStatus;
         public object ProgBar;
+        public object LblPlc;
     }
 
     public struct ClsSingeltonPlcDatas
@@ -66,8 +73,10 @@ namespace Helper
         private object m_LblStatus;
         private object m_BtnStart;
         private object m_BtnStopp;
+        private object m_LblPlc;
 
         private System.Windows.Forms.Timer m_TimerRead;
+        private System.Windows.Forms.Timer m_TimerPlc;
 
 
         private libnodave.daveOSserialType m_Fds;
@@ -80,8 +89,24 @@ namespace Helper
         private int m_Rack;
         private int m_Slot;
 
+        private SQLiteCommand m_sqliteCommand;
+        private SQLiteConnection m_sqliteConnection;
+        private SQLiteDataReader m_sqliteDataReader;
+
+        private ClsSingeltonParameter m_parameter;
+
+
+
         private ClsSingeltonPlc(ClsSingeltonPlcParameter PlcParameter)
         {
+            this.m_parameter = ClsSingeltonParameter.CreateInstance();
+
+            this.m_sqliteConnection = new SQLiteConnection();
+            this.m_sqliteConnection.ConnectionString = this.m_parameter.ConnectionString;
+            this.m_sqliteConnection.Open();
+
+            this.m_sqliteCommand = new SQLiteCommand(this.m_sqliteConnection);
+
 
             this.m_DatenBytes = new byte[0];
 
@@ -102,6 +127,11 @@ namespace Helper
             this.m_TimerRead.Interval = 100;
             this.m_TimerRead.Tick+=TimerRead_Tick;
 
+            this.m_TimerPlc = new System.Windows.Forms.Timer();
+            this.m_TimerPlc.Enabled = true;
+            this.m_TimerPlc.Interval = 1000;
+            this.m_TimerPlc.Tick += TimerPlc_Tick;
+
             this.m_IP = PlcParameter.IP;
             this.m_Rack = Convert.ToInt32(PlcParameter.Rack);
             this.m_Slot = Convert.ToInt32(PlcParameter.Slot);
@@ -111,6 +141,7 @@ namespace Helper
             this.m_LblStatus = PlcParameter.LblStatus;
             this.m_BtnStart = PlcParameter.BtnStart;
             this.m_BtnStopp = PlcParameter.BtnStopp;
+            this.m_LblPlc = PlcParameter.LblPlc;
             
             this.m_BackgroundWorkerPlcRead = new BackgroundWorker();
             this.m_BackgroundWorkerPlcRead.WorkerReportsProgress = true;
@@ -125,6 +156,9 @@ namespace Helper
             this.ButtonVisibleOnOff(this.m_BtnStart, true);
             this.ButtonVisibleOnOff(this.m_BtnStopp, false);
             this.SetInfo(this.m_LblStatus, "Wait..");
+            this.m_PlcState = 0;
+
+            this.LoadPlcitems();
 
         }
 
@@ -143,6 +177,24 @@ namespace Helper
             this.m_BackgroundWorkerPlcRead.RunWorkerAsync();
         }
 
+        private void TimerPlc_Tick(object sender, EventArgs e)
+        {
+            if (this.m_LblPlc != null)
+            {
+                if(this.m_LblStatus is Label)
+                {
+                    Label lbl = (Label)this.m_LblPlc;
+                    if (this.m_PlcState!=0)
+                    {
+                        lbl.Visible = !lbl.Visible;
+                    }
+                    else
+                    {
+                        lbl.Visible = false;
+                    }
+                }
+            }
+        }
 
         private void BackgroundWorkerPlcRead_DoWork(object sender, DoWorkEventArgs e)
         {
@@ -268,7 +320,7 @@ namespace Helper
                 this.SetInfo(this.m_LblStatus, "Canc..");
                 this.ButtonVisibleOnOff(this.m_BtnStart, true);
                 this.SetProgressbar(this.m_ProgressBar, 0);
-
+                this.m_PlcState = 0;
             }
             foreach (string var in (List<string>)e.Result)
             {
@@ -325,10 +377,7 @@ namespace Helper
             this.m_FlagGoOn = true;
             this.ButtonVisibleOnOff(this.m_BtnStart, false);
             this.ButtonVisibleOnOff(this.m_BtnStopp, true);
-            do
-            {
-                this.InitPLC();
-            } while (this.m_PlcState < 0);
+            this.InitPLC();
             this.m_TimerRead.Enabled = true;
         }
 
@@ -363,6 +412,26 @@ namespace Helper
             this.ButtonVisibleOnOff(this.m_BtnStopp, false);
             this.SetProgressbar(this.m_ProgressBar, 0);
         }
+
+        private void LoadPlcitems()
+        {
+            this.m_sqliteCommand.CommandText = "Select Adresse, Symbol, Symboltype, Kommentar from plcitems";
+
+            if (this.m_sqliteDataReader != null)
+            {
+                this.m_sqliteDataReader.Close();
+                this.m_sqliteDataReader = null;
+            }
+            this.m_sqliteDataReader = this.m_sqliteCommand.ExecuteReader();
+            while (this.m_sqliteDataReader.Read())
+            {
+                this.AddList(this.m_sqliteDataReader.GetValue(0).ToString(), this.m_sqliteDataReader.GetValue(1).ToString(), this.m_sqliteDataReader.GetValue(2).ToString(), this.m_sqliteDataReader.GetValue(3).ToString());
+            }
+            this.m_sqliteDataReader.Close();
+            this.m_sqliteDataReader = null;
+
+        }
+
         public void AddList(string adresse, string symbolName, string dataType, string comment, bool dataLog=false)
         {
             int byte_length = 0;
