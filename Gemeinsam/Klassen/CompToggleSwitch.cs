@@ -11,19 +11,20 @@ using System.Windows.Forms;
 
 namespace Helper
 {
-    public enum SwitchState
-    {
-        Off=0,
-        On
-    }
     [ToolboxItem(true)]
-    [ToolboxBitmapAttribute(typeof(ToggleSwitch),"ToggleSwitch.bmp")]
-    public class ToggleSwitch : PictureBox
+    [ToolboxBitmapAttribute(typeof(CompToggleSwitch),"ToggleSwitch.bmp")]
+    public class CompToggleSwitch : PictureBox
     {
-        public ToggleSwitch()
+        public enum SwitchState
+        {
+            Off = 0,
+            On
+        }
+        public CompToggleSwitch()
         {
             this.Width = 79;
             this.Height = 39;
+            this.State = CompToggleSwitch.SwitchState.Off;
         }
 
         [Category("Default"), Description("")]
@@ -49,13 +50,13 @@ namespace Helper
         }
         protected override void OnClick(EventArgs e)
         {
-            if (this.State == SwitchState.Off)
+            if (this.State == CompToggleSwitch.SwitchState.Off)
             {
-                this.State = SwitchState.On;
+                this.State = CompToggleSwitch.SwitchState.On;
             }
             else
             {
-                this.State = SwitchState.Off;
+                this.State = CompToggleSwitch.SwitchState.Off;
             }
             base.OnClick(e);
             this.Invalidate();

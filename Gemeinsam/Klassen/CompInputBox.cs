@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace Helper
 {
-    public class InputBox : TextBox
+    public class CompInputBox : TextBox
     {
-        public InputBox()
+        public CompInputBox()
         {
             this.BackColor = Color.White;
             this.ForeColor = Color.Black;
@@ -76,7 +76,6 @@ namespace Helper
 
         protected override void OnGotFocus(EventArgs e)
         {
-
             this.BackColor = SystemColors.Highlight;
             base.OnGotFocus(e);
         }
