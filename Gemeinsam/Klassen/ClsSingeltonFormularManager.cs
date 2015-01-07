@@ -41,6 +41,9 @@ namespace Helper
 
         private Hashtable m_formulars;//!<Liste fuer die angemeldeten Formulare
 
+        private int m_dynamicControlId;
+
+
 
 
         /** 
@@ -51,6 +54,7 @@ namespace Helper
         private ClsSingeltonFormularManager()
         {
             this.m_formulars = new Hashtable();
+            this.m_dynamicControlId = 0;
         }
 
         /** 
@@ -65,6 +69,14 @@ namespace Helper
                 m_instance=null;
             }
         }
+
+        public string GetDynamicControlName(string controlType)
+        {
+            string retval = controlType + this.m_dynamicControlId.ToString();
+            this.m_dynamicControlId++;
+            return retval;
+        }
+
 
         /** 
          * \brief Instanz erzeugen

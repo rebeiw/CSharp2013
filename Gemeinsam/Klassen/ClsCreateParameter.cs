@@ -14,7 +14,7 @@ namespace Helper
     public class ClsCreateParameter
     {
         private Label m_Text;
-        private ToggleSwitch m_ToogleSwitch;
+        private CompToggleSwitch m_ToogleSwitch;
         private CompLedRectangle m_LedRectangle;
         private Control m_Komponente;
         private int m_Zeile;
@@ -46,7 +46,7 @@ namespace Helper
             Form frm = new Form();
 
             int breite = this.m_Komponente.ClientRectangle.Width;
-            this.m_ToogleSwitch = new ToggleSwitch();
+            this.m_ToogleSwitch = new CompToggleSwitch();
             this.m_LedRectangle = new CompLedRectangle();
 
             int hoeheZeile=this.m_LedRectangle.Height;

@@ -273,16 +273,16 @@ namespace Helper
             return retval;
         }
 
-        public static SwitchState GetSateToggleSwitch(string Input)
+        public static CompToggleSwitch.SwitchState GetSateToggleSwitch(string Input)
         {
-            SwitchState retval = SwitchState.Off;
+            CompToggleSwitch.SwitchState retval = CompToggleSwitch.SwitchState.Off;
             if (Input == "0")
             {
-                retval = SwitchState.Off;
+                retval = CompToggleSwitch.SwitchState.Off;
             }
             if (Input == "1")
             {
-                retval = SwitchState.On;
+                retval = CompToggleSwitch.SwitchState.On;
             }
             return retval;
         }

@@ -415,7 +415,7 @@ namespace Helper
 
         private void LoadPlcitems()
         {
-            this.m_sqliteCommand.CommandText = "Select Adresse, Symbol, Symboltype, Kommentar from plcitems";
+            this.m_sqliteCommand.CommandText = "Select S7Adress, S7Symbol, S7SymbolType, S7Comment from plcitems";
 
             if (this.m_sqliteDataReader != null)
             {
@@ -425,7 +425,10 @@ namespace Helper
             this.m_sqliteDataReader = this.m_sqliteCommand.ExecuteReader();
             while (this.m_sqliteDataReader.Read())
             {
-                this.AddList(this.m_sqliteDataReader.GetValue(0).ToString(), this.m_sqliteDataReader.GetValue(1).ToString(), this.m_sqliteDataReader.GetValue(2).ToString(), this.m_sqliteDataReader.GetValue(3).ToString());
+                this.AddList(this.m_sqliteDataReader.GetValue(0).ToString(), 
+                             this.m_sqliteDataReader.GetValue(1).ToString(), 
+                             this.m_sqliteDataReader.GetValue(2).ToString(), 
+                             this.m_sqliteDataReader.GetValue(3).ToString());
             }
             this.m_sqliteDataReader.Close();
             this.m_sqliteDataReader = null;

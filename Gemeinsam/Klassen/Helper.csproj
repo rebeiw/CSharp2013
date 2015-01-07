@@ -115,6 +115,12 @@
     <Compile Include="FrmMenu.Designer.cs">
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmParameter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmParameter.Designer.cs">
+      <DependentUpon>FrmParameter.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,7 +149,7 @@
     <Compile Include="FuncPLC.cs" />
     <Compile Include="FuncString.cs" />
     <Compile Include="GlobalVar.cs" />
-    <Compile Include="InputBox.cs">
+    <Compile Include="CompInputBox.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="CompLedRectangle.cs">
@@ -178,7 +184,7 @@
     </Compile>
     <Compile Include="SQLHelper.cs" />
     <Compile Include="StatusHelper.cs" />
-    <Compile Include="ToggleSwitch.cs">
+    <Compile Include="CompToggleSwitch.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="CompTxtBox.cs">
@@ -205,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMenu.resx">
       <DependentUpon>FrmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmParameter.resx">
+      <DependentUpon>FrmParameter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPassword.resx">
       <DependentUpon>FrmPassword.cs</DependentUpon>

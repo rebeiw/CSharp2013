@@ -6,9 +6,13 @@ namespace Helper
     {
         private ClsSingeltonFormularManager m_formularManager;
 
+
+        private System.Drawing.Size m_size;
+
         public FrmVorlage()
         {
             InitializeComponent();
+            this.m_size = new System.Drawing.Size();
             this.m_formularManager = ClsSingeltonFormularManager.CreateInstance();
         }
 
@@ -24,6 +28,86 @@ namespace Helper
 
         public virtual void SetLanguage()
         {
+        }
+
+
+        protected GroupBox CreateGroupBox(int left, int top, int width, int height, string text, Control parent)
+        {
+            GroupBox group_box = null;
+            group_box = new System.Windows.Forms.GroupBox();
+            group_box.SetBounds(left, top, width, height);
+            group_box.Text = text;
+            group_box.Name = this.m_formularManager.GetDynamicControlName("groupBox");
+            parent.Controls.Add(group_box);
+            return group_box;
+        }
+
+        protected Label CreateLabel(int left, int top, int width, int height, string text, Control parent, System.Drawing.ContentAlignment Align=System.Drawing.ContentAlignment.MiddleRight)
+        {
+            Label label = null;
+
+            label = new System.Windows.Forms.Label();
+            label.AutoSize = false;
+            label.Text = text;
+            label.SetBounds(left, top, width, height);
+            label.TextAlign = Align;
+            label.Name = this.m_formularManager.GetDynamicControlName("label");
+            parent.Controls.Add(label);
+            return label;
+        }
+
+        protected CompToggleSwitch CreateToggleSwitch(int left, int top, Control parent)
+        {
+            int width = 79;
+            int height = 39;
+            CompToggleSwitch comp_toggle_switch = null;
+            comp_toggle_switch = new Helper.CompToggleSwitch();
+            comp_toggle_switch.SetBounds(left, top, width, height);
+            comp_toggle_switch.Name = this.m_formularManager.GetDynamicControlName("compToggleSwitch");
+            parent.Controls.Add(comp_toggle_switch);
+            return comp_toggle_switch;
+        }
+
+
+
+        protected CompLedRectangle CreateLedRectangle(int left, int top, Control parent)
+        {
+            int width = 79;
+            int height = 39;
+            CompLedRectangle comp_led_rectangle = null;
+            comp_led_rectangle = new Helper.CompLedRectangle();
+            comp_led_rectangle.SetBounds(left, top, width, height);
+            comp_led_rectangle.Name = this.m_formularManager.GetDynamicControlName("compLedRectangle");
+            parent.Controls.Add(comp_led_rectangle);
+            return comp_led_rectangle;
+        }
+
+
+
+        protected TabPage CreateTabPage(string text, Control parent)
+        {
+            TabPage tab_page = null;
+            tab_page = new System.Windows.Forms.TabPage();
+            tab_page.Text = text;
+            tab_page.BackColor = System.Drawing.Color.Silver;
+            tab_page.Name = this.m_formularManager.GetDynamicControlName("tabPage");
+            parent.Controls.Add(tab_page);
+            return tab_page;
+        }
+
+        protected TabControl CreateTabControl(int left, int top, int width, int height, Control parent)
+        {
+            TabControl tab_control = null;
+            tab_control = new System.Windows.Forms.TabControl();
+            tab_control.SetBounds(left, top, width, height);
+            this.m_size.Width = tab_control.ItemSize.Width;
+            this.m_size.Height = 39;
+            tab_control.ItemSize = this.m_size;
+            tab_control.Name = this.m_formularManager.GetDynamicControlName("tabControl");
+            tab_control.SelectedIndex = 0;
+            tab_control.TabIndex = 0;
+            parent.Controls.Add(tab_control);
+            return tab_control;
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)

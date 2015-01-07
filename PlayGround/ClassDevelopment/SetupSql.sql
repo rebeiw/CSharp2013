@@ -32,6 +32,7 @@ VALUES
 ('Operator','Operator','Operator','','',''),
 ('Ausgeloggt','Ausgeloggt','Logoff','','',''),
 ('Service','Service','Service','','',''),
+('Pumpen 1','Pumpen 1','Pumps 1','','',''),
 ('Einrichter','Einrichter','Setter','','','');
 
 CREATE TABLE IF NOT EXISTS Parameter  

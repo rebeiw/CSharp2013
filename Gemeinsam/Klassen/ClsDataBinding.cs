@@ -168,8 +168,8 @@ namespace Helper
 
                         if (obj_type == "Helper.ToggleSwitch")
                         {
-                            ToggleSwitch obj_toogle_switch;
-                            obj_toogle_switch = (ToggleSwitch)obj;
+                            CompToggleSwitch obj_toogle_switch;
+                            obj_toogle_switch = (CompToggleSwitch)obj;
                             if (bindingList.Propertie == "State")
                             {
                                 obj_toogle_switch.State = FuncGeneral.GetSateToggleSwitch(Glb_Plc.DatabasesValues[bindingList.SymbolName].ToString());
@@ -198,8 +198,8 @@ namespace Helper
 
                         if (obj_type == "Helper.InputBox")
                         {
-                            InputBox obj_input_box;
-                            obj_input_box = (Helper.InputBox)obj;
+                            CompInputBox obj_input_box;
+                            obj_input_box = (Helper.CompInputBox)obj;
                             if (bindingList.Propertie == "Text")
                             {
                                 if (!obj_input_box.Focused)

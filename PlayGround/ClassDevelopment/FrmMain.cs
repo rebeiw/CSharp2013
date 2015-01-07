@@ -17,7 +17,6 @@ namespace ClassDevelopment
     {
 
         private ClsSingeltonVariablesCollecter m_varCollect;
-
         private ClsSingeltonUserManagement m_userManagement;
         private ClsSingeltonDataBinding m_dataBinding;
         private ClsSingeltonLanguage m_language;
@@ -25,8 +24,8 @@ namespace ClassDevelopment
         private ClsSingeltonPlcParameter m_plcPara;
         private ClsSingeltonFormularManager m_formularManager;
         private ClsSingeltonParameter m_parameter;
-        FrmHeater FrmHeater;
-
+        private FrmHeater FrmHeater;
+        private FrmParameter FrmParameter;
         public FrmMain()
         {
 
@@ -35,6 +34,7 @@ namespace ClassDevelopment
 
             FuncGeneral.Start();
             FrmHeater = new FrmHeater();
+            FrmParameter = new FrmParameter();
 
             this.InitializeComponent();
             this.Width = 1024;
@@ -171,6 +171,12 @@ namespace ClassDevelopment
         private void FrmMain_Activated(object sender, EventArgs e)
         {
             this.m_parameter.ActualForm = this;
+        }
+
+        private void BtnPara_Click(object sender, EventArgs e)
+        {
+            this.m_formularManager.FormularShow("FrmParameter");
+
         }
     }
 }

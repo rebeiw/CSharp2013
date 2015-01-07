@@ -138,7 +138,7 @@ namespace Helper
         {
             if(!this.m_tableComponentIgnore.Contains(controlToTranslate))
             {
-                if (controlToTranslate is Form || controlToTranslate is Label || controlToTranslate is GroupBox)
+                if (controlToTranslate is Form || controlToTranslate is Label || controlToTranslate is GroupBox || controlToTranslate is TabPage) 
                 {
                     string native_text = controlToTranslate.Text;
                     this.AddControl(controlToTranslate, "Text", native_text);

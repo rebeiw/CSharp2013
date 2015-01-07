@@ -44,10 +44,5 @@ namespace Helper
         {
             m_formularManager.FormularShow("FrmKeyBoard");
         }
-
-        private void FrmVorlageMenu_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

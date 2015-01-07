@@ -154,6 +154,7 @@
             this.compBitButton1 = new Helper.CompBitButton();
             this.compBitButton2 = new Helper.CompBitButton();
             this.LblPlcNoConnect = new System.Windows.Forms.Label();
+            this.BtnPara = new Helper.CompBitButton();
             ((System.ComponentModel.ISupportInitialize)(this.BtnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnKeyboard)).BeginInit();
             this.GbxMenu.SuspendLayout();
@@ -208,6 +209,7 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.compBitButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.compBitButton2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnPara)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnClose
@@ -229,6 +231,7 @@
             // 
             this.GbxOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
             this.GbxOutput.BackColor = System.Drawing.Color.Transparent;
+            this.GbxOutput.Controls.Add(this.BtnPara);
             this.GbxOutput.Controls.Add(this.compBitButton2);
             this.GbxOutput.Controls.Add(this.compBitButton1);
             this.GbxOutput.Controls.Add(this.panel1);
@@ -348,7 +351,6 @@
             this.GbxOutput.Controls.Add(this.Pip08);
             this.GbxOutput.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GbxOutput.ForeColor = System.Drawing.Color.Black;
-            this.GbxOutput.Location = new System.Drawing.Point(5, 4);
             this.GbxOutput.Size = new System.Drawing.Size(1007, 701);
             this.GbxOutput.Text = "Heater Fuel Gas";
             // 
@@ -358,7 +360,7 @@
             // 
             // Led01
             // 
-            this.Led01.Location = new System.Drawing.Point(7, 21);
+            this.Led01.Location = new System.Drawing.Point(7, 19);
             this.Led01.Name = "Led01";
             this.Led01.Size = new System.Drawing.Size(79, 39);
             this.Led01.State = Helper.CompLedRectangle.CompLedState.LedOff;
@@ -385,7 +387,7 @@
             // 
             // Led02
             // 
-            this.Led02.Location = new System.Drawing.Point(104, 21);
+            this.Led02.Location = new System.Drawing.Point(104, 19);
             this.Led02.Name = "Led02";
             this.Led02.Size = new System.Drawing.Size(79, 39);
             this.Led02.State = Helper.CompLedRectangle.CompLedState.LedOff;
@@ -403,7 +405,7 @@
             // 
             // Led03
             // 
-            this.Led03.Location = new System.Drawing.Point(202, 21);
+            this.Led03.Location = new System.Drawing.Point(202, 19);
             this.Led03.Name = "Led03";
             this.Led03.Size = new System.Drawing.Size(79, 39);
             this.Led03.State = Helper.CompLedRectangle.CompLedState.LedOff;
@@ -421,7 +423,7 @@
             // 
             // Led04
             // 
-            this.Led04.Location = new System.Drawing.Point(305, 21);
+            this.Led04.Location = new System.Drawing.Point(305, 19);
             this.Led04.Name = "Led04";
             this.Led04.Size = new System.Drawing.Size(79, 39);
             this.Led04.State = Helper.CompLedRectangle.CompLedState.LedOff;
@@ -440,7 +442,7 @@
             // 
             // Led05
             // 
-            this.Led05.Location = new System.Drawing.Point(402, 21);
+            this.Led05.Location = new System.Drawing.Point(402, 19);
             this.Led05.Name = "Led05";
             this.Led05.Size = new System.Drawing.Size(79, 39);
             this.Led05.State = Helper.CompLedRectangle.CompLedState.LedOff;
@@ -458,7 +460,7 @@
             // 
             // Led06
             // 
-            this.Led06.Location = new System.Drawing.Point(497, 21);
+            this.Led06.Location = new System.Drawing.Point(497, 19);
             this.Led06.Name = "Led06";
             this.Led06.Size = new System.Drawing.Size(79, 39);
             this.Led06.State = Helper.CompLedRectangle.CompLedState.LedOff;
@@ -471,7 +473,7 @@
             this.bitButton2.EnableMouseDown = false;
             this.bitButton2.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
             this.bitButton2.Formular = null;
-            this.bitButton2.Location = new System.Drawing.Point(921, 21);
+            this.bitButton2.Location = new System.Drawing.Point(917, 19);
             this.bitButton2.Name = "bitButton2";
             this.bitButton2.Picture_0 = Helper.CompBitButtonStyle.btg_Menue;
             this.bitButton2.Picture_1 = Helper.CompBitButtonStyle.btg_Blanko;
@@ -628,7 +630,7 @@
             this.Txt17.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.Txt17.ForeColor = System.Drawing.Color.Yellow;
             this.Txt17.Format = "0";
-            this.Txt17.Location = new System.Drawing.Point(792, 22);
+            this.Txt17.Location = new System.Drawing.Point(792, 19);
             this.Txt17.Margin = new System.Windows.Forms.Padding(4);
             this.Txt17.Name = "Txt17";
             this.Txt17.Size = new System.Drawing.Size(59, 29);
@@ -1894,7 +1896,7 @@
             this.compBitButton1.Caption = "";
             this.compBitButton1.EnableMouseDown = false;
             this.compBitButton1.Formular = null;
-            this.compBitButton1.Location = new System.Drawing.Point(705, 21);
+            this.compBitButton1.Location = new System.Drawing.Point(705, 19);
             this.compBitButton1.Name = "compBitButton1";
             this.compBitButton1.Picture_0 = Helper.CompBitButtonStyle.btg_Blanko;
             this.compBitButton1.Picture_1 = Helper.CompBitButtonStyle.btg_Blanko;
@@ -1913,7 +1915,7 @@
             this.compBitButton2.Caption = "";
             this.compBitButton2.EnableMouseDown = false;
             this.compBitButton2.Formular = null;
-            this.compBitButton2.Location = new System.Drawing.Point(596, 21);
+            this.compBitButton2.Location = new System.Drawing.Point(596, 19);
             this.compBitButton2.Name = "compBitButton2";
             this.compBitButton2.Picture_0 = Helper.CompBitButtonStyle.btg_Blanko;
             this.compBitButton2.Picture_1 = Helper.CompBitButtonStyle.btg_Blanko;
@@ -1940,6 +1942,25 @@
             this.LblPlcNoConnect.Text = "No PLC - Connection";
             this.LblPlcNoConnect.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.LblPlcNoConnect.Visible = false;
+            // 
+            // BtnPara
+            // 
+            this.BtnPara.Caption = "";
+            this.BtnPara.EnableMouseDown = false;
+            this.BtnPara.Formular = null;
+            this.BtnPara.Location = new System.Drawing.Point(596, 72);
+            this.BtnPara.Name = "BtnPara";
+            this.BtnPara.Picture_0 = Helper.CompBitButtonStyle.btg_Para;
+            this.BtnPara.Picture_1 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnPara.Picture_2 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnPara.Picture_3 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnPara.Picture_4 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnPara.PictureNumber = 0;
+            this.BtnPara.Size = new System.Drawing.Size(79, 48);
+            this.BtnPara.Symbol = null;
+            this.BtnPara.TabIndex = 156;
+            this.BtnPara.TabStop = false;
+            this.BtnPara.Click += new System.EventHandler(this.BtnPara_Click);
             // 
             // FrmMain
             // 
@@ -2015,6 +2036,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.compBitButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.compBitButton2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnPara)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2146,6 +2168,7 @@
         private Helper.CompBitButton compBitButton1;
         private Helper.CompBitButton compBitButton2;
         private System.Windows.Forms.Label LblPlcNoConnect;
+        private Helper.CompBitButton BtnPara;
     }
 }
 

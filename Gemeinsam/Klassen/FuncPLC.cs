@@ -20,7 +20,7 @@ namespace Helper
             }
             if (btnType == "Helper.InputBox")
             {
-                InputBox btnObj = (InputBox)sender;
+                CompInputBox btnObj = (CompInputBox)sender;
                 retval = btnObj.Symbol;
             }
             return retval;
