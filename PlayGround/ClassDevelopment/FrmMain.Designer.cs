@@ -41,7 +41,7 @@
             this.Led05 = new Helper.CompLedRectangle();
             this.label6 = new System.Windows.Forms.Label();
             this.Led06 = new Helper.CompLedRectangle();
-            this.bitButton2 = new Helper.CompBitButton();
+            this.BtnMenuMain = new Helper.CompBitButton();
             this.Pip07 = new Helper.CompPipe();
             this.Pip02 = new Helper.CompPipe();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -151,10 +151,7 @@
             this.label47 = new System.Windows.Forms.Label();
             this.label46 = new System.Windows.Forms.Label();
             this.compTxtBox2 = new Helper.CompTxtBox();
-            this.compBitButton1 = new Helper.CompBitButton();
-            this.compBitButton2 = new Helper.CompBitButton();
             this.LblPlcNoConnect = new System.Windows.Forms.Label();
-            this.BtnPara = new Helper.CompBitButton();
             ((System.ComponentModel.ISupportInitialize)(this.BtnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnKeyboard)).BeginInit();
             this.GbxMenu.SuspendLayout();
@@ -166,7 +163,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Led04)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Led05)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Led06)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bitButton2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnMenuMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pip07)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pip02)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -207,9 +204,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.compArrow6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.compPipe3)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.compBitButton1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.compBitButton2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnPara)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnClose
@@ -231,9 +225,6 @@
             // 
             this.GbxOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
             this.GbxOutput.BackColor = System.Drawing.Color.Transparent;
-            this.GbxOutput.Controls.Add(this.BtnPara);
-            this.GbxOutput.Controls.Add(this.compBitButton2);
-            this.GbxOutput.Controls.Add(this.compBitButton1);
             this.GbxOutput.Controls.Add(this.panel1);
             this.GbxOutput.Controls.Add(this.compPipe3);
             this.GbxOutput.Controls.Add(this.compArrow6);
@@ -335,7 +326,7 @@
             this.GbxOutput.Controls.Add(this.BtnStartPlc);
             this.GbxOutput.Controls.Add(this.pictureBox1);
             this.GbxOutput.Controls.Add(this.Pip07);
-            this.GbxOutput.Controls.Add(this.bitButton2);
+            this.GbxOutput.Controls.Add(this.BtnMenuMain);
             this.GbxOutput.Controls.Add(this.label6);
             this.GbxOutput.Controls.Add(this.Led06);
             this.GbxOutput.Controls.Add(this.label5);
@@ -362,14 +353,14 @@
             // 
             this.Led01.Location = new System.Drawing.Point(7, 19);
             this.Led01.Name = "Led01";
-            this.Led01.Size = new System.Drawing.Size(79, 39);
+            this.Led01.Size = new System.Drawing.Size(89, 35);
             this.Led01.State = Helper.CompLedRectangle.CompLedState.LedOff;
             this.Led01.TabIndex = 10;
             this.Led01.TabStop = false;
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(7, 63);
+            this.label1.Location = new System.Drawing.Point(12, 59);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 39);
             this.label1.TabIndex = 11;
@@ -378,7 +369,7 @@
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(104, 63);
+            this.label2.Location = new System.Drawing.Point(132, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 39);
             this.label2.TabIndex = 13;
@@ -387,16 +378,16 @@
             // 
             // Led02
             // 
-            this.Led02.Location = new System.Drawing.Point(104, 19);
+            this.Led02.Location = new System.Drawing.Point(127, 19);
             this.Led02.Name = "Led02";
-            this.Led02.Size = new System.Drawing.Size(79, 39);
+            this.Led02.Size = new System.Drawing.Size(89, 35);
             this.Led02.State = Helper.CompLedRectangle.CompLedState.LedOff;
             this.Led02.TabIndex = 12;
             this.Led02.TabStop = false;
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(202, 63);
+            this.label3.Location = new System.Drawing.Point(252, 59);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 39);
             this.label3.TabIndex = 15;
@@ -405,16 +396,16 @@
             // 
             // Led03
             // 
-            this.Led03.Location = new System.Drawing.Point(202, 19);
+            this.Led03.Location = new System.Drawing.Point(247, 19);
             this.Led03.Name = "Led03";
-            this.Led03.Size = new System.Drawing.Size(79, 39);
+            this.Led03.Size = new System.Drawing.Size(89, 35);
             this.Led03.State = Helper.CompLedRectangle.CompLedState.LedOff;
             this.Led03.TabIndex = 14;
             this.Led03.TabStop = false;
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(305, 63);
+            this.label4.Location = new System.Drawing.Point(372, 59);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 39);
             this.label4.TabIndex = 17;
@@ -423,9 +414,9 @@
             // 
             // Led04
             // 
-            this.Led04.Location = new System.Drawing.Point(305, 19);
+            this.Led04.Location = new System.Drawing.Point(367, 19);
             this.Led04.Name = "Led04";
-            this.Led04.Size = new System.Drawing.Size(79, 39);
+            this.Led04.Size = new System.Drawing.Size(89, 35);
             this.Led04.State = Helper.CompLedRectangle.CompLedState.LedOff;
             this.Led04.TabIndex = 16;
             this.Led04.TabStop = false;
@@ -433,7 +424,7 @@
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(402, 63);
+            this.label5.Location = new System.Drawing.Point(492, 59);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 39);
             this.label5.TabIndex = 19;
@@ -442,16 +433,16 @@
             // 
             // Led05
             // 
-            this.Led05.Location = new System.Drawing.Point(402, 19);
+            this.Led05.Location = new System.Drawing.Point(487, 19);
             this.Led05.Name = "Led05";
-            this.Led05.Size = new System.Drawing.Size(79, 39);
+            this.Led05.Size = new System.Drawing.Size(89, 35);
             this.Led05.State = Helper.CompLedRectangle.CompLedState.LedOff;
             this.Led05.TabIndex = 18;
             this.Led05.TabStop = false;
             // 
             // label6
             // 
-            this.label6.Location = new System.Drawing.Point(497, 63);
+            this.label6.Location = new System.Drawing.Point(612, 59);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 39);
             this.label6.TabIndex = 21;
@@ -460,32 +451,32 @@
             // 
             // Led06
             // 
-            this.Led06.Location = new System.Drawing.Point(497, 19);
+            this.Led06.Location = new System.Drawing.Point(607, 19);
             this.Led06.Name = "Led06";
-            this.Led06.Size = new System.Drawing.Size(79, 39);
+            this.Led06.Size = new System.Drawing.Size(89, 35);
             this.Led06.State = Helper.CompLedRectangle.CompLedState.LedOff;
             this.Led06.TabIndex = 20;
             this.Led06.TabStop = false;
             // 
-            // bitButton2
+            // BtnMenuMain
             // 
-            this.bitButton2.Caption = "";
-            this.bitButton2.EnableMouseDown = false;
-            this.bitButton2.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
-            this.bitButton2.Formular = null;
-            this.bitButton2.Location = new System.Drawing.Point(917, 19);
-            this.bitButton2.Name = "bitButton2";
-            this.bitButton2.Picture_0 = Helper.CompBitButtonStyle.btg_Menue;
-            this.bitButton2.Picture_1 = Helper.CompBitButtonStyle.btg_Blanko;
-            this.bitButton2.Picture_2 = Helper.CompBitButtonStyle.btg_Blanko;
-            this.bitButton2.Picture_3 = Helper.CompBitButtonStyle.btg_Blanko;
-            this.bitButton2.Picture_4 = Helper.CompBitButtonStyle.btg_Blanko;
-            this.bitButton2.PictureNumber = 0;
-            this.bitButton2.Size = new System.Drawing.Size(79, 48);
-            this.bitButton2.Symbol = null;
-            this.bitButton2.TabIndex = 22;
-            this.bitButton2.TabStop = false;
-            this.bitButton2.Click += new System.EventHandler(this.bitButton2_Click);
+            this.BtnMenuMain.Caption = "";
+            this.BtnMenuMain.EnableMouseDown = false;
+            this.BtnMenuMain.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.BtnMenuMain.Formular = null;
+            this.BtnMenuMain.Location = new System.Drawing.Point(917, 19);
+            this.BtnMenuMain.Name = "BtnMenuMain";
+            this.BtnMenuMain.Picture_0 = Helper.CompBitButtonStyle.btg_Menue;
+            this.BtnMenuMain.Picture_1 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnMenuMain.Picture_2 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnMenuMain.Picture_3 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnMenuMain.Picture_4 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnMenuMain.PictureNumber = 0;
+            this.BtnMenuMain.Size = new System.Drawing.Size(79, 48);
+            this.BtnMenuMain.Symbol = null;
+            this.BtnMenuMain.TabIndex = 22;
+            this.BtnMenuMain.TabStop = false;
+            this.BtnMenuMain.Click += new System.EventHandler(this.BtnMenuMain_Click);
             // 
             // Pip07
             // 
@@ -1891,44 +1882,6 @@
             this.compTxtBox2.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
             this.compTxtBox2.TextSymbol = "";
             // 
-            // compBitButton1
-            // 
-            this.compBitButton1.Caption = "";
-            this.compBitButton1.EnableMouseDown = false;
-            this.compBitButton1.Formular = null;
-            this.compBitButton1.Location = new System.Drawing.Point(705, 19);
-            this.compBitButton1.Name = "compBitButton1";
-            this.compBitButton1.Picture_0 = Helper.CompBitButtonStyle.btg_Blanko;
-            this.compBitButton1.Picture_1 = Helper.CompBitButtonStyle.btg_Blanko;
-            this.compBitButton1.Picture_2 = Helper.CompBitButtonStyle.btg_Blanko;
-            this.compBitButton1.Picture_3 = Helper.CompBitButtonStyle.btg_Blanko;
-            this.compBitButton1.Picture_4 = Helper.CompBitButtonStyle.btg_Blanko;
-            this.compBitButton1.PictureNumber = 0;
-            this.compBitButton1.Size = new System.Drawing.Size(79, 48);
-            this.compBitButton1.Symbol = null;
-            this.compBitButton1.TabIndex = 154;
-            this.compBitButton1.TabStop = false;
-            this.compBitButton1.Click += new System.EventHandler(this.compBitButton1_Click);
-            // 
-            // compBitButton2
-            // 
-            this.compBitButton2.Caption = "";
-            this.compBitButton2.EnableMouseDown = false;
-            this.compBitButton2.Formular = null;
-            this.compBitButton2.Location = new System.Drawing.Point(596, 19);
-            this.compBitButton2.Name = "compBitButton2";
-            this.compBitButton2.Picture_0 = Helper.CompBitButtonStyle.btg_Blanko;
-            this.compBitButton2.Picture_1 = Helper.CompBitButtonStyle.btg_Blanko;
-            this.compBitButton2.Picture_2 = Helper.CompBitButtonStyle.btg_Blanko;
-            this.compBitButton2.Picture_3 = Helper.CompBitButtonStyle.btg_Blanko;
-            this.compBitButton2.Picture_4 = Helper.CompBitButtonStyle.btg_Blanko;
-            this.compBitButton2.PictureNumber = 0;
-            this.compBitButton2.Size = new System.Drawing.Size(79, 48);
-            this.compBitButton2.Symbol = null;
-            this.compBitButton2.TabIndex = 155;
-            this.compBitButton2.TabStop = false;
-            this.compBitButton2.Click += new System.EventHandler(this.compBitButton2_Click);
-            // 
             // LblPlcNoConnect
             // 
             this.LblPlcNoConnect.BackColor = System.Drawing.Color.Red;
@@ -1942,25 +1895,6 @@
             this.LblPlcNoConnect.Text = "No PLC - Connection";
             this.LblPlcNoConnect.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.LblPlcNoConnect.Visible = false;
-            // 
-            // BtnPara
-            // 
-            this.BtnPara.Caption = "";
-            this.BtnPara.EnableMouseDown = false;
-            this.BtnPara.Formular = null;
-            this.BtnPara.Location = new System.Drawing.Point(596, 72);
-            this.BtnPara.Name = "BtnPara";
-            this.BtnPara.Picture_0 = Helper.CompBitButtonStyle.btg_Para;
-            this.BtnPara.Picture_1 = Helper.CompBitButtonStyle.btg_Blanko;
-            this.BtnPara.Picture_2 = Helper.CompBitButtonStyle.btg_Blanko;
-            this.BtnPara.Picture_3 = Helper.CompBitButtonStyle.btg_Blanko;
-            this.BtnPara.Picture_4 = Helper.CompBitButtonStyle.btg_Blanko;
-            this.BtnPara.PictureNumber = 0;
-            this.BtnPara.Size = new System.Drawing.Size(79, 48);
-            this.BtnPara.Symbol = null;
-            this.BtnPara.TabIndex = 156;
-            this.BtnPara.TabStop = false;
-            this.BtnPara.Click += new System.EventHandler(this.BtnPara_Click);
             // 
             // FrmMain
             // 
@@ -1992,7 +1926,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Led04)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Led05)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Led06)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bitButton2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnMenuMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pip07)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pip02)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -2034,9 +1968,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.compPipe3)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.compBitButton1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.compBitButton2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnPara)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2055,7 +1986,7 @@
         private Helper.CompLedRectangle Led03;
         private System.Windows.Forms.Label label2;
         private Helper.CompLedRectangle Led02;
-        private Helper.CompBitButton bitButton2;
+        private Helper.CompBitButton BtnMenuMain;
         private Helper.CompPipe Pip07;
         private Helper.CompPipe Pip02;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -2165,10 +2096,7 @@
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.Label label46;
         private Helper.CompTxtBox compTxtBox2;
-        private Helper.CompBitButton compBitButton1;
-        private Helper.CompBitButton compBitButton2;
         private System.Windows.Forms.Label LblPlcNoConnect;
-        private Helper.CompBitButton BtnPara;
     }
 }
 

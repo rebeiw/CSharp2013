@@ -37,6 +37,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.bitButtonSmall1 = new Helper.BitButtonSmall();
             this.bitButtonSmall2 = new Helper.BitButtonSmall();
+            this.compInputBox1 = new Helper.CompInputBox();
             ((System.ComponentModel.ISupportInitialize)(this.BtnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnKeyboard)).BeginInit();
             this.GbxMenu.SuspendLayout();
@@ -58,6 +59,7 @@
             // GbxOutput
             // 
             this.GbxOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
+            this.GbxOutput.Controls.Add(this.compInputBox1);
             this.GbxOutput.Controls.Add(this.bitButtonSmall2);
             this.GbxOutput.Controls.Add(this.bitButtonSmall1);
             this.GbxOutput.Controls.Add(this.textBox1);
@@ -67,6 +69,7 @@
             this.GbxOutput.Controls.Add(this.Txt03);
             this.GbxOutput.Controls.Add(this.Txt02);
             this.GbxOutput.Controls.Add(this.Txt01);
+            this.GbxOutput.Location = new System.Drawing.Point(0, 5);
             this.GbxOutput.Size = new System.Drawing.Size(652, 267);
             // 
             // Txt01
@@ -124,7 +127,7 @@
             // 
             this.Led01.Location = new System.Drawing.Point(164, 31);
             this.Led01.Name = "Led01";
-            this.Led01.Size = new System.Drawing.Size(79, 39);
+            this.Led01.Size = new System.Drawing.Size(89, 35);
             this.Led01.State = Helper.CompLedRectangle.CompLedState.LedOff;
             this.Led01.TabIndex = 3;
             this.Led01.TabStop = false;
@@ -159,6 +162,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 22);
             this.textBox1.TabIndex = 6;
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // bitButtonSmall1
             // 
@@ -198,6 +202,21 @@
             this.bitButtonSmall2.TabStop = false;
             this.bitButtonSmall2.Click += new System.EventHandler(this.bitButtonSmall2_Click);
             // 
+            // compInputBox1
+            // 
+            this.compInputBox1.BackColor = System.Drawing.Color.White;
+            this.compInputBox1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.compInputBox1.ForeColor = System.Drawing.Color.Black;
+            this.compInputBox1.Format = null;
+            this.compInputBox1.Location = new System.Drawing.Point(452, 123);
+            this.compInputBox1.Name = "compInputBox1";
+            this.compInputBox1.Size = new System.Drawing.Size(89, 35);
+            this.compInputBox1.Symbol = null;
+            this.compInputBox1.TabIndex = 2;
+            this.compInputBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.compInputBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.compInputBox1_KeyPress);
+            this.compInputBox1.Leave += new System.EventHandler(this.compInputBox1_Leave);
+            // 
             // FrmHeater
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -234,5 +253,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private Helper.BitButtonSmall bitButtonSmall1;
         private Helper.BitButtonSmall bitButtonSmall2;
+        private Helper.CompInputBox compInputBox1;
     }
 }

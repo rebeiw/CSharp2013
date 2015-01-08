@@ -20,8 +20,8 @@ namespace Helper
         private Pen m_Pen;
         public CompLedRectangle()
         {
-            this.m_Height = 39;
-            this.m_Width = 79;
+            this.m_Height = 35;
+            this.m_Width = 89;
             this.SetPropertie();
             this.State = CompLedState.LedOff;
             this.m_RecLedGradient = new Rectangle(0, 0, this.Width, this.Height);
@@ -76,5 +76,7 @@ namespace Helper
 
  
         }
+
+
     }
 }

@@ -25,7 +25,9 @@ namespace ClassDevelopment
         private ClsSingeltonFormularManager m_formularManager;
         private ClsSingeltonParameter m_parameter;
         private FrmHeater FrmHeater;
-        private FrmParameter FrmParameter;
+        private FrmPara FrmParameter;
+        private FrmInfo FrmInformation;
+        private FrmServ FrmService;
         public FrmMain()
         {
 
@@ -33,8 +35,6 @@ namespace ClassDevelopment
             this.m_parameter = ClsSingeltonParameter.CreateInstance();
 
             FuncGeneral.Start();
-            FrmHeater = new FrmHeater();
-            FrmParameter = new FrmParameter();
 
             this.InitializeComponent();
             this.Width = 1024;
@@ -56,6 +56,10 @@ namespace ClassDevelopment
             this.m_plc = ClsSingeltonPlc.CreateInstance(this.m_plcPara);
             this.m_language = ClsSingeltonLanguage.CreateInstance(this);
 
+            this.FrmHeater = new FrmHeater();
+            this.FrmParameter = new FrmPara();
+            this.FrmInformation = new FrmInfo();
+            this.FrmService = new FrmServ();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -126,6 +130,11 @@ namespace ClassDevelopment
             this.m_userManagement.SetUserRight();
             this.m_formularManager.SetUserRight();
 
+            this.m_formularManager.AddBitButtonCloseAll();
+            this.m_formularManager.AddButton(CompBitButtonStyle.btg_Para, "FrmPara");
+            this.m_formularManager.AddButton(CompBitButtonStyle.btg_Info, "FrmInfo");
+            this.m_formularManager.AddButton(CompBitButtonStyle.btg_Service, "FrmServ");
+
 
             FuncGeneral.CentreObject(this.LblPlcNoConnect,this.GbxOutput);
 
@@ -143,7 +152,7 @@ namespace ClassDevelopment
             this.Dispose();
         }
 
-        private void bitButton2_Click(object sender, EventArgs e)
+        private void BtnMenuMain_Click(object sender, EventArgs e)
         {
             this.ShowMenu();
         }
@@ -158,25 +167,10 @@ namespace ClassDevelopment
             this.m_plc.StoppRead();
         }
 
-        private void compBitButton1_Click(object sender, EventArgs e)
-        {
-            this.m_formularManager.FormularShow("FrmHeater");
-        }
-
-        private void compBitButton2_Click(object sender, EventArgs e)
-        {
-            this.BtnClose_Click(sender, e);
-        }
-
         private void FrmMain_Activated(object sender, EventArgs e)
         {
             this.m_parameter.ActualForm = this;
         }
 
-        private void BtnPara_Click(object sender, EventArgs e)
-        {
-            this.m_formularManager.FormularShow("FrmParameter");
-
-        }
     }
 }

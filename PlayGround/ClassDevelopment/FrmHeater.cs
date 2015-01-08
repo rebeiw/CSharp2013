@@ -61,5 +61,20 @@ namespace ClassDevelopment
         {
             this.m_userManagement.SetEnable(this.textBox1, ClsSingeltonUserManagement.UserRight.Logoff, true);
         }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void compInputBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void compInputBox1_Leave(object sender, EventArgs e)
+        {
+
+        }
     }
 }

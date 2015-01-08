@@ -1,5 +1,15 @@
-﻿using System.Windows.Forms;
-
+﻿using System;
+using System.Collections.Generic;
+using System.Collections;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Data.SQLite;
 namespace Helper
 {
     public partial class FrmVorlage : Form
@@ -56,6 +66,32 @@ namespace Helper
             return label;
         }
 
+        protected CompTxtBox CreateTxtBox(int left, int top, string format, Control parent)
+        {
+            int width = 79;
+            int height = 39;
+            CompTxtBox txt_box = null;
+            txt_box = new Helper.CompTxtBox();
+            txt_box.SetBounds(left, top, width, height);
+            txt_box.Format = format;
+            txt_box.Name = this.m_formularManager.GetDynamicControlName("compTxtBox");
+            parent.Controls.Add(txt_box);
+            return txt_box;
+        }
+
+        protected CompInputBox CreateInputBox(int left, int top, string format, Control parent)
+        {
+            int width = 89;
+            int height = 35;
+            CompInputBox txt_box = null;
+            txt_box = new Helper.CompInputBox();
+            txt_box.SetBounds(left, top, width, height);
+            txt_box.Format = format;
+            txt_box.Name = this.m_formularManager.GetDynamicControlName("compInputBox");
+            parent.Controls.Add(txt_box);
+            return txt_box;
+        }
+
         protected CompToggleSwitch CreateToggleSwitch(int left, int top, Control parent)
         {
             int width = 79;
@@ -67,7 +103,6 @@ namespace Helper
             parent.Controls.Add(comp_toggle_switch);
             return comp_toggle_switch;
         }
-
 
 
         protected CompLedRectangle CreateLedRectangle(int left, int top, Control parent)
@@ -103,9 +138,11 @@ namespace Helper
             this.m_size.Width = tab_control.ItemSize.Width;
             this.m_size.Height = 39;
             tab_control.ItemSize = this.m_size;
+            tab_control.DrawMode = TabDrawMode.OwnerDrawFixed;
             tab_control.Name = this.m_formularManager.GetDynamicControlName("tabControl");
             tab_control.SelectedIndex = 0;
             tab_control.TabIndex = 0;
+            tab_control.DrawItem += new DrawItemEventHandler(this.TabControl_DrawItem); 
             parent.Controls.Add(tab_control);
             return tab_control;
         }
@@ -115,6 +152,38 @@ namespace Helper
             e.Cancel = true;
             this.Hide();
         }
+
+        private void TabControl_DrawItem(object sender, System.Windows.Forms.DrawItemEventArgs e)
+        {
+            TabControl obj = (TabControl)sender;
+            Font Font;
+            Brush backBrush;
+            Brush foreBrush;
+            if (e.Index == obj.SelectedIndex)
+            {
+                Font = new Font(e.Font, FontStyle.Bold | FontStyle.Bold);
+                Font = new Font(e.Font, FontStyle.Bold);
+
+                backBrush = new System.Drawing.SolidBrush(Color.DarkGray);
+                foreBrush = Brushes.Black;
+            }
+            else
+            {
+                Font = e.Font;
+                backBrush = new SolidBrush(e.BackColor);
+                foreBrush = new SolidBrush(e.ForeColor);
+            }
+            string sTabName = obj.TabPages[e.Index].Text;
+            StringFormat sf = new StringFormat();
+            sf.Alignment = StringAlignment.Center;
+            sf.LineAlignment = StringAlignment.Center;
+
+            e.Graphics.FillRectangle(new SolidBrush(Color.Silver), e.Bounds);
+            Rectangle rect = e.Bounds;
+            rect = new Rectangle(rect.X, rect.Y + 3, rect.Width, rect.Height - 3);
+            e.Graphics.DrawString(sTabName, Font, foreBrush, rect, sf);
+            sf.Dispose();
+        } 
 
         private void FrmVorlage_Load(object sender, System.EventArgs e)
         {

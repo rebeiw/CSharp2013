@@ -7,17 +7,22 @@ using System.Threading.Tasks;
 public class GlobalVar
 {
 
+    //Allgemeine Konstanten fuer automatische Formulargenerierung
 
-    //Konstanten fuer automatische Generierung des Serviceformulars
+    public const int ConstControlSpacing = 5;
+    public const int ConstGroupBoxOffset = 20;
+    public const int ConstOffsetCorrectWidth = 1;
 
 
-    public const int Const_Service_TextHeigt = 39;
-    public const int Const_Service_TextBreite = 400;
-    public const int Const_Service_LblSpacing = 2;
+    //Konstanten fuer automatische Generierung des Parameterformulars
+
+
+    public const int ConstParameterTextHeigt = 35;
+    public const int ConstParameterTxtBoxWidth = 89;
+    public const int ConstParameterLblSpacing = 2;
 
 
     //Konstanten fuer automatische Generierung des Freigabeformulars
-    public const int Const_ControlSpacing = 5;
     public const int Const_LedSpacing = 2;
     public const int Const_LedHeigt = 25;
     public const int Const_TextHeigt = 25;

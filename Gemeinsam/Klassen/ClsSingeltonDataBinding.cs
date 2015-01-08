@@ -18,6 +18,7 @@ namespace Helper
         private static ClsSingeltonDataBinding m_instance;
 
         private ClsSingeltonVariablesCollecter m_VariablesCollecter;
+        private ClsSingeltonFormularManager m_formularManager;
 
         private Hashtable m_Variables;
         private Hashtable m_VariablesNo;
@@ -25,6 +26,7 @@ namespace Helper
 
         private ClsSingeltonDataBinding()
         {
+            this.m_formularManager = ClsSingeltonFormularManager.CreateInstance();
             this.m_Variables = new Hashtable();
             this.m_VariablesNo = new Hashtable();
             this.m_Components = new Hashtable();
@@ -60,28 +62,28 @@ namespace Helper
                 }
             }
         }
-        public void AddList(object Form, string Component, string Propertie, string VarName)
+        public void AddList(object Form, string Component, string Propertie, string varName)
         {
             ClsSingeltonDataBindingList data;
             data.Form = Form;
             data.Component = Component;
             data.Propertie = Propertie;
-            data.VarName = VarName;
+            data.VarName = varName;
             string key = "";
 
-            if (this.m_VariablesNo[VarName] == null)
+            if (this.m_VariablesNo[varName] == null)
             {
                 int i = 0;
-                key = VarName + "_" + i.ToString();
+                key = varName + "_" + i.ToString();
                 i++;
-                this.m_VariablesNo.Add(VarName, i);
+                this.m_VariablesNo.Add(varName, i);
             }
             else
             {
-                int no = (int)this.m_VariablesNo[VarName];
-                key = VarName + "_" + no.ToString();
+                int no = (int)this.m_VariablesNo[varName];
+                key = varName + "_" + no.ToString();
                 no++;
-                this.m_VariablesNo[VarName] = no;
+                this.m_VariablesNo[varName] = no;
 
             }
             this.m_Variables.Add(key, data);
@@ -92,7 +94,7 @@ namespace Helper
             string cntrl_name = data.Component.ToString();
 
             object obj = this.GetControlByName(frm, cntrl_name);
-            this.m_Components.Add(obj, VarName);
+            this.m_Components.Add(obj, varName);
             if(obj!=null)
             {
                 string obj_type = obj.GetType().ToString();
@@ -103,6 +105,7 @@ namespace Helper
                     obj_text_box.KeyPress+= new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
                 }
             }
+            this.Dispatch(varName,true);
         }
 
         public void Dispatch(string VarName, bool Override=false)
@@ -127,6 +130,11 @@ namespace Helper
                         string cntrl_name = data.Component.ToString();
 
                         frm_show = Application.OpenForms[frm_name];
+                        if(frm_show==null)
+                        {
+                            frm_show = (Form)this.m_formularManager.GetFormular(frm_name);
+                        }
+ 
                         if (frm_show != null)
                         {
                             object obj = this.GetControlByName(frm_show, cntrl_name);
@@ -186,7 +194,7 @@ namespace Helper
                                         obj_comp.Flow = flow;
                                     }
                                 }
-                                
+
                                 if (obj_type == "Helper.CompLedRectangle")
                                 {
                                     CompLedRectangle obj_comp;
@@ -198,6 +206,37 @@ namespace Helper
                                         convert_value = Convert.ToInt32(val);
                                         CompLedRectangle.CompLedState state = (CompLedRectangle.CompLedState)convert_value;
                                         obj_comp.State = state;
+                                    }
+                                }
+
+                                if (obj_type == "Helper.CompToggleSwitch")
+                                {
+                                    CompToggleSwitch obj_comp;
+                                    obj_comp = (CompToggleSwitch)obj;
+                                    if (data.Propertie == "State")
+                                    {
+                                        int convert_value = 0;
+                                        string val = m_VariablesCollecter.ReadValueString(data.VarName);
+                                        convert_value = Convert.ToInt32(val);
+                                        CompToggleSwitch.CompToggleSwitchState state = (CompToggleSwitch.CompToggleSwitchState)convert_value;
+                                        obj_comp.State = state;
+                                    }
+                                }
+
+                                if (obj_type == "Helper.CompInputBox")
+                                {
+                                    CompInputBox obj_comp;
+                                    obj_comp = (CompInputBox)obj;
+                                    if (data.Propertie == "Text")
+                                    {
+                                        if (!obj_comp.Focused || Override)
+                                        {
+                                            string format = "{0:" + obj_comp.Format + "}";
+                                            string value = m_VariablesCollecter.ReadValueString(data.VarName);
+                                            double wert = 0.0;
+                                            Double.TryParse(value, out wert);
+                                            obj_comp.Text = String.Format(format, wert);
+                                        }
                                     }
                                 }
                             }

@@ -139,6 +139,42 @@ namespace Helper
                 //component.Visible = Convert.ToBoolean((enable_visible.Visible & aktual_user));
             }
         }
+        public void AddUserRightControl(Control component, int UserRight)
+        {
+            this.AddControl(component);
+            if(((int)ClsSingeltonUserManagement.UserRight.Logoff & UserRight)>0)
+            {
+                this.SetEnable(component, ClsSingeltonUserManagement.UserRight.Logoff);
+            }
+            else
+            {
+                this.ResetEnable(component, ClsSingeltonUserManagement.UserRight.Logoff);
+            }
+            if (((int)ClsSingeltonUserManagement.UserRight.Operator & UserRight) > 0)
+            {
+                this.SetEnable(component, ClsSingeltonUserManagement.UserRight.Operator);
+            }
+            else
+            {
+                this.ResetEnable(component, ClsSingeltonUserManagement.UserRight.Operator);
+            }
+            if (((int)ClsSingeltonUserManagement.UserRight.Setter & UserRight) > 0)
+            {
+                this.SetEnable(component, ClsSingeltonUserManagement.UserRight.Setter);
+            }
+            else
+            {
+                this.ResetEnable(component, ClsSingeltonUserManagement.UserRight.Setter);
+            }
+            if (((int)ClsSingeltonUserManagement.UserRight.Service & UserRight) > 0)
+            {
+                this.SetEnable(component, ClsSingeltonUserManagement.UserRight.Service);
+            }
+            else
+            {
+                this.ResetEnable(component, ClsSingeltonUserManagement.UserRight.Service);
+            }
+        }
 
         private void AddControl(Control component)
         {
@@ -165,6 +201,29 @@ namespace Helper
                     this.m_tableComponents.Add(component, enable_visible);
                 }
             }
+
+            if (component_type == "Helper.CompInputBox")
+            {
+                enable_visible.Enable = UserRight.Logoff | UserRight.Operator | UserRight.Setter | UserRight.Service;
+                enable_visible.Visible = UserRight.Logoff | UserRight.Operator | UserRight.Setter | UserRight.Service;
+                if (!this.m_tableComponents.ContainsKey(component))
+                {
+                    this.m_tableComponents.Add(component, enable_visible);
+                }
+            }
+
+
+
+            if (component_type == "Helper.CompToggleSwitch")
+            {
+                enable_visible.Enable = UserRight.Logoff | UserRight.Operator | UserRight.Setter | UserRight.Service;
+                enable_visible.Visible = UserRight.Logoff | UserRight.Operator | UserRight.Setter | UserRight.Service;
+                if (!this.m_tableComponents.ContainsKey(component))
+                {
+                    this.m_tableComponents.Add(component, enable_visible);
+                }
+            }
+
         }
     }
 }

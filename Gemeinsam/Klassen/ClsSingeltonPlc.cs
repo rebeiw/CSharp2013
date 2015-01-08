@@ -39,7 +39,11 @@ namespace Helper
         public string Symbolname;
         public string Value;
     }
-
+    public struct ClsSingeltonPlcWriteDatas
+    {
+        public string Symbolname;
+        public string Value;
+    }
     public class ClsSingeltonPlc
     {
         private static ClsSingeltonPlc m_instance;
@@ -53,6 +57,8 @@ namespace Helper
         private Hashtable m_SymbolInfo;
 
         private List<int> m_DatabasesNr;
+
+        private Queue<ClsSingeltonPlcWriteDatas> m_WriteValues;
 
         private Hashtable m_DatabasesValues;
 
@@ -96,9 +102,17 @@ namespace Helper
         private ClsSingeltonParameter m_parameter;
 
 
+        public void AddWriteList(string symbol, string value)
+        {
+            ClsSingeltonPlcWriteDatas write_value;
+            write_value.Symbolname=symbol;
+            write_value.Value=value;
+            this.m_WriteValues.Enqueue(write_value);
+        }
 
         private ClsSingeltonPlc(ClsSingeltonPlcParameter PlcParameter)
         {
+            this.m_WriteValues = new Queue<ClsSingeltonPlcWriteDatas>();
             this.m_parameter = ClsSingeltonParameter.CreateInstance();
 
             this.m_sqliteConnection = new SQLiteConnection();
@@ -162,6 +176,11 @@ namespace Helper
 
         }
 
+        public static ClsSingeltonPlc GetInstance()
+        {
+            return m_instance;
+        }
+
         public static ClsSingeltonPlc CreateInstance(ClsSingeltonPlcParameter PlcParameter)
         {
             if (m_instance == null)
@@ -196,8 +215,61 @@ namespace Helper
             }
         }
 
+        public void Write(string Symbolname, string Value)
+        {
+            if(this.m_PlcState==0)
+            {
+                ClsSingeltonPlcDatas data;
+
+                data = (ClsSingeltonPlcDatas)this.m_SymbolInfo[Symbolname];
+
+                if (data.DataType == "BOOL")
+                {
+                    byte[] low = new byte[] { 0 };
+                    byte[] high = new byte[] { 255 };
+                    int bitAdresse = data.ByteNumber * 8 + data.BitNumber;
+                    if (Value == "1")
+                    {
+                        this.m_Dc.writeBits(libnodave.daveDB, data.DatabaseNumber, bitAdresse, 1, high);
+                    }
+                    if (Value == "0")
+                    {
+                        this.m_Dc.writeBits(libnodave.daveDB, data.DatabaseNumber, bitAdresse, 1, low);
+                    }
+                }
+                if (data.DataType == "REAL")
+                {
+                    float wert = 0.0F;
+                    float.TryParse(Value, out wert);
+                    float fltValue = (float)Convert.ToDouble(wert);
+                    var i = libnodave.daveToPLCfloat(fltValue);
+                    byte[] intBytes = BitConverter.GetBytes(i);
+                    m_Dc.writeBytes(libnodave.daveDB, data.DatabaseNumber, data.ByteNumber, 4, intBytes);
+                }
+                if (data.DataType == "INT")
+                {
+                    Int16 wert = 0;
+                    Int16.TryParse(Value, out wert);
+                    Int16 intValue = Convert.ToInt16(wert);
+                    byte[] intBytes = BitConverter.GetBytes(intValue);
+                    Array.Reverse(intBytes);
+                    m_Dc.writeBytes(libnodave.daveDB, data.DatabaseNumber, data.ByteNumber, 2, intBytes);
+                }
+            }
+        }
+
         private void BackgroundWorkerPlcRead_DoWork(object sender, DoWorkEventArgs e)
         {
+            int no_write = 0;
+            foreach(ClsSingeltonPlcWriteDatas write in this.m_WriteValues)
+            {
+                this.Write(write.Symbolname, write.Value);
+                no_write++;
+            }
+            for (int i=0;i<no_write;i++)
+            {
+                this.m_WriteValues.Dequeue();
+            }
             int counter_progress = 0;
             int progress_value = 0;
             this.m_Value.Clear();
@@ -280,10 +352,7 @@ namespace Helper
 
                             if (m_DatabasesValues.ContainsKey(searchSymbol))
                             {
-                                if ((string)m_DatabasesValues[searchSymbol] != value)
-                                {
-                                    this.m_Value.Add(searchSymbol);
-                                }
+                                this.m_Value.Add(searchSymbol);
                                 m_DatabasesValues[searchSymbol] = value;
                             }
                             else
