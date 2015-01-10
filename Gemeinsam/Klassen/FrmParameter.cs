@@ -16,7 +16,7 @@ namespace Helper
 {
     public partial class FrmParameter : FrmVorlageMenu
     {
-        public enum FormularType { Parameter = 0, Info, Service };
+        public enum FormularType { Parameter = 0, Info, Service,Error,Release };
 
         public struct PlcItemList
         {
@@ -38,29 +38,26 @@ namespace Helper
 
 
         private ClsSingeltonVariablesCollecter m_varCollect;
-        private ClsSingeltonUserManagement m_userManagement;
-        private ClsSingeltonDataBinding m_dataBinding;
+        protected ClsSingeltonUserManagement m_userManagement;
+        protected ClsSingeltonDataBinding m_dataBinding;
         private ClsSingeltonLanguage m_language;
         private ClsSingeltonParameter m_parameter;
         private ClsSingeltonPlc m_plc;
 
         private SQLiteCommand m_sqliteCommand;
         private SQLiteConnection m_sqliteConnection;
-        private SQLiteDataReader m_sqliteDataReader;
+        protected SQLiteDataReader m_sqliteDataReader;
 
-        private Hashtable m_plcItemList;
+        protected Hashtable m_plcItemList;
         private int m_KeyCount;
         private FormularType m_formularType;
+
+        protected TabControl m_tabControl;
+
 
         public FrmParameter()
         {
             InitializeComponent();
-
-        }
-
-        protected void CreateFormular(FormularType formularType)
-        {
-            this.m_formularType = formularType;
             this.m_KeyCount = 0;
             this.m_plcItemList = new Hashtable();
             this.m_userManagement = ClsSingeltonUserManagement.CreateInstance();
@@ -75,9 +72,19 @@ namespace Helper
 
             this.m_dataBinding = ClsSingeltonDataBinding.CreateInstance();
 
+        }
+
+        protected void CreateFormular(FormularType formularType)
+        {
+            this.m_formularType = formularType;
+
             if(formularType==FormularType.Parameter || formularType==FormularType.Info || formularType==FormularType.Service)
             {
                 this.LoadParameter();
+            }
+            if (formularType == FormularType.Error || formularType == FormularType.Release)
+            {
+                this.LoadError();
             }
 
 
@@ -86,6 +93,182 @@ namespace Helper
         }
 
 
+        protected PlcItemList GetPlcItemList(string varName)
+        {
+            PlcItemList plc_item_list;
+            string sql_command = "";
+            //0       , 1       , 2           , 3        , 4         , 5           , 6
+            sql_command += "Select S7Adress, S7Symbol, S7SymbolType, S7Comment, SymbolType, RankingGroup, GroupComment, ";
+            //7            , 8      , 9   , 10          , 11        , 12        , 13             , 14        
+            sql_command += "RankingSymbol, Comment, Unit, SymbolFormat, UpperLimit, LowerLimit, UserRightEnable, UserRightVisible, ";
+            //15
+            sql_command += "Column ";
+            sql_command += "from plcitems ";
+
+            
+            sql_command += "where VisuSymbol=";
+            sql_command += "'" + varName + "'";
+            this.m_sqliteCommand.CommandText = sql_command;
+
+            if (this.m_sqliteDataReader != null)
+            {
+                this.m_sqliteDataReader.Close();
+                this.m_sqliteDataReader = null;
+            }
+            this.m_sqliteDataReader = this.m_sqliteCommand.ExecuteReader();
+            this.m_sqliteDataReader.Read();
+            plc_item_list.S7Adress = this.m_sqliteDataReader.GetValue(0).ToString();
+            plc_item_list.S7Symbol = this.m_sqliteDataReader.GetValue(1).ToString();
+            plc_item_list.S7SymbolType = this.m_sqliteDataReader.GetValue(2).ToString();
+            plc_item_list.SymbolType = this.m_sqliteDataReader.GetValue(4).ToString();
+            plc_item_list.GroupComment = this.m_sqliteDataReader.GetValue(6).ToString();
+            plc_item_list.RankingSymbol = Convert.ToInt32(this.m_sqliteDataReader.GetValue(7).ToString());
+            plc_item_list.Comment = this.m_sqliteDataReader.GetValue(8).ToString();
+            plc_item_list.Unit = this.m_sqliteDataReader.GetValue(9).ToString();
+            plc_item_list.Format = this.m_sqliteDataReader.GetValue(10).ToString();
+            plc_item_list.Column = Convert.ToInt32(this.m_sqliteDataReader.GetValue(15).ToString());
+            plc_item_list.UpperLimit = Convert.ToDouble(this.m_sqliteDataReader.GetValue(11).ToString());
+            plc_item_list.LowerLimit = Convert.ToDouble(this.m_sqliteDataReader.GetValue(12).ToString());
+            plc_item_list.UserRightEnable = Convert.ToInt32(this.m_sqliteDataReader.GetValue(13).ToString());
+            plc_item_list.Varname=varName;
+            this.m_sqliteDataReader.Close();
+
+            return plc_item_list;
+
+        }
+        
+
+        private void LoadError()
+        {
+            string sql_command = "";
+            //0       , 1       , 2           , 3        , 4         , 5           , 6
+            sql_command += "Select S7Adress, S7Symbol, S7SymbolType, S7Comment, SymbolType, RankingGroup, GroupComment, ";
+            //7            , 8      , 9   , 10          , 11        , 12        , 13             , 14        
+            sql_command += "RankingSymbol, Comment, Unit, SymbolFormat, UpperLimit, LowerLimit, UserRightEnable, UserRightVisible, ";
+            //15
+            sql_command += "Column ";
+            if (this.m_formularType == FormularType.Error)
+            {
+                sql_command += "from plcitems where (SymbolType='E') order by RankingGroup, RankingSymbol";
+            }
+
+            if (this.m_formularType == FormularType.Release)
+            {
+                sql_command += "from plcitems where (SymbolType='R') order by RankingGroup, RankingSymbol";
+            }
+
+            this.m_sqliteCommand.CommandText = sql_command;
+
+            if (this.m_sqliteDataReader != null)
+            {
+                this.m_sqliteDataReader.Close();
+                this.m_sqliteDataReader = null;
+            }
+            this.m_sqliteDataReader = this.m_sqliteCommand.ExecuteReader();
+            TabControl tab_control = this.CreateTabControl(4, 20, this.GbxOutput.Width - 8, this.GbxOutput.Height - 25, this.GbxOutput);
+            tab_control.TabStop = false;
+            this.m_tabControl = tab_control;
+            TabPage tab_page = null;
+            int page_no = 0;
+
+            tab_page = this.CreateTabPage("Seite " + (page_no + 1), tab_control);
+            int gbx_row = 0;
+            int gbx_col = 0;
+            GroupBox group_box = null;
+
+            Label label_text = null;
+            PlcItemList plc_item_list;
+            CompLedRound led_round = null;
+            string old_group_comment = "";
+            int row_comp = 0;
+
+            int gbx_width = (tab_control.DisplayRectangle.Width + 10) / GlobalVar.ConstNumberOfColumns - (GlobalVar.ConstNumberOfColumns+1) *4;
+
+            while (this.m_sqliteDataReader.Read())
+            {
+
+                plc_item_list.S7Adress = this.m_sqliteDataReader.GetValue(0).ToString();
+                plc_item_list.S7Symbol = this.m_sqliteDataReader.GetValue(1).ToString();
+                plc_item_list.S7SymbolType = this.m_sqliteDataReader.GetValue(2).ToString();
+                plc_item_list.SymbolType = this.m_sqliteDataReader.GetValue(4).ToString();
+                plc_item_list.GroupComment = this.m_sqliteDataReader.GetValue(6).ToString();
+                plc_item_list.RankingSymbol = Convert.ToInt32(this.m_sqliteDataReader.GetValue(7).ToString());
+                plc_item_list.Comment = this.m_sqliteDataReader.GetValue(8).ToString();
+                plc_item_list.Unit = this.m_sqliteDataReader.GetValue(9).ToString();
+                plc_item_list.Format = this.m_sqliteDataReader.GetValue(10).ToString();
+                plc_item_list.Column = Convert.ToInt32(this.m_sqliteDataReader.GetValue(15).ToString());
+                plc_item_list.UpperLimit = Convert.ToDouble(this.m_sqliteDataReader.GetValue(11).ToString());
+                plc_item_list.LowerLimit = Convert.ToDouble(this.m_sqliteDataReader.GetValue(12).ToString());
+                plc_item_list.UserRightEnable = Convert.ToInt32(this.m_sqliteDataReader.GetValue(13).ToString());
+
+                string[] adress_info = plc_item_list.S7Adress.Split('.');
+                string db_number = adress_info[0];
+                string varname = db_number + "." + plc_item_list.S7Symbol;
+
+                plc_item_list.Varname = varname;
+
+                int top = 0;
+                int left = 0;
+
+                if(old_group_comment!=plc_item_list.GroupComment)
+                {
+                    old_group_comment = plc_item_list.GroupComment;
+                    top = 0;
+                    left = 0;
+                    if(gbx_row==0)
+                    {
+                        top = 4;
+                        left = 4;
+                        gbx_row++;
+                    }
+                    else
+                    {
+                        left = group_box.Left;
+                        top = group_box.Top + group_box.Height + 4;
+                    }
+                    group_box = this.CreateGroupBox(left, top, gbx_width, 50, plc_item_list.GroupComment, tab_page);
+                    row_comp = 0;
+                }
+                int height=(row_comp) * 27 + 50;
+                int height_max = height + group_box.Top;
+                if (height_max>tab_control.DisplayRectangle.Height)
+                {
+                    gbx_col++;
+                    if(gbx_col>2)
+                    {
+                        page_no++;
+                        tab_page = this.CreateTabPage("Seite " + (page_no + 1), tab_control);
+                        gbx_row = 0;
+                        gbx_col = 0;
+                    }
+                    else
+                    {
+                        left = gbx_col * (gbx_width + 4) + 4;
+                        top = 4;
+                        group_box = this.CreateGroupBox(left, top, gbx_width, 50, plc_item_list.GroupComment, tab_page);
+                        row_comp = 0;
+                    }
+                }
+                height = (row_comp) * 27 + 50;
+                group_box.Height = height;
+
+                int top_comp = row_comp * 27 + 20;
+                int left_comp = 4;
+                if (this.m_formularType == FormularType.Release)
+                {
+                    led_round = this.CreateLedRound(left_comp, top_comp, group_box, CompLedRound.LEDType.Release);
+                }
+                if (this.m_formularType == FormularType.Error)
+                {
+                    led_round = this.CreateLedRound(left_comp, top_comp, group_box, CompLedRound.LEDType.Error);
+                }
+                this.m_dataBinding.AddList(this, led_round.Name.ToString(), "State", varname);
+                label_text = this.CreateLabel(left_comp + 40, top_comp, 200, 25, plc_item_list.Comment, group_box, ContentAlignment.MiddleLeft);
+                row_comp++;;
+            }
+            this.m_sqliteDataReader.Close();
+            this.m_sqliteDataReader = null;
+        }
         private void LoadParameter()
         {
             string sql_command="";
@@ -119,6 +302,7 @@ namespace Helper
             int i = 0;
             TabControl tab_control=this.CreateTabControl(4, 20, this.GbxOutput.Width - 8, this.GbxOutput.Height - 25, this.GbxOutput);
             tab_control.TabStop = false;
+            this.m_tabControl = tab_control;
             TabPage tab_page = null;
             GroupBox group_box = null;
             Label label_text = null;
@@ -131,7 +315,7 @@ namespace Helper
             string old_group_comment = "";
             int row = 0;
             int old_ranging_symbol = 0;
-
+            bool first_start = true;
             while (this.m_sqliteDataReader.Read())
             {
 
@@ -141,6 +325,12 @@ namespace Helper
                 plc_item_list.SymbolType = this.m_sqliteDataReader.GetValue(4).ToString();
                 plc_item_list.GroupComment = this.m_sqliteDataReader.GetValue(6).ToString();
                 plc_item_list.RankingSymbol = Convert.ToInt32(this.m_sqliteDataReader.GetValue(7).ToString());
+                if (first_start)
+                {
+                    first_start = false;
+                    old_ranging_symbol = plc_item_list.RankingSymbol + 1;
+                }
+
                 plc_item_list.Comment = this.m_sqliteDataReader.GetValue(8).ToString();
                 plc_item_list.Unit = this.m_sqliteDataReader.GetValue(9).ToString();
                 plc_item_list.Format = this.m_sqliteDataReader.GetValue(10).ToString();
@@ -156,6 +346,7 @@ namespace Helper
                 plc_item_list.Varname=varname;
                 if (plc_item_list.GroupComment != old_group_comment)
                 {
+                    old_ranging_symbol = plc_item_list.RankingSymbol-1;
                     row = 0;
                     old_group_comment = plc_item_list.GroupComment;
                     tab_page = (TabPage)this.CreateTabPage(plc_item_list.GroupComment, tab_control);
@@ -164,14 +355,21 @@ namespace Helper
 
                 int top = row * (GlobalVar.ConstParameterTextHeigt + GlobalVar.ConstControlSpacing) + GlobalVar.ConstGroupBoxOffset;
 
-                int text_width = group_box.Width - (5 * GlobalVar.ConstControlSpacing + GlobalVar.ConstParameterTxtBoxWidth + GlobalVar.ConstParameterTxtBoxWidth + GlobalVar.ConstParameterTxtBoxWidth) - GlobalVar.ConstOffsetCorrectWidth;
-                label_text = (Label)this.CreateLabel(GlobalVar.ConstControlSpacing, top, text_width, GlobalVar.ConstParameterTextHeigt, plc_item_list.Comment, group_box, System.Drawing.ContentAlignment.MiddleRight);
+                int text_width = group_box.Width - (5 * GlobalVar.ConstControlSpacing + 
+                                                        GlobalVar.ConstParameterTxtBoxWidth + 
+                                                        GlobalVar.ConstParameterTxtBoxWidth + 
+                                                        GlobalVar.ConstParameterTxtBoxWidth) - 
+                                                        GlobalVar.ConstOffsetCorrectWidth;
+                label_text = (Label)this.CreateLabel(GlobalVar.ConstControlSpacing, top, text_width, 
+                                                     GlobalVar.ConstParameterTextHeigt, plc_item_list.Comment, 
+                                                     group_box, System.Drawing.ContentAlignment.MiddleRight);
                 int left_unit = 0;
                 if (plc_item_list.S7SymbolType == "BOOL")
                 {
                     if (plc_item_list.SymbolType == "P" || plc_item_list.SymbolType == "S")
                     {
-                        toggle_switch = (CompToggleSwitch)this.CreateToggleSwitch(GlobalVar.ConstControlSpacing + label_text.Width + label_text.Left, top, group_box);
+                        toggle_switch = (CompToggleSwitch)this.CreateToggleSwitch(GlobalVar.ConstControlSpacing + 
+                                                                                  label_text.Width + label_text.Left, top, group_box);
                         toggle_switch.Click += new System.EventHandler(this.ToggleSwitch_Click);
                         toggle_switch.Symbol = varname;
                         toggle_switch.DoSwitch = false;
@@ -190,14 +388,20 @@ namespace Helper
                 {
                     if (plc_item_list.SymbolType == "PO" || plc_item_list.SymbolType == "I" || plc_item_list.SymbolType == "SO")
                     {
-                        int left = GlobalVar.ConstControlSpacing + (plc_item_list.Column - 1) * (GlobalVar.ConstParameterTxtBoxWidth + GlobalVar.ConstControlSpacing) + label_text.Left + label_text.Width;
+                        int left = GlobalVar.ConstControlSpacing + (plc_item_list.Column - 1) * (GlobalVar.ConstParameterTxtBoxWidth + 
+                                                                                                 GlobalVar.ConstControlSpacing) + 
+                                                                                                 label_text.Left + 
+                                                                                                 label_text.Width;
                         txt_box = this.CreateTxtBox(left, top, plc_item_list.Format, group_box);
                         this.m_dataBinding.AddList(this, txt_box.Name.ToString(), "Text", varname);
                         left_unit = txt_box.Left + txt_box.Width + GlobalVar.ConstControlSpacing;
                     }
                     if (plc_item_list.SymbolType == "P" || plc_item_list.SymbolType == "S")
                     {
-                        int left = GlobalVar.ConstControlSpacing + (plc_item_list.Column - 1) * (GlobalVar.ConstParameterTxtBoxWidth + GlobalVar.ConstControlSpacing) + label_text.Left + label_text.Width;
+                        int left = GlobalVar.ConstControlSpacing + (plc_item_list.Column - 1) * (GlobalVar.ConstParameterTxtBoxWidth + 
+                                                                                                 GlobalVar.ConstControlSpacing) + 
+                                                                                                 label_text.Left + 
+                                                                                                 label_text.Width;
                         input_box = this.CreateInputBox(left, top, plc_item_list.Format, group_box);
                         input_box.Symbol = varname;
                         input_box.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.InputBox_KeyPress);
@@ -209,7 +413,11 @@ namespace Helper
                         left_unit = input_box.Left + input_box.Width + GlobalVar.ConstControlSpacing;
                     }
                 }
-                label_unit = (Label)this.CreateLabel(left_unit, top, GlobalVar.ConstParameterTxtBoxWidth, GlobalVar.ConstParameterTextHeigt, plc_item_list.Unit, group_box, System.Drawing.ContentAlignment.MiddleLeft);
+                label_unit = (Label)this.CreateLabel(left_unit, top, GlobalVar.ConstParameterTxtBoxWidth, 
+                                                                     GlobalVar.ConstParameterTextHeigt, 
+                                                                     plc_item_list.Unit, 
+                                                                     group_box, 
+                                                                     System.Drawing.ContentAlignment.MiddleLeft);
                 if (plc_item_list.RankingSymbol != old_ranging_symbol)
                 {
                     old_ranging_symbol = plc_item_list.RankingSymbol;
@@ -221,7 +429,7 @@ namespace Helper
             this.m_sqliteDataReader = null;
         }
 
-        private void InputBox_KeyPress(object sender, KeyPressEventArgs e)
+        protected void InputBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
             {
@@ -254,7 +462,7 @@ namespace Helper
             }
         }
 
-        private void InputBox_Leave(object sender, EventArgs e)
+        protected void InputBox_Leave(object sender, EventArgs e)
         {
             if(this.m_KeyCount>0)
             {
@@ -284,6 +492,11 @@ namespace Helper
         private void FrmParameter_Activated(object sender, EventArgs e)
         {
             this.m_parameter.ActualForm = this;
+        }
+
+        private void FrmParameter_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.Led01 = new Helper.CompLedRectangle();
             this.label1 = new System.Windows.Forms.Label();
@@ -130,8 +131,7 @@
             this.label33 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
-            this.compVan1 = new Helper.CompVan();
-            this.label36 = new System.Windows.Forms.Label();
+            this.LblErrorBar = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
@@ -152,6 +152,9 @@
             this.label46 = new System.Windows.Forms.Label();
             this.compTxtBox2 = new Helper.CompTxtBox();
             this.LblPlcNoConnect = new System.Windows.Forms.Label();
+            this.TmrErrorTicker = new System.Windows.Forms.Timer(this.components);
+            this.compVan2 = new Helper.CompVan();
+            this.compBitButton1 = new Helper.CompBitButton();
             ((System.ComponentModel.ISupportInitialize)(this.BtnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnKeyboard)).BeginInit();
             this.GbxMenu.SuspendLayout();
@@ -199,11 +202,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.compArrow3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.compArrow4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.compArrow5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.compVan1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.compPipe2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.compArrow6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.compPipe3)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.compVan2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compBitButton1)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnClose
@@ -225,6 +229,8 @@
             // 
             this.GbxOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
             this.GbxOutput.BackColor = System.Drawing.Color.Transparent;
+            this.GbxOutput.Controls.Add(this.compBitButton1);
+            this.GbxOutput.Controls.Add(this.compVan2);
             this.GbxOutput.Controls.Add(this.panel1);
             this.GbxOutput.Controls.Add(this.compPipe3);
             this.GbxOutput.Controls.Add(this.compArrow6);
@@ -238,7 +244,6 @@
             this.GbxOutput.Controls.Add(this.label39);
             this.GbxOutput.Controls.Add(this.label38);
             this.GbxOutput.Controls.Add(this.label37);
-            this.GbxOutput.Controls.Add(this.compVan1);
             this.GbxOutput.Controls.Add(this.label35);
             this.GbxOutput.Controls.Add(this.label34);
             this.GbxOutput.Controls.Add(this.label33);
@@ -1628,28 +1633,19 @@
             this.label35.Text = "TV2619C";
             this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // compVan1
+            // LblErrorBar
             // 
-            this.compVan1.ColorVan = System.Drawing.Color.Blue;
-            this.compVan1.Direction = Helper.CompVan.CompVanDirection.Right;
-            this.compVan1.Location = new System.Drawing.Point(112, 125);
-            this.compVan1.Name = "compVan1";
-            this.compVan1.Size = new System.Drawing.Size(59, 59);
-            this.compVan1.TabIndex = 139;
-            this.compVan1.TabStop = false;
-            // 
-            // label36
-            // 
-            this.label36.BackColor = System.Drawing.Color.Red;
-            this.label36.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label36.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.ForeColor = System.Drawing.Color.White;
-            this.label36.Location = new System.Drawing.Point(7, 709);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(1004, 29);
-            this.label36.TabIndex = 2;
-            this.label36.Text = "10.12.2014 12:00:00 | Fehlermeldung";
-            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LblErrorBar.BackColor = System.Drawing.Color.Red;
+            this.LblErrorBar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.LblErrorBar.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblErrorBar.ForeColor = System.Drawing.Color.White;
+            this.LblErrorBar.Location = new System.Drawing.Point(7, 709);
+            this.LblErrorBar.Name = "LblErrorBar";
+            this.LblErrorBar.Size = new System.Drawing.Size(1004, 29);
+            this.LblErrorBar.TabIndex = 2;
+            this.LblErrorBar.Text = "10.12.2014 12:00:00 | Fehlermeldung";
+            this.LblErrorBar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LblErrorBar.Click += new System.EventHandler(this.label36_Click);
             // 
             // label37
             // 
@@ -1896,23 +1892,57 @@
             this.LblPlcNoConnect.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.LblPlcNoConnect.Visible = false;
             // 
+            // TmrErrorTicker
+            // 
+            this.TmrErrorTicker.Interval = 1000;
+            this.TmrErrorTicker.Tick += new System.EventHandler(this.TmrErrorTicker_Tick);
+            // 
+            // compVan2
+            // 
+            this.compVan2.ColorVan = System.Drawing.Color.Blue;
+            this.compVan2.Direction = Helper.CompVan.CompVanDirection.Right;
+            this.compVan2.Location = new System.Drawing.Point(112, 124);
+            this.compVan2.Name = "compVan2";
+            this.compVan2.Size = new System.Drawing.Size(59, 59);
+            this.compVan2.TabIndex = 154;
+            this.compVan2.TabStop = false;
+            // 
+            // compBitButton1
+            // 
+            this.compBitButton1.Caption = "";
+            this.compBitButton1.EnableMouseDown = false;
+            this.compBitButton1.Formular = null;
+            this.compBitButton1.Location = new System.Drawing.Point(760, 71);
+            this.compBitButton1.Name = "compBitButton1";
+            this.compBitButton1.Picture_0 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.compBitButton1.Picture_1 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.compBitButton1.Picture_2 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.compBitButton1.Picture_3 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.compBitButton1.Picture_4 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.compBitButton1.PictureNumber = 0;
+            this.compBitButton1.Size = new System.Drawing.Size(79, 48);
+            this.compBitButton1.Symbol = null;
+            this.compBitButton1.TabIndex = 155;
+            this.compBitButton1.TabStop = false;
+            this.compBitButton1.Click += new System.EventHandler(this.compBitButton1_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1604, 741);
             this.Controls.Add(this.LblPlcNoConnect);
-            this.Controls.Add(this.label36);
+            this.Controls.Add(this.LblErrorBar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "HeatControl";
             this.Activated += new System.EventHandler(this.FrmMain_Activated);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Controls.SetChildIndex(this.GbxMenu, 0);
             this.Controls.SetChildIndex(this.GbxOutput, 0);
-            this.Controls.SetChildIndex(this.label36, 0);
+            this.Controls.SetChildIndex(this.LblErrorBar, 0);
             this.Controls.SetChildIndex(this.LblPlcNoConnect, 0);
             ((System.ComponentModel.ISupportInitialize)(this.BtnClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnKeyboard)).EndInit();
@@ -1962,12 +1992,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.compArrow3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.compArrow4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.compArrow5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.compVan1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.compPipe2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.compArrow6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.compPipe3)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.compVan2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compBitButton1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2075,8 +2106,7 @@
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label35;
-        private Helper.CompVan compVan1;
-        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label LblErrorBar;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label37;
@@ -2097,6 +2127,9 @@
         private System.Windows.Forms.Label label46;
         private Helper.CompTxtBox compTxtBox2;
         private System.Windows.Forms.Label LblPlcNoConnect;
+        private System.Windows.Forms.Timer TmrErrorTicker;
+        private Helper.CompVan compVan2;
+        private Helper.CompBitButton compBitButton1;
     }
 }
 

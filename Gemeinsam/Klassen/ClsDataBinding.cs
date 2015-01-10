@@ -148,8 +148,8 @@ namespace Helper
 
                         if (obj_type == "Helper.LedRound")
                         {
-                            LedRound obj_led_round;
-                            obj_led_round = (LedRound)obj;
+                            CompLedRound obj_led_round;
+                            obj_led_round = (CompLedRound)obj;
                             if (bindingList.Propertie == "State")
                             {
                                 obj_led_round.State = FuncGeneral.GetSateLED(Glb_Plc.DatabasesValues[bindingList.SymbolName].ToString());

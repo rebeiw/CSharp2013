@@ -83,6 +83,9 @@
     <Compile Include="ClsCreateParameter.cs" />
     <Compile Include="ClsIni.cs" />
     <Compile Include="ClsPDF.cs" />
+    <Compile Include="CompMultiBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CompTemplate.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -155,7 +158,7 @@
     <Compile Include="CompLedRectangle.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="LedRound.cs">
+    <Compile Include="CompLedRound.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Lifter.cs">
@@ -229,10 +232,11 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="libnodave.dll">
+    <Content Include="libnodave.dll" />
+    <Content Include="libnodave.net.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="libnodave.net.dll">
+    <Content Include="PdfSharp.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="SQLite.Interop.dll">

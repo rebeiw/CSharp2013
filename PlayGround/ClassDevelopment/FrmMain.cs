@@ -9,12 +9,21 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Helper;
+using System.Data.SqlClient;
+using System.Data.SQLite;
 
 
 namespace ClassDevelopment
 {
     public partial class FrmMain : Helper.FrmVorlageMenu
     {
+        private SQLiteCommand m_sqliteCommand;
+        private SQLiteConnection m_sqliteConnection;
+        private SQLiteDataReader m_sqliteDataReader;
+
+        private int m_errorTickerCounter;
+        private int m_errorNoRecords;
+        private List<string>m_errorList;
 
         private ClsSingeltonVariablesCollecter m_varCollect;
         private ClsSingeltonUserManagement m_userManagement;
@@ -28,11 +37,24 @@ namespace ClassDevelopment
         private FrmPara FrmParameter;
         private FrmInfo FrmInformation;
         private FrmServ FrmService;
+        private FrmError FrmError;
+        private FrmRelease FrmRelease;
+        private FrmErrorReportingSystem FrmErrorReportingSystem;
+
+        private FrmO2Curve FrmO2Curve;
         public FrmMain()
         {
 
-
+            this.m_errorTickerCounter = 0;
+            this.m_errorNoRecords = 0;
+            this.m_errorList = new List<string>();
+            this.m_errorList.Clear();
             this.m_parameter = ClsSingeltonParameter.CreateInstance();
+            this.m_sqliteConnection = new SQLiteConnection();
+            this.m_sqliteConnection.ConnectionString = this.m_parameter.ConnectionString;
+            this.m_sqliteConnection.Open();
+
+            this.m_sqliteCommand = new SQLiteCommand(this.m_sqliteConnection);
 
             FuncGeneral.Start();
 
@@ -60,6 +82,12 @@ namespace ClassDevelopment
             this.FrmParameter = new FrmPara();
             this.FrmInformation = new FrmInfo();
             this.FrmService = new FrmServ();
+            this.FrmError = new FrmError();
+            this.FrmRelease = new FrmRelease();
+            this.FrmErrorReportingSystem = new FrmErrorReportingSystem();
+            this.FrmO2Curve = new FrmO2Curve();
+
+            this.TmrErrorTicker.Enabled = true;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -134,6 +162,9 @@ namespace ClassDevelopment
             this.m_formularManager.AddButton(CompBitButtonStyle.btg_Para, "FrmPara");
             this.m_formularManager.AddButton(CompBitButtonStyle.btg_Info, "FrmInfo");
             this.m_formularManager.AddButton(CompBitButtonStyle.btg_Service, "FrmServ");
+            this.m_formularManager.AddButton(CompBitButtonStyle.btg_Error, "FrmError");
+            this.m_formularManager.AddButton(CompBitButtonStyle.btg_Freigabe, "FrmRelease");
+            this.m_formularManager.AddButton(CompBitButtonStyle.btg_Meldesystem, "FrmErrorReportingSystem");
 
 
             FuncGeneral.CentreObject(this.LblPlcNoConnect,this.GbxOutput);
@@ -172,5 +203,67 @@ namespace ClassDevelopment
             this.m_parameter.ActualForm = this;
         }
 
+        private void label36_Click(object sender, EventArgs e)
+        {
+            this.m_formularManager.FormularShow("FrmErrorReportingSystem");
+        }
+
+        private void ReadError()
+        {
+            this.m_sqliteCommand.CommandText = this.m_plc.GetSqlAkuell();
+            this.m_errorList.Clear();
+            if (this.m_sqliteDataReader != null)
+            {
+                this.m_sqliteDataReader.Close();
+                this.m_sqliteDataReader = null;
+            }
+            this.m_sqliteDataReader = this.m_sqliteCommand.ExecuteReader();
+            while (this.m_sqliteDataReader.Read())
+            {
+                this.m_errorList.Add(this.m_sqliteDataReader.GetValue(0).ToString() + " | " + 
+                                     this.m_sqliteDataReader.GetValue(1).ToString() + " | " +
+                                     this.m_sqliteDataReader.GetValue(2).ToString()
+                                     );
+            }
+            this.m_sqliteDataReader.Close();
+
+        }
+
+        private void TmrErrorTicker_Tick(object sender, EventArgs e)
+        {
+            this.m_sqliteCommand.CommandText = "select count (id) as NumberOfRecords from errors";
+
+            if (this.m_sqliteDataReader != null)
+            {
+                this.m_sqliteDataReader.Close();
+                this.m_sqliteDataReader = null;
+            }
+            this.m_sqliteDataReader = this.m_sqliteCommand.ExecuteReader();
+            this.m_sqliteDataReader.Read();
+            int no_of_records = this.m_sqliteDataReader.GetInt32(0);
+            this.m_sqliteDataReader.Close();
+            this.LblErrorBar.Visible=Convert.ToBoolean(no_of_records);
+            if (m_errorNoRecords != no_of_records)
+            {
+                this.m_errorTickerCounter = 0;
+                m_errorNoRecords = no_of_records;
+                this.ReadError();
+            }
+            if (this.m_errorTickerCounter<this.m_errorList.Count())
+            {
+                this.LblErrorBar.Text = (this.m_errorTickerCounter + 1).ToString() + "..." + this.m_errorList.Count().ToString() + " | " + this.m_errorList[this.m_errorTickerCounter];
+                this.m_errorTickerCounter++;
+            }
+            else
+            {
+                this.m_errorTickerCounter = 0;
+                this.ReadError();
+            }
+        }
+
+        private void compBitButton1_Click(object sender, EventArgs e)
+        {
+            this.m_formularManager.FormularShow("FrmO2Curve");
+        }
     }
 }

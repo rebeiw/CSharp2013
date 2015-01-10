@@ -45,8 +45,8 @@ namespace Helper
         {
             string retval = "";
             DateTime timestamp = DateTime.Now;
-            string uhrzeit = "'" + timestamp.ToLongTimeString() + "'";
-            string datum = "'" + timestamp.Year + "-" + timestamp.Month + "-" + timestamp.Day + "'";
+            string uhrzeit = timestamp.ToLongTimeString();
+            string datum = timestamp.Year + "-" +  FillForward(timestamp.Month.ToString(),"0",2) + "-" + FillForward(timestamp.Day.ToString(),"0",2);
             retval = datum + " " + uhrzeit;
             return retval;
         }

@@ -74,6 +74,10 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\..\Gemeinsam\Klassen\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -84,6 +88,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmError.Designer.cs">
+      <DependentUpon>FrmError.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmErrorReportingSystem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmErrorReportingSystem.Designer.cs">
+      <DependentUpon>FrmErrorReportingSystem.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmHeater.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,11 +118,23 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmO2Curve.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmO2Curve.Designer.cs">
+      <DependentUpon>FrmO2Curve.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPara.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmPara.Designer.cs">
       <DependentUpon>FrmPara.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRelease.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRelease.Designer.cs">
+      <DependentUpon>FrmRelease.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmServ.cs">
       <SubType>Form</SubType>
@@ -116,6 +144,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmError.resx">
+      <DependentUpon>FrmError.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmErrorReportingSystem.resx">
+      <DependentUpon>FrmErrorReportingSystem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmHeater.resx">
       <DependentUpon>FrmHeater.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,8 +159,14 @@
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmO2Curve.resx">
+      <DependentUpon>FrmO2Curve.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmPara.resx">
       <DependentUpon>FrmPara.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRelease.resx">
+      <DependentUpon>FrmRelease.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmServ.resx">
       <DependentUpon>FrmServ.cs</DependentUpon>
@@ -194,6 +234,9 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="libnodave.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="SetupSql.sql" />
     <Content Include="Visu.ico" />
   </ItemGroup>

@@ -117,20 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="TmrErrorTicker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAABAAEAGBYQAAEABADIAQAAFgAAACgAAAAYAAAALAAAAAEABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAD/AAD/AAAA//8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAACAAAAAAAAAAAAAAAiIAAAAAABEQAAAAIiIAAAAAABERAAACIiAAAAAAAAEREAACIgAAAA
-        AAAAAREAACIAAAAAAAAAABEQAiIAAAAAAAAAABEQIiAAAAAAAAAAAAERIiAAAAAAAAAAAAERAAAAAAAA
-        AAAAAAAAIiAAAAAAAAAAAAMzIiAAAAAAAAAAAAMzIiAAAAAAAAAAAAMzAiIAAAAAAAAAADMwAiIAAAAA
-        AAAAADMwACIgAAAAAAAAAzMAACIgAAAAAAAAAzMAAAICIAAAAAADMDAAAAAiIgAAAAAzMwAAAAACIiIg
-        AzMzMAAAAAAAAiIiAzMwAAAAAAAAAAIiAzAAAAAA+f+fAPD/DwDh/4cAw//DAMf/4wDP//EAj//xAB//
-        +AAf5/gAH8P4AB/n+AAf5/gAH+f4AI/n8QCP5/EAx+fjAMPnwwDh54cA8OcPAPgAHwD+AH8A/4H/AA==
-</value>
-  </data>
 </root>

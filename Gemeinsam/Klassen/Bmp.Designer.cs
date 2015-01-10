@@ -583,6 +583,16 @@ namespace Helper {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap btg_Warn {
+            get {
+                object obj = ResourceManager.GetObject("btg_Warn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap btg_Weis {
             get {
                 object obj = ResourceManager.GetObject("btg_Weis", resourceCulture);

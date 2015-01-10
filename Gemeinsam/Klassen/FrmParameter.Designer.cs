@@ -53,6 +53,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmParameter";
             this.Activated += new System.EventHandler(this.FrmParameter_Activated);
+            this.Load += new System.EventHandler(this.FrmParameter_Load);
             ((System.ComponentModel.ISupportInitialize)(this.BtnClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnKeyboard)).EndInit();
             this.GbxMenu.ResumeLayout(false);

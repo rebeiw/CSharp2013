@@ -1,0 +1,218 @@
+ID	S7Adress	S7Symbol	S7SymbolType	S7Comment	SymbolType	Column	RankingGroup	GroupComment	RankingSymbol	Comment	Unit	SymbolFormat	UpperLimit	LowerLimit	UserRightEnable	UserRightVisible	VisuSymbol	
+1	DB50.DBD0	P1_Qmin_1	REAL	Pumpen 1:Pumpendruck 1	S	1	1	Pumpen 1	1	Pumpendruck 1	bar	0.0	99999	0	14	15	DB50.P1_Qmin_1
+2	DB50.DBD4	P1_Qmin_2	REAL	Pumpen 1:Pumpendruck 2	S	1	1	Pumpen 1	2	Pumpendruck 2	bar	0.00	99999	0	15	15	DB50.P1_Qmin_2
+3	DB50.DBD8	P1_Qmin_3	REAL	Pumpen 1:Pumpendruck 3	S	1	1	Pumpen 1	3	Pumpendruck 3	bar	0.00	99999	0	15	15	DB50.P1_Qmin_3
+4	DB50.DBD12	P1_Qmin_4	REAL	Pumpen 1:Pumpendruck 4	S	1	1	Pumpen 1	4	Pumpendruck 4	bar	0	99999	0	15	15	DB50.P1_Qmin_4
+5	DB50.DBD16	P1_Qmin_5	REAL	Pumpen 1:Pumpendruck 5	S	1	1	Pumpen 1	5	Pumpendruck 5	bar	0.00	99999	0	15	15	DB50.P1_Qmin_5
+6	DB51.DBD0	P1_Qmin_1	REAL	Pumpen 2:Pumpendruck 1	I	1	2	Pumpen 2	1	Pumpendruck 1	bar	0.00	99999	0	14	15	DB51.P1_Qmin_1
+7	DB51.DBD4	P1_Qmin_2	REAL	Pumpen 2:Pumpendruck 2	I	1	2	Pumpen 2	2	Pumpendruck 2	bar	0.0	99999	0	14	15	DB51.P1_Qmin_2
+8	DB51.DBD8	P1_Qmin_3	REAL	Pumpen 2:Pumpendruck 3	I	1	2	Pumpen 2	3	Pumpendruck 3	bar	0.00	99999	0	14	15	DB51.P1_Qmin_3
+9	DB51.DBD12	P1_Qmin_4	REAL	Pumpen 2:Pumpendruck 4	I	1	2	Pumpen 2	4	Pumpendruck 4	bar	0.00	99999	0	14	15	DB51.P1_Qmin_4
+10	DB51.DBD16	P1_Qmin_5	REAL	Pumpen 2:Pumpendruck 5	I	1	2	Pumpen 2	5	Pumpendruck 5	bar	0.00	99999	0	14	15	DB51.P1_Qmin_5
+11	DB52.DBW0	Valve01	INT	Schieber:Status 1	I	1	3	Schieber	1	Status 1	NULL	0	99999	0	15	15	DB52.Valve01
+12	DB52.DBW2	Valve02	INT	Schieber:Status 2	I	1	3	Schieber	2	Status 2	NULL	0	99999	0	15	15	DB52.Valve02
+13	DB52.DBW4	Valve03	INT	Schieber:Status 3	I	1	3	Schieber	3	Status 3	NULL	0	99999	0	15	15	DB52.Valve03
+14	DB52.DBW6	Valve04	INT	Schieber:Status 4	I	1	3	Schieber	4	Status 4	NULL	0	99999	0	15	15	DB52.Valve04
+15	DB52.DBW8	Valve05	INT	Schieber:Status 5	I	1	3	Schieber	5	Status 5	NULL	0	99999	0	15	15	DB52.Valve05
+16	DB53.DBX0.0	Bit01	BOOL	Fehlergruppe 1: Fehler 1	I	1	4	Fehlergruppe 1	1	 Fehler 1	NULL	0	1	0	15	15	DB53.Bit01
+17	DB53.DBX0.1	Bit02	BOOL	Fehlergruppe 1: Fehler 2	I	1	4	Fehlergruppe 1	2	 Fehler 2	NULL	0	1	0	15	15	DB53.Bit02
+18	DB53.DBX0.2	Bit03	BOOL	Fehlergruppe 1: Fehler 3	I	1	4	Fehlergruppe 1	3	 Fehler 3	NULL	0	1	0	15	15	DB53.Bit03
+19	DB53.DBX0.3	Bit04	BOOL	Fehlergruppe 1: Fehler 4	I	1	4	Fehlergruppe 1	4	 Fehler 4	NULL	0	1	0	15	15	DB53.Bit04
+20	DB53.DBX0.4	Bit05	BOOL	Fehlergruppe 1: Fehler 5	E	1	4	Fehlergruppe 1	5	 Fehler 5	NULL	0	1	0	15	15	DB53.Bit05
+21	DB53.DBX0.5	Bit06	BOOL	Fehlergruppe 1: Fehler 6	E	1	4	Fehlergruppe 1	6	 Fehler 6	NULL	0	1	0	15	15	DB53.Bit06
+22	DB53.DBX0.6	Bit07	BOOL	Fehlergruppe 1: Fehler 7	E	1	4	Fehlergruppe 1	7	 Fehler 7	NULL	0	1	0	15	15	DB53.Bit07
+23	DB53.DBX0.7	Bit08	BOOL	Fehlergruppe 2: Fehler 1	E	1	4	Fehlergruppe 2	8	 Fehler 1	NULL	0	1	0	15	15	DB53.Bit08
+24	DB53.DBX1.0	Bit09	BOOL	Fehlergruppe 2: Fehler 2	E	1	5	Fehlergruppe 2	1	 Fehler 2	NULL	0	1	0	15	15	DB53.Bit09
+25	DB53.DBX1.1	Bit10	BOOL	Fehlergruppe 2: Fehler 3	E	1	5	Fehlergruppe 2	2	 Fehler 3	NULL	0	1	0	15	15	DB53.Bit10
+26	DB53.DBX1.2	Bit11	BOOL	Fehlergruppe 2: Fehler 4	E	1	5	Fehlergruppe 2	3	 Fehler 4	NULL	0	1	0	15	15	DB53.Bit11
+27	DB53.DBX1.3	Bit12	BOOL	Fehlergruppe 2: Fehler 5	E	1	5	Fehlergruppe 2	4	 Fehler 5	NULL	0	1	0	15	15	DB53.Bit12
+28	DB53.DBX1.4	Bit13	BOOL	Fehlergruppe 2: Fehler 6	E	1	5	Fehlergruppe 2	5	 Fehler 6	NULL	0	1	0	15	15	DB53.Bit13
+29	DB53.DBX1.5	Bit14	BOOL	Fehlergruppe 2: Fehler 7	E	1	5	Fehlergruppe 2	6	 Fehler 7	NULL	0	1	0	15	15	DB53.Bit14
+30	DB53.DBX1.6	Bit15	BOOL	Fehlergruppe 2: Fehler 7	E	1	5	Fehlergruppe 2	7	 Fehler 7	NULL	0	1	0	15	15	DB53.Bit15
+31	DB53.DBX1.7	Bit16	BOOL	Fehlergruppe 2: Fehler 8	E	1	5	Fehlergruppe 2	8	 Fehler 8	NULL	0	1	0	15	15	DB53.Bit16
+32	DB53.DBX2.0	Bit17	BOOL	Fehlergruppe 3: Fehler 1	E	1	6	Fehlergruppe 3	1	 Fehler 1	NULL	0	1	0	15	15	DB53.Bit17
+33	DB53.DBX2.1	Bit18	BOOL	Fehlergruppe 3: Fehler 2	E	1	6	Fehlergruppe 3	2	 Fehler 2	NULL	0	1	0	15	15	DB53.Bit18
+34	DB53.DBX2.2	Bit19	BOOL	Fehlergruppe 3: Fehler 3	E	1	6	Fehlergruppe 3	3	 Fehler 3	NULL	0	1	0	15	15	DB53.Bit19
+35	DB53.DBX2.3	Bit20	BOOL	Fehlergruppe 3: Fehler 4	E	1	6	Fehlergruppe 3	4	 Fehler 4	NULL	0	1	0	15	15	DB53.Bit20
+36	DB53.DBX2.4	Bit21	BOOL	Fehlergruppe 3: Fehler 5	E	1	6	Fehlergruppe 3	5	 Fehler 5	NULL	0	1	0	15	15	DB53.Bit21
+37	DB53.DBX2.5	Bit22	BOOL	Fehlergruppe 4: Fehler 1	E	1	6	Fehlergruppe 4	6	 Fehler 1	NULL	0	1	0	15	15	DB53.Bit22
+38	DB53.DBX2.6	Bit23	BOOL	Fehlergruppe 4: Fehler 2	E	1	6	Fehlergruppe 4	7	 Fehler 2	NULL	0	1	0	15	15	DB53.Bit23
+39	DB53.DBX2.7	Bit24	BOOL	Fehlergruppe 4: Fehler 3	E	1	6	Fehlergruppe 4	8	 Fehler 3	NULL	0	1	0	15	15	DB53.Bit24
+40	DB53.DBX3.0	Bit25	BOOL	Fehlergruppe 4: Fehler 4	E	1	7	Fehlergruppe 4	1	 Fehler 4	NULL	0	1	0	15	15	DB53.Bit25
+41	DB53.DBX3.1	Bit26	BOOL	Fehlergruppe 4: Fehler 5	E	1	7	Fehlergruppe 4	2	 Fehler 5	NULL	0	1	0	15	15	DB53.Bit26
+42	DB53.DBX3.2	Bit27	BOOL	Fehlergruppe 5: Fehler 1	E	1	7	Fehlergruppe 5	3	 Fehler 1	NULL	0	1	0	15	15	DB53.Bit27
+43	DB53.DBX3.3	Bit28	BOOL	Fehlergruppe 5: Fehler 2	E	1	7	Fehlergruppe 5	4	 Fehler 2	NULL	0	1	0	15	15	DB53.Bit28
+44	DB53.DBX3.4	Bit29	BOOL	Fehlergruppe 5: Fehler 3	E	1	7	Fehlergruppe 5	5	 Fehler 3	NULL	0	1	0	15	15	DB53.Bit29
+45	DB53.DBX3.5	Bit30	BOOL	Fehlergruppe 5: Fehler 4	E	1	7	Fehlergruppe 5	6	 Fehler 4	NULL	0	1	0	15	15	DB53.Bit30
+46	DB53.DBX3.6	Bit31	BOOL	Fehlergruppe 6: Fehler 1	E	1	7	Fehlergruppe 6	7	 Fehler 1	NULL	0	1	0	15	15	DB53.Bit31
+47	DB53.DBX3.7	Bit32	BOOL	Fehlergruppe 6: Fehler 2	E	1	7	Fehlergruppe 6	8	 Fehler 2	NULL	0	1	0	15	15	DB53.Bit32
+48	DB54.DBX0.0	Bit01	BOOL	Freigabegruppe 1: Freigabe 1	R	1	8	Freigabegruppe 1	1	 Freigabe 1	NULL	0	1	0	15	15	DB54.Bit01
+49	DB54.DBX0.1	Bit02	BOOL	Freigabegruppe 1: Freigabe 2	R	1	8	Freigabegruppe 1	2	 Freigabe 2	NULL	0	1	0	15	15	DB54.Bit02
+50	DB54.DBX0.2	Bit03	BOOL	Freigabegruppe 1: Freigabe 3	R	1	8	Freigabegruppe 1	3	 Freigabe 3	NULL	0	1	0	15	15	DB54.Bit03
+51	DB54.DBX0.3	Bit04	BOOL	Freigabegruppe 1: Freigabe 4	R	1	8	Freigabegruppe 1	4	 Freigabe 4	NULL	0	1	0	15	15	DB54.Bit04
+52	DB54.DBX0.4	Bit05	BOOL	Freigabegruppe 1: Freigabe 5	R	1	8	Freigabegruppe 1	5	 Freigabe 5	NULL	0	1	0	15	15	DB54.Bit05
+53	DB54.DBX0.5	Bit06	BOOL	Freigabegruppe 1: Freigabe 6	R	1	8	Freigabegruppe 1	6	 Freigabe 6	NULL	0	1	0	15	15	DB54.Bit06
+54	DB54.DBX0.6	Bit07	BOOL	Freigabegruppe 1: Freigabe 7	R	1	8	Freigabegruppe 1	7	 Freigabe 7	NULL	0	1	0	15	15	DB54.Bit07
+55	DB54.DBX0.7	Bit08	BOOL	Freigabegruppe 1: Freigabe 8	R	1	8	Freigabegruppe 1	8	 Freigabe 8	NULL	0	1	0	15	15	DB54.Bit08
+56	DB54.DBX1.0	Bit09	BOOL	Freigabegruppe 1: Freigabe 9	R	1	8	Freigabegruppe 1	9	 Freigabe 9	NULL	0	1	0	15	15	DB54.Bit09
+57	DB54.DBX1.1	Bit10	BOOL	Freigabegruppe 2: Freigabe 1	R	1	8	Freigabegruppe 2	10	 Freigabe 1	NULL	0	1	0	15	15	DB54.Bit10
+58	DB54.DBX1.2	Bit11	BOOL	Freigabegruppe 2: Freigabe 2	R	1	8	Freigabegruppe 2	11	 Freigabe 2	NULL	0	1	0	15	15	DB54.Bit11
+59	DB54.DBX1.3	Bit12	BOOL	Freigabegruppe 2: Freigabe 3	R	1	8	Freigabegruppe 2	12	 Freigabe 3	NULL	0	1	0	15	15	DB54.Bit12
+60	DB54.DBX1.4	Bit13	BOOL	Freigabegruppe 2: Freigabe 4	R	1	8	Freigabegruppe 2	13	 Freigabe 4	NULL	0	1	0	15	15	DB54.Bit13
+61	DB54.DBX1.5	Bit14	BOOL	Freigabegruppe 2: Freigabe 5	R	1	8	Freigabegruppe 2	14	 Freigabe 5	NULL	0	1	0	15	15	DB54.Bit14
+62	DB54.DBX1.6	Bit15	BOOL	Freigabegruppe 2: Freigabe 6	R	1	8	Freigabegruppe 2	15	 Freigabe 6	NULL	0	1	0	15	15	DB54.Bit15
+63	DB54.DBX1.7	Bit16	BOOL	Freigabegruppe 3: Freigabe 1	R	1	8	Freigabegruppe 3	16	 Freigabe 1	NULL	0	1	0	15	15	DB54.Bit16
+64	DB54.DBX2.0	Bit17	BOOL	Freigabegruppe 4: Freigabe 1	R	1	9	Freigabegruppe 4	1	 Freigabe 1	NULL	0	1	0	15	15	DB54.Bit17
+65	DB54.DBX2.1	Bit18	BOOL	Freigabegruppe 4: Freigabe 2	R	1	9	Freigabegruppe 4	2	 Freigabe 2	NULL	0	1	0	15	15	DB54.Bit18
+66	DB54.DBX2.2	Bit19	BOOL	Freigabegruppe 4: Freigabe 3	R	1	9	Freigabegruppe 4	3	 Freigabe 3	NULL	0	1	0	15	15	DB54.Bit19
+67	DB54.DBX2.3	Bit20	BOOL	Freigabegruppe 4: Freigabe 4	R	1	9	Freigabegruppe 4	4	 Freigabe 4	NULL	0	1	0	15	15	DB54.Bit20
+68	DB54.DBX2.4	Bit21	BOOL	Freigabegruppe 5: Freigabe 1	R	1	9	Freigabegruppe 5	5	 Freigabe 1	NULL	0	1	0	15	15	DB54.Bit21
+69	DB54.DBX2.5	Bit22	BOOL	Freigabegruppe 5: Freigabe 2	R	1	9	Freigabegruppe 5	6	 Freigabe 2	NULL	0	1	0	15	15	DB54.Bit22
+70	DB54.DBX2.6	Bit23	BOOL	Freigabegruppe 5: Freigabe 3	R	1	9	Freigabegruppe 5	7	 Freigabe 3	NULL	0	1	0	15	15	DB54.Bit23
+71	DB54.DBX2.7	Bit24	BOOL	Freigabegruppe 5: Freigabe 4	R	1	9	Freigabegruppe 5	8	 Freigabe 4	NULL	0	1	0	15	15	DB54.Bit24
+72	DB54.DBX3.0	Bit25	BOOL	Freigabegruppe 6: Freigabe 1	R	1	9	Freigabegruppe 6	9	 Freigabe 1	NULL	0	1	0	15	15	DB54.Bit25
+73	DB54.DBX3.1	Bit26	BOOL	Freigabegruppe 6: Freigabe 2	R	1	9	Freigabegruppe 6	10	 Freigabe 2	NULL	0	1	0	15	15	DB54.Bit26
+74	DB54.DBX3.2	Bit27	BOOL	Freigabegruppe 6: Freigabe 3	R	1	9	Freigabegruppe 6	11	 Freigabe 3	NULL	0	1	0	15	15	DB54.Bit27
+75	DB54.DBX3.3	Bit28	BOOL	Freigabegruppe 6: Freigabe 4	R	1	9	Freigabegruppe 6	12	 Freigabe 4	NULL	0	1	0	15	15	DB54.Bit28
+76	DB54.DBX3.4	Bit29	BOOL	Freigabegruppe 6: Freigabe 5	R	1	9	Freigabegruppe 6	13	 Freigabe 5	NULL	0	1	0	15	15	DB54.Bit29
+77	DB54.DBX3.5	Bit30	BOOL	Freigabegruppe 6: Freigabe 6	R	1	9	Freigabegruppe 6	14	 Freigabe 6	NULL	0	1	0	15	15	DB54.Bit30
+78	DB54.DBX3.6	Bit31	BOOL	Freigabegruppe 6: Freigabe 7	R	1	9	Freigabegruppe 6	15	 Freigabe 7	NULL	0	1	0	15	15	DB54.Bit31
+79	DB54.DBX3.7	Bit32	BOOL	Freigabegruppe 6: Freigabe 8	R	1	9	Freigabegruppe 6	16	 Freigabe 8	NULL	0	1	0	15	15	DB54.Bit32
+80	DB55.DBX0.0	Bit01	BOOL	Parameter 1: Wert 01	P	1	3	Parameter 1	1	 Wert 01	NULL	0	1	0	15	15	DB55.Bit01
+81	DB55.DBX0.1	Bit02	BOOL	Parameter 1: Wert 02	P	1	3	Parameter 1	2	 Wert 02	NULL	0	1	0	15	15	DB55.Bit02
+82	DB55.DBX0.2	Bit03	BOOL	Parameter 1: Wert 03	P	1	3	Parameter 1	3	 Wert 03	NULL	0	1	0	15	15	DB55.Bit03
+83	DB55.DBX0.3	Bit04	BOOL	Parameter 1: Wert 04	P	1	3	Parameter 1	4	 Wert 04	NULL	0	1	0	15	15	DB55.Bit04
+84	DB55.DBX0.4	Bit05	BOOL	Parameter 1: Wert 05	P	1	3	Parameter 1	5	 Wert 05	NULL	0	1	0	15	15	DB55.Bit05
+85	DB55.DBX0.5	Bit06	BOOL	Parameter 1: Wert 06	P	1	3	Parameter 1	6	 Wert 06	NULL	0	1	0	14	15	DB55.Bit06
+86	DB55.DBD2	Wert1	REAL	Parameter 2: Wert Real 1	P	1	4	Parameter 2	1	 Wert Real 1	bar	0.0	99999	0	15	15	DB55.Wert1
+87	DB55.DBW6	Wert2	INT	Parameter 2: Wert Int 1	P	1	4	Parameter 2	2	 Wert Int 1	mm	0	99999	0	14	15	DB55.Wert2
+88	DB55.DBD8	Wert3	REAL	Parameter 2: Wert Real 2	P	1	4	Parameter 2	3	 Wert Real 2	m	0	99999	0	12	15	DB55.Wert3
+89	DB55.DBW12	Wert4	INT	Parameter 2: Wert Int 2	P	1	4	Parameter 2	4	 Wert Int 2	s	0	99999	0	8	15	DB55.Wert4
+90	DB55.DBD14	Wert5	REAL	Parameter 2: Wert Real 3	P	1	4	Parameter 2	5	 Wert Real 3	%	0.00	99999	0	14	15	DB55.Wert5
+91	DB55.DBD18	Burner00	REAL	Burner: Stufe 0	NULL	1	5	Burner	1	 Stufe 0	%	0.00	20	0	8	15	DB55.Burner00
+92	DB55.DBD22	Burner01	REAL	Burner: Stufe 1	NULL	1	5	Burner	2	 Stufe 1	%	0.00	20	0	8	15	DB55.Burner01
+93	DB55.DBD26	Burner02	REAL	Burner: Stufe 2	NULL	1	5	Burner	3	 Stufe 2	%	0.00	20	0	8	15	DB55.Burner02
+94	DB55.DBD30	Burner03	REAL	Burner: Stufe 3	NULL	1	5	Burner	4	 Stufe 3	%	0.00	20	0	8	15	DB55.Burner03
+95	DB55.DBD34	Burner04	REAL	Burner: Stufe 4	NULL	1	5	Burner	5	 Stufe 4	%	0.00	20	0	8	15	DB55.Burner04
+96	DB55.DBD38	Burner05	REAL	Burner: Stufe 5	NULL	1	5	Burner	6	 Stufe 5	%	0.00	20	0	8	15	DB55.Burner05
+97	DB55.DBD42	Burner06	REAL	Burner: Stufe 6	NULL	1	5	Burner	7	 Stufe 6	%	0.00	20	0	8	15	DB55.Burner06
+98	DB55.DBD46	Burner07	REAL	Burner: Stufe 7	NULL	1	5	Burner	8	 Stufe 7	%	0.00	20	0	8	15	DB55.Burner07
+99	DB55.DBD50	Burner08	REAL	Burner: Stufe 8	NULL	1	5	Burner	9	 Stufe 8	%	0.00	20	0	8	15	DB55.Burner08
+100	DB55.DBD54	Burner09	REAL	Burner: Stufe 9	NULL	1	5	Burner	10	 Stufe 9	%	0.00	20	0	8	15	DB55.Burner09
+101	DB55.DBD58	Burner10	REAL	Burner: Stufe 10	NULL	1	5	Burner	11	 Stufe 10	%	0.00	20	0	4	15	DB55.Burner10
+102	DB55.DBD62	Burner11	REAL	Burner: Stufe 11	NULL	1	5	Burner	12	 Stufe 11	%	0.00	20	0	4	15	DB55.Burner11
+103	DB55.DBD66	Burner12	REAL	Burner: Stufe 12	NULL	1	5	Burner	13	 Stufe 12	%	0.00	20	0	4	15	DB55.Burner12
+104	DB55.DBD70	Burner13	REAL	Burner: Stufe 13	NULL	1	5	Burner	14	 Stufe 13	%	0.00	20	0	4	15	DB55.Burner13
+105	DB55.DBD74	Burner14	REAL	Burner: Stufe 14	NULL	1	5	Burner	15	 Stufe 14	%	0.00	20	0	4	15	DB55.Burner14
+106	DB55.DBD78	Burner15	REAL	Burner: Stufe 15	NULL	1	5	Burner	16	 Stufe 15	%	0.00	20	0	4	15	DB55.Burner15
+107	DB55.DBD82	Burner16	REAL	Burner: Stufe 16	NULL	1	5	Burner	17	 Stufe 16	%	0.00	20	0	4	15	DB55.Burner16
+108	DB55.DBD86	Burner17	REAL	Burner: Stufe 17	NULL	1	5	Burner	18	 Stufe 17	%	0.00	20	0	2	15	DB55.Burner17
+109	DB55.DBD90	Burner18	REAL	Burner: Stufe 18	NULL	1	5	Burner	19	 Stufe 18	%	0.00	20	0	2	15	DB55.Burner18
+110	DB55.DBD94	Burner19	REAL	Burner: Stufe 19	NULL	1	5	Burner	20	 Stufe 19	%	0.00	20	0	2	15	DB55.Burner19
+111	DB55.DBD98	Burner20	REAL	Burner: Stufe 20	NULL	1	5	Burner	21	 Stufe 20	%	0.00	20	0	2	15	DB55.Burner20
+112	DB55.DBD102	Fuel00	REAL	Zusammensetzung Treibgas Brennstoff: Stufe 0	NULL	1	5	Zusammensetzung Treibgas Brennstoff	22	 Stufe 0	%	0.00	20	0	2	15	DB55.Fuel00
+113	DB55.DBD106	Fuel01	REAL	Zusammensetzung Treibgas Brennstoff: Stufe 5	NULL	1	6	Zusammensetzung Treibgas Brennstoff	1	 Stufe 5	NULL	0	20	0	15	15	DB55.Fuel01
+114	DB55.DBD110	Fuel02	REAL	Zusammensetzung Treibgas Brennstoff: Stufe 10	NULL	1	6	Zusammensetzung Treibgas Brennstoff	2	 Stufe 10	NULL	0	20	0	15	15	DB55.Fuel02
+115	DB55.DBD114	Fuel03	REAL	Zusammensetzung Treibgas Brennstoff: Stufe 15	NULL	1	6	Zusammensetzung Treibgas Brennstoff	3	 Stufe 15	NULL	0	20	0	15	15	DB55.Fuel03
+116	DB55.DBD118	Fuel04	REAL	Zusammensetzung Treibgas Brennstoff: Stufe 20	NULL	1	6	Zusammensetzung Treibgas Brennstoff	4	 Stufe 20	NULL	0	20	0	15	15	DB55.Fuel04
+117	DB55.DBD122	Fuel05	REAL	Zusammensetzung Treibgas Brennstoff: Stufe 25	NULL	1	6	Zusammensetzung Treibgas Brennstoff	5	 Stufe 25	NULL	0	20	0	15	15	DB55.Fuel05
+118	DB55.DBD126	Fuel06	REAL	Zusammensetzung Treibgas Brennstoff: Stufe 30	NULL	1	6	Zusammensetzung Treibgas Brennstoff	6	 Stufe 30	NULL	0	20	0	15	15	DB55.Fuel06
+119	DB55.DBD130	Fuel07	REAL	Zusammensetzung Treibgas Brennstoff: Stufe 35	NULL	1	6	Zusammensetzung Treibgas Brennstoff	7	 Stufe 35	NULL	0	20	0	15	15	DB55.Fuel07
+120	DB55.DBD134	Fuel08	REAL	Zusammensetzung Treibgas Brennstoff: Stufe 40	NULL	1	6	Zusammensetzung Treibgas Brennstoff	8	 Stufe 40	NULL	0	20	0	15	15	DB55.Fuel08
+121	DB55.DBD138	Fuel09	REAL	Zusammensetzung Treibgas Brennstoff: Stufe 45	NULL	1	6	Zusammensetzung Treibgas Brennstoff	9	 Stufe 45	NULL	0	20	0	15	15	DB55.Fuel09
+122	DB55.DBD142	Fuel10	REAL	Zusammensetzung Treibgas Brennstoff: Stufe 50	NULL	1	6	Zusammensetzung Treibgas Brennstoff	10	 Stufe 50	NULL	0	20	0	15	15	DB55.Fuel10
+123	DB55.DBD146	Fuel11	REAL	Zusammensetzung Treibgas Brennstoff: Stufe 55	NULL	1	6	Zusammensetzung Treibgas Brennstoff	11	 Stufe 55	NULL	0	20	0	15	15	DB55.Fuel11
+124	DB55.DBD150	Fuel12	REAL	Zusammensetzung Treibgas Brennstoff: Stufe 60	NULL	1	6	Zusammensetzung Treibgas Brennstoff	12	 Stufe 60	NULL	0	20	0	15	15	DB55.Fuel12
+125	DB55.DBD154	Fuel13	REAL	Zusammensetzung Treibgas Brennstoff: Stufe 65	NULL	1	6	Zusammensetzung Treibgas Brennstoff	13	 Stufe 65	NULL	0	20	0	15	15	DB55.Fuel13
+126	DB55.DBD158	Fuel14	REAL	Zusammensetzung Treibgas Brennstoff: Stufe 70	NULL	1	6	Zusammensetzung Treibgas Brennstoff	14	 Stufe 70	NULL	0	20	0	15	15	DB55.Fuel14
+127	DB55.DBD162	Fuel15	REAL	Zusammensetzung Treibgas Brennstoff: Stufe 75	NULL	1	6	Zusammensetzung Treibgas Brennstoff	15	 Stufe 75	NULL	0	20	0	15	15	DB55.Fuel15
+128	DB55.DBD166	Fuel16	REAL	Zusammensetzung Treibgas Brennstoff: Stufe 80	NULL	1	6	Zusammensetzung Treibgas Brennstoff	16	 Stufe 80	NULL	0	20	0	15	15	DB55.Fuel16
+129	DB55.DBD170	Fuel17	REAL	Zusammensetzung Treibgas Brennstoff: Stufe 85	NULL	1	6	Zusammensetzung Treibgas Brennstoff	17	 Stufe 85	NULL	0	20	0	15	15	DB55.Fuel17
+130	DB55.DBD174	Fuel18	REAL	Zusammensetzung Treibgas Brennstoff: Stufe 90	NULL	1	6	Zusammensetzung Treibgas Brennstoff	18	 Stufe 90	NULL	0	20	0	15	15	DB55.Fuel18
+131	DB55.DBD178	Fuel19	REAL	Zusammensetzung Treibgas Brennstoff: Stufe 95	NULL	1	6	Zusammensetzung Treibgas Brennstoff	19	 Stufe 95	NULL	0	20	0	15	15	DB55.Fuel19
+132	DB55.DBD182	Fuel20	REAL	Zusammensetzung Treibgas Brennstoff: Stufe 100	NULL	1	6	Zusammensetzung Treibgas Brennstoff	20	 Stufe 100	NULL	0	20	0	15	15	DB55.Fuel20
+133	DB55.DBD186	Flue00	REAL	Zusammensetzung Treibgas Abgas: Stufe 0	NULL	NULL	NULL	Zusammensetzung Treibgas Abgas	NULL	 Stufe 0	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Flue00
+134	DB55.DBD190	Flue01	REAL	Zusammensetzung Treibgas Abgas: Stufe 5	NULL	NULL	NULL	Zusammensetzung Treibgas Abgas	NULL	 Stufe 5	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Flue01
+135	DB55.DBD194	Flue02	REAL	Zusammensetzung Treibgas Abgas: Stufe 10	NULL	NULL	NULL	Zusammensetzung Treibgas Abgas	NULL	 Stufe 10	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Flue02
+136	DB55.DBD198	Flue03	REAL	Zusammensetzung Treibgas Abgas: Stufe 15	NULL	NULL	NULL	Zusammensetzung Treibgas Abgas	NULL	 Stufe 15	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Flue03
+137	DB55.DBD202	Flue04	REAL	Zusammensetzung Treibgas Abgas: Stufe 20	NULL	NULL	NULL	Zusammensetzung Treibgas Abgas	NULL	 Stufe 20	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Flue04
+138	DB55.DBD206	Flue05	REAL	Zusammensetzung Treibgas Abgas: Stufe 25	NULL	NULL	NULL	Zusammensetzung Treibgas Abgas	NULL	 Stufe 25	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Flue05
+139	DB55.DBD210	Flue06	REAL	Zusammensetzung Treibgas Abgas: Stufe 30	NULL	NULL	NULL	Zusammensetzung Treibgas Abgas	NULL	 Stufe 30	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Flue06
+140	DB55.DBD214	Flue07	REAL	Zusammensetzung Treibgas Abgas: Stufe 35	NULL	NULL	NULL	Zusammensetzung Treibgas Abgas	NULL	 Stufe 35	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Flue07
+141	DB55.DBD218	Flue08	REAL	Zusammensetzung Treibgas Abgas: Stufe 40	NULL	NULL	NULL	Zusammensetzung Treibgas Abgas	NULL	 Stufe 40	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Flue08
+142	DB55.DBD222	Flue09	REAL	Zusammensetzung Treibgas Abgas: Stufe 45	NULL	NULL	NULL	Zusammensetzung Treibgas Abgas	NULL	 Stufe 45	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Flue09
+143	DB55.DBD226	Flue10	REAL	Zusammensetzung Treibgas Abgas: Stufe 50	NULL	NULL	NULL	Zusammensetzung Treibgas Abgas	NULL	 Stufe 50	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Flue10
+144	DB55.DBD230	Flue11	REAL	Zusammensetzung Treibgas Abgas: Stufe 55	NULL	NULL	NULL	Zusammensetzung Treibgas Abgas	NULL	 Stufe 55	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Flue11
+145	DB55.DBD234	Flue12	REAL	Zusammensetzung Treibgas Abgas: Stufe 60	NULL	NULL	NULL	Zusammensetzung Treibgas Abgas	NULL	 Stufe 60	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Flue12
+146	DB55.DBD238	Flue13	REAL	Zusammensetzung Treibgas Abgas: Stufe 65	NULL	NULL	NULL	Zusammensetzung Treibgas Abgas	NULL	 Stufe 65	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Flue13
+147	DB55.DBD242	Flue14	REAL	Zusammensetzung Treibgas Abgas: Stufe 70	NULL	NULL	NULL	Zusammensetzung Treibgas Abgas	NULL	 Stufe 70	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Flue14
+148	DB55.DBD246	Flue15	REAL	Zusammensetzung Treibgas Abgas: Stufe 75	NULL	NULL	NULL	Zusammensetzung Treibgas Abgas	NULL	 Stufe 75	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Flue15
+149	DB55.DBD250	Flue16	REAL	Zusammensetzung Treibgas Abgas: Stufe 80	NULL	NULL	NULL	Zusammensetzung Treibgas Abgas	NULL	 Stufe 80	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Flue16
+150	DB55.DBD254	Flue17	REAL	Zusammensetzung Treibgas Abgas: Stufe 85	NULL	NULL	NULL	Zusammensetzung Treibgas Abgas	NULL	 Stufe 85	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Flue17
+151	DB55.DBD258	Flue18	REAL	Zusammensetzung Treibgas Abgas: Stufe 90	NULL	NULL	NULL	Zusammensetzung Treibgas Abgas	NULL	 Stufe 90	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Flue18
+152	DB55.DBD262	Flue19	REAL	Zusammensetzung Treibgas Abgas: Stufe 95	NULL	NULL	NULL	Zusammensetzung Treibgas Abgas	NULL	 Stufe 95	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Flue19
+153	DB55.DBD266	Flue20	REAL	Zusammensetzung Treibgas Abgas: Stufe 100	NULL	NULL	NULL	Zusammensetzung Treibgas Abgas	NULL	 Stufe 100	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Flue20
+154	DB55.DBD270	Air0100	REAL	Zusammensetzung Treibgas Luftzufuhr 1: Stufe 0	NULL	NULL	NULL	Zusammensetzung Treibgas Luftzufuhr 1	NULL	 Stufe 0	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Air0100
+155	DB55.DBD274	Air0101	REAL	Zusammensetzung Treibgas Luftzufuhr 1: Stufe 5	NULL	NULL	NULL	Zusammensetzung Treibgas Luftzufuhr 1	NULL	 Stufe 5	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Air0101
+156	DB55.DBD278	Air0102	REAL	Zusammensetzung Treibgas Luftzufuhr 1: Stufe 10	NULL	NULL	NULL	Zusammensetzung Treibgas Luftzufuhr 1	NULL	 Stufe 10	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Air0102
+157	DB55.DBD282	Air0103	REAL	Zusammensetzung Treibgas Luftzufuhr 1: Stufe 15	NULL	NULL	NULL	Zusammensetzung Treibgas Luftzufuhr 1	NULL	 Stufe 15	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Air0103
+158	DB55.DBD286	Air0104	REAL	Zusammensetzung Treibgas Luftzufuhr 1: Stufe 20	NULL	NULL	NULL	Zusammensetzung Treibgas Luftzufuhr 1	NULL	 Stufe 20	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Air0104
+159	DB55.DBD290	Air0105	REAL	Zusammensetzung Treibgas Luftzufuhr 1: Stufe 25	NULL	NULL	NULL	Zusammensetzung Treibgas Luftzufuhr 1	NULL	 Stufe 25	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Air0105
+160	DB55.DBD294	Air0106	REAL	Zusammensetzung Treibgas Luftzufuhr 1: Stufe 30	NULL	NULL	NULL	Zusammensetzung Treibgas Luftzufuhr 1	NULL	 Stufe 30	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Air0106
+161	DB55.DBD298	Air0107	REAL	Zusammensetzung Treibgas Luftzufuhr 1: Stufe 35	NULL	NULL	NULL	Zusammensetzung Treibgas Luftzufuhr 1	NULL	 Stufe 35	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Air0107
+162	DB55.DBD302	Air0108	REAL	Zusammensetzung Treibgas Luftzufuhr 1: Stufe 40	NULL	NULL	NULL	Zusammensetzung Treibgas Luftzufuhr 1	NULL	 Stufe 40	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Air0108
+163	DB55.DBD306	Air0109	REAL	Zusammensetzung Treibgas Luftzufuhr 1: Stufe 45	NULL	NULL	NULL	Zusammensetzung Treibgas Luftzufuhr 1	NULL	 Stufe 45	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Air0109
+164	DB55.DBD310	Air0110	REAL	Zusammensetzung Treibgas Luftzufuhr 1: Stufe 50	NULL	NULL	NULL	Zusammensetzung Treibgas Luftzufuhr 1	NULL	 Stufe 50	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Air0110
+165	DB55.DBD314	Air0111	REAL	Zusammensetzung Treibgas Luftzufuhr 1: Stufe 55	NULL	NULL	NULL	Zusammensetzung Treibgas Luftzufuhr 1	NULL	 Stufe 55	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Air0111
+166	DB55.DBD318	Air0112	REAL	Zusammensetzung Treibgas Luftzufuhr 1: Stufe 60	NULL	NULL	NULL	Zusammensetzung Treibgas Luftzufuhr 1	NULL	 Stufe 60	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Air0112
+167	DB55.DBD322	Air0113	REAL	Zusammensetzung Treibgas Luftzufuhr 1: Stufe 65	NULL	NULL	NULL	Zusammensetzung Treibgas Luftzufuhr 1	NULL	 Stufe 65	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Air0113
+168	DB55.DBD326	Air0114	REAL	Zusammensetzung Treibgas Luftzufuhr 1: Stufe 70	NULL	NULL	NULL	Zusammensetzung Treibgas Luftzufuhr 1	NULL	 Stufe 70	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Air0114
+169	DB55.DBD330	Air0115	REAL	Zusammensetzung Treibgas Luftzufuhr 1: Stufe 75	NULL	NULL	NULL	Zusammensetzung Treibgas Luftzufuhr 1	NULL	 Stufe 75	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Air0115
+170	DB55.DBD334	Air0116	REAL	Zusammensetzung Treibgas Luftzufuhr 1: Stufe 80	NULL	NULL	NULL	Zusammensetzung Treibgas Luftzufuhr 1	NULL	 Stufe 80	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Air0116
+171	DB55.DBD338	Air0117	REAL	Zusammensetzung Treibgas Luftzufuhr 1: Stufe 85	NULL	NULL	NULL	Zusammensetzung Treibgas Luftzufuhr 1	NULL	 Stufe 85	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Air0117
+172	DB55.DBD342	Air0118	REAL	Zusammensetzung Treibgas Luftzufuhr 1: Stufe 90	NULL	NULL	NULL	Zusammensetzung Treibgas Luftzufuhr 1	NULL	 Stufe 90	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Air0118
+173	DB55.DBD346	Air0119	REAL	Zusammensetzung Treibgas Luftzufuhr 1: Stufe 95	NULL	NULL	NULL	Zusammensetzung Treibgas Luftzufuhr 1	NULL	 Stufe 95	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Air0119
+174	DB55.DBD350	Air0120	REAL	Zusammensetzung Treibgas Luftzufuhr 1: Stufe 100	NULL	NULL	NULL	Zusammensetzung Treibgas Luftzufuhr 1	NULL	 Stufe 100	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Air0120
+175	DB55.DBD354	Air0200	REAL	Zusammensetzung Treibgas Luftzufuhr 2: Stufe 0	NULL	NULL	NULL	Zusammensetzung Treibgas Luftzufuhr 2	NULL	 Stufe 0	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Air0200
+176	DB55.DBD358	Air0201	REAL	Zusammensetzung Treibgas Luftzufuhr 2: Stufe 5	NULL	NULL	NULL	Zusammensetzung Treibgas Luftzufuhr 2	NULL	 Stufe 5	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Air0201
+177	DB55.DBD362	Air0202	REAL	Zusammensetzung Treibgas Luftzufuhr 2: Stufe 10	NULL	NULL	NULL	Zusammensetzung Treibgas Luftzufuhr 2	NULL	 Stufe 10	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Air0202
+178	DB55.DBD366	Air0203	REAL	Zusammensetzung Treibgas Luftzufuhr 2: Stufe 15	NULL	NULL	NULL	Zusammensetzung Treibgas Luftzufuhr 2	NULL	 Stufe 15	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Air0203
+179	DB55.DBD370	Air0204	REAL	Zusammensetzung Treibgas Luftzufuhr 2: Stufe 20	NULL	NULL	NULL	Zusammensetzung Treibgas Luftzufuhr 2	NULL	 Stufe 20	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Air0204
+180	DB55.DBD374	Air0205	REAL	Zusammensetzung Treibgas Luftzufuhr 2: Stufe 25	NULL	NULL	NULL	Zusammensetzung Treibgas Luftzufuhr 2	NULL	 Stufe 25	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Air0205
+181	DB55.DBD378	Air0206	REAL	Zusammensetzung Treibgas Luftzufuhr 2: Stufe 30	NULL	NULL	NULL	Zusammensetzung Treibgas Luftzufuhr 2	NULL	 Stufe 30	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Air0206
+182	DB55.DBD382	Air0207	REAL	Zusammensetzung Treibgas Luftzufuhr 2: Stufe 35	NULL	NULL	NULL	Zusammensetzung Treibgas Luftzufuhr 2	NULL	 Stufe 35	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Air0207
+183	DB55.DBD386	Air0208	REAL	Zusammensetzung Treibgas Luftzufuhr 2: Stufe 40	NULL	NULL	NULL	Zusammensetzung Treibgas Luftzufuhr 2	NULL	 Stufe 40	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Air0208
+184	DB55.DBD390	Air0209	REAL	Zusammensetzung Treibgas Luftzufuhr 2: Stufe 45	NULL	NULL	NULL	Zusammensetzung Treibgas Luftzufuhr 2	NULL	 Stufe 45	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Air0209
+185	DB55.DBD394	Air0210	REAL	Zusammensetzung Treibgas Luftzufuhr 2: Stufe 50	NULL	NULL	NULL	Zusammensetzung Treibgas Luftzufuhr 2	NULL	 Stufe 50	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Air0210
+186	DB55.DBD398	Air0211	REAL	Zusammensetzung Treibgas Luftzufuhr 2: Stufe 55	NULL	NULL	NULL	Zusammensetzung Treibgas Luftzufuhr 2	NULL	 Stufe 55	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Air0211
+187	DB55.DBD402	Air0212	REAL	Zusammensetzung Treibgas Luftzufuhr 2: Stufe 60	NULL	NULL	NULL	Zusammensetzung Treibgas Luftzufuhr 2	NULL	 Stufe 60	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Air0212
+188	DB55.DBD406	Air0213	REAL	Zusammensetzung Treibgas Luftzufuhr 2: Stufe 65	NULL	NULL	NULL	Zusammensetzung Treibgas Luftzufuhr 2	NULL	 Stufe 65	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Air0213
+189	DB55.DBD410	Air0214	REAL	Zusammensetzung Treibgas Luftzufuhr 2: Stufe 70	NULL	NULL	NULL	Zusammensetzung Treibgas Luftzufuhr 2	NULL	 Stufe 70	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Air0214
+190	DB55.DBD414	Air0215	REAL	Zusammensetzung Treibgas Luftzufuhr 2: Stufe 75	NULL	NULL	NULL	Zusammensetzung Treibgas Luftzufuhr 2	NULL	 Stufe 75	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Air0215
+191	DB55.DBD418	Air0216	REAL	Zusammensetzung Treibgas Luftzufuhr 2: Stufe 80	NULL	NULL	NULL	Zusammensetzung Treibgas Luftzufuhr 2	NULL	 Stufe 80	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Air0216
+192	DB55.DBD422	Air0217	REAL	Zusammensetzung Treibgas Luftzufuhr 2: Stufe 85	NULL	NULL	NULL	Zusammensetzung Treibgas Luftzufuhr 2	NULL	 Stufe 85	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Air0217
+193	DB55.DBD426	Air0218	REAL	Zusammensetzung Treibgas Luftzufuhr 2: Stufe 90	NULL	NULL	NULL	Zusammensetzung Treibgas Luftzufuhr 2	NULL	 Stufe 90	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Air0218
+194	DB55.DBD430	Air0219	REAL	Zusammensetzung Treibgas Luftzufuhr 2: Stufe 95	NULL	NULL	NULL	Zusammensetzung Treibgas Luftzufuhr 2	NULL	 Stufe 95	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Air0219
+195	DB55.DBD434	Air0220	REAL	Zusammensetzung Treibgas Luftzufuhr 2: Stufe 100	NULL	NULL	NULL	Zusammensetzung Treibgas Luftzufuhr 2	NULL	 Stufe 100	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Air0220
+196	DB55.DBD438	Speed00	REAL	Zusammensetzung Treibgas Geschwindigkeit: Stufe 0	NULL	NULL	NULL	Zusammensetzung Treibgas Geschwindigkeit	NULL	 Stufe 0	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Speed00
+197	DB55.DBD442	Speed01	REAL	Zusammensetzung Treibgas Geschwindigkeit: Stufe 5	NULL	NULL	NULL	Zusammensetzung Treibgas Geschwindigkeit	NULL	 Stufe 5	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Speed01
+198	DB55.DBD446	Speed02	REAL	Zusammensetzung Treibgas Geschwindigkeit: Stufe 10	NULL	NULL	NULL	Zusammensetzung Treibgas Geschwindigkeit	NULL	 Stufe 10	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Speed02
+199	DB55.DBD450	Speed03	REAL	Zusammensetzung Treibgas Geschwindigkeit: Stufe 15	NULL	NULL	NULL	Zusammensetzung Treibgas Geschwindigkeit	NULL	 Stufe 15	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Speed03
+200	DB55.DBD454	Speed04	REAL	Zusammensetzung Treibgas Geschwindigkeit: Stufe 20	NULL	NULL	NULL	Zusammensetzung Treibgas Geschwindigkeit	NULL	 Stufe 20	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Speed04
+201	DB55.DBD458	Speed05	REAL	Zusammensetzung Treibgas Geschwindigkeit: Stufe 25	NULL	NULL	NULL	Zusammensetzung Treibgas Geschwindigkeit	NULL	 Stufe 25	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Speed05
+202	DB55.DBD462	Speed06	REAL	Zusammensetzung Treibgas Geschwindigkeit: Stufe 30	NULL	NULL	NULL	Zusammensetzung Treibgas Geschwindigkeit	NULL	 Stufe 30	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Speed06
+203	DB55.DBD466	Speed07	REAL	Zusammensetzung Treibgas Geschwindigkeit: Stufe 35	NULL	NULL	NULL	Zusammensetzung Treibgas Geschwindigkeit	NULL	 Stufe 35	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Speed07
+204	DB55.DBD470	Speed08	REAL	Zusammensetzung Treibgas Geschwindigkeit: Stufe 40	NULL	NULL	NULL	Zusammensetzung Treibgas Geschwindigkeit	NULL	 Stufe 40	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Speed08
+205	DB55.DBD474	Speed09	REAL	Zusammensetzung Treibgas Geschwindigkeit: Stufe 45	NULL	NULL	NULL	Zusammensetzung Treibgas Geschwindigkeit	NULL	 Stufe 45	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Speed09
+206	DB55.DBD478	Speed10	REAL	Zusammensetzung Treibgas Geschwindigkeit: Stufe 50	NULL	NULL	NULL	Zusammensetzung Treibgas Geschwindigkeit	NULL	 Stufe 50	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Speed10
+207	DB55.DBD482	Speed11	REAL	Zusammensetzung Treibgas Geschwindigkeit: Stufe 55	NULL	NULL	NULL	Zusammensetzung Treibgas Geschwindigkeit	NULL	 Stufe 55	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Speed11
+208	DB55.DBD486	Speed12	REAL	Zusammensetzung Treibgas Geschwindigkeit: Stufe 60	NULL	NULL	NULL	Zusammensetzung Treibgas Geschwindigkeit	NULL	 Stufe 60	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Speed12
+209	DB55.DBD490	Speed13	REAL	Zusammensetzung Treibgas Geschwindigkeit: Stufe 65	NULL	NULL	NULL	Zusammensetzung Treibgas Geschwindigkeit	NULL	 Stufe 65	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Speed13
+210	DB55.DBD494	Speed14	REAL	Zusammensetzung Treibgas Geschwindigkeit: Stufe 70	NULL	NULL	NULL	Zusammensetzung Treibgas Geschwindigkeit	NULL	 Stufe 70	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Speed14
+211	DB55.DBD498	Speed15	REAL	Zusammensetzung Treibgas Geschwindigkeit: Stufe 75	NULL	NULL	NULL	Zusammensetzung Treibgas Geschwindigkeit	NULL	 Stufe 75	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Speed15
+212	DB55.DBD502	Speed16	REAL	Zusammensetzung Treibgas Geschwindigkeit: Stufe 80	NULL	NULL	NULL	Zusammensetzung Treibgas Geschwindigkeit	NULL	 Stufe 80	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Speed16
+213	DB55.DBD506	Speed17	REAL	Zusammensetzung Treibgas Geschwindigkeit: Stufe 85	NULL	NULL	NULL	Zusammensetzung Treibgas Geschwindigkeit	NULL	 Stufe 85	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Speed17
+214	DB55.DBD510	Speed18	REAL	Zusammensetzung Treibgas Geschwindigkeit: Stufe 90	NULL	NULL	NULL	Zusammensetzung Treibgas Geschwindigkeit	NULL	 Stufe 90	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Speed18
+215	DB55.DBD514	Speed19	REAL	Zusammensetzung Treibgas Geschwindigkeit: Stufe 95	NULL	NULL	NULL	Zusammensetzung Treibgas Geschwindigkeit	NULL	 Stufe 95	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Speed19
+216	DB55.DBD518	Speed20	REAL	Zusammensetzung Treibgas Geschwindigkeit: Stufe 100	NULL	NULL	NULL	Zusammensetzung Treibgas Geschwindigkeit	NULL	 Stufe 100	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Speed20
+217	DB55.DBX0.6	Bit07	BOOL	Parameter 1: Wert 07	NULL	NULL	NULL	Parameter 1	NULL	 Wert 07	NULL	NULL	NULL	NULL	NULL	NULL	DB55.Bit07

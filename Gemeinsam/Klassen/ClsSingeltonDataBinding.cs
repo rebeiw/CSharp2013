@@ -166,6 +166,34 @@ namespace Helper
                                         }
                                     }
                                 }
+
+                                
+                                if (obj_type == "Helper.CompMultiBar")
+                                {
+                                    CompMultiBar obj_text_box;
+                                    obj_text_box = (CompMultiBar)obj;
+                                    if (data.Propertie == "Value1")
+                                    {
+                                        obj_text_box.Value1 = m_VariablesCollecter.ReadValueDouble(data.VarName);
+                                    }
+                                    if (data.Propertie == "Value2")
+                                    {
+                                        obj_text_box.Value2 = m_VariablesCollecter.ReadValueDouble(data.VarName);
+                                    }
+                                    if (data.Propertie == "Value3")
+                                    {
+                                        obj_text_box.Value3 = m_VariablesCollecter.ReadValueDouble(data.VarName);
+                                    }
+                                    if (data.Propertie == "Value4")
+                                    {
+                                        obj_text_box.Value4 = m_VariablesCollecter.ReadValueDouble(data.VarName);
+                                    }
+                                    if (data.Propertie == "Value5")
+                                    {
+                                        obj_text_box.Value5 = m_VariablesCollecter.ReadValueDouble(data.VarName);
+                                    }
+                                }
+
                                 
                                 if (obj_type == "Helper.CompVentil")
                                 {
@@ -199,6 +227,22 @@ namespace Helper
                                 {
                                     CompLedRectangle obj_comp;
                                     obj_comp = (CompLedRectangle)obj;
+                                    if (data.Propertie == "State")
+                                    {
+                                        int convert_value = 0;
+                                        string val = m_VariablesCollecter.ReadValueString(data.VarName);
+                                        convert_value = Convert.ToInt32(val);
+                                        CompLedRectangle.CompLedState state = (CompLedRectangle.CompLedState)convert_value;
+                                        obj_comp.State = state;
+                                    }
+                                }
+
+
+
+                                if (obj_type == "Helper.CompLedRound")
+                                {
+                                    CompLedRound obj_comp;
+                                    obj_comp = (CompLedRound)obj;
                                     if (data.Propertie == "State")
                                     {
                                         int convert_value = 0;

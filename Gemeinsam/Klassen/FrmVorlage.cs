@@ -15,8 +15,6 @@ namespace Helper
     public partial class FrmVorlage : Form
     {
         private ClsSingeltonFormularManager m_formularManager;
-
-
         private System.Drawing.Size m_size;
 
         public FrmVorlage()
@@ -51,6 +49,19 @@ namespace Helper
             parent.Controls.Add(group_box);
             return group_box;
         }
+
+        protected CompMultiBar CreateMultiBar(int left, int top, int width, int height, Control parent)
+        {
+            CompMultiBar multi_bar = null;
+
+            multi_bar = new CompMultiBar();
+            multi_bar.AutoSize = false;
+            multi_bar.SetBounds(left, top, width, height);
+            multi_bar.Name = this.m_formularManager.GetDynamicControlName("compMultiBar");
+            parent.Controls.Add(multi_bar);
+            return multi_bar;
+        }
+
 
         protected Label CreateLabel(int left, int top, int width, int height, string text, Control parent, System.Drawing.ContentAlignment Align=System.Drawing.ContentAlignment.MiddleRight)
         {
@@ -117,6 +128,18 @@ namespace Helper
             return comp_led_rectangle;
         }
 
+        protected CompLedRound CreateLedRound(int left, int top, Control parent, Helper.CompLedRound.LEDType ledType=CompLedRound.LEDType.Normal)
+        {
+            int width = 25;
+            int height = 25;
+            CompLedRound comp_led_round = null;
+            comp_led_round = new Helper.CompLedRound();
+            comp_led_round.SetBounds(left, top, width, height);
+            comp_led_round.Type = ledType;
+            comp_led_round.Name = this.m_formularManager.GetDynamicControlName("compLedRound");
+            parent.Controls.Add(comp_led_round);
+            return comp_led_round;
+        }
 
 
         protected TabPage CreateTabPage(string text, Control parent)
@@ -139,10 +162,10 @@ namespace Helper
             this.m_size.Height = 39;
             tab_control.ItemSize = this.m_size;
             tab_control.DrawMode = TabDrawMode.OwnerDrawFixed;
+            tab_control.DrawItem += new DrawItemEventHandler(this.TabControl_DrawItem);
             tab_control.Name = this.m_formularManager.GetDynamicControlName("tabControl");
             tab_control.SelectedIndex = 0;
             tab_control.TabIndex = 0;
-            tab_control.DrawItem += new DrawItemEventHandler(this.TabControl_DrawItem); 
             parent.Controls.Add(tab_control);
             return tab_control;
         }
@@ -153,7 +176,7 @@ namespace Helper
             this.Hide();
         }
 
-        private void TabControl_DrawItem(object sender, System.Windows.Forms.DrawItemEventArgs e)
+        protected void TabControl_DrawItem(object sender, System.Windows.Forms.DrawItemEventArgs e)
         {
             TabControl obj = (TabControl)sender;
             Font Font;

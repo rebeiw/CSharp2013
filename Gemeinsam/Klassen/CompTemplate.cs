@@ -21,6 +21,8 @@ namespace Helper
         protected PointF m_PointFCentrePoint;
 
         protected Rectangle m_Rectangle;
+
+        private Rectangle m_compRec;
         protected List<Point> m_PointList;
         protected List<Point> m_PointListCalc;
         protected List<Point> m_PointListPoligon;
@@ -40,6 +42,7 @@ namespace Helper
             this.m_Point = new Point();
             this.m_PointFCentrePoint = new Point();
             this.m_Rectangle = new Rectangle();
+            this.m_compRec = new Rectangle();
             this.m_NormalX = 19;
             this.m_NormalY = 19;
             this.m_Rotation = 0.0;
@@ -85,6 +88,18 @@ namespace Helper
             float start_angle = startAngle + (float)this.m_Rotation;
             graphic.DrawArc(this.m_Pen, this.m_Rectangle, start_angle, angle);
             graphic.FillPie(this.m_Brush, this.m_Rectangle, start_angle, angle);
+        }
+
+        protected void SetFocus(Graphics graphic)
+        {
+            this.m_Pen.Color = Color.DarkBlue;
+            this.m_compRec.X = 0;
+            this.m_compRec.Y = 0;
+            this.m_compRec.Width = this.Width-1;
+            this.m_compRec.Height = this.Height-1;
+            graphic.DrawRectangle(this.m_Pen, this.m_compRec);
+
+
         }
 
         protected void DrawEllipse(Graphics graphic)

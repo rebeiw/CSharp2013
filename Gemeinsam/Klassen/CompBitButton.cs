@@ -61,7 +61,8 @@ namespace Helper
         btg_Pfeillinks,
         btg_PfeilRechts,
         btg_Graph,
-        btg_Info
+        btg_Info,
+        btg_Meldesystem
     }
 
     public class CompBitButton : PictureBox
@@ -333,6 +334,7 @@ namespace Helper
             this.m_Bitmaps.Add(Bmp.btg_pfeilre);
             this.m_Bitmaps.Add(Bmp.btg_graph);
             this.m_Bitmaps.Add(Bmp.Btg_info);
+            this.m_Bitmaps.Add(Bmp.btg_Warn);
         }
     }
 }

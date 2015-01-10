@@ -38,12 +38,14 @@ namespace Helper
         public string DataType;
         public string Symbolname;
         public string Value;
+        public string SymbolType;
     }
     public struct ClsSingeltonPlcWriteDatas
     {
         public string Symbolname;
         public string Value;
     }
+
     public class ClsSingeltonPlc
     {
         private static ClsSingeltonPlc m_instance;
@@ -75,6 +77,8 @@ namespace Helper
 
         private BackgroundWorker m_BackgroundWorkerPlcRead;
 
+        private ClsSingeltonLanguage m_language;
+
         private object m_ProgressBar;
         private object m_LblStatus;
         private object m_BtnStart;
@@ -102,6 +106,9 @@ namespace Helper
         private ClsSingeltonParameter m_parameter;
 
 
+        private int m_errorCounter;
+
+
         public void AddWriteList(string symbol, string value)
         {
             ClsSingeltonPlcWriteDatas write_value;
@@ -112,8 +119,10 @@ namespace Helper
 
         private ClsSingeltonPlc(ClsSingeltonPlcParameter PlcParameter)
         {
+            this.m_errorCounter = 0;
             this.m_WriteValues = new Queue<ClsSingeltonPlcWriteDatas>();
             this.m_parameter = ClsSingeltonParameter.CreateInstance();
+            this.m_language = ClsSingeltonLanguage.CreateInstance();
 
             this.m_sqliteConnection = new SQLiteConnection();
             this.m_sqliteConnection.ConnectionString = this.m_parameter.ConnectionString;
@@ -189,6 +198,34 @@ namespace Helper
             }
             return m_instance;
         }
+
+        public string GetSqlAkuell()
+        {
+            string sql_actual = "";
+            string language = this.m_parameter.Language;
+            sql_actual += "SELECT ";
+            sql_actual += "Errors.InComing, ";
+            sql_actual += "Errors.VisuSymbol,  ";
+            sql_actual += "Language." + language + " || ': ' || Language_1.NativeText AS " + this.m_language.GetTranslation("Kommentar") + " ";
+            sql_actual += "FROM  ";
+            sql_actual += "Errors  ";
+            sql_actual += "INNER JOIN  ";
+            sql_actual += "Plcitems  ";
+            sql_actual += "ON  ";
+            sql_actual += "Errors.VisuSymbol = Plcitems.VisuSymbol ";
+            sql_actual += "INNER JOIN  ";
+            sql_actual += "Language ";
+            sql_actual += "ON  ";
+            sql_actual += "Plcitems.GroupComment = Language.NativeText ";
+            sql_actual += "INNER JOIN  ";
+            sql_actual += "Language AS Language_1 ";
+            sql_actual += "ON ";
+            sql_actual += "Plcitems.Comment = Language_1.NativeText ";
+            sql_actual += "where outgoing is null ";
+            sql_actual += "order by errors.id desc ";
+            return sql_actual;
+        }
+
 
         private void TimerRead_Tick(object sender, EventArgs e)
         {
@@ -325,6 +362,15 @@ namespace Helper
                                 }
                                 int convert_value = 0;
                                 convert_value = Convert.ToInt32(value);
+                                if(pclData.SymbolType=="E")
+                                {
+                                    string old_value=this.m_VarCollect.ReadValueString(searchSymbol);
+                                    if(old_value!=value)
+                                    {
+                                        this.m_InfoThread[3] = searchSymbol;
+                                        this.m_BackgroundWorkerPlcRead.ReportProgress(3);
+                                    }
+                                }
                                 this.m_VarCollect.WriteValue(searchSymbol, convert_value);
                             }
                             if (pclData.DataType == "INT")
@@ -378,6 +424,75 @@ namespace Helper
             {
                 this.SetProgressbar(this.m_ProgressBar, (int)this.m_InfoThread[e.ProgressPercentage]);
             }
+            if (e.ProgressPercentage == 3)
+            {
+                this.m_errorCounter++;
+                string varname = (string)this.m_InfoThread[e.ProgressPercentage];
+                string value=this.m_VarCollect.ReadValueString(varname);
+                string sql_command = "";
+                if (value == "0")
+                {
+                    if (this.m_errorCounter > 30)
+                    {
+                        this.m_errorCounter = 0;
+
+                        this.m_sqliteCommand.CommandText = "select count (id) as NumberOfRecords from errors";
+
+                        if (this.m_sqliteDataReader != null)
+                        {
+                            this.m_sqliteDataReader.Close();
+                            this.m_sqliteDataReader = null;
+                        }
+                        this.m_sqliteDataReader = this.m_sqliteCommand.ExecuteReader();
+                        this.m_sqliteDataReader.Read();
+                        int no_of_records = this.m_sqliteDataReader.GetInt32(0);
+                        this.m_sqliteDataReader.Close();
+                        if (no_of_records > 100)
+                        {
+                            this.m_sqliteCommand.CommandText = "select id from errors order by id limit 1";
+                            if (this.m_sqliteDataReader != null)
+                            {
+                                this.m_sqliteDataReader.Close();
+                                this.m_sqliteDataReader = null;
+                            }
+
+                            this.m_sqliteDataReader = this.m_sqliteCommand.ExecuteReader();
+                            this.m_sqliteDataReader.Read();
+                            int record_number = this.m_sqliteDataReader.GetInt32(0);
+                            this.m_sqliteDataReader.Close();
+                            record_number += 50;
+                            string sql = "Delete from Errors where id < " + record_number.ToString();
+                            this.m_sqliteCommand.CommandText = sql;
+                            this.m_sqliteCommand.ExecuteNonQuery();
+                        }
+                        this.m_sqliteDataReader.Close();
+                    }
+                    string inComing = FuncString.GetTimestamp();
+                    sql_command ="";
+
+                    sql_command += "INSERT INTO Errors(VisuSymbol,InComing) ";
+                    sql_command += "SELECT ";
+                    sql_command += "'" + varname + "' ";
+                    sql_command+=",";
+                    sql_command += "'" + inComing + "' ";
+                    sql_command+="WHERE NOT EXISTS(SELECT 1 FROM Errors WHERE VisuSymbol = ";
+                    sql_command += "'" + varname + "' ";
+                    sql_command += "and outgoing is null)";
+                    this.m_sqliteCommand.CommandText = sql_command;
+                    this.m_sqliteCommand.ExecuteNonQuery();
+                }
+                else
+                {
+                    string outComing = FuncString.GetTimestamp();
+                    sql_command ="";
+                    sql_command += "UPDATE errors SET OutGoing=";
+                    sql_command += "'" + outComing + "'";
+                    sql_command+="WHERE OutGoing IS NULL AND VisuSymbol=";
+                    sql_command += "'" + varname + "'";
+                    this.m_sqliteCommand.CommandText = sql_command;
+                    this.m_sqliteCommand.ExecuteNonQuery();
+                }
+            }
         }
 
         private void BackgroundWorkerPlcRead_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -391,9 +506,18 @@ namespace Helper
                 this.SetProgressbar(this.m_ProgressBar, 0);
                 this.m_PlcState = 0;
             }
-            foreach (string var in (List<string>)e.Result)
+            try
             {
-                this.m_DataBinding.Dispatch(var);
+                foreach (string var in (List<string>)e.Result)
+                {
+                    this.m_DataBinding.Dispatch(var);
+                }
+            }
+            catch
+            {
+                int asd = 0;
+                asd++;
+                
             }
             this.m_TimerRead.Enabled = this.m_FlagGoOn;
         }
@@ -484,7 +608,7 @@ namespace Helper
 
         private void LoadPlcitems()
         {
-            this.m_sqliteCommand.CommandText = "Select S7Adress, S7Symbol, S7SymbolType, S7Comment from plcitems";
+            this.m_sqliteCommand.CommandText = "Select S7Adress, S7Symbol, S7SymbolType, S7Comment, SymbolType from plcitems";
 
             if (this.m_sqliteDataReader != null)
             {
@@ -495,16 +619,16 @@ namespace Helper
             while (this.m_sqliteDataReader.Read())
             {
                 this.AddList(this.m_sqliteDataReader.GetValue(0).ToString(), 
-                             this.m_sqliteDataReader.GetValue(1).ToString(), 
-                             this.m_sqliteDataReader.GetValue(2).ToString(), 
-                             this.m_sqliteDataReader.GetValue(3).ToString());
+                             this.m_sqliteDataReader.GetValue(1).ToString(),
+                             this.m_sqliteDataReader.GetValue(2).ToString(),
+                             this.m_sqliteDataReader.GetValue(3).ToString(),
+                             this.m_sqliteDataReader.GetValue(4).ToString());
             }
             this.m_sqliteDataReader.Close();
             this.m_sqliteDataReader = null;
-
         }
 
-        public void AddList(string adresse, string symbolName, string dataType, string comment, bool dataLog=false)
+        public void AddList(string adresse, string symbolName, string dataType, string comment, string symbolType, bool dataLog = false)
         {
             int byte_length = 0;
             ClsSingeltonVariablesCollecterDataType data_type = ClsSingeltonVariablesCollecterDataType.Null;
@@ -567,6 +691,7 @@ namespace Helper
             data.Comment = comment;
             data.Value = "0.0";
             data.DataLog = dataLog;
+            data.SymbolType=symbolType;
             this.m_Daten.Add(data);
             string keyInfo = "DB" + db_nr + "." + symbolName;
             this.m_VarCollect.CreateVariable(keyInfo, data_type);

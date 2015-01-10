@@ -346,7 +346,7 @@ namespace Helper
 
 
 
-        public static void CreateLedRound(LedRound Component, int Left, int Top, Helper.LEDType LedType)
+        public static void CreateLedRound(CompLedRound Component, int Left, int Top, Helper.CompLedRound.LEDType LedType)
         {
             komCounter++;
             string compName = "ledRoundDyn_" + komCounter;

@@ -23,6 +23,9 @@ public class GlobalVar
 
 
     //Konstanten fuer automatische Generierung des Freigabeformulars
+    public const int ConstNumberOfColumns = 2;
+
+
     public const int Const_LedSpacing = 2;
     public const int Const_LedHeigt = 25;
     public const int Const_TextHeigt = 25;
