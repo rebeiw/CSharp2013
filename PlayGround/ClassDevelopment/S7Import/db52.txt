@@ -1,0 +1,5 @@
+DB52	Valve01	DB52.DBW0	INT	Schieber:Status 1
+DB52	Valve02	DB52.DBW2	INT	Schieber:Status 2
+DB52	Valve03	DB52.DBW4	INT	Schieber:Status 3
+DB52	Valve04	DB52.DBW6	INT	Schieber:Status 4
+DB52	Valve05	DB52.DBW8	INT	Schieber:Status 5

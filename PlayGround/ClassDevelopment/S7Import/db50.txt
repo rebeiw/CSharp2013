@@ -1,0 +1,5 @@
+DB50	P1_Qmin_1	DB50.DBD0	REAL	Pumpen 1:Pumpendruck 1#C1#G1#S1
+DB50	P1_Qmin_2	DB50.DBD4	REAL	Pumpen 1:Pumpendruck 2#C1#G1#S2
+DB50	P1_Qmin_3	DB50.DBD8	REAL	Pumpen 1:Pumpendruck 3#C1#G1#S3
+DB50	P1_Qmin_4	DB50.DBD12	REAL	Pumpen 1:Pumpendruck 4#C1#G1#S4
+DB50	P1_Qmin_5	DB50.DBD16	REAL	Pumpen 1:Pumpendruck 5#C1#G1#S5
