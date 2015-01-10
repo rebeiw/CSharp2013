@@ -18,15 +18,16 @@ using System.Windows.Input;
 namespace Helper
 {
 
-    public enum LEDType
-    {
-        Normal = 0,
-        Error,
-        Release
-    }
 
-    public class LedRound : PictureBox
+    public class CompLedRound : PictureBox
     {
+        public enum LEDType
+        {
+            Normal = 0,
+            Error,
+            Release
+        }
+
         private Rectangle recLedGradient;
         private Rectangle recLed;
         private Point centerPoint;
@@ -34,10 +35,9 @@ namespace Helper
 
         public event EventHandler ValueChanged;
 
-        ~LedRound()
+        ~CompLedRound()
         {
             GC.Collect();
-        
         }
 
         [Category("Default"), Description("")]
@@ -62,7 +62,7 @@ namespace Helper
             this.Height =25;
         }
 
-        public LedRound()
+        public CompLedRound()
         {
             this.Width = 25;
             this.Height = 25;
