@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrjKalibSimu", "PrjKalibSimu.csproj", "{A0B28CAB-08BD-4349-BA51-BCD54A04B29F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helper", "..\..\Gemeinsam\Klassen\Helper.csproj", "{105E1C4D-F555-4C42-B09B-EAF26CD86990}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrjMakroControl", "..\PrjMakroControl\PrjMakroControl.csproj", "{F0B62E99-CB05-4639-BEA2-3A174A81BA0D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A0B28CAB-08BD-4349-BA51-BCD54A04B29F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0B28CAB-08BD-4349-BA51-BCD54A04B29F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0B28CAB-08BD-4349-BA51-BCD54A04B29F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0B28CAB-08BD-4349-BA51-BCD54A04B29F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{105E1C4D-F555-4C42-B09B-EAF26CD86990}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{105E1C4D-F555-4C42-B09B-EAF26CD86990}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{105E1C4D-F555-4C42-B09B-EAF26CD86990}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{105E1C4D-F555-4C42-B09B-EAF26CD86990}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0B62E99-CB05-4639-BEA2-3A174A81BA0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0B62E99-CB05-4639-BEA2-3A174A81BA0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0B62E99-CB05-4639-BEA2-3A174A81BA0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0B62E99-CB05-4639-BEA2-3A174A81BA0D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

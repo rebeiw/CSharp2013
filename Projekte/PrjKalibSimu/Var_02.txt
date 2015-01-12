@@ -1,0 +1,84 @@
+colomnGroupBox
+groupBoxBefore
+row
+topGroupBox
+topGroupBox
+colomnGroupBox
+groupBoxBefore
+rest
+row
+tabPagegheight
+topGroupBox
+groupBox
+groupBox.Left
+groupBox.Text
+groupBox.Top
+groupBox.Width
+groupBoxBefore
+groupNameBefore
+row
+topGroupBox
+Label lbl
+LedRound led
+comment
+comment
+groupBox.Height
+groupName
+int ledTop
+lbl.Height
+lbl.Left
+lbl.Text
+lbl.Top
+lbl.Width
+led.Left
+led.Name
+led.Top
+led.Type
+rest
+string[] kom
+symbolName
+tabPagegheight
+GroupBox gb
+GroupBox groupBox
+GroupBox groupBoxBefore
+Label lbl
+LedRound led
+List<string> sortList
+gb.Name
+groupNameBefore
+int colomnGroupBox
+int pageNr
+int pageNumber
+int rest
+int row
+int tabControlHeight
+int tabControlWidth
+int tabPagegheight
+int topGroupBox
+lbl.AutoSize
+lbl.Name
+lbl.Text
+lbl.TextAlign
+led.Name
+m_Releases
+m_glb_DataBinding
+m_glb_FormularManager
+m_glb_PLC
+string comment
+string groupName
+string groupNameBefore
+string symbolName
+string textPage
+this.FormBorderStyle
+this.Height
+this.Text
+this.Width
+this.m_TabControlDaten
+this.m_TabControlDaten.Height
+this.m_TabControlDaten.ItemSize
+this.m_TabControlDaten.Left
+this.m_TabControlDaten.Name
+this.m_TabControlDaten.TabPages[pageNumber].BackColor
+this.m_TabControlDaten.TabPages[pageNumber].Name
+this.m_TabControlDaten.Top
+this.m_TabControlDaten.Width
