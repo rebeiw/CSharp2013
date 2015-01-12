@@ -47,7 +47,6 @@
             this.Pip02 = new Helper.CompPipe();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Pip08 = new Helper.CompPipe();
-            this.BtnStartPlc = new Helper.CompBitButton();
             this.Txt14 = new Helper.CompTxtBox();
             this.Txt01 = new Helper.CompTxtBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -101,7 +100,6 @@
             this.Txt18 = new Helper.CompTxtBox();
             this.label15 = new System.Windows.Forms.Label();
             this.Txt19 = new Helper.CompTxtBox();
-            this.BtnStoppPlc = new Helper.CompBitButton();
             this.lblState = new System.Windows.Forms.Label();
             this.BarPlcProgress = new System.Windows.Forms.ProgressBar();
             this.compArrow1 = new Helper.CompArrow();
@@ -155,6 +153,56 @@
             this.TmrErrorTicker = new System.Windows.Forms.Timer(this.components);
             this.compVan2 = new Helper.CompVan();
             this.compBitButton1 = new Helper.CompBitButton();
+            this.BtnStoppPlc = new Helper.CompBitButton();
+            this.BtnStartPlc = new Helper.CompBitButton();
+            this.compBitButton2 = new Helper.CompBitButton();
+            this.compLedRectangle1 = new Helper.CompLedRectangle();
+            this.compLedRound1 = new Helper.CompLedRound();
+            this.compMultiBar1 = new Helper.CompMultiBar();
+            this.compPipe4 = new Helper.CompPipe();
+            this.compToggleSwitch1 = new Helper.CompToggleSwitch();
+            this.compTxtBox4 = new Helper.CompTxtBox();
+            this.compVentil1 = new Helper.CompVentil();
+            this.compInputBox1 = new Helper.CompInputBox();
+            this.waterTank1 = new Helper.WaterTank();
+            this.lifter1 = new Helper.Lifter();
+            this.pump1 = new Helper.Pump();
+            this.schranke1 = new Helper.Schranke();
+            this.scale1 = new Helper.Scale();
+            this.valve1 = new Helper.Valve();
+            this.compVentil2 = new Helper.CompVentil();
+            this.compVentil3 = new Helper.CompVentil();
+            this.compVentil4 = new Helper.CompVentil();
+            this.compPipe5 = new Helper.CompPipe();
+            this.compLedRectangle2 = new Helper.CompLedRectangle();
+            this.compLedRound2 = new Helper.CompLedRound();
+            this.compLedRound3 = new Helper.CompLedRound();
+            this.compLedRound4 = new Helper.CompLedRound();
+            this.compLedRound5 = new Helper.CompLedRound();
+            this.compLedRound6 = new Helper.CompLedRound();
+            this.pump2 = new Helper.Pump();
+            this.pump3 = new Helper.Pump();
+            this.pump4 = new Helper.Pump();
+            this.pump5 = new Helper.Pump();
+            this.pump6 = new Helper.Pump();
+            this.pump7 = new Helper.Pump();
+            this.pump8 = new Helper.Pump();
+            this.pump9 = new Helper.Pump();
+            this.pump10 = new Helper.Pump();
+            this.pump11 = new Helper.Pump();
+            this.pump12 = new Helper.Pump();
+            this.pump13 = new Helper.Pump();
+            this.pump14 = new Helper.Pump();
+            this.pump15 = new Helper.Pump();
+            this.pump16 = new Helper.Pump();
+            this.lifter2 = new Helper.Lifter();
+            this.valve2 = new Helper.Valve();
+            this.valve3 = new Helper.Valve();
+            this.valve4 = new Helper.Valve();
+            this.lifter3 = new Helper.Lifter();
+            this.compBitButton3 = new Helper.CompBitButton();
+            this.compBitButton4 = new Helper.CompBitButton();
+            this.compBitButton5 = new Helper.CompBitButton();
             ((System.ComponentModel.ISupportInitialize)(this.BtnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnKeyboard)).BeginInit();
             this.GbxMenu.SuspendLayout();
@@ -171,7 +219,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Pip02)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pip08)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnStartPlc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pip01)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pip04)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pip06)).BeginInit();
@@ -195,7 +242,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Pip14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Vnt06)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Vnt07)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnStoppPlc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.compArrow1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.compArrow2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.compPipe1)).BeginInit();
@@ -208,6 +254,54 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.compVan2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.compBitButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnStoppPlc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnStartPlc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compBitButton2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compLedRectangle1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compLedRound1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compMultiBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compPipe4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compToggleSwitch1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compVentil1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.waterTank1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lifter1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pump1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schranke1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scale1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.valve1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compVentil2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compVentil3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compVentil4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compPipe5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compLedRectangle2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compLedRound2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compLedRound3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compLedRound4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compLedRound5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compLedRound6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pump2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pump3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pump4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pump5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pump6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pump7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pump8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pump9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pump10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pump11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pump12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pump13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pump14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pump15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pump16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lifter2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.valve2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.valve3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.valve4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lifter3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compBitButton3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compBitButton4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compBitButton5)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnClose
@@ -274,7 +368,6 @@
             this.GbxOutput.Controls.Add(this.Pip02);
             this.GbxOutput.Controls.Add(this.BarPlcProgress);
             this.GbxOutput.Controls.Add(this.lblState);
-            this.GbxOutput.Controls.Add(this.BtnStoppPlc);
             this.GbxOutput.Controls.Add(this.label14);
             this.GbxOutput.Controls.Add(this.Txt18);
             this.GbxOutput.Controls.Add(this.label15);
@@ -328,7 +421,6 @@
             this.GbxOutput.Controls.Add(this.label7);
             this.GbxOutput.Controls.Add(this.Txt01);
             this.GbxOutput.Controls.Add(this.Txt14);
-            this.GbxOutput.Controls.Add(this.BtnStartPlc);
             this.GbxOutput.Controls.Add(this.pictureBox1);
             this.GbxOutput.Controls.Add(this.Pip07);
             this.GbxOutput.Controls.Add(this.BtnMenuMain);
@@ -347,6 +439,7 @@
             this.GbxOutput.Controls.Add(this.Pip08);
             this.GbxOutput.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GbxOutput.ForeColor = System.Drawing.Color.Black;
+            this.GbxOutput.Location = new System.Drawing.Point(1555, 5);
             this.GbxOutput.Size = new System.Drawing.Size(1007, 701);
             this.GbxOutput.Text = "Heater Fuel Gas";
             // 
@@ -527,26 +620,6 @@
             this.Pip08.Size = new System.Drawing.Size(684, 10);
             this.Pip08.TabIndex = 27;
             this.Pip08.TabStop = false;
-            // 
-            // BtnStartPlc
-            // 
-            this.BtnStartPlc.Caption = "";
-            this.BtnStartPlc.EnableMouseDown = false;
-            this.BtnStartPlc.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
-            this.BtnStartPlc.Formular = null;
-            this.BtnStartPlc.Location = new System.Drawing.Point(10, 615);
-            this.BtnStartPlc.Name = "BtnStartPlc";
-            this.BtnStartPlc.Picture_0 = Helper.CompBitButtonStyle.btg_Run;
-            this.BtnStartPlc.Picture_1 = Helper.CompBitButtonStyle.btg_Blanko;
-            this.BtnStartPlc.Picture_2 = Helper.CompBitButtonStyle.btg_Blanko;
-            this.BtnStartPlc.Picture_3 = Helper.CompBitButtonStyle.btg_Blanko;
-            this.BtnStartPlc.Picture_4 = Helper.CompBitButtonStyle.btg_Blanko;
-            this.BtnStartPlc.PictureNumber = 0;
-            this.BtnStartPlc.Size = new System.Drawing.Size(79, 48);
-            this.BtnStartPlc.Symbol = null;
-            this.BtnStartPlc.TabIndex = 28;
-            this.BtnStartPlc.TabStop = false;
-            this.BtnStartPlc.Click += new System.EventHandler(this.BtnStartPlc_Click);
             // 
             // Txt14
             // 
@@ -1289,26 +1362,6 @@
             this.Txt19.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.Setpoint;
             this.Txt19.TextSymbol = "";
             // 
-            // BtnStoppPlc
-            // 
-            this.BtnStoppPlc.Caption = "";
-            this.BtnStoppPlc.EnableMouseDown = false;
-            this.BtnStoppPlc.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
-            this.BtnStoppPlc.Formular = null;
-            this.BtnStoppPlc.Location = new System.Drawing.Point(10, 615);
-            this.BtnStoppPlc.Name = "BtnStoppPlc";
-            this.BtnStoppPlc.Picture_0 = Helper.CompBitButtonStyle.btg_Stop;
-            this.BtnStoppPlc.Picture_1 = Helper.CompBitButtonStyle.btg_Blanko;
-            this.BtnStoppPlc.Picture_2 = Helper.CompBitButtonStyle.btg_Blanko;
-            this.BtnStoppPlc.Picture_3 = Helper.CompBitButtonStyle.btg_Blanko;
-            this.BtnStoppPlc.Picture_4 = Helper.CompBitButtonStyle.btg_Blanko;
-            this.BtnStoppPlc.PictureNumber = 0;
-            this.BtnStoppPlc.Size = new System.Drawing.Size(79, 48);
-            this.BtnStoppPlc.Symbol = null;
-            this.BtnStoppPlc.TabIndex = 100;
-            this.BtnStoppPlc.TabStop = false;
-            this.BtnStoppPlc.Click += new System.EventHandler(this.BtnStoppPlc_Click);
-            // 
             // lblState
             // 
             this.lblState.Location = new System.Drawing.Point(10, 594);
@@ -1926,11 +1979,704 @@
             this.compBitButton1.TabStop = false;
             this.compBitButton1.Click += new System.EventHandler(this.compBitButton1_Click);
             // 
+            // BtnStoppPlc
+            // 
+            this.BtnStoppPlc.Caption = "";
+            this.BtnStoppPlc.EnableMouseDown = false;
+            this.BtnStoppPlc.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.BtnStoppPlc.Formular = null;
+            this.BtnStoppPlc.Location = new System.Drawing.Point(7, 658);
+            this.BtnStoppPlc.Name = "BtnStoppPlc";
+            this.BtnStoppPlc.Picture_0 = Helper.CompBitButtonStyle.btg_Stop;
+            this.BtnStoppPlc.Picture_1 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnStoppPlc.Picture_2 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnStoppPlc.Picture_3 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnStoppPlc.Picture_4 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnStoppPlc.PictureNumber = 0;
+            this.BtnStoppPlc.Size = new System.Drawing.Size(79, 48);
+            this.BtnStoppPlc.Symbol = null;
+            this.BtnStoppPlc.TabIndex = 158;
+            this.BtnStoppPlc.TabStop = false;
+            this.BtnStoppPlc.Click += new System.EventHandler(this.BtnStoppPlc_Click_1);
+            // 
+            // BtnStartPlc
+            // 
+            this.BtnStartPlc.Caption = "";
+            this.BtnStartPlc.EnableMouseDown = false;
+            this.BtnStartPlc.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.BtnStartPlc.Formular = null;
+            this.BtnStartPlc.Location = new System.Drawing.Point(7, 658);
+            this.BtnStartPlc.Name = "BtnStartPlc";
+            this.BtnStartPlc.Picture_0 = Helper.CompBitButtonStyle.btg_Run;
+            this.BtnStartPlc.Picture_1 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnStartPlc.Picture_2 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnStartPlc.Picture_3 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnStartPlc.Picture_4 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnStartPlc.PictureNumber = 0;
+            this.BtnStartPlc.Size = new System.Drawing.Size(79, 48);
+            this.BtnStartPlc.Symbol = null;
+            this.BtnStartPlc.TabIndex = 159;
+            this.BtnStartPlc.TabStop = false;
+            this.BtnStartPlc.Click += new System.EventHandler(this.BtnStartPlc_Click_1);
+            // 
+            // compBitButton2
+            // 
+            this.compBitButton2.Caption = "";
+            this.compBitButton2.EnableMouseDown = false;
+            this.compBitButton2.Formular = null;
+            this.compBitButton2.Location = new System.Drawing.Point(932, 12);
+            this.compBitButton2.Name = "compBitButton2";
+            this.compBitButton2.Picture_0 = Helper.CompBitButtonStyle.btg_Menue;
+            this.compBitButton2.Picture_1 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.compBitButton2.Picture_2 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.compBitButton2.Picture_3 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.compBitButton2.Picture_4 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.compBitButton2.PictureNumber = 0;
+            this.compBitButton2.Size = new System.Drawing.Size(79, 48);
+            this.compBitButton2.Symbol = null;
+            this.compBitButton2.TabIndex = 160;
+            this.compBitButton2.TabStop = false;
+            this.compBitButton2.Click += new System.EventHandler(this.compBitButton2_Click);
+            // 
+            // compLedRectangle1
+            // 
+            this.compLedRectangle1.Location = new System.Drawing.Point(363, 9);
+            this.compLedRectangle1.Name = "compLedRectangle1";
+            this.compLedRectangle1.Size = new System.Drawing.Size(89, 35);
+            this.compLedRectangle1.State = Helper.CompLedRectangle.CompLedState.LedOff;
+            this.compLedRectangle1.TabIndex = 161;
+            this.compLedRectangle1.TabStop = false;
+            // 
+            // compLedRound1
+            // 
+            this.compLedRound1.Location = new System.Drawing.Point(363, 99);
+            this.compLedRound1.Name = "compLedRound1";
+            this.compLedRound1.Size = new System.Drawing.Size(25, 25);
+            this.compLedRound1.State = Helper.CompLedRectangle.CompLedState.LedOff;
+            this.compLedRound1.TabIndex = 162;
+            this.compLedRound1.TabStop = false;
+            this.compLedRound1.Type = Helper.CompLedRound.LEDType.Normal;
+            // 
+            // compMultiBar1
+            // 
+            this.compMultiBar1.ColorBar1 = System.Drawing.Color.Yellow;
+            this.compMultiBar1.ColorBar2 = System.Drawing.Color.Orange;
+            this.compMultiBar1.ColorBar3 = System.Drawing.Color.RoyalBlue;
+            this.compMultiBar1.ColorBar4 = System.Drawing.Color.Blue;
+            this.compMultiBar1.ColorBar5 = System.Drawing.Color.Green;
+            this.compMultiBar1.Direction = Helper.CompMultiBar.CompVanDirection.Right;
+            this.compMultiBar1.Location = new System.Drawing.Point(801, 208);
+            this.compMultiBar1.MaxValue = 100D;
+            this.compMultiBar1.Name = "compMultiBar1";
+            this.compMultiBar1.NumberOfBars = 5;
+            this.compMultiBar1.Select = false;
+            this.compMultiBar1.Size = new System.Drawing.Size(105, 339);
+            this.compMultiBar1.TabIndex = 163;
+            this.compMultiBar1.TabStop = false;
+            this.compMultiBar1.Value1 = 10D;
+            this.compMultiBar1.Value2 = 45D;
+            this.compMultiBar1.Value3 = 88D;
+            this.compMultiBar1.Value4 = 55D;
+            this.compMultiBar1.Value5 = 27D;
+            // 
+            // compPipe4
+            // 
+            this.compPipe4.BackColor = System.Drawing.Color.Blue;
+            this.compPipe4.ColorFlowOff = System.Drawing.Color.Blue;
+            this.compPipe4.ColorFlowOn = System.Drawing.Color.Aqua;
+            this.compPipe4.Flow = Helper.CompPipe.CompPipeFlow.FlowOff;
+            this.compPipe4.Location = new System.Drawing.Point(153, 348);
+            this.compPipe4.Name = "compPipe4";
+            this.compPipe4.Size = new System.Drawing.Size(100, 10);
+            this.compPipe4.TabIndex = 164;
+            this.compPipe4.TabStop = false;
+            // 
+            // compToggleSwitch1
+            // 
+            this.compToggleSwitch1.DoSwitch = true;
+            this.compToggleSwitch1.Location = new System.Drawing.Point(363, 241);
+            this.compToggleSwitch1.Name = "compToggleSwitch1";
+            this.compToggleSwitch1.Size = new System.Drawing.Size(89, 35);
+            this.compToggleSwitch1.State = Helper.CompToggleSwitch.CompToggleSwitchState.Off;
+            this.compToggleSwitch1.Symbol = null;
+            this.compToggleSwitch1.TabIndex = 165;
+            this.compToggleSwitch1.TabStop = false;
+            // 
+            // compTxtBox4
+            // 
+            this.compTxtBox4.BackColor = System.Drawing.Color.Black;
+            this.compTxtBox4.Enabled = false;
+            this.compTxtBox4.Error = false;
+            this.compTxtBox4.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.compTxtBox4.ForeColor = System.Drawing.Color.Yellow;
+            this.compTxtBox4.Format = null;
+            this.compTxtBox4.Location = new System.Drawing.Point(487, 62);
+            this.compTxtBox4.Name = "compTxtBox4";
+            this.compTxtBox4.Size = new System.Drawing.Size(89, 35);
+            this.compTxtBox4.TabIndex = 166;
+            this.compTxtBox4.Text = "0";
+            this.compTxtBox4.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Normal;
+            this.compTxtBox4.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
+            this.compTxtBox4.TextSymbol = "";
+            // 
+            // compVentil1
+            // 
+            this.compVentil1.ColorClose = System.Drawing.Color.Aqua;
+            this.compVentil1.ColorOpen = System.Drawing.Color.Blue;
+            this.compVentil1.Direction = Helper.CompVentil.CompVentilDirection.Horizontal;
+            this.compVentil1.Location = new System.Drawing.Point(12, 349);
+            this.compVentil1.Name = "compVentil1";
+            this.compVentil1.Size = new System.Drawing.Size(40, 40);
+            this.compVentil1.State = Helper.CompVentil.CompVentilState.Open;
+            this.compVentil1.TabIndex = 167;
+            this.compVentil1.TabStop = false;
+            // 
+            // compInputBox1
+            // 
+            this.compInputBox1.BackColor = System.Drawing.Color.White;
+            this.compInputBox1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.compInputBox1.ForeColor = System.Drawing.Color.Black;
+            this.compInputBox1.Format = "0.00";
+            this.compInputBox1.Location = new System.Drawing.Point(487, 9);
+            this.compInputBox1.Name = "compInputBox1";
+            this.compInputBox1.Size = new System.Drawing.Size(89, 35);
+            this.compInputBox1.Symbol = null;
+            this.compInputBox1.TabIndex = 168;
+            this.compInputBox1.Text = "2,35";
+            this.compInputBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // waterTank1
+            // 
+            this.waterTank1.Caption = null;
+            this.waterTank1.Error = false;
+            this.waterTank1.Location = new System.Drawing.Point(338, 596);
+            this.waterTank1.Name = "waterTank1";
+            this.waterTank1.Size = new System.Drawing.Size(211, 101);
+            this.waterTank1.TabIndex = 169;
+            this.waterTank1.TabStop = false;
+            this.waterTank1.Thickness = 15;
+            this.waterTank1.Type = Helper.WatertankType.Watertank;
+            this.waterTank1.Value = 45D;
+            // 
+            // lifter1
+            // 
+            this.lifter1.BackColor = System.Drawing.Color.Transparent;
+            this.lifter1.Location = new System.Drawing.Point(654, 11);
+            this.lifter1.Name = "lifter1";
+            this.lifter1.Size = new System.Drawing.Size(44, 129);
+            this.lifter1.State = Helper.LifterState.Down;
+            this.lifter1.TabIndex = 170;
+            this.lifter1.TabStop = false;
+            // 
+            // pump1
+            // 
+            this.pump1.BackColor = System.Drawing.Color.Transparent;
+            this.pump1.Caption = null;
+            this.pump1.FlowDirection = Helper.PumpFlowDirection.Right;
+            this.pump1.Location = new System.Drawing.Point(338, 348);
+            this.pump1.Name = "pump1";
+            this.pump1.Size = new System.Drawing.Size(40, 40);
+            this.pump1.State = Helper.PumpState.NotUsed;
+            this.pump1.TabIndex = 171;
+            this.pump1.TabStop = false;
+            // 
+            // schranke1
+            // 
+            this.schranke1.Location = new System.Drawing.Point(7, 9);
+            this.schranke1.Name = "schranke1";
+            this.schranke1.Rotation = -45D;
+            this.schranke1.Size = new System.Drawing.Size(350, 320);
+            this.schranke1.TabIndex = 172;
+            this.schranke1.TabStop = false;
+            // 
+            // scale1
+            // 
+            this.scale1.Location = new System.Drawing.Point(618, 228);
+            this.scale1.Name = "scale1";
+            this.scale1.Size = new System.Drawing.Size(99, 241);
+            this.scale1.TabIndex = 173;
+            this.scale1.TabStop = false;
+            // 
+            // valve1
+            // 
+            this.valve1.BackColor = System.Drawing.Color.Transparent;
+            this.valve1.Caption = null;
+            this.valve1.FlowDirection = Helper.ValveDirection.Horizontal;
+            this.valve1.Location = new System.Drawing.Point(12, 492);
+            this.valve1.Mode = Helper.ValveMode.Automatic;
+            this.valve1.Name = "valve1";
+            this.valve1.Rotation = 0D;
+            this.valve1.Size = new System.Drawing.Size(40, 40);
+            this.valve1.State = Helper.ValveState.Undefine;
+            this.valve1.SteeringMode = Helper.SteeringMode.Digital;
+            this.valve1.TabIndex = 174;
+            this.valve1.TabStop = false;
+            this.valve1.Type = Helper.ValveType.Normal;
+            // 
+            // compVentil2
+            // 
+            this.compVentil2.ColorClose = System.Drawing.Color.Aqua;
+            this.compVentil2.ColorOpen = System.Drawing.Color.Blue;
+            this.compVentil2.Direction = Helper.CompVentil.CompVentilDirection.Vertical;
+            this.compVentil2.Location = new System.Drawing.Point(81, 349);
+            this.compVentil2.Name = "compVentil2";
+            this.compVentil2.Size = new System.Drawing.Size(40, 40);
+            this.compVentil2.State = Helper.CompVentil.CompVentilState.Open;
+            this.compVentil2.TabIndex = 175;
+            this.compVentil2.TabStop = false;
+            // 
+            // compVentil3
+            // 
+            this.compVentil3.ColorClose = System.Drawing.Color.Aqua;
+            this.compVentil3.ColorOpen = System.Drawing.Color.Blue;
+            this.compVentil3.Direction = Helper.CompVentil.CompVentilDirection.Horizontal;
+            this.compVentil3.Location = new System.Drawing.Point(12, 400);
+            this.compVentil3.Name = "compVentil3";
+            this.compVentil3.Size = new System.Drawing.Size(40, 40);
+            this.compVentil3.State = Helper.CompVentil.CompVentilState.Close;
+            this.compVentil3.TabIndex = 176;
+            this.compVentil3.TabStop = false;
+            // 
+            // compVentil4
+            // 
+            this.compVentil4.ColorClose = System.Drawing.Color.Aqua;
+            this.compVentil4.ColorOpen = System.Drawing.Color.Blue;
+            this.compVentil4.Direction = Helper.CompVentil.CompVentilDirection.Vertical;
+            this.compVentil4.Location = new System.Drawing.Point(81, 400);
+            this.compVentil4.Name = "compVentil4";
+            this.compVentil4.Size = new System.Drawing.Size(40, 40);
+            this.compVentil4.State = Helper.CompVentil.CompVentilState.Close;
+            this.compVentil4.TabIndex = 177;
+            this.compVentil4.TabStop = false;
+            // 
+            // compPipe5
+            // 
+            this.compPipe5.BackColor = System.Drawing.Color.Aqua;
+            this.compPipe5.ColorFlowOff = System.Drawing.Color.Blue;
+            this.compPipe5.ColorFlowOn = System.Drawing.Color.Aqua;
+            this.compPipe5.Flow = Helper.CompPipe.CompPipeFlow.FlowOn;
+            this.compPipe5.Location = new System.Drawing.Point(153, 373);
+            this.compPipe5.Name = "compPipe5";
+            this.compPipe5.Size = new System.Drawing.Size(100, 10);
+            this.compPipe5.TabIndex = 178;
+            this.compPipe5.TabStop = false;
+            // 
+            // compLedRectangle2
+            // 
+            this.compLedRectangle2.Location = new System.Drawing.Point(363, 50);
+            this.compLedRectangle2.Name = "compLedRectangle2";
+            this.compLedRectangle2.Size = new System.Drawing.Size(89, 35);
+            this.compLedRectangle2.State = Helper.CompLedRectangle.CompLedState.LedOn;
+            this.compLedRectangle2.TabIndex = 179;
+            this.compLedRectangle2.TabStop = false;
+            // 
+            // compLedRound2
+            // 
+            this.compLedRound2.Location = new System.Drawing.Point(427, 99);
+            this.compLedRound2.Name = "compLedRound2";
+            this.compLedRound2.Size = new System.Drawing.Size(25, 25);
+            this.compLedRound2.State = Helper.CompLedRectangle.CompLedState.LedOn;
+            this.compLedRound2.TabIndex = 180;
+            this.compLedRound2.TabStop = false;
+            this.compLedRound2.Type = Helper.CompLedRound.LEDType.Normal;
+            // 
+            // compLedRound3
+            // 
+            this.compLedRound3.Location = new System.Drawing.Point(427, 145);
+            this.compLedRound3.Name = "compLedRound3";
+            this.compLedRound3.Size = new System.Drawing.Size(25, 25);
+            this.compLedRound3.State = Helper.CompLedRectangle.CompLedState.LedOn;
+            this.compLedRound3.TabIndex = 182;
+            this.compLedRound3.TabStop = false;
+            this.compLedRound3.Type = Helper.CompLedRound.LEDType.Error;
+            // 
+            // compLedRound4
+            // 
+            this.compLedRound4.Location = new System.Drawing.Point(363, 145);
+            this.compLedRound4.Name = "compLedRound4";
+            this.compLedRound4.Size = new System.Drawing.Size(25, 25);
+            this.compLedRound4.State = Helper.CompLedRectangle.CompLedState.LedOff;
+            this.compLedRound4.TabIndex = 181;
+            this.compLedRound4.TabStop = false;
+            this.compLedRound4.Type = Helper.CompLedRound.LEDType.Error;
+            // 
+            // compLedRound5
+            // 
+            this.compLedRound5.Location = new System.Drawing.Point(427, 194);
+            this.compLedRound5.Name = "compLedRound5";
+            this.compLedRound5.Size = new System.Drawing.Size(25, 25);
+            this.compLedRound5.State = Helper.CompLedRectangle.CompLedState.LedOn;
+            this.compLedRound5.TabIndex = 184;
+            this.compLedRound5.TabStop = false;
+            this.compLedRound5.Type = Helper.CompLedRound.LEDType.Release;
+            // 
+            // compLedRound6
+            // 
+            this.compLedRound6.Location = new System.Drawing.Point(363, 194);
+            this.compLedRound6.Name = "compLedRound6";
+            this.compLedRound6.Size = new System.Drawing.Size(25, 25);
+            this.compLedRound6.State = Helper.CompLedRectangle.CompLedState.LedOff;
+            this.compLedRound6.TabIndex = 183;
+            this.compLedRound6.TabStop = false;
+            this.compLedRound6.Type = Helper.CompLedRound.LEDType.Release;
+            // 
+            // pump2
+            // 
+            this.pump2.BackColor = System.Drawing.Color.Transparent;
+            this.pump2.Caption = null;
+            this.pump2.FlowDirection = Helper.PumpFlowDirection.Right;
+            this.pump2.Location = new System.Drawing.Point(338, 394);
+            this.pump2.Name = "pump2";
+            this.pump2.Size = new System.Drawing.Size(40, 40);
+            this.pump2.State = Helper.PumpState.Ready;
+            this.pump2.TabIndex = 185;
+            this.pump2.TabStop = false;
+            // 
+            // pump3
+            // 
+            this.pump3.BackColor = System.Drawing.Color.Transparent;
+            this.pump3.Caption = null;
+            this.pump3.FlowDirection = Helper.PumpFlowDirection.Right;
+            this.pump3.Location = new System.Drawing.Point(338, 440);
+            this.pump3.Name = "pump3";
+            this.pump3.Size = new System.Drawing.Size(40, 40);
+            this.pump3.State = Helper.PumpState.Running;
+            this.pump3.TabIndex = 186;
+            this.pump3.TabStop = false;
+            // 
+            // pump4
+            // 
+            this.pump4.BackColor = System.Drawing.Color.Transparent;
+            this.pump4.Caption = null;
+            this.pump4.FlowDirection = Helper.PumpFlowDirection.Right;
+            this.pump4.Location = new System.Drawing.Point(338, 492);
+            this.pump4.Name = "pump4";
+            this.pump4.Size = new System.Drawing.Size(40, 40);
+            this.pump4.State = Helper.PumpState.Error;
+            this.pump4.TabIndex = 187;
+            this.pump4.TabStop = false;
+            // 
+            // pump5
+            // 
+            this.pump5.BackColor = System.Drawing.Color.Transparent;
+            this.pump5.Caption = null;
+            this.pump5.FlowDirection = Helper.PumpFlowDirection.Up;
+            this.pump5.Location = new System.Drawing.Point(399, 492);
+            this.pump5.Name = "pump5";
+            this.pump5.Size = new System.Drawing.Size(40, 40);
+            this.pump5.State = Helper.PumpState.Error;
+            this.pump5.TabIndex = 191;
+            this.pump5.TabStop = false;
+            // 
+            // pump6
+            // 
+            this.pump6.BackColor = System.Drawing.Color.Transparent;
+            this.pump6.Caption = null;
+            this.pump6.FlowDirection = Helper.PumpFlowDirection.Up;
+            this.pump6.Location = new System.Drawing.Point(399, 441);
+            this.pump6.Name = "pump6";
+            this.pump6.Size = new System.Drawing.Size(40, 40);
+            this.pump6.State = Helper.PumpState.Running;
+            this.pump6.TabIndex = 190;
+            this.pump6.TabStop = false;
+            // 
+            // pump7
+            // 
+            this.pump7.BackColor = System.Drawing.Color.Transparent;
+            this.pump7.Caption = null;
+            this.pump7.FlowDirection = Helper.PumpFlowDirection.Up;
+            this.pump7.Location = new System.Drawing.Point(399, 395);
+            this.pump7.Name = "pump7";
+            this.pump7.Size = new System.Drawing.Size(40, 40);
+            this.pump7.State = Helper.PumpState.Ready;
+            this.pump7.TabIndex = 189;
+            this.pump7.TabStop = false;
+            // 
+            // pump8
+            // 
+            this.pump8.BackColor = System.Drawing.Color.Transparent;
+            this.pump8.Caption = null;
+            this.pump8.FlowDirection = Helper.PumpFlowDirection.Up;
+            this.pump8.Location = new System.Drawing.Point(399, 349);
+            this.pump8.Name = "pump8";
+            this.pump8.Size = new System.Drawing.Size(40, 40);
+            this.pump8.State = Helper.PumpState.NotUsed;
+            this.pump8.TabIndex = 188;
+            this.pump8.TabStop = false;
+            // 
+            // pump9
+            // 
+            this.pump9.BackColor = System.Drawing.Color.Transparent;
+            this.pump9.Caption = null;
+            this.pump9.FlowDirection = Helper.PumpFlowDirection.Left;
+            this.pump9.Location = new System.Drawing.Point(460, 492);
+            this.pump9.Name = "pump9";
+            this.pump9.Size = new System.Drawing.Size(40, 40);
+            this.pump9.State = Helper.PumpState.Error;
+            this.pump9.TabIndex = 195;
+            this.pump9.TabStop = false;
+            // 
+            // pump10
+            // 
+            this.pump10.BackColor = System.Drawing.Color.Transparent;
+            this.pump10.Caption = null;
+            this.pump10.FlowDirection = Helper.PumpFlowDirection.Left;
+            this.pump10.Location = new System.Drawing.Point(460, 441);
+            this.pump10.Name = "pump10";
+            this.pump10.Size = new System.Drawing.Size(40, 40);
+            this.pump10.State = Helper.PumpState.Running;
+            this.pump10.TabIndex = 194;
+            this.pump10.TabStop = false;
+            // 
+            // pump11
+            // 
+            this.pump11.BackColor = System.Drawing.Color.Transparent;
+            this.pump11.Caption = null;
+            this.pump11.FlowDirection = Helper.PumpFlowDirection.Left;
+            this.pump11.Location = new System.Drawing.Point(460, 395);
+            this.pump11.Name = "pump11";
+            this.pump11.Size = new System.Drawing.Size(40, 40);
+            this.pump11.State = Helper.PumpState.Ready;
+            this.pump11.TabIndex = 193;
+            this.pump11.TabStop = false;
+            // 
+            // pump12
+            // 
+            this.pump12.BackColor = System.Drawing.Color.Transparent;
+            this.pump12.Caption = null;
+            this.pump12.FlowDirection = Helper.PumpFlowDirection.Left;
+            this.pump12.Location = new System.Drawing.Point(462, 349);
+            this.pump12.Name = "pump12";
+            this.pump12.Size = new System.Drawing.Size(40, 40);
+            this.pump12.State = Helper.PumpState.NotUsed;
+            this.pump12.TabIndex = 192;
+            this.pump12.TabStop = false;
+            // 
+            // pump13
+            // 
+            this.pump13.BackColor = System.Drawing.Color.Transparent;
+            this.pump13.Caption = null;
+            this.pump13.FlowDirection = Helper.PumpFlowDirection.Down;
+            this.pump13.Location = new System.Drawing.Point(525, 492);
+            this.pump13.Name = "pump13";
+            this.pump13.Size = new System.Drawing.Size(40, 40);
+            this.pump13.State = Helper.PumpState.Error;
+            this.pump13.TabIndex = 199;
+            this.pump13.TabStop = false;
+            // 
+            // pump14
+            // 
+            this.pump14.BackColor = System.Drawing.Color.Transparent;
+            this.pump14.Caption = null;
+            this.pump14.FlowDirection = Helper.PumpFlowDirection.Down;
+            this.pump14.Location = new System.Drawing.Point(525, 441);
+            this.pump14.Name = "pump14";
+            this.pump14.Size = new System.Drawing.Size(40, 40);
+            this.pump14.State = Helper.PumpState.Running;
+            this.pump14.TabIndex = 198;
+            this.pump14.TabStop = false;
+            // 
+            // pump15
+            // 
+            this.pump15.BackColor = System.Drawing.Color.Transparent;
+            this.pump15.Caption = null;
+            this.pump15.FlowDirection = Helper.PumpFlowDirection.Down;
+            this.pump15.Location = new System.Drawing.Point(525, 395);
+            this.pump15.Name = "pump15";
+            this.pump15.Size = new System.Drawing.Size(40, 40);
+            this.pump15.State = Helper.PumpState.Ready;
+            this.pump15.TabIndex = 197;
+            this.pump15.TabStop = false;
+            // 
+            // pump16
+            // 
+            this.pump16.BackColor = System.Drawing.Color.Transparent;
+            this.pump16.Caption = null;
+            this.pump16.FlowDirection = Helper.PumpFlowDirection.Down;
+            this.pump16.Location = new System.Drawing.Point(524, 349);
+            this.pump16.Name = "pump16";
+            this.pump16.Size = new System.Drawing.Size(40, 40);
+            this.pump16.State = Helper.PumpState.NotUsed;
+            this.pump16.TabIndex = 196;
+            this.pump16.TabStop = false;
+            // 
+            // lifter2
+            // 
+            this.lifter2.BackColor = System.Drawing.Color.Red;
+            this.lifter2.Location = new System.Drawing.Point(842, 9);
+            this.lifter2.Name = "lifter2";
+            this.lifter2.Size = new System.Drawing.Size(44, 129);
+            this.lifter2.State = Helper.LifterState.Error;
+            this.lifter2.TabIndex = 200;
+            this.lifter2.TabStop = false;
+            // 
+            // valve2
+            // 
+            this.valve2.BackColor = System.Drawing.Color.Transparent;
+            this.valve2.Caption = null;
+            this.valve2.FlowDirection = Helper.ValveDirection.Horizontal;
+            this.valve2.Location = new System.Drawing.Point(81, 492);
+            this.valve2.Mode = Helper.ValveMode.Automatic;
+            this.valve2.Name = "valve2";
+            this.valve2.Rotation = 0D;
+            this.valve2.Size = new System.Drawing.Size(40, 40);
+            this.valve2.State = Helper.ValveState.Open;
+            this.valve2.SteeringMode = Helper.SteeringMode.Digital;
+            this.valve2.TabIndex = 201;
+            this.valve2.TabStop = false;
+            this.valve2.Type = Helper.ValveType.Normal;
+            // 
+            // valve3
+            // 
+            this.valve3.BackColor = System.Drawing.Color.Transparent;
+            this.valve3.Caption = null;
+            this.valve3.FlowDirection = Helper.ValveDirection.Horizontal;
+            this.valve3.Location = new System.Drawing.Point(153, 492);
+            this.valve3.Mode = Helper.ValveMode.Automatic;
+            this.valve3.Name = "valve3";
+            this.valve3.Rotation = 0D;
+            this.valve3.Size = new System.Drawing.Size(40, 40);
+            this.valve3.State = Helper.ValveState.Close;
+            this.valve3.SteeringMode = Helper.SteeringMode.Digital;
+            this.valve3.TabIndex = 202;
+            this.valve3.TabStop = false;
+            this.valve3.Type = Helper.ValveType.Normal;
+            // 
+            // valve4
+            // 
+            this.valve4.BackColor = System.Drawing.Color.Transparent;
+            this.valve4.Caption = null;
+            this.valve4.FlowDirection = Helper.ValveDirection.Horizontal;
+            this.valve4.Location = new System.Drawing.Point(223, 492);
+            this.valve4.Mode = Helper.ValveMode.Automatic;
+            this.valve4.Name = "valve4";
+            this.valve4.Rotation = 0D;
+            this.valve4.Size = new System.Drawing.Size(40, 40);
+            this.valve4.State = Helper.ValveState.Error;
+            this.valve4.SteeringMode = Helper.SteeringMode.Digital;
+            this.valve4.TabIndex = 203;
+            this.valve4.TabStop = false;
+            this.valve4.Type = Helper.ValveType.Normal;
+            // 
+            // lifter3
+            // 
+            this.lifter3.BackColor = System.Drawing.Color.Transparent;
+            this.lifter3.Location = new System.Drawing.Point(719, 11);
+            this.lifter3.Name = "lifter3";
+            this.lifter3.Size = new System.Drawing.Size(44, 129);
+            this.lifter3.State = Helper.LifterState.Sinking;
+            this.lifter3.TabIndex = 204;
+            this.lifter3.TabStop = false;
+            // 
+            // compBitButton3
+            // 
+            this.compBitButton3.Caption = "";
+            this.compBitButton3.EnableMouseDown = false;
+            this.compBitButton3.Formular = null;
+            this.compBitButton3.Location = new System.Drawing.Point(932, 75);
+            this.compBitButton3.Name = "compBitButton3";
+            this.compBitButton3.Picture_0 = Helper.CompBitButtonStyle.btg_Requery;
+            this.compBitButton3.Picture_1 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.compBitButton3.Picture_2 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.compBitButton3.Picture_3 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.compBitButton3.Picture_4 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.compBitButton3.PictureNumber = 0;
+            this.compBitButton3.Size = new System.Drawing.Size(79, 48);
+            this.compBitButton3.Symbol = null;
+            this.compBitButton3.TabIndex = 205;
+            this.compBitButton3.TabStop = false;
+            // 
+            // compBitButton4
+            // 
+            this.compBitButton4.Caption = "";
+            this.compBitButton4.EnableMouseDown = false;
+            this.compBitButton4.Formular = null;
+            this.compBitButton4.Location = new System.Drawing.Point(932, 138);
+            this.compBitButton4.Name = "compBitButton4";
+            this.compBitButton4.Picture_0 = Helper.CompBitButtonStyle.btg_Benutzer;
+            this.compBitButton4.Picture_1 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.compBitButton4.Picture_2 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.compBitButton4.Picture_3 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.compBitButton4.Picture_4 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.compBitButton4.PictureNumber = 0;
+            this.compBitButton4.Size = new System.Drawing.Size(79, 48);
+            this.compBitButton4.Symbol = null;
+            this.compBitButton4.TabIndex = 206;
+            this.compBitButton4.TabStop = false;
+            // 
+            // compBitButton5
+            // 
+            this.compBitButton5.Caption = "";
+            this.compBitButton5.EnableMouseDown = false;
+            this.compBitButton5.Formular = null;
+            this.compBitButton5.Location = new System.Drawing.Point(932, 201);
+            this.compBitButton5.Name = "compBitButton5";
+            this.compBitButton5.Picture_0 = Helper.CompBitButtonStyle.btg_Keyboard;
+            this.compBitButton5.Picture_1 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.compBitButton5.Picture_2 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.compBitButton5.Picture_3 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.compBitButton5.Picture_4 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.compBitButton5.PictureNumber = 0;
+            this.compBitButton5.Size = new System.Drawing.Size(79, 48);
+            this.compBitButton5.Symbol = null;
+            this.compBitButton5.TabIndex = 207;
+            this.compBitButton5.TabStop = false;
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1604, 741);
+            this.Controls.Add(this.compBitButton5);
+            this.Controls.Add(this.compBitButton4);
+            this.Controls.Add(this.compBitButton3);
+            this.Controls.Add(this.lifter3);
+            this.Controls.Add(this.valve4);
+            this.Controls.Add(this.valve3);
+            this.Controls.Add(this.valve2);
+            this.Controls.Add(this.lifter2);
+            this.Controls.Add(this.pump13);
+            this.Controls.Add(this.pump14);
+            this.Controls.Add(this.pump15);
+            this.Controls.Add(this.pump16);
+            this.Controls.Add(this.pump9);
+            this.Controls.Add(this.pump10);
+            this.Controls.Add(this.pump11);
+            this.Controls.Add(this.pump12);
+            this.Controls.Add(this.pump5);
+            this.Controls.Add(this.pump6);
+            this.Controls.Add(this.pump7);
+            this.Controls.Add(this.pump8);
+            this.Controls.Add(this.pump4);
+            this.Controls.Add(this.pump3);
+            this.Controls.Add(this.pump2);
+            this.Controls.Add(this.compLedRound5);
+            this.Controls.Add(this.compLedRound6);
+            this.Controls.Add(this.compLedRound3);
+            this.Controls.Add(this.compLedRound4);
+            this.Controls.Add(this.compLedRound2);
+            this.Controls.Add(this.compLedRectangle2);
+            this.Controls.Add(this.compPipe5);
+            this.Controls.Add(this.compVentil4);
+            this.Controls.Add(this.compVentil3);
+            this.Controls.Add(this.compVentil2);
+            this.Controls.Add(this.valve1);
+            this.Controls.Add(this.scale1);
+            this.Controls.Add(this.schranke1);
+            this.Controls.Add(this.pump1);
+            this.Controls.Add(this.lifter1);
+            this.Controls.Add(this.waterTank1);
+            this.Controls.Add(this.compInputBox1);
+            this.Controls.Add(this.compVentil1);
+            this.Controls.Add(this.compTxtBox4);
+            this.Controls.Add(this.compToggleSwitch1);
+            this.Controls.Add(this.compPipe4);
+            this.Controls.Add(this.compMultiBar1);
+            this.Controls.Add(this.compLedRound1);
+            this.Controls.Add(this.compLedRectangle1);
+            this.Controls.Add(this.compBitButton2);
+            this.Controls.Add(this.BtnStartPlc);
+            this.Controls.Add(this.BtnStoppPlc);
             this.Controls.Add(this.LblPlcNoConnect);
             this.Controls.Add(this.LblErrorBar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1944,6 +2690,56 @@
             this.Controls.SetChildIndex(this.GbxOutput, 0);
             this.Controls.SetChildIndex(this.LblErrorBar, 0);
             this.Controls.SetChildIndex(this.LblPlcNoConnect, 0);
+            this.Controls.SetChildIndex(this.BtnStoppPlc, 0);
+            this.Controls.SetChildIndex(this.BtnStartPlc, 0);
+            this.Controls.SetChildIndex(this.compBitButton2, 0);
+            this.Controls.SetChildIndex(this.compLedRectangle1, 0);
+            this.Controls.SetChildIndex(this.compLedRound1, 0);
+            this.Controls.SetChildIndex(this.compMultiBar1, 0);
+            this.Controls.SetChildIndex(this.compPipe4, 0);
+            this.Controls.SetChildIndex(this.compToggleSwitch1, 0);
+            this.Controls.SetChildIndex(this.compTxtBox4, 0);
+            this.Controls.SetChildIndex(this.compVentil1, 0);
+            this.Controls.SetChildIndex(this.compInputBox1, 0);
+            this.Controls.SetChildIndex(this.waterTank1, 0);
+            this.Controls.SetChildIndex(this.lifter1, 0);
+            this.Controls.SetChildIndex(this.pump1, 0);
+            this.Controls.SetChildIndex(this.schranke1, 0);
+            this.Controls.SetChildIndex(this.scale1, 0);
+            this.Controls.SetChildIndex(this.valve1, 0);
+            this.Controls.SetChildIndex(this.compVentil2, 0);
+            this.Controls.SetChildIndex(this.compVentil3, 0);
+            this.Controls.SetChildIndex(this.compVentil4, 0);
+            this.Controls.SetChildIndex(this.compPipe5, 0);
+            this.Controls.SetChildIndex(this.compLedRectangle2, 0);
+            this.Controls.SetChildIndex(this.compLedRound2, 0);
+            this.Controls.SetChildIndex(this.compLedRound4, 0);
+            this.Controls.SetChildIndex(this.compLedRound3, 0);
+            this.Controls.SetChildIndex(this.compLedRound6, 0);
+            this.Controls.SetChildIndex(this.compLedRound5, 0);
+            this.Controls.SetChildIndex(this.pump2, 0);
+            this.Controls.SetChildIndex(this.pump3, 0);
+            this.Controls.SetChildIndex(this.pump4, 0);
+            this.Controls.SetChildIndex(this.pump8, 0);
+            this.Controls.SetChildIndex(this.pump7, 0);
+            this.Controls.SetChildIndex(this.pump6, 0);
+            this.Controls.SetChildIndex(this.pump5, 0);
+            this.Controls.SetChildIndex(this.pump12, 0);
+            this.Controls.SetChildIndex(this.pump11, 0);
+            this.Controls.SetChildIndex(this.pump10, 0);
+            this.Controls.SetChildIndex(this.pump9, 0);
+            this.Controls.SetChildIndex(this.pump16, 0);
+            this.Controls.SetChildIndex(this.pump15, 0);
+            this.Controls.SetChildIndex(this.pump14, 0);
+            this.Controls.SetChildIndex(this.pump13, 0);
+            this.Controls.SetChildIndex(this.lifter2, 0);
+            this.Controls.SetChildIndex(this.valve2, 0);
+            this.Controls.SetChildIndex(this.valve3, 0);
+            this.Controls.SetChildIndex(this.valve4, 0);
+            this.Controls.SetChildIndex(this.lifter3, 0);
+            this.Controls.SetChildIndex(this.compBitButton3, 0);
+            this.Controls.SetChildIndex(this.compBitButton4, 0);
+            this.Controls.SetChildIndex(this.compBitButton5, 0);
             ((System.ComponentModel.ISupportInitialize)(this.BtnClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnKeyboard)).EndInit();
             this.GbxMenu.ResumeLayout(false);
@@ -1961,7 +2757,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Pip02)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pip08)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnStartPlc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pip01)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pip04)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pip06)).EndInit();
@@ -1985,7 +2780,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Pip14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Vnt06)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Vnt07)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnStoppPlc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.compArrow1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.compArrow2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.compPipe1)).EndInit();
@@ -1999,7 +2793,56 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.compVan2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.compBitButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnStoppPlc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnStartPlc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compBitButton2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compLedRectangle1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compLedRound1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compMultiBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compPipe4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compToggleSwitch1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compVentil1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.waterTank1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lifter1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pump1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schranke1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scale1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.valve1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compVentil2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compVentil3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compVentil4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compPipe5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compLedRectangle2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compLedRound2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compLedRound3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compLedRound4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compLedRound5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compLedRound6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pump2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pump3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pump4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pump5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pump6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pump7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pump8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pump9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pump10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pump11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pump12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pump13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pump14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pump15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pump16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lifter2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.valve2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.valve3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.valve4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lifter3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compBitButton3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compBitButton4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.compBitButton5)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -2022,7 +2865,6 @@
         private Helper.CompPipe Pip02;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Helper.CompPipe Pip08;
-        private Helper.CompBitButton BtnStartPlc;
         private System.Windows.Forms.Label label7;
         private Helper.CompTxtBox Txt01;
         private Helper.CompTxtBox Txt14;
@@ -2076,7 +2918,6 @@
         private Helper.CompVentil Vnt07;
         private Helper.CompTxtBox Txt08;
         private Helper.CompVentil Vnt06;
-        private Helper.CompBitButton BtnStoppPlc;
         private System.Windows.Forms.ProgressBar BarPlcProgress;
         private System.Windows.Forms.Label lblState;
         private Helper.CompArrow compArrow1;
@@ -2130,6 +2971,56 @@
         private System.Windows.Forms.Timer TmrErrorTicker;
         private Helper.CompVan compVan2;
         private Helper.CompBitButton compBitButton1;
+        private Helper.CompBitButton BtnStoppPlc;
+        private Helper.CompBitButton BtnStartPlc;
+        private Helper.CompBitButton compBitButton2;
+        private Helper.CompLedRectangle compLedRectangle1;
+        private Helper.CompLedRound compLedRound1;
+        private Helper.CompMultiBar compMultiBar1;
+        private Helper.CompPipe compPipe4;
+        private Helper.CompToggleSwitch compToggleSwitch1;
+        private Helper.CompTxtBox compTxtBox4;
+        private Helper.CompVentil compVentil1;
+        private Helper.CompInputBox compInputBox1;
+        private Helper.WaterTank waterTank1;
+        private Helper.Lifter lifter1;
+        private Helper.Pump pump1;
+        private Helper.Schranke schranke1;
+        private Helper.Scale scale1;
+        private Helper.Valve valve1;
+        private Helper.CompVentil compVentil2;
+        private Helper.CompVentil compVentil3;
+        private Helper.CompVentil compVentil4;
+        private Helper.CompPipe compPipe5;
+        private Helper.CompLedRectangle compLedRectangle2;
+        private Helper.CompLedRound compLedRound2;
+        private Helper.CompLedRound compLedRound3;
+        private Helper.CompLedRound compLedRound4;
+        private Helper.CompLedRound compLedRound5;
+        private Helper.CompLedRound compLedRound6;
+        private Helper.Pump pump2;
+        private Helper.Pump pump3;
+        private Helper.Pump pump4;
+        private Helper.Pump pump5;
+        private Helper.Pump pump6;
+        private Helper.Pump pump7;
+        private Helper.Pump pump8;
+        private Helper.Pump pump9;
+        private Helper.Pump pump10;
+        private Helper.Pump pump11;
+        private Helper.Pump pump12;
+        private Helper.Pump pump13;
+        private Helper.Pump pump14;
+        private Helper.Pump pump15;
+        private Helper.Pump pump16;
+        private Helper.Lifter lifter2;
+        private Helper.Valve valve2;
+        private Helper.Valve valve3;
+        private Helper.Valve valve4;
+        private Helper.Lifter lifter3;
+        private Helper.CompBitButton compBitButton3;
+        private Helper.CompBitButton compBitButton4;
+        private Helper.CompBitButton compBitButton5;
     }
 }
 

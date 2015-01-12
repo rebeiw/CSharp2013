@@ -169,6 +169,8 @@ namespace ClassDevelopment
 
             FuncGeneral.CentreObject(this.LblPlcNoConnect,this.GbxOutput);
 
+            this.Text = "Demo";
+
 
         }
 
@@ -264,6 +266,22 @@ namespace ClassDevelopment
         private void compBitButton1_Click(object sender, EventArgs e)
         {
             this.m_formularManager.FormularShow("FrmO2Curve");
+        }
+
+        private void BtnStoppPlc_Click_1(object sender, EventArgs e)
+        {
+            this.m_plc.StoppRead();
+
+        }
+
+        private void BtnStartPlc_Click_1(object sender, EventArgs e)
+        {
+            this.m_plc.StartRead();
+        }
+
+        private void compBitButton2_Click(object sender, EventArgs e)
+        {
+            this.ShowMenu();
         }
     }
 }

@@ -22,14 +22,7 @@ namespace ClassDevelopment
 
         private void FrmO2Curve_Load(object sender, EventArgs e)
         {
-            int off=200;
-            for(int i=0;i<11;i++)
-            {
-                string format = "{0:0.00}";
 
-                this.CreateLabel(200, i * 20 + off, 60, 20, String.Format(format, 10-i)+"-", this.tabPage1);
-            }
-            this.CreateMultiBar(260, 213, 50, 200, this.tabPage1);
 
         }
 
@@ -40,7 +33,6 @@ namespace ClassDevelopment
 
         private void compBitButton1_MouseDown(object sender, MouseEventArgs e)
         {
-            this.compMultiBar1.Select = true;
         }
 
         private void compInputBox1_Enter(object sender, EventArgs e)
@@ -49,6 +41,11 @@ namespace ClassDevelopment
         }
 
         private void compMultiBar3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void compMultiBar2_Click(object sender, EventArgs e)
         {
 
         }
