@@ -1,0 +1,72 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Mobile_Calibration_Rig.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="COMPortModBus" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">COM1</Value>
+    </Setting>
+    <Setting Name="COMPortFA_M3" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">COM3</Value>
+    </Setting>
+    <Setting Name="COMPortCustTemp" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">COM5</Value>
+    </Setting>
+    <Setting Name="COMPortAmbientTemp" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">COM4</Value>
+    </Setting>
+    <Setting Name="CS32LowRange" Type="System.Single" Scope="Application">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="CS32HighRange" Type="System.Single" Scope="Application">
+      <Value Profile="(Default)">600</Value>
+    </Setting>
+    <Setting Name="CS34LowRange" Type="System.Single" Scope="Application">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="CS34HighRange" Type="System.Single" Scope="Application">
+      <Value Profile="(Default)">5000</Value>
+    </Setting>
+    <Setting Name="CS36LowRange" Type="System.Single" Scope="Application">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="CS36HighRange" Type="System.Single" Scope="Application">
+      <Value Profile="(Default)">17000</Value>
+    </Setting>
+    <Setting Name="CS38LowRange" Type="System.Single" Scope="Application">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="CS38HighRange" Type="System.Single" Scope="Application">
+      <Value Profile="(Default)">50000</Value>
+    </Setting>
+    <Setting Name="CalCertPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">C:\Users\Public\Documents\Calibration Certificates\</Value>
+    </Setting>
+    <Setting Name="MaxErrorRotamass" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">0.3</Value>
+    </Setting>
+    <Setting Name="MaxErrorRotameter" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">0.5</Value>
+    </Setting>
+    <Setting Name="MaxErrorDY" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">0.75</Value>
+    </Setting>
+    <Setting Name="MaxErrorAXF" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">0.3</Value>
+    </Setting>
+    <Setting Name="CS32PulseRate" Type="System.Single" Scope="Application">
+      <Value Profile="(Default)">10000</Value>
+    </Setting>
+    <Setting Name="CS34PulseRate" Type="System.Single" Scope="Application">
+      <Value Profile="(Default)">10000</Value>
+    </Setting>
+    <Setting Name="CS36PulseRate" Type="System.Single" Scope="Application">
+      <Value Profile="(Default)">10000</Value>
+    </Setting>
+    <Setting Name="CS38PulseRate" Type="System.Single" Scope="Application">
+      <Value Profile="(Default)">10000</Value>
+    </Setting>
+    <Setting Name="MCRDataConnection" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\MCR.accdb</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
