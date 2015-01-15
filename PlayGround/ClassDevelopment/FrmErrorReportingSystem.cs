@@ -15,6 +15,7 @@ namespace ClassDevelopment
 {
     public partial class FrmErrorReportingSystem : FrmVorlageMenu
     {
+        private ClsPDF m_ClsPDF;
 
         private ClsSingeltonFormularManager m_formularManager;
         private ClsSingeltonParameter m_parameter;
@@ -83,6 +84,8 @@ namespace ClassDevelopment
 
             this.timer1.Interval = 1000;
             this.timer1.Enabled = true;
+
+            this.m_ClsPDF = new ClsPDF();
         }
 
 
