@@ -71,6 +71,8 @@ namespace ClassDevelopment
             this.m_plcPara.BtnStart = this.BtnStartPlc;
             this.m_plcPara.BtnStopp = this.BtnStoppPlc;
             this.m_plcPara.IP = this.m_parameter.PlcIp;
+            this.m_plcPara.IP = "192.168.56.1";
+
             this.m_plcPara.Rack = this.m_parameter.PlcRack;
             this.m_plcPara.Slot = this.m_parameter.PlcSlot;
             this.m_plcPara.LblPlc = this.LblPlcNoConnect;
@@ -86,6 +88,9 @@ namespace ClassDevelopment
             this.FrmRelease = new FrmRelease();
             this.FrmErrorReportingSystem = new FrmErrorReportingSystem();
             this.FrmO2Curve = new FrmO2Curve();
+
+            this.BtnStartPlc.Click += new System.EventHandler(this.BtnStartPlc_Click);
+            this.BtnStoppPlc.Click += new System.EventHandler(this.BtnStoppPlc_Click);
 
             this.TmrErrorTicker.Enabled = true;
         }

@@ -153,8 +153,6 @@
             this.TmrErrorTicker = new System.Windows.Forms.Timer(this.components);
             this.compVan2 = new Helper.CompVan();
             this.compBitButton1 = new Helper.CompBitButton();
-            this.BtnStoppPlc = new Helper.CompBitButton();
-            this.BtnStartPlc = new Helper.CompBitButton();
             this.compBitButton2 = new Helper.CompBitButton();
             this.compLedRectangle1 = new Helper.CompLedRectangle();
             this.compLedRound1 = new Helper.CompLedRound();
@@ -203,6 +201,8 @@
             this.compBitButton3 = new Helper.CompBitButton();
             this.compBitButton4 = new Helper.CompBitButton();
             this.compBitButton5 = new Helper.CompBitButton();
+            this.BtnStartPlc = new Helper.CompBitButton();
+            this.BtnStoppPlc = new Helper.CompBitButton();
             ((System.ComponentModel.ISupportInitialize)(this.BtnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnKeyboard)).BeginInit();
             this.GbxMenu.SuspendLayout();
@@ -254,8 +254,6 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.compVan2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.compBitButton1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnStoppPlc)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnStartPlc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.compBitButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.compLedRectangle1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.compLedRound1)).BeginInit();
@@ -302,6 +300,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.compBitButton3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.compBitButton4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.compBitButton5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnStartPlc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnStoppPlc)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnClose
@@ -323,6 +323,8 @@
             // 
             this.GbxOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
             this.GbxOutput.BackColor = System.Drawing.Color.Transparent;
+            this.GbxOutput.Controls.Add(this.BtnStoppPlc);
+            this.GbxOutput.Controls.Add(this.BtnStartPlc);
             this.GbxOutput.Controls.Add(this.compBitButton1);
             this.GbxOutput.Controls.Add(this.compVan2);
             this.GbxOutput.Controls.Add(this.panel1);
@@ -439,7 +441,6 @@
             this.GbxOutput.Controls.Add(this.Pip08);
             this.GbxOutput.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GbxOutput.ForeColor = System.Drawing.Color.Black;
-            this.GbxOutput.Location = new System.Drawing.Point(1555, 5);
             this.GbxOutput.Size = new System.Drawing.Size(1007, 701);
             this.GbxOutput.Text = "Heater Fuel Gas";
             // 
@@ -1979,46 +1980,6 @@
             this.compBitButton1.TabStop = false;
             this.compBitButton1.Click += new System.EventHandler(this.compBitButton1_Click);
             // 
-            // BtnStoppPlc
-            // 
-            this.BtnStoppPlc.Caption = "";
-            this.BtnStoppPlc.EnableMouseDown = false;
-            this.BtnStoppPlc.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
-            this.BtnStoppPlc.Formular = null;
-            this.BtnStoppPlc.Location = new System.Drawing.Point(7, 658);
-            this.BtnStoppPlc.Name = "BtnStoppPlc";
-            this.BtnStoppPlc.Picture_0 = Helper.CompBitButtonStyle.btg_Stop;
-            this.BtnStoppPlc.Picture_1 = Helper.CompBitButtonStyle.btg_Blanko;
-            this.BtnStoppPlc.Picture_2 = Helper.CompBitButtonStyle.btg_Blanko;
-            this.BtnStoppPlc.Picture_3 = Helper.CompBitButtonStyle.btg_Blanko;
-            this.BtnStoppPlc.Picture_4 = Helper.CompBitButtonStyle.btg_Blanko;
-            this.BtnStoppPlc.PictureNumber = 0;
-            this.BtnStoppPlc.Size = new System.Drawing.Size(79, 48);
-            this.BtnStoppPlc.Symbol = null;
-            this.BtnStoppPlc.TabIndex = 158;
-            this.BtnStoppPlc.TabStop = false;
-            this.BtnStoppPlc.Click += new System.EventHandler(this.BtnStoppPlc_Click_1);
-            // 
-            // BtnStartPlc
-            // 
-            this.BtnStartPlc.Caption = "";
-            this.BtnStartPlc.EnableMouseDown = false;
-            this.BtnStartPlc.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
-            this.BtnStartPlc.Formular = null;
-            this.BtnStartPlc.Location = new System.Drawing.Point(7, 658);
-            this.BtnStartPlc.Name = "BtnStartPlc";
-            this.BtnStartPlc.Picture_0 = Helper.CompBitButtonStyle.btg_Run;
-            this.BtnStartPlc.Picture_1 = Helper.CompBitButtonStyle.btg_Blanko;
-            this.BtnStartPlc.Picture_2 = Helper.CompBitButtonStyle.btg_Blanko;
-            this.BtnStartPlc.Picture_3 = Helper.CompBitButtonStyle.btg_Blanko;
-            this.BtnStartPlc.Picture_4 = Helper.CompBitButtonStyle.btg_Blanko;
-            this.BtnStartPlc.PictureNumber = 0;
-            this.BtnStartPlc.Size = new System.Drawing.Size(79, 48);
-            this.BtnStartPlc.Symbol = null;
-            this.BtnStartPlc.TabIndex = 159;
-            this.BtnStartPlc.TabStop = false;
-            this.BtnStartPlc.Click += new System.EventHandler(this.BtnStartPlc_Click_1);
-            // 
             // compBitButton2
             // 
             this.compBitButton2.Caption = "";
@@ -2622,6 +2583,44 @@
             this.compBitButton5.TabIndex = 207;
             this.compBitButton5.TabStop = false;
             // 
+            // BtnStartPlc
+            // 
+            this.BtnStartPlc.Caption = "";
+            this.BtnStartPlc.EnableMouseDown = false;
+            this.BtnStartPlc.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.BtnStartPlc.Formular = null;
+            this.BtnStartPlc.Location = new System.Drawing.Point(12, 615);
+            this.BtnStartPlc.Name = "BtnStartPlc";
+            this.BtnStartPlc.Picture_0 = Helper.CompBitButtonStyle.btg_Run;
+            this.BtnStartPlc.Picture_1 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnStartPlc.Picture_2 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnStartPlc.Picture_3 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnStartPlc.Picture_4 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnStartPlc.PictureNumber = 0;
+            this.BtnStartPlc.Size = new System.Drawing.Size(79, 48);
+            this.BtnStartPlc.Symbol = null;
+            this.BtnStartPlc.TabIndex = 160;
+            this.BtnStartPlc.TabStop = false;
+            // 
+            // BtnStoppPlc
+            // 
+            this.BtnStoppPlc.Caption = "";
+            this.BtnStoppPlc.EnableMouseDown = false;
+            this.BtnStoppPlc.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.BtnStoppPlc.Formular = null;
+            this.BtnStoppPlc.Location = new System.Drawing.Point(12, 615);
+            this.BtnStoppPlc.Name = "BtnStoppPlc";
+            this.BtnStoppPlc.Picture_0 = Helper.CompBitButtonStyle.btg_Stop;
+            this.BtnStoppPlc.Picture_1 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnStoppPlc.Picture_2 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnStoppPlc.Picture_3 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnStoppPlc.Picture_4 = Helper.CompBitButtonStyle.btg_Blanko;
+            this.BtnStoppPlc.PictureNumber = 0;
+            this.BtnStoppPlc.Size = new System.Drawing.Size(79, 48);
+            this.BtnStoppPlc.Symbol = null;
+            this.BtnStoppPlc.TabIndex = 161;
+            this.BtnStoppPlc.TabStop = false;
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2675,8 +2674,6 @@
             this.Controls.Add(this.compLedRound1);
             this.Controls.Add(this.compLedRectangle1);
             this.Controls.Add(this.compBitButton2);
-            this.Controls.Add(this.BtnStartPlc);
-            this.Controls.Add(this.BtnStoppPlc);
             this.Controls.Add(this.LblPlcNoConnect);
             this.Controls.Add(this.LblErrorBar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -2687,11 +2684,8 @@
             this.Activated += new System.EventHandler(this.FrmMain_Activated);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Controls.SetChildIndex(this.GbxMenu, 0);
-            this.Controls.SetChildIndex(this.GbxOutput, 0);
             this.Controls.SetChildIndex(this.LblErrorBar, 0);
             this.Controls.SetChildIndex(this.LblPlcNoConnect, 0);
-            this.Controls.SetChildIndex(this.BtnStoppPlc, 0);
-            this.Controls.SetChildIndex(this.BtnStartPlc, 0);
             this.Controls.SetChildIndex(this.compBitButton2, 0);
             this.Controls.SetChildIndex(this.compLedRectangle1, 0);
             this.Controls.SetChildIndex(this.compLedRound1, 0);
@@ -2740,6 +2734,7 @@
             this.Controls.SetChildIndex(this.compBitButton3, 0);
             this.Controls.SetChildIndex(this.compBitButton4, 0);
             this.Controls.SetChildIndex(this.compBitButton5, 0);
+            this.Controls.SetChildIndex(this.GbxOutput, 0);
             ((System.ComponentModel.ISupportInitialize)(this.BtnClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnKeyboard)).EndInit();
             this.GbxMenu.ResumeLayout(false);
@@ -2793,8 +2788,6 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.compVan2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.compBitButton1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnStoppPlc)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnStartPlc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.compBitButton2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.compLedRectangle1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.compLedRound1)).EndInit();
@@ -2841,6 +2834,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.compBitButton3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.compBitButton4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.compBitButton5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnStartPlc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnStoppPlc)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2971,8 +2966,6 @@
         private System.Windows.Forms.Timer TmrErrorTicker;
         private Helper.CompVan compVan2;
         private Helper.CompBitButton compBitButton1;
-        private Helper.CompBitButton BtnStoppPlc;
-        private Helper.CompBitButton BtnStartPlc;
         private Helper.CompBitButton compBitButton2;
         private Helper.CompLedRectangle compLedRectangle1;
         private Helper.CompLedRound compLedRound1;
@@ -3021,6 +3014,8 @@
         private Helper.CompBitButton compBitButton3;
         private Helper.CompBitButton compBitButton4;
         private Helper.CompBitButton compBitButton5;
+        private Helper.CompBitButton BtnStoppPlc;
+        private Helper.CompBitButton BtnStartPlc;
     }
 }
 

@@ -24,8 +24,8 @@ namespace ClassDevelopment
             this.Height = 660;
             this.m_formularManager = ClsSingeltonFormularManager.CreateInstance(this, this.Name);
             this.CreateFormular(FormularType.Parameter);
-            //this.CreateO2Curve();
-            //this.CreateCompoundDriveGas();
+            this.CreateO2Curve();
+            this.CreateCompoundDriveGas();
 
 
         }
