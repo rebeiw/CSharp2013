@@ -52,8 +52,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.Pip01 = new Helper.CompPipe();
             this.Pip04 = new Helper.CompPipe();
-            this.Txt17 = new Helper.CompTxtBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.Pip06 = new Helper.CompPipe();
             this.Pip03 = new Helper.CompPipe();
             this.Pip05 = new Helper.CompPipe();
@@ -203,6 +201,8 @@
             this.compBitButton5 = new Helper.CompBitButton();
             this.BtnStartPlc = new Helper.CompBitButton();
             this.BtnStoppPlc = new Helper.CompBitButton();
+            this.label8 = new System.Windows.Forms.Label();
+            this.Txt17 = new Helper.CompTxtBox();
             ((System.ComponentModel.ISupportInitialize)(this.BtnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnKeyboard)).BeginInit();
             this.GbxMenu.SuspendLayout();
@@ -417,8 +417,6 @@
             this.GbxOutput.Controls.Add(this.Pip03);
             this.GbxOutput.Controls.Add(this.Pip01);
             this.GbxOutput.Controls.Add(this.Pip06);
-            this.GbxOutput.Controls.Add(this.label8);
-            this.GbxOutput.Controls.Add(this.Txt17);
             this.GbxOutput.Controls.Add(this.Pip04);
             this.GbxOutput.Controls.Add(this.label7);
             this.GbxOutput.Controls.Add(this.Txt01);
@@ -691,33 +689,6 @@
             this.Pip04.Size = new System.Drawing.Size(247, 6);
             this.Pip04.TabIndex = 37;
             this.Pip04.TabStop = false;
-            // 
-            // Txt17
-            // 
-            this.Txt17.BackColor = System.Drawing.Color.Black;
-            this.Txt17.Enabled = false;
-            this.Txt17.Error = false;
-            this.Txt17.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
-            this.Txt17.ForeColor = System.Drawing.Color.Yellow;
-            this.Txt17.Format = "0";
-            this.Txt17.Location = new System.Drawing.Point(792, 19);
-            this.Txt17.Margin = new System.Windows.Forms.Padding(4);
-            this.Txt17.Name = "Txt17";
-            this.Txt17.Size = new System.Drawing.Size(59, 29);
-            this.Txt17.TabIndex = 40;
-            this.Txt17.Text = "0";
-            this.Txt17.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
-            this.Txt17.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
-            this.Txt17.TextSymbol = "";
-            // 
-            // label8
-            // 
-            this.label8.Location = new System.Drawing.Point(792, 56);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(59, 17);
-            this.label8.TabIndex = 42;
-            this.label8.Text = "%";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Pip06
             // 
@@ -1849,6 +1820,8 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.DimGray;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.Txt17);
             this.panel1.Controls.Add(this.label48);
             this.panel1.Controls.Add(this.label49);
             this.panel1.Controls.Add(this.compTxtBox3);
@@ -1966,7 +1939,7 @@
             this.compBitButton1.Caption = "";
             this.compBitButton1.EnableMouseDown = false;
             this.compBitButton1.Formular = null;
-            this.compBitButton1.Location = new System.Drawing.Point(760, 71);
+            this.compBitButton1.Location = new System.Drawing.Point(827, 17);
             this.compBitButton1.Name = "compBitButton1";
             this.compBitButton1.Picture_0 = Helper.CompBitButtonStyle.btg_Blanko;
             this.compBitButton1.Picture_1 = Helper.CompBitButtonStyle.btg_Blanko;
@@ -1978,6 +1951,7 @@
             this.compBitButton1.Symbol = null;
             this.compBitButton1.TabIndex = 155;
             this.compBitButton1.TabStop = false;
+            this.compBitButton1.Visible = false;
             this.compBitButton1.Click += new System.EventHandler(this.compBitButton1_Click);
             // 
             // compBitButton2
@@ -2621,6 +2595,33 @@
             this.BtnStoppPlc.TabIndex = 161;
             this.BtnStoppPlc.TabStop = false;
             // 
+            // label8
+            // 
+            this.label8.Location = new System.Drawing.Point(76, 45);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(59, 17);
+            this.label8.TabIndex = 160;
+            this.label8.Text = "%";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Txt17
+            // 
+            this.Txt17.BackColor = System.Drawing.Color.Black;
+            this.Txt17.Enabled = false;
+            this.Txt17.Error = false;
+            this.Txt17.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
+            this.Txt17.ForeColor = System.Drawing.Color.Yellow;
+            this.Txt17.Format = "0";
+            this.Txt17.Location = new System.Drawing.Point(76, 11);
+            this.Txt17.Margin = new System.Windows.Forms.Padding(4);
+            this.Txt17.Name = "Txt17";
+            this.Txt17.Size = new System.Drawing.Size(59, 29);
+            this.Txt17.TabIndex = 159;
+            this.Txt17.Text = "0";
+            this.Txt17.TextboxSize = Helper.CompTxtBox.CompTxtBoxSize.Small;
+            this.Txt17.TextBoxType = Helper.CompTxtBox.CompTxtBoxType.ProcessVariable;
+            this.Txt17.TextSymbol = "";
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2865,8 +2866,6 @@
         private Helper.CompTxtBox Txt14;
         private Helper.CompPipe Pip04;
         private Helper.CompPipe Pip01;
-        private Helper.CompTxtBox Txt17;
-        private System.Windows.Forms.Label label8;
         private Helper.CompPipe Pip06;
         private Helper.CompPipe Pip03;
         private Helper.CompTxtBox Txt10;
@@ -3016,6 +3015,8 @@
         private Helper.CompBitButton compBitButton5;
         private Helper.CompBitButton BtnStoppPlc;
         private Helper.CompBitButton BtnStartPlc;
+        private System.Windows.Forms.Label label8;
+        private Helper.CompTxtBox Txt17;
     }
 }
 

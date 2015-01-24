@@ -56,7 +56,7 @@ namespace ClassDevelopment
                 multi_bar = this.CreateMultiBar(i * (width + space) + left_multi_bar, off + 13, width, 200, group_box);
                 multi_bar.NumberOfBars = 5;
                 multi_bar.Name = "compMultiBarCompoundDriveGas" + i.ToString();
-                multi_bar.Click += new System.EventHandler(this.compMultiBar_Click);
+                multi_bar.Click += new System.EventHandler(this.compMultiBarDriveGas_Click);
 
                 label = this.CreateLabel(i * (width + space) + left_multi_bar, multi_bar.Top + multi_bar.Height + space, width, 30, i.ToString(), group_box, ContentAlignment.MiddleCenter);
                 varname = "DB55.Fuel" + FuncString.FillForward(i.ToString(), "0", 2);
@@ -72,8 +72,8 @@ namespace ClassDevelopment
                 input_box.Name = "compInputBoxCompoundDriveGas" + i.ToString();
                 input_box.Symbol = varname;
                 input_box.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.InputBox_KeyPress);
-                input_box.Leave += new System.EventHandler(this.compInputBox_Leave);
-                input_box.Enter += new System.EventHandler(this.compInputBox_Enter);
+                input_box.Leave += new System.EventHandler(this.compInputBoxDriveGas_Leave);
+                input_box.Enter += new System.EventHandler(this.compInputBoxDriveGas_Enter);
                 this.m_dataBinding.AddList(this, input_box.Name.ToString(), "Text", varname);
                 this.m_plcItemList.Add(input_box, plc_item_list);
                 this.m_userManagement.AddUserRightControl(input_box, plc_item_list.UserRightEnable);
@@ -85,7 +85,6 @@ namespace ClassDevelopment
                     col = 0;
                 }
             }
-
         }
 
 
@@ -116,11 +115,11 @@ namespace ClassDevelopment
                 multi_bar = this.CreateMultiBar(i * (width + space) + left_multi_bar, off + 13, width, 200, group_box);
                 multi_bar.Name = "compMultiBarBurnerLoad" + i.ToString();
                 multi_bar.ColorBar1 = Color.Blue;
-                multi_bar.Click += new System.EventHandler(this.compMultiBar_Click);
+                multi_bar.Click += new System.EventHandler(this.compMultiBarBurnerLoad_Click);
 
                 label = this.CreateLabel(i * (width + space) + left_multi_bar, multi_bar.Top + multi_bar.Height + space, width, 30, i.ToString(), group_box, ContentAlignment.MiddleCenter);
                 varname = "DB55.Burner" + FuncString.FillForward(i.ToString(), "0", 2);
-                this.m_dataBinding.AddList(this, multi_bar.Name.ToString(), "Value", varname);
+                this.m_dataBinding.AddList(this, multi_bar.Name.ToString(), "Value1", varname);
 
                 PlcItemList plc_item_list = this.GetPlcItemList(varname);
 
@@ -132,8 +131,8 @@ namespace ClassDevelopment
                 input_box.Name = "compInputBoxBurnerLoad" + i.ToString();
                 input_box.Symbol = varname;
                 input_box.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.InputBox_KeyPress);
-                input_box.Leave += new System.EventHandler(this.compInputBox_Leave);
-                input_box.Enter += new System.EventHandler(this.compInputBox_Enter);
+                input_box.Leave += new System.EventHandler(this.compInputBoxBurnerLoad_Leave);
+                input_box.Enter += new System.EventHandler(this.compInputBoxBurnerLoad_Enter);
                 this.m_dataBinding.AddList(this, input_box.Name.ToString(), "Text", varname);
                 this.m_plcItemList.Add(input_box, plc_item_list);
                 this.m_userManagement.AddUserRightControl(input_box, plc_item_list.UserRightEnable);
@@ -147,7 +146,10 @@ namespace ClassDevelopment
             }
 
         }
-        private void ResetSelectAll()
+
+
+
+        private void ResetSelectAllBurnerLoad()
         {
             for(int i=0;i<21;i++)
             {
@@ -156,9 +158,9 @@ namespace ClassDevelopment
             }
         }
 
-        private void compMultiBar_Click(object sender, EventArgs e)
+        private void compMultiBarBurnerLoad_Click(object sender, EventArgs e)
         {
-            this.ResetSelectAll();
+            this.ResetSelectAllBurnerLoad();
             CompMultiBar obj=(CompMultiBar)sender;
             string number = FuncString.GetOnlyNumeric(obj.Name);
             obj.Select = true;
@@ -166,7 +168,7 @@ namespace ClassDevelopment
             obj_set_focus.Focus();
         }
 
-        private void compInputBox_Leave(object sender, EventArgs e)
+        private void compInputBoxBurnerLoad_Leave(object sender, EventArgs e)
         {
             CompInputBox obj = (CompInputBox)sender;
             string number = FuncString.GetOnlyNumeric(obj.Name);
@@ -174,9 +176,10 @@ namespace ClassDevelopment
             obj_set_focus.Select = false;
             this.InputBox_Leave(sender, e);
         }
-        private void compInputBox_Enter(object sender, EventArgs e)
+
+        private void compInputBoxBurnerLoad_Enter(object sender, EventArgs e)
         {
-            this.ResetSelectAll();
+            this.ResetSelectAllBurnerLoad();
             CompInputBox obj = (CompInputBox)sender;
             string number = FuncString.GetOnlyNumeric(obj.Name);
             CompMultiBar obj_set_focus = (CompMultiBar)this.m_dataBinding.GetControlByName(this, "compMultiBarBurnerLoad" + number);
@@ -185,11 +188,47 @@ namespace ClassDevelopment
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
-            this.ResetSelectAll();
+            this.ResetSelectAllBurnerLoad();
+            this.ResetSelectAllDriveGas();
             base.OnFormClosing(e);
         }
 
+        private void ResetSelectAllDriveGas()
+        {
+            for (int i = 0; i < 21; i++)
+            {
+                CompMultiBar obj_set_focus = (CompMultiBar)this.m_dataBinding.GetControlByName(this, "compMultiBarCompoundDriveGas" + i.ToString());
+                obj_set_focus.Select = false;
+            }
+        }
 
+        private void compMultiBarDriveGas_Click(object sender, EventArgs e)
+        {
+            this.ResetSelectAllBurnerLoad();
+            CompMultiBar obj = (CompMultiBar)sender;
+            string number = FuncString.GetOnlyNumeric(obj.Name);
+            obj.Select = true;
+            CompInputBox obj_set_focus = (CompInputBox)this.m_dataBinding.GetControlByName(this, "compInputBoxCompoundDriveGas" + number);
+            obj_set_focus.Focus();
+        }
+
+        private void compInputBoxDriveGas_Leave(object sender, EventArgs e)
+        {
+            CompInputBox obj = (CompInputBox)sender;
+            string number = FuncString.GetOnlyNumeric(obj.Name);
+            CompMultiBar obj_set_focus = (CompMultiBar)this.m_dataBinding.GetControlByName(this, "compMultiBarCompoundDriveGas" + number);
+            obj_set_focus.Select = false;
+            this.InputBox_Leave(sender, e);
+        }
+
+        private void compInputBoxDriveGas_Enter(object sender, EventArgs e)
+        {
+            this.ResetSelectAllDriveGas();
+            CompInputBox obj = (CompInputBox)sender;
+            string number = FuncString.GetOnlyNumeric(obj.Name);
+            CompMultiBar obj_set_focus = (CompMultiBar)this.m_dataBinding.GetControlByName(this, "compMultiBarCompoundDriveGas" + number);
+            obj_set_focus.Select = true;
+        }
 
         private void FrmPara_Load(object sender, EventArgs e)
         {
