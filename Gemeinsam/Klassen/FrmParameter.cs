@@ -142,9 +142,9 @@ namespace Helper
         {
             string sql_command = "";
             //0       , 1       , 2           , 3        , 4         , 5           , 6
-            sql_command += "Select S7Adress, S7Symbol, S7SymbolType, S7Comment, SymbolType, RankingGroup, GroupComment, ";
+            sql_command += "Select S7Adress, S7Symbol, S7SymbolType, S7Comment, SymbolType, cast(RankingGroup as integer) as RankingGroup, GroupComment, ";
             //7            , 8      , 9   , 10          , 11        , 12        , 13             , 14        
-            sql_command += "RankingSymbol, Comment, Unit, SymbolFormat, UpperLimit, LowerLimit, UserRightEnable, UserRightVisible, ";
+            sql_command += "cast(RankingSymbol as integer) as RankingSymbol, Comment, Unit, SymbolFormat, UpperLimit, LowerLimit, UserRightEnable, UserRightVisible, ";
             //15
             sql_command += "Column ";
             if (this.m_formularType == FormularType.Error)
@@ -273,9 +273,9 @@ namespace Helper
         {
             string sql_command="";
                                //0       , 1       , 2           , 3        , 4         , 5           , 6
-            sql_command+="Select S7Adress, S7Symbol, S7SymbolType, S7Comment, SymbolType, RankingGroup, GroupComment, ";
-                          //7            , 8      , 9   , 10          , 11        , 12        , 13             , 14        
-            sql_command += "RankingSymbol, Comment, Unit, SymbolFormat, UpperLimit, LowerLimit, UserRightEnable, UserRightVisible, ";
+            sql_command += "Select S7Adress, S7Symbol, S7SymbolType, S7Comment, SymbolType, cast(RankingGroup as integer) as RankingGroup, GroupComment, ";
+                          //7            , 8      , 9   , 10          , 11        , 12        ,  13             , 14        
+            sql_command += "cast(RankingSymbol as integer) as RankingSymbol, Comment, Unit, SymbolFormat, UpperLimit, LowerLimit, UserRightEnable, UserRightVisible, ";
                          //15
             sql_command += "Column ";
             if(this.m_formularType==FormularType.Parameter)

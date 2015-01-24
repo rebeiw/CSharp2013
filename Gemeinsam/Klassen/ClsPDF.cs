@@ -43,13 +43,13 @@ namespace Helper
 
         private List<ClsPDFBorders> m_ListBorders;
 
-        private ClsSingeltonLanguage m_ClsSingeltonLanguage;
+        private ClsSingeltonLanguage m_language;
 
         public ClsPDF()
         {
             this.m_ListBorders = new List<ClsPDFBorders>();
 
-            this.m_ClsSingeltonLanguage = ClsSingeltonLanguage.CreateInstance();
+            this.m_language = ClsSingeltonLanguage.CreateInstance();
             this.m_Rectangle=new Rectangle();
 
             this.m_XBrush=new XSolidBrush(XBrushes.Red);
@@ -61,38 +61,35 @@ namespace Helper
             this.m_FontSize1Bold = new XFont(this.m_FontName, this.m_Size1, XFontStyle.Bold);
 
             this.m_PdfDokument = new PdfDocument();
-            this.AddPage();
-            this.AddPage(PageSize.A4, PageOrientation.Landscape);
 
-            this.SetPage(0);
-            this.m_XGraphics.DrawString("Calibration", this.m_FontSize1Bold, this.m_XBrush, this.m_LeftBorder, this.m_TopBorder);
+        }
 
-            SetPage(1);
-            this.m_XGraphics.DrawString("Calibration11111", this.m_FontSize1Bold, this.m_XBrush, this.m_LeftBorder, this.m_TopBorder);
-
-            this.m_Rectangle.X = (int)(this.m_XPen.Width / 2.0);
-            this.m_Rectangle.Y = (int)(this.m_XPen.Width / 2.0);
-            this.m_Rectangle.Width = 594 - 2;
-            this.m_Rectangle.Height = 220;
-
-            this.m_XGraphics.DrawRectangle(this.m_XPen, this.m_Rectangle);
-
+        public void ShowDocument()
+        {
             m_PdfDokument.Save(this.m_FileName);
-
             Process.Start(this.m_FileName);
+        }
+
+        public void DrawString(string text,double borderLeft,double borderTop)
+        {
+            int left = this.m_LeftBorder + this.GetPointX(borderLeft);
+            int top = this.m_TopBorder + this.GetPointY(borderTop);
+            this.m_XGraphics.DrawString(this.m_language.GetTranslation(text),this.m_FontSize1Bold, this.m_XBrush, left, top);
+
         }
         private int GetPointY(double cm)
         {
             int retval = (int)(this.m_PdfPage.Height.Point / this.m_PdfPage.Height.Millimeter * cm * 10.0);
             return retval;
         }
+
         private int GetPointX(double cm)
         {
             int retval = (int)(this.m_PdfPage.Width.Point / this.m_PdfPage.Width.Millimeter * cm * 10.0);
             return retval;
         }
 
-        private void SetPage(int pageNo)
+        public void SetPage(int pageNo)
         {
             if (this.m_XGraphics != null)
             {
@@ -105,7 +102,7 @@ namespace Helper
             this.m_TopBorder = this.GetPointY(this.m_ListBorders[pageNo].Top);
         }
 
-        private void AddPage(PageSize pageSize = PageSize.A4, PageOrientation pageOrientation = PageOrientation.Portrait, double leftBorder=2, double topBorder=2)
+        public void AddPage(PageSize pageSize = PageSize.A4, PageOrientation pageOrientation = PageOrientation.Portrait, double leftBorder = 2, double topBorder = 2)
         {
             ClsPDFBorders pdf_borders;
             pdf_borders.Left = leftBorder;
