@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2013 for Windows Desktop
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Report", "Report.csproj", "{19022697-941E-4FDE-BAC0-22FD69286045}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helper", "..\..\Gemeinsam\Klassen\Helper.csproj", "{105E1C4D-F555-4C42-B09B-EAF26CD86990}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19022697-941E-4FDE-BAC0-22FD69286045}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19022697-941E-4FDE-BAC0-22FD69286045}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19022697-941E-4FDE-BAC0-22FD69286045}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19022697-941E-4FDE-BAC0-22FD69286045}.Release|Any CPU.Build.0 = Release|Any CPU
+		{105E1C4D-F555-4C42-B09B-EAF26CD86990}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{105E1C4D-F555-4C42-B09B-EAF26CD86990}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{105E1C4D-F555-4C42-B09B-EAF26CD86990}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{105E1C4D-F555-4C42-B09B-EAF26CD86990}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
