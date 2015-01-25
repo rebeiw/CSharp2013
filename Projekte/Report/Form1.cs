@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace Report
 {
-    public partial class Form1 : Form
+    public partial class Form1 : FrmVorlage
     {
 
         ClsPDF m_ClsPdf;
@@ -15,21 +15,8 @@ namespace Report
             this.m_ClsPdf = new ClsPDF();
             this.m_ClsPdf.AddPage();
 
-            for (int i = 0; i < 10;i++ )
-            {
-                this.m_ClsPdf.DrawString("Wieber Juergen " + i.ToString() , 0, i);
-            }
-            this.m_ClsPdf.AddPage();
-            for (int i = 0; i < 10; i++)
-            {
-                this.m_ClsPdf.DrawString("Wieber Christine " + i.ToString(), 5, i);
-            }
+            this.m_ClsPdf.PrintHead("");
 
-            this.m_ClsPdf.SetPage(0);
-            for (int i = 0; i < 10; i++)
-            {
-                this.m_ClsPdf.DrawString("Wieber Christine " + i.ToString(), 5, i+10);
-            }
             this.m_ClsPdf.ShowDocument();
         }
 
@@ -37,5 +24,12 @@ namespace Report
         {
 
         }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+            this.Dispose();
+        }
+
     }
 }

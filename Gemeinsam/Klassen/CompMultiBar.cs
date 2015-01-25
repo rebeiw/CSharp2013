@@ -120,11 +120,11 @@ namespace Helper
         }
 
         [Category("Default"), Description("")]
-        private bool m_Select;
-        public bool Select
+        private bool m_Choise;
+        public bool Choise
         {
-            set { if (this.m_Select != value) { this.m_Select = value; this.Invalidate(); } }
-            get { return this.m_Select; }
+            set { if (this.m_Choise != value) { this.m_Choise = value; this.Invalidate(); } }
+            get { return this.m_Choise; }
         }
 
         public CompMultiBar()
@@ -147,7 +147,7 @@ namespace Helper
             this.ColorBar5 = Color.Green;
 
             this.Direction = CompVanDirection.Right;
-            this.Select = false;
+            this.Choise = false;
         }
 
         protected override void OnPaint(PaintEventArgs pe)
@@ -213,7 +213,7 @@ namespace Helper
             }
 
 
-            if (this.Select==true)
+            if (this.Choise==true)
             {
                 this.SetFocus(g);
             }
