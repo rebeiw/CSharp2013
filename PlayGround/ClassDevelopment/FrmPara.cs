@@ -154,7 +154,7 @@ namespace ClassDevelopment
             for(int i=0;i<21;i++)
             {
                 CompMultiBar obj_set_focus = (CompMultiBar)this.m_dataBinding.GetControlByName(this, "compMultiBarBurnerLoad" + i.ToString());
-                obj_set_focus.Select = false;
+                obj_set_focus.Choise = false;
             }
         }
 
@@ -163,7 +163,7 @@ namespace ClassDevelopment
             this.ResetSelectAllBurnerLoad();
             CompMultiBar obj=(CompMultiBar)sender;
             string number = FuncString.GetOnlyNumeric(obj.Name);
-            obj.Select = true;
+            obj.Choise = true;
             CompInputBox obj_set_focus = (CompInputBox)this.m_dataBinding.GetControlByName(this, "compInputBoxBurnerLoad" + number);
             obj_set_focus.Focus();
         }
@@ -173,7 +173,7 @@ namespace ClassDevelopment
             CompInputBox obj = (CompInputBox)sender;
             string number = FuncString.GetOnlyNumeric(obj.Name);
             CompMultiBar obj_set_focus = (CompMultiBar)this.m_dataBinding.GetControlByName(this, "compMultiBarBurnerLoad" + number);
-            obj_set_focus.Select = false;
+            obj_set_focus.Choise = false;
             this.InputBox_Leave(sender, e);
         }
 
@@ -183,7 +183,7 @@ namespace ClassDevelopment
             CompInputBox obj = (CompInputBox)sender;
             string number = FuncString.GetOnlyNumeric(obj.Name);
             CompMultiBar obj_set_focus = (CompMultiBar)this.m_dataBinding.GetControlByName(this, "compMultiBarBurnerLoad" + number);
-            obj_set_focus.Select = true;
+            obj_set_focus.Choise = true;
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -198,7 +198,7 @@ namespace ClassDevelopment
             for (int i = 0; i < 21; i++)
             {
                 CompMultiBar obj_set_focus = (CompMultiBar)this.m_dataBinding.GetControlByName(this, "compMultiBarCompoundDriveGas" + i.ToString());
-                obj_set_focus.Select = false;
+                obj_set_focus.Choise = false;
             }
         }
 
@@ -207,7 +207,7 @@ namespace ClassDevelopment
             this.ResetSelectAllBurnerLoad();
             CompMultiBar obj = (CompMultiBar)sender;
             string number = FuncString.GetOnlyNumeric(obj.Name);
-            obj.Select = true;
+            obj.Choise = true;
             CompInputBox obj_set_focus = (CompInputBox)this.m_dataBinding.GetControlByName(this, "compInputBoxCompoundDriveGas" + number);
             obj_set_focus.Focus();
         }
@@ -217,7 +217,7 @@ namespace ClassDevelopment
             CompInputBox obj = (CompInputBox)sender;
             string number = FuncString.GetOnlyNumeric(obj.Name);
             CompMultiBar obj_set_focus = (CompMultiBar)this.m_dataBinding.GetControlByName(this, "compMultiBarCompoundDriveGas" + number);
-            obj_set_focus.Select = false;
+            obj_set_focus.Choise = false;
             this.InputBox_Leave(sender, e);
         }
 
@@ -227,7 +227,7 @@ namespace ClassDevelopment
             CompInputBox obj = (CompInputBox)sender;
             string number = FuncString.GetOnlyNumeric(obj.Name);
             CompMultiBar obj_set_focus = (CompMultiBar)this.m_dataBinding.GetControlByName(this, "compMultiBarCompoundDriveGas" + number);
-            obj_set_focus.Select = true;
+            obj_set_focus.Choise = true;
         }
 
         private void FrmPara_Load(object sender, EventArgs e)

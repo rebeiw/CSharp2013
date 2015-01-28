@@ -2004,7 +2004,7 @@
             this.compMultiBar1.MaxValue = 100D;
             this.compMultiBar1.Name = "compMultiBar1";
             this.compMultiBar1.NumberOfBars = 5;
-            this.compMultiBar1.Select = false;
+            this.compMultiBar1.Choise = false;
             this.compMultiBar1.Size = new System.Drawing.Size(105, 339);
             this.compMultiBar1.TabIndex = 163;
             this.compMultiBar1.TabStop = false;
